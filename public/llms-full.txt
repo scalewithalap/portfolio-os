@@ -1,0 +1,101 @@
+# Full Technical Portfolio & Case Studies - Alap Putatunda
+
+> Founding AI Engineer & Full-Stack AI Developer | 8+ Years Experience
+> Website: https://scalewithalap.com | Email: hi@scalewithalap.com | GitHub: https://github.com/scalewithalap
+
+---
+
+## Executive Bio & Core Background
+
+Alap Putatunda is a Founding AI Engineer and Full-stack AI-native Developer with 8+ years of experience taking software from an empty repository to deployment, monitoring, and ongoing operation. Builds production LLM and multi-agent systems with RAG, semantic search, provider-agnostic model orchestration, voice AI, workflow automation, metered billing, and observability.
+
+Founded Scale with Alap, co-founded and leads Zero Headache as CEO, and shipped Vibe44 and OpenUI. Uses AI coding agents to accelerate delivery while retaining ownership of architecture, testing, security, and reliability. Selected for Hyperagent's "The Founding 500" in June 2026 ($20,000 credit recipient).
+
+---
+
+## Detailed Project Case Studies
+
+### 1. Scale with Alap (Portfolio OS)
+- **Category:** Interactive Desktop Portfolio & Web System
+- **URL:** https://scalewithalap.com/projects/scalewithalap
+- **Codebase Size:** 39 Files, React 19 + TypeScript + Vite + Tailwind CSS v4 + Zustand + Immer + Web Audio API
+- **Overview:** Built a 39-file application that recreates macOS and iOS windowing systems, featuring a custom window manager for drag, 8-axis resize, edge snapping, and z-index ordering. Manages state in a 484-line Zustand and Immer store, code-splits 13 apps with React.lazy and Suspense, and uses a requestAnimationFrame dock magnification system with GPU-accelerated transforms.
+- **Key Metrics:**
+  - 39 App Files
+  - 30+ UI State Fields in Zustand/Immer
+  - 13 Lazy-Loaded Code-Split Apps
+  - GPU-Accelerated Dock Magnification
+- **Highlights:**
+  - Custom window geometry manager with drag, resize, quadrant snap, and z-index ordering
+  - Cosine scaling dock magnification via requestAnimationFrame & 3D CSS transforms
+  - Web Audio API sound synthesizer for interactive UI audio feedback
+  - Dark/Light system theme toggle engine and touch gesture handlers
+
+### 2. Vibe44 Marketing & MCP Server
+- **Category:** Next.js Starter Kit & Model Context Protocol
+- **URL:** https://scalewithalap.com/projects/vibe44
+- **Overview:** Built a serverless MCP server implementing JSON-RPC 2.0 with 6 tools, 4 resource templates, rate limiting, and /llms.txt documentation endpoints for AI agent and RAG ingestion. Handles automated webhook fulfillment from Creem payments to GitHub repository access, single-use Cal.com booking link generation, Resend email dispatch, and Notion CRM synchronization with idempotency guards.
+- **Key Metrics:**
+  - 6 MCP Tools
+  - 4 Resource Templates
+  - Idempotent Webhook Fulfillment Engine
+  - /llms.txt RAG Ingestion Endpoint
+- **Tech Stack:** Next.js 16 Route Handlers, JSON-RPC 2.0, Creem Webhooks, GitHub API, Cal.com API, Resend API, Notion API.
+
+### 3. Vibe44 Next.js 16 Starter Kit Engine
+- **Category:** Next.js 16 Starter Kit Engine
+- **URL:** https://scalewithalap.com/projects/vibe44-demo
+- **Overview:** Built a 687-file, ~165,000-line Next.js 16 engine across ~810 files using a Universal Adapter Pattern. Supports 4 LLM providers (Anthropic, OpenAI, Gemini, DeepSeek) with PII redaction and structured output generation. Integrates 5 payment gateways (Stripe, Dodo Payments, Polar, Lemon Squeezy, Creem), Drizzle ORM over PostgreSQL with Supabase RLS, Trigger.dev v4 background jobs, Upstash Redis/QStash, WebAuthn authentication, and Sentry telemetry; validated by 900+ unit tests across 84 Vitest suites and 9 Playwright E2E test suites.
+- **Key Metrics:**
+  - ~165,000 Lines of Production Code
+  - 687 Source Files
+  - 900+ Unit Tests across 84 Suites
+  - 32 PostgreSQL Database Tables
+
+### 4. OpenUI
+- **Category:** Open Source Local-First UI Generator
+- **URL:** https://scalewithalap.com/projects/openui
+- **Overview:** An MIT-licensed, provider-agnostic platform for generating React and TypeScript component code locally without cloud databases or subscription requirements. Built with Next.js 16, React 19, Prisma 7 with SQLite, Tailwind CSS v4, and Redux Toolkit.
+
+### 5. Zero Headache Marketing
+- **Category:** AI Lead Capture & Service Operations
+- **URL:** https://scalewithalap.com/projects/zeroheadache
+- **Overview:** Leads product and engineering for a 24/7 AI lead-capture, qualification, booking, and recovery service across 12 voice and messaging channels for high-ticket local businesses. Defined multi-tenant playbooks and sub-10-second call answer targets. Applied to Y Combinator Fall 2026.
+
+### 6. Zero Headache Platform
+- **Category:** AI Multi-Agent Call Dispatch Engine
+- **URL:** https://scalewithalap.com/projects/zeroheadache-platform
+- **Overview:** Multi-tenant AI voice call dispatch, real-time audio streaming, and CRM synchronization engine.
+
+### 7. Make Me Sound
+- **Category:** AI Communication Copilot
+- **URL:** https://scalewithalap.com/projects/makemesound
+- **Overview:** AI-powered communication copilot featuring a 105-tone transformation matrix (15 categories with 7 sub-variants each) and parallel multi-stream response engine.
+
+### 8. Freecom AI Store
+- **Category:** AI-Native eCommerce Storefront
+- **URL:** https://scalewithalap.com/projects/freecom
+- **Overview:** Open-source eCommerce storefront integrating automated product recommendation agents and instant checkout pipelines.
+
+### 9. Soothly AI
+- **Category:** Autonomous 8-Agent Revenue Platform
+- **URL:** https://scalewithalap.com/projects/soothly
+- **Overview:** Autonomous revenue operations platform with an 8-agent ecosystem coordinated by a Superagent meta-orchestrator using Inngest durable step functions and Supabase pgvector.
+
+---
+
+## Work Experience & History
+
+1. **Scale with Alap (Personal Brand)** - *Founder & AI Engineer* (May 2026 - Present)
+   - Founded Scale with Alap to publish technical content and build AI products (Vibe44, OpenUI, Make Me Sound, Freecom AI).
+   - Directs AI-assisted engineering workflows across architecture, implementation, testing, and CI using Claude Code, Cursor, Codex, and Copilot.
+
+2. **Zero Headache (AI-Native Service Company)** - *Co-founder & CEO* (July 2026 - Present)
+   - Leads product and engineering for a 24/7 AI lead capture and booking service across 12 channels.
+   - Applied to Y Combinator Fall 2026.
+
+3. **Pharmison Valentes Pharma Pvt. Ltd.** - *Co-founder & CTO* (May 2019 - Present)
+   - Co-founded a registered Indian pharmaceutical company and led all technology end to end. Holds non-executive Director/Shareholder position.
+
+4. **Freelance AI & Web Developer** - (2017 - 2026)
+   - Built custom web applications, mobile apps, and AI automation systems for global clients.

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset 
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+                            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+  <!-- Homepage / Main Desktop Portfolio OS -->
+  <url>
+    <loc>https://scalewithalap.com/</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <!-- Project 1: Scale with Alap -->
+  <url>
+    <loc>https://scalewithalap.com/projects/scalewithalap</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Project 2: Vibe44 Marketing -->
+  <url>
+    <loc>https://scalewithalap.com/projects/vibe44</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Project 3: Vibe44 Demo Kit -->
+  <url>
+    <loc>https://scalewithalap.com/projects/vibe44-demo</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Project 4: OpenUI -->
+  <url>
+    <loc>https://scalewithalap.com/projects/openui</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Project 5: Zero Headache Marketing -->
+  <url>
+    <loc>https://scalewithalap.com/projects/zeroheadache</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Project 6: Zero Headache Platform -->
+  <url>
+    <loc>https://scalewithalap.com/projects/zeroheadache-platform</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Project 7: Make Me Sound -->
+  <url>
+    <loc>https://scalewithalap.com/projects/makemesound</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Project 8: Freecom AI Store -->
+  <url>
+    <loc>https://scalewithalap.com/projects/freecom</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Project 9: Soothly AI -->
+  <url>
+    <loc>https://scalewithalap.com/projects/soothly</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+</urlset>
