@@ -4,8 +4,8 @@ export default function HeroHoverText() {
   const containerRef = useRef<HTMLDivElement>(null);
   const charsRef = useRef<(HTMLSpanElement | null)[]>([]);
 
-  const line1Text = "Hey, I'm Alap! Welcome to my";
-  const line2Text = "portfolio.";
+  const line1Text = "I built this portfolio just to impress you.";
+  const line2Text = "Did it work?";
 
   useEffect(() => {
     // Disable hover animation on mobile and tablet screens
@@ -108,10 +108,10 @@ export default function HeroHoverText() {
   return (
     <div
       ref={containerRef}
-      className="select-none text-center pointer-events-auto flex flex-col items-center justify-center py-6 px-4"
+      className="select-none text-center pointer-events-auto flex flex-col items-center justify-center py-6 px-4 drop-shadow-[0_5px_5px_rgba(0,0,0,0.55)]"
     >
-      {/* Top Line: "Hey, I'm Alap! welcome to my" */}
-      <div className="flex flex-wrap justify-center items-center gap-x-[0.3em]">
+      {/* Top Line */}
+      <div className="flex flex-wrap justify-center items-center gap-x-[0.65em]">
         {line1Text.split(" ").map((word, wIdx) => (
           <span key={wIdx} className="inline-block whitespace-nowrap">
             {word.split("").map((char, cIdx) => {
@@ -122,7 +122,7 @@ export default function HeroHoverText() {
                   ref={(el) => {
                     charsRef.current[myIdx] = el;
                   }}
-                  className="inline-block font-sans font-normal text-white text-2xl sm:text-3xl md:text-4xl lg:text-[55px] tracking-tight cursor-default transition-transform drop-shadow-[0_8px_24px_rgba(0,0,0,0.75)]"
+                  className="inline-block font-sans font-normal text-white text-2xl sm:text-3xl md:text-[55px] tracking-tighter cursor-default transition-transform drop-shadow-[0_8px_24px_rgba(0,0,0,0.75)]"
                 >
                   {char}
                 </span>
@@ -132,22 +132,26 @@ export default function HeroHoverText() {
         ))}
       </div>
 
-      {/* Bottom Line: "portfolio." */}
-      <div className="flex justify-center items-center mt-2.5 md:-mt-2">
-        {line2Text.split("").map((char, cIdx) => {
-          const myIdx = charIndexCounter++;
-          return (
-            <span
-              key={cIdx}
-              ref={(el) => {
-                charsRef.current[myIdx] = el;
-              }}
-              className="md:mt-7 inline-block font-serif italic font-normal text-white text-6xl sm:text-8xl md:text-9xl tracking-tight drop-shadow-[0_20px_50px_rgba(0,0,0,0.85)] cursor-default transition-transform"
-            >
-              {char}
-            </span>
-          );
-        })}
+      {/* Bottom Line */}
+      <div className="flex flex-wrap justify-center items-center gap-x-[1.5em] mt-2.5 md:mt-0">
+        {line2Text.split(" ").map((word, wIdx) => (
+          <span key={wIdx} className="inline-block whitespace-nowrap">
+            {word.split("").map((char, cIdx) => {
+              const myIdx = charIndexCounter++;
+              return (
+                <span
+                  key={cIdx}
+                  ref={(el) => {
+                    charsRef.current[myIdx] = el;
+                  }}
+                  className="md:mt-7 inline-block font-serif italic font-normal text-white text-6xl sm:text-8xl md:text-[112px] tracking-tight drop-shadow-[0_20px_50px_rgba(0,0,0,0.85)] cursor-default transition-transform"
+                >
+                  {char}
+                </span>
+              );
+            })}
+          </span>
+        ))}
       </div>
     </div>
   );

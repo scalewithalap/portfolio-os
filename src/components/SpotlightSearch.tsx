@@ -178,7 +178,7 @@ const SEARCH_ITEMS: SearchItem[] = [
     color: "bg-blue-700 text-white",
     tags: ["Next.js 16", "Postgres", "RLS", "Trigger.dev"],
     keywords: [
-      "vibe44 demo",
+      "Vibe44 Starter Kit",
       "universal adapter",
       "rag",
       "pii",

@@ -175,7 +175,7 @@ export default function AboutApp() {
                     Experience
                   </span>
                   <span className={isLight ? "text-slate-800" : "text-white"}>
-                    8+ years taking software from empty repo to production
+                    6+ years taking software from empty repo to production
                   </span>
                 </div>
                 <div
@@ -186,8 +186,12 @@ export default function AboutApp() {
                   >
                     Open to Work
                   </span>
-                  <span className={`font-semibold ${isLight ? "text-emerald-700" : "text-emerald-400"}`}>
-                    AI Engineer & Full-Stack AI-Native Developer roles at early-stage startups (≤200 people), remote or relocation with visa sponsorship
+                  <span
+                    className={`font-semibold ${isLight ? "text-emerald-700" : "text-emerald-400"}`}
+                  >
+                    AI Engineer & Full-Stack AI-Native Developer roles at
+                    early-stage startups (≤200 people), remote or relocation
+                    with visa sponsorship
                   </span>
                 </div>
                 <div className="flex flex-col sm:flex-row px-4 py-3 gap-1 sm:gap-0 items-start sm:items-center">
@@ -222,7 +226,7 @@ export default function AboutApp() {
                   className={`leading-relaxed text-xs md:text-sm ${isLight ? "text-slate-700" : "text-white/80"}`}
                 >
                   Founding AI Engineer and Full-stack AI-native Developer with
-                  8+ years of experience taking software from an empty
+                  6+ years of experience taking software from an empty
                   repository to deployment, monitoring, and ongoing operation.
                   Builds production LLM and multi-agent systems with RAG,
                   semantic search, provider-agnostic model orchestration, voice
@@ -381,7 +385,7 @@ export default function AboutApp() {
                     <span
                       className={`text-[11px] md:text-xs font-mono ${isLight ? "text-slate-500" : "text-white/50"}`}
                     >
-                      2017 – 2026
+                      2019 – 2026
                     </span>
                   </div>
                   <p className="text-xs md:text-sm font-semibold text-blue-600 mt-0.5">

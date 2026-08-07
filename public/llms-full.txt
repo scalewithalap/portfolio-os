@@ -1,13 +1,13 @@
 # Full Technical Portfolio & Case Studies - Alap Putatunda
 
-> Founding AI Engineer & Full-Stack AI Developer | 8+ Years Experience
+> Founding AI Engineer & Full-Stack AI Developer | 6+ Years Experience
 > Website: https://scalewithalap.com | Email: hi@scalewithalap.com | GitHub: https://github.com/scalewithalap
 
 ---
 
 ## Executive Bio & Core Background
 
-Alap Putatunda is a Founding AI Engineer and Full-stack AI-native Developer with 8+ years of experience taking software from an empty repository to deployment, monitoring, and ongoing operation. Builds production LLM and multi-agent systems with RAG, semantic search, provider-agnostic model orchestration, voice AI, workflow automation, metered billing, and observability.
+Alap Putatunda is a Founding AI Engineer and Full-stack AI-native Developer with 6+ years of experience taking software from an empty repository to deployment, monitoring, and ongoing operation. Builds production LLM and multi-agent systems with RAG, semantic search, provider-agnostic model orchestration, voice AI, workflow automation, metered billing, and observability.
 
 Founded Scale with Alap, co-founded and leads Zero Headache as CEO, and shipped Vibe44 and OpenUI. Uses AI coding agents to accelerate delivery while retaining ownership of architecture, testing, security, and reliability. Selected for Hyperagent's "The Founding 500" in June 2026 ($20,000 credit recipient).
 
@@ -97,5 +97,5 @@ Founded Scale with Alap, co-founded and leads Zero Headache as CEO, and shipped 
 3. **Pharmison Valentes Pharma Pvt. Ltd.** - *Co-founder & CTO* (May 2019 - Present)
    - Co-founded a registered Indian pharmaceutical company and led all technology end to end. Holds non-executive Director/Shareholder position.
 
-4. **Freelance AI & Web Developer** - (2017 - 2026)
+4. **Freelance AI & Web Developer** - (2019 - 2026)
    - Built custom web applications, mobile apps, and AI automation systems for global clients.

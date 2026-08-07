@@ -77,7 +77,7 @@ const OUTPUT_LINES = [
     type: "item",
   },
   {
-    text: "  ├─ Vibe44 Demo | ~165k line Next.js 16 Next.js Starter Kit | demo.vibe44.com",
+    text: "  ├─ Vibe44 Starter Kit | ~165k line Next.js 16 Next.js Starter Kit | demo.vibe44.com",
     type: "item",
   },
   {

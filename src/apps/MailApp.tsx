@@ -40,7 +40,7 @@ const EMAILS = [
     id: "4",
     sender: "Independent Web & App Developer",
     subject: "Freelancer",
-    date: "2017 – 2026",
+    date: "2019 – 2026",
     preview: "Built websites, web and app projects, AI systems...",
     body: `Built websites, web and app projects, AI systems, and automations for clients, establishing hands-on full-stack engineering foundations.`,
   },

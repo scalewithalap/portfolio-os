@@ -14,7 +14,7 @@ This repository contains the source code for `scalewithalap.com`. The applicatio
 ## Core profile and background
 
 - **Name:** Alap Putatunda
-- **Role:** Founding AI Engineer & Full-Stack AI Developer (8+ years experience)
+- **Role:** Founding AI Engineer & Full-Stack AI Developer (6+ years experience)
 - **Location:** India (open to global remote roles or relocation with visa sponsorship)
 - **Recognition:** Selected for "The Founding 500" by Hyperagent (Airtable) in June 2026 ($20,000 credit recipient)
 - **Contact:** `hi@scalewithalap.com`

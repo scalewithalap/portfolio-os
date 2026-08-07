@@ -100,7 +100,7 @@ export default function DesktopEnvironment() {
         />
 
         {/* Ambient Dark Overlay */}
-        <div className="absolute inset-0 bg-black/10 backdrop-blur-[0.5px]" />
+        <div className="absolute inset-0 bg-black/10" />
 
         {/* Center Hero Text with Interactive Mouse Proximity Hover Animation */}
         <HeroHoverText />

@@ -46,7 +46,7 @@ export default function ResumeApp() {
           />
           <div>
             <span
-              className={`text-xs sm:text-[13px] font-semibold block leading-snug ${isLight ? "text-slate-900" : "text-white"}`}
+              className={`text-xs sm:text-[13px] font-semibold block leading-normal ${isLight ? "text-slate-900" : "text-white"}`}
             >
               Alap Putatunda's Resume
             </span>
@@ -108,10 +108,10 @@ export default function ResumeApp() {
                     className={`mr-1 w-3.5 h-3.5 ${isLight ? "text-blue-800" : "text-blue-400"} shrink-0`}
                   />
                   From India | Open to remote jobs | Ready to relocate with visa
-                  sponsorship | DM or Email for walkthroughs or demos
+                  sponsorship | DM or Email for demos or to schedule a call
                 </p>
                 <div
-                  className={`flex flex-wrap items-center justify-center md:justify-start gap-x-4 gap-y-1.5 mt-1 text-xs md:text-sm ${
+                  className={`flex flex-wrap items-center justify-center md:justify-start gap-x-4 gap-y-1.5 mt-1 text-sm md:text-base ${
                     isLight ? "text-slate-800" : "text-white/80"
                   }`}
                 >
@@ -197,13 +197,13 @@ export default function ResumeApp() {
               <span>Summary</span>
             </h2>
             <p
-              className={`text-xs sm:text-sm leading-relaxed p-4 rounded-xl border ${
+              className={`text-xs sm:text-sm leading-normal p-4 rounded-xl border ${
                 isLight
                   ? "bg-slate-50 border-slate-200 text-slate-800"
                   : "bg-white/5 border-white/5 text-white/80"
               }`}
             >
-              Founding AI Engineer and Full-stack AI-native Developer with 8+
+              Founding AI Engineer and Full-stack AI-native Developer with 6+
               years of experience taking software from an empty repository to
               deployment, monitoring, and ongoing operation. Builds production
               LLM and multi-agent systems with RAG, semantic search,
@@ -372,7 +372,7 @@ export default function ResumeApp() {
                   </a>
                 </h3>
                 <ul
-                  className={`md:pl-3 text-xs md:text-sm list-inside space-y-1 leading-relaxed ${isLight ? "text-slate-800 font-medium" : "text-white/80 font-normal"}`}
+                  className={`md:pl-7 text-xs md:text-sm list-disc space-y-1 leading-normal ${isLight ? "text-slate-800 font-medium" : "text-white/80 font-normal"}`}
                 >
                   <li>
                     Built a 39-file application that recreates macOS and iOS
@@ -417,7 +417,7 @@ export default function ResumeApp() {
                   </a>
                 </h3>
                 <ul
-                  className={`md:pl-3 text-xs md:text-sm list-inside space-y-1 leading-relaxed ${isLight ? "text-slate-800 font-medium" : "text-white/80 font-normal"}`}
+                  className={`md:pl-7 text-xs md:text-sm list-disc space-y-1 leading-normal ${isLight ? "text-slate-800 font-medium" : "text-white/80 font-normal"}`}
                 >
                   <li>
                     Built from scratch a serverless MCP server with JSON-RPC
@@ -444,8 +444,8 @@ export default function ResumeApp() {
                 <h3
                   className={`font-bold text-sm md:text-base ${isLight ? "text-blue-800" : "text-blue-400"}`}
                 >
-                  Vibe44 Demo | Demo website for Vibe44 Next.js AI SaaS Starter
-                  Kit |{" "}
+                  Vibe44 Starter Kit | Demo website for Vibe44 Next.js AI SaaS
+                  Starter Kit |{" "}
                   <a
                     href="https://demo.vibe44.com"
                     target="_blank"
@@ -456,7 +456,7 @@ export default function ResumeApp() {
                   </a>
                 </h3>
                 <ul
-                  className={`md:pl-3 text-xs md:text-sm list-inside space-y-1 leading-relaxed ${isLight ? "text-slate-800 font-medium" : "text-white/80 font-normal"}`}
+                  className={`md:pl-7 text-xs md:text-sm list-disc space-y-1 leading-normal ${isLight ? "text-slate-800 font-medium" : "text-white/80 font-normal"}`}
                 >
                   <li>
                     Built from scratch a 687-file, ~165,000-line Next.js 16
@@ -486,7 +486,8 @@ export default function ResumeApp() {
                 <h3
                   className={`font-bold text-sm md:text-base ${isLight ? "text-blue-800" : "text-blue-400"}`}
                 >
-                  Zero Headache | Fully managed AI front desk marketing site |{" "}
+                  Zero Headache | Fully managed AI front desk for local service
+                  businesses | YC Fall 2026 applicant |{" "}
                   <a
                     href="https://zeroheadache.co"
                     target="_blank"
@@ -495,10 +496,9 @@ export default function ResumeApp() {
                   >
                     zeroheadache.co
                   </a>{" "}
-                  (YC Fall 2026 applicant)
                 </h3>
                 <ul
-                  className={`md:pl-3 text-xs md:text-sm list-inside space-y-1 leading-relaxed ${isLight ? "text-slate-800 font-medium" : "text-white/80 font-normal"}`}
+                  className={`md:pl-7 text-xs md:text-sm list-disc space-y-1 leading-normal ${isLight ? "text-slate-800 font-medium" : "text-white/80 font-normal"}`}
                 >
                   <li>
                     Built from scratch a 12-channel inbound engine with 10
@@ -534,7 +534,7 @@ export default function ResumeApp() {
                   </a>
                 </h3>
                 <ul
-                  className={`md:pl-3 text-xs md:text-sm list-inside space-y-1 leading-relaxed ${isLight ? "text-slate-800 font-medium" : "text-white/80 font-normal"}`}
+                  className={`md:pl-7 text-xs md:text-sm list-disc space-y-1 leading-normal ${isLight ? "text-slate-800 font-medium" : "text-white/80 font-normal"}`}
                 >
                   <li>
                     Building from scratch a Next.js 16 platform that runs one
@@ -573,7 +573,7 @@ export default function ResumeApp() {
                   </a>
                 </h3>
                 <ul
-                  className={`md:pl-3 text-xs md:text-sm list-inside space-y-1 leading-relaxed ${isLight ? "text-slate-800 font-medium" : "text-white/80 font-normal"}`}
+                  className={`md:pl-7 text-xs md:text-sm list-disc space-y-1 leading-normal ${isLight ? "text-slate-800 font-medium" : "text-white/80 font-normal"}`}
                 >
                   <li>
                     Built an MIT-licensed, provider-agnostic alternative to
@@ -605,7 +605,7 @@ export default function ResumeApp() {
                   </a>
                 </h3>
                 <ul
-                  className={`md:pl-3 text-xs md:text-sm list-inside space-y-1 leading-relaxed ${isLight ? "text-slate-800 font-medium" : "text-white/80 font-normal"}`}
+                  className={`md:pl-7 text-xs md:text-sm list-disc space-y-1 leading-normal ${isLight ? "text-slate-800 font-medium" : "text-white/80 font-normal"}`}
                 >
                   <li>
                     Building a parallel multi-stream engine that converts drafts
@@ -636,7 +636,7 @@ export default function ResumeApp() {
                   </a>
                 </h3>
                 <ul
-                  className={`md:pl-3 text-xs md:text-sm list-inside space-y-1 leading-relaxed ${isLight ? "text-slate-800 font-medium" : "text-white/80 font-normal"}`}
+                  className={`md:pl-7 text-xs md:text-sm list-disc space-y-1 leading-normal ${isLight ? "text-slate-800 font-medium" : "text-white/80 font-normal"}`}
                 >
                   <li>
                     Building an open-source digital-download commerce platform
@@ -669,7 +669,7 @@ export default function ResumeApp() {
                   </a>
                 </h3>
                 <ul
-                  className={`md:pl-3 text-xs md:text-sm list-inside space-y-1 leading-relaxed ${isLight ? "text-slate-800 font-medium" : "text-white/80 font-normal"}`}
+                  className={`md:pl-7 text-xs md:text-sm list-disc space-y-1 leading-normal ${isLight ? "text-slate-800 font-medium" : "text-white/80 font-normal"}`}
                 >
                   <li>
                     Building an autonomous revenue operations platform running
@@ -728,7 +728,7 @@ export default function ResumeApp() {
                   </span>
                 </div>
                 <ul
-                  className={`md:pl-3 text-xs md:text-sm list-inside space-y-1 leading-relaxed ${isLight ? "text-slate-800 font-medium" : "text-white/80 font-normal"}`}
+                  className={`md:pl-7 text-xs md:text-sm list-disc space-y-1 leading-normal ${isLight ? "text-slate-800 font-medium" : "text-white/80 font-normal"}`}
                 >
                   <li>
                     Founded Scale with Alap to publish technical content and
@@ -768,7 +768,7 @@ export default function ResumeApp() {
                   </span>
                 </div>
                 <ul
-                  className={`md:pl-3 text-xs md:text-sm list-inside space-y-1 leading-relaxed ${isLight ? "text-slate-800 font-medium" : "text-white/80 font-normal"}`}
+                  className={`md:pl-7 text-xs md:text-sm list-disc space-y-1 leading-normal ${isLight ? "text-slate-800 font-medium" : "text-white/80 font-normal"}`}
                 >
                   <li>
                     Leads product and engineering for a 24/7 AI lead-capture,
@@ -810,7 +810,7 @@ export default function ResumeApp() {
                   </span>
                 </div>
                 <ul
-                  className={`md:pl-3 text-xs md:text-sm list-inside space-y-1 leading-relaxed ${isLight ? "text-slate-800 font-medium" : "text-white/80 font-normal"}`}
+                  className={`md:pl-7 text-xs md:text-sm list-disc space-y-1 leading-normal ${isLight ? "text-slate-800 font-medium" : "text-white/80 font-normal"}`}
                 >
                   <li>
                     Co-founded a registered Indian pharmaceutical company and
@@ -845,11 +845,11 @@ export default function ResumeApp() {
                         : "bg-blue-500/10 text-blue-300 border border-blue-500/20"
                     }`}
                   >
-                    2017 – 2026
+                    2019 – 2026
                   </span>
                 </div>
                 <ul
-                  className={`md:pl-3 text-xs md:text-sm list-inside space-y-1 leading-relaxed ${isLight ? "text-slate-800 font-medium" : "text-white/80 font-normal"}`}
+                  className={`md:pl-7 text-xs md:text-sm list-disc space-y-1 leading-normal ${isLight ? "text-slate-800 font-medium" : "text-white/80 font-normal"}`}
                 >
                   <li>
                     Designed, built, and deployed custom web applications, REST
@@ -971,19 +971,6 @@ export default function ResumeApp() {
                 </div>
               </div>
             </div>
-          </div>
-
-          {/* Bottom Download CTA */}
-          <div className="pt-4 flex flex-col items-center justify-center space-y-2 border-t border-slate-200 dark:border-white/10">
-            <a
-              href="/files/alap_resume.pdf"
-              download="Alap's Resume"
-              onClick={handleDownloadToast}
-              className="px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm rounded-xl flex items-center space-x-2 shadow-lg shadow-blue-600/30 transition-all hover:scale-105 cursor-pointer"
-            >
-              <Download className="w-3.5 h-3.5" />
-              <span>Download Resume</span>
-            </a>
           </div>
         </div>
       </div>

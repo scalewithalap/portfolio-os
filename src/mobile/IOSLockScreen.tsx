@@ -106,28 +106,28 @@ export default function IOSLockScreen({ onUnlock }: IOSLockScreenProps) {
       onMouseMove={(e) => handleMove(e.clientY)}
       onMouseUp={handleEnd}
       onMouseLeave={handleEnd}
-      className="fixed inset-0 z-50 flex flex-col justify-between bg-cover px-2.5 pt-12 pb-6 transition-opacity duration-300 overflow-hidden font-sans touch-none"
+      className="fixed inset-0 z-50 flex flex-col justify-between bg-cover px-2.5 pt-12 pb-10 transition-opacity duration-300 overflow-hidden font-sans touch-none"
       style={{
         backgroundImage: "url(/images/wallpaper-mobile.webp)",
         backgroundPosition: "center",
       }}
     >
       {/* Dark Ambient Overlay */}
-      <div className="absolute inset-0 bg-black/10 backdrop-blur-[0.5px]" />
+      <div className="absolute inset-0 bg-black/10" />
 
       {/* Top Lock Indicator & Time Display */}
       <div className="relative z-10 flex flex-col items-center text-white">
-        <div className="text-[19px] sm:text-[22px] font-semibold text-white/90 tracking-wide">
+        <div className="text-[18px] sm:text-[22px] font-semibold text-white/90 tracking-wide">
           {formatDate(time)}
         </div>
 
-        <h1 className="text-8xl sm:text-9xl font-semibold tracking-tight text-white drop-shadow-[0_10px_30px_rgba(0,0,0,0.6)] mt-1 font-sans">
+        <h1 className="text-8xl sm:text-9xl font-semibold tracking-tight text-white drop-shadow-[0_10px_30px_rgba(0,0,0,0.6)] font-sans">
           {formatTime(time)}
         </h1>
       </div>
 
       {/* Center Notification Preview Card */}
-      <div className="relative z-10 mb-auto w-full mx-auto mt-2">
+      <div className="relative z-10 mb-auto w-full mx-auto mt-1">
         <div className="rounded-2xl bg-black/50 backdrop-blur-2xl border border-white/20 p-4 shadow-2xl space-y-2 animate-fadeIn">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
@@ -153,8 +153,8 @@ export default function IOSLockScreen({ onUnlock }: IOSLockScreenProps) {
               Hey, I'm Alap! Welcome to My Portfolio.
             </h4>
             <p className="text-xs text-white/85 leading-tight mt-0.5">
-              Founding AI Engineer & Full-Stack AI-native Developer. This
-              portfolio is best experienced on a desktop.
+              Founding AI Engineer & Full-Stack AI-native Developer. For the
+              full macOS experience, view this website on a desktop.
             </p>
           </div>
         </div>

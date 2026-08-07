@@ -31,7 +31,7 @@ export default function TabletEnvironment() {
           backgroundPosition: "center",
         }}
       >
-        <div className="absolute inset-0 bg-black/10 backdrop-blur-[0.5px]" />
+        <div className="absolute inset-0 bg-black/10" />
       </div>
 
       {/* Responsive Top Menu Bar - Identical Desktop Top Bar */}
