@@ -62,21 +62,6 @@ export default function ResumeApp() {
         <div className="flex items-center space-x-2">
           <a
             href="/files/alap_resume.pdf"
-            target="_blank"
-            rel="noreferrer"
-            className={`px-2.5 py-1.5 text-xs font-medium rounded-lg flex items-center space-x-1.5 transition-colors border cursor-pointer ${
-              isLight
-                ? "bg-white border-slate-300 text-slate-800 hover:bg-slate-100"
-                : "bg-white/10 border-white/10 text-white/90 hover:bg-white/20"
-            }`}
-            title="Open PDF in new browser tab"
-          >
-            <ExternalLink className="w-3.5 h-3.5" />
-            <span className="hidden sm:inline">Open in a New Tab</span>
-          </a>
-
-          <a
-            href="/files/alap_resume.pdf"
             download="Alap's Resume"
             onClick={handleDownloadToast}
             className="px-3 py-1.5 bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold rounded-lg flex items-center space-x-1.5 shadow-md shadow-blue-600/30 transition-all active:scale-95 cursor-pointer"
@@ -89,12 +74,12 @@ export default function ResumeApp() {
 
       {/* Main Document Content */}
       <div
-        className={`flex-1 overflow-y-auto p-4 md:p-8 pb-28 md:pb-32 font-sans transition-colors duration-200 ${
+        className={`flex-1 overflow-y-auto p-3 md:p-6 pb-28 md:pb-32 font-sans transition-colors duration-200 ${
           isLight ? "bg-slate-100/60" : "bg-[#09090b]"
         }`}
       >
         <div
-          className={`w-full border rounded-2xl p-6 md:p-10 shadow-2xl space-y-8 transition-colors ${
+          className={`w-full border rounded-2xl p-4 md:p-8 shadow-2xl space-y-8 transition-colors ${
             isLight
               ? "bg-white border-slate-200 text-slate-900 shadow-slate-300/50"
               : "bg-[#18181b] border-white/10 text-white"
@@ -107,71 +92,95 @@ export default function ResumeApp() {
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
               <div>
                 <h1
-                  className={`text-3xl font-bold tracking-tight ${isLight ? "text-slate-900" : "text-white"}`}
+                  className={`text-4xl font-bold tracking-tight ${isLight ? "text-slate-900" : "text-white"}`}
                 >
                   ALAP PUTATUNDA
                 </h1>
                 <p
-                  className={`font-bold text-lg mt-0.5 ${isLight ? "text-blue-800" : "text-blue-400"}`}
+                  className={`font-bold text-lg ${isLight ? "text-blue-800" : "text-blue-400"}`}
                 >
-                  Founding AI Engineer
+                  Founding AI Engineer & Full-Stack AI-native Developer
                 </p>
                 <p
-                  className={`text-xs md:text-sm mt-1 ${isLight ? "text-slate-600" : "text-white/70"}`}
+                  className={`flex items-center text-sm md:text-base mt-1 ${isLight ? "text-slate-800" : "text-white/80"}`}
                 >
-                  India | Open to remote jobs or ready to relocate with visa
-                  sponsorship | DM for walkthroughs or demos
+                  <MapPin
+                    className={`mr-1 w-3.5 h-3.5 ${isLight ? "text-blue-800" : "text-blue-400"} shrink-0`}
+                  />
+                  From India | Open to remote jobs | Ready to relocate with visa
+                  sponsorship | DM or Email for walkthroughs or demos
                 </p>
+                <div
+                  className={`flex flex-wrap items-center justify-center md:justify-start gap-x-4 gap-y-1.5 mt-1 text-xs md:text-sm ${
+                    isLight ? "text-slate-800" : "text-white/80"
+                  }`}
+                >
+                  <a
+                    href="mailto:hi@scalewithalap.com"
+                    className={`flex items-center space-x-1 ${isLight ? "hover:text-blue-800" : "hover:text-blue-400"}`}
+                  >
+                    <Mail
+                      className={`w-3.5 h-3.5 ${isLight ? "text-blue-800" : "text-blue-400"} shrink-0`}
+                    />
+                    <span>hi@scalewithalap.com</span>
+                  </a>
+                  <span>•</span>
+                  <a
+                    href="https://wa.me/917980301128/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className={
+                      isLight ? "hover:text-blue-800" : "hover:text-blue-400"
+                    }
+                  >
+                    WhatsApp
+                  </a>
+                  <span>•</span>
+                  <a
+                    href="https://linkedin.com/in/scalewithalap"
+                    target="_blank"
+                    rel="noreferrer"
+                    className={
+                      isLight ? "hover:text-blue-800" : "hover:text-blue-400"
+                    }
+                  >
+                    LinkedIn
+                  </a>
+                  <span>•</span>
+                  <a
+                    href="https://github.com/scalewithalap"
+                    target="_blank"
+                    rel="noreferrer"
+                    className={
+                      isLight ? "hover:text-blue-800" : "hover:text-blue-400"
+                    }
+                  >
+                    GitHub
+                  </a>
+                  <span>•</span>
+                  <a
+                    href="https://x.com/scalewithalap"
+                    target="_blank"
+                    rel="noreferrer"
+                    className={
+                      isLight ? "hover:text-blue-800" : "hover:text-blue-400"
+                    }
+                  >
+                    X
+                  </a>
+                  <span>•</span>
+                  <a
+                    href="https://www.instagram.com/scalewithalap"
+                    target="_blank"
+                    rel="noreferrer"
+                    className={
+                      isLight ? "hover:text-blue-800" : "hover:text-blue-400"
+                    }
+                  >
+                    Instagram
+                  </a>
+                </div>
               </div>
-            </div>
-
-            <div
-              className={`flex flex-wrap items-center justify-center md:justify-start gap-x-4 gap-y-1.5 mt-4 text-xs md:text-sm ${
-                isLight ? "text-slate-600" : "text-white/70"
-              }`}
-            >
-              <a
-                href="mailto:hi@scalewithalap.com"
-                className={`flex items-center space-x-1 ${isLight ? "hover:text-blue-800" : "hover:text-blue-400"}`}
-              >
-                <Mail
-                  className={`w-3.5 h-3.5 ${isLight ? "text-blue-800" : "text-blue-400"}`}
-                />
-                <span>hi@scalewithalap.com</span>
-              </a>
-              <span>•</span>
-              <a
-                href="https://linkedin.com/in/scalewithalap"
-                target="_blank"
-                rel="noreferrer"
-                className={
-                  isLight ? "hover:text-blue-800" : "hover:text-blue-400"
-                }
-              >
-                LinkedIn
-              </a>
-              <span>•</span>
-              <a
-                href="https://github.com/scalewithalap"
-                target="_blank"
-                rel="noreferrer"
-                className={
-                  isLight ? "hover:text-blue-800" : "hover:text-blue-400"
-                }
-              >
-                GitHub
-              </a>
-              <span>•</span>
-              <a
-                href="https://x.com/scalewithalap"
-                target="_blank"
-                rel="noreferrer"
-                className={
-                  isLight ? "hover:text-blue-800" : "hover:text-blue-400"
-                }
-              >
-                X
-              </a>
             </div>
           </div>
 
@@ -194,7 +203,7 @@ export default function ResumeApp() {
                   : "bg-white/5 border-white/5 text-white/80"
               }`}
             >
-              Founding AI Engineer and Full-stack AI-native Developer with 6+
+              Founding AI Engineer and Full-stack AI-native Developer with 8+
               years of experience taking software from an empty repository to
               deployment, monitoring, and ongoing operation. Builds production
               LLM and multi-agent systems with RAG, semantic search,
@@ -339,10 +348,11 @@ export default function ResumeApp() {
                 }`}
               >
                 <h3
-                  className={`font-bold text-sm md:text-base ${isLight ? "text-blue-800" : "text-blue-400"}`}
+                  className={`font-bold text-sm md:text-base ${
+                    isLight ? "text-blue-800" : "text-blue-400"
+                  }`}
                 >
-                  Scale with Alap | Interactive macOS-style Portfolio OS built
-                  by Alap Putatunda (AI Engineer & Full-stack Developer) |{" "}
+                  Scale with Alap | Interactive macOS-style Portfolio OS |{" "}
                   <a
                     href="https://scalewithalap.com"
                     target="_blank"
@@ -358,7 +368,7 @@ export default function ResumeApp() {
                     rel="noreferrer"
                     className="underline decoration-1 underline-offset-2"
                   >
-                    github.com/scalewithalap/portfolio-os
+                    GitHub
                   </a>
                 </h3>
                 <ul
@@ -371,7 +381,7 @@ export default function ResumeApp() {
                     animated minimize and restore behavior.
                   </li>
                   <li>
-                    Managed 30+ UI state fields in a 484-line Zustand/Immer
+                    Managed 30+ UI state fields in a 755-line Zustand/Immer
                     store and code-split 13 apps with React.lazy and Suspense.
                     Added store-driven themes, touch gestures,
                     IntersectionObserver image loading, CSS 3D effects, and a

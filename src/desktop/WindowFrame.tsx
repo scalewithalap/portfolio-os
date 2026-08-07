@@ -530,7 +530,7 @@ export default function WindowFrame({ app, children }: WindowFrameProps) {
         isLight ? "bg-white/92 text-zinc-900" : "bg-zinc-950/85 text-white"
       } ${
         app.isMaximized
-          ? "rounded-none border-0 shadow-none"
+          ? "rounded-none border-0 shadow-none md:mt-1.5"
           : `rounded-2xl border ${
               isFocused
                 ? isLight
@@ -543,8 +543,16 @@ export default function WindowFrame({ app, children }: WindowFrameProps) {
       }`}
       style={{
         zIndex: app.zIndex,
-        width: app.isMaximized ? "100vw" : app.size.width,
-        height: app.isMaximized ? "calc(100vh - 28px)" : app.size.height,
+        width: app.isMaximized
+          ? "100vw"
+          : typeof window !== "undefined" && window.innerWidth < 1024
+            ? Math.min(app.size.width, window.innerWidth - 24)
+            : app.size.width,
+        height: app.isMaximized
+          ? "calc(100vh - 28px)"
+          : typeof window !== "undefined" && window.innerHeight < 800
+            ? Math.min(app.size.height, window.innerHeight - 56)
+            : app.size.height,
         pointerEvents: app.isMinimized ? "none" : "auto",
       }}
     >

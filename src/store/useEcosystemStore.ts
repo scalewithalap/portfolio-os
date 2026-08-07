@@ -1,7 +1,7 @@
 import { create } from "zustand";
 import { immer } from "zustand/middleware/immer";
 
-export type Environment = "macOS" | "iOS" | null;
+export type Environment = "macOS" | "iPadOS" | "iOS" | null;
 
 export interface AppWindow {
   id: string;
@@ -221,12 +221,16 @@ function getDefaultWindowGeometry() {
   const menuH = 28;
 
   // Target dimensions with screen bounds safety
-  const width = Math.min(1300, Math.max(360, screenW - 40));
-  const height = Math.min(620, Math.max(300, screenH - menuH - 20));
+  const width = Math.min(1300, Math.max(320, screenW - (screenW < 768 ? 16 : screenW < 1024 ? 32 : 40)));
+  const height = Math.min(680, Math.max(300, screenH - menuH - (screenW < 1024 ? 60 : 80)));
 
-  // Default position requested by user: translate(135px, 60px)
-  const x = Math.max(0, Math.min(screenW - width, 135));
-  const y = Math.max(menuH, Math.min(screenH - height, 60));
+  // Position: Centered cleanly on tablet screens, slightly offset on desktop
+  const x = screenW < 1024 
+    ? Math.max(8, (screenW - width) / 2) 
+    : Math.max(0, Math.min(screenW - width, 135));
+  const y = screenW < 1024 
+    ? 36 
+    : Math.max(menuH, Math.min(screenH - height, 60));
 
   return {
     position: { x, y },
@@ -414,7 +418,13 @@ export const useEcosystemStore = create<EcosystemState>()(
 
     setEnvironment: (env) =>
       set((state) => {
+        const prevEnv = state.activeEnvironment;
         state.activeEnvironment = env;
+        if (env === "iOS" || env === "iPadOS") {
+          state.systemTheme = "dark";
+        } else if (env === "macOS" && (prevEnv === "iOS" || prevEnv === "iPadOS")) {
+          state.systemTheme = "light";
+        }
       }),
     finishBoot: () =>
       set((state) => {

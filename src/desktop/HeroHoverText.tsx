@@ -8,6 +8,13 @@ export default function HeroHoverText() {
   const line2Text = "portfolio.";
 
   useEffect(() => {
+    // Disable hover animation on mobile and tablet screens
+    const isMobileOrTablet =
+      window.innerWidth < 1024 ||
+      !window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+
+    if (isMobileOrTablet) return;
+
     let animationFrameId: number | null = null;
     let cachedCoords: Array<{ x: number; y: number }> = [];
 
@@ -126,7 +133,7 @@ export default function HeroHoverText() {
       </div>
 
       {/* Bottom Line: "portfolio." */}
-      <div className="flex justify-center items-center">
+      <div className="flex justify-center items-center mt-2.5 md:-mt-2">
         {line2Text.split("").map((char, cIdx) => {
           const myIdx = charIndexCounter++;
           return (

@@ -48,7 +48,7 @@ export const PROJECTS_DATA: Project[] = [
     description:
       "A 39-file React 19 application recreating macOS and iOS desktop environments with custom window management and Web Audio synthesis.",
     longDescription:
-      "Built a 39-file application that recreates macOS and iOS windowing systems, featuring a custom window manager for drag, 8-axis resize, edge snapping, and z-index ordering. Manages state in a 484-line Zustand and Immer store, code-splits 13 apps with React.lazy and Suspense, and uses a requestAnimationFrame dock magnification system with GPU-accelerated transforms.",
+      "Built a 39-file application that recreates macOS and iOS windowing systems, featuring a custom window manager for drag, 8-axis resize, edge snapping, and z-index ordering. Manages state in a 755-line Zustand and Immer store, code-splits 13 apps with React.lazy and Suspense, and uses a requestAnimationFrame dock magnification system with GPU-accelerated transforms.",
     tags: [
       "React 19",
       "TypeScript",

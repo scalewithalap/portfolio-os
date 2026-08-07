@@ -29,7 +29,7 @@ export default function SEOHead() {
     } else if (focusedAppId === "about") {
       title = "About Alap Putatunda - Founding AI Engineer";
       description =
-        "Alap Putatunda is a Founding AI Engineer with 6+ years experience taking AI products from empty repo to production. Recipient of Hyperagent Founding 500.";
+        "Alap Putatunda is a Founding AI Engineer with 8+ years experience taking AI products from empty repo to production. Recipient of Hyperagent Founding 500.";
     } else if (focusedAppId === "resume") {
       title = "Resume - Alap Putatunda | Founding AI Engineer";
       description =

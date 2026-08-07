@@ -7,15 +7,32 @@ import SEOHead from './components/SEOHead';
 import { getAppInfoByProjectId } from './data/projectsData';
 
 const DesktopEnv = lazy(() => import('./desktop/DesktopEnvironment'));
+const TabletEnv = lazy(() => import('./tablet/TabletEnvironment'));
 const MobileEnv = lazy(() => import('./mobile/MobileEnvironment'));
 
 export default function App() {
   const { activeEnvironment, setEnvironment, openApp } = useEcosystemStore();
 
   useEffect(() => {
-    // Initial user agent & viewport environment detection on mount
-    const isMobile = window.innerWidth <= 768 || /Mobi|Android/i.test(navigator.userAgent);
-    setEnvironment(isMobile ? 'iOS' : 'macOS');
+    // Initial viewport & device environment detection
+    const detectEnvironment = () => {
+      const w = window.innerWidth;
+      if (w < 768) {
+        setEnvironment('iOS');
+      } else if (w <= 1024) {
+        setEnvironment('iPadOS');
+      } else {
+        setEnvironment('macOS');
+      }
+    };
+
+    detectEnvironment();
+
+    const handleResize = () => {
+      detectEnvironment();
+    };
+
+    window.addEventListener('resize', handleResize);
 
     // Deep-link route parser for /projects/:id, ?project=:id, ?app=:id, or #project-:id
     const handleInitialDeepLink = () => {
@@ -49,6 +66,10 @@ export default function App() {
     };
 
     handleInitialDeepLink();
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
   }, [setEnvironment, openApp]);
 
   if (!activeEnvironment) {
@@ -60,7 +81,9 @@ export default function App() {
       <SEOHead />
       <ErrorBoundary fallbackTitle="Portfolio OS Failed to Load">
         <Suspense fallback={<div className="h-screen w-screen bg-black" />}>
-          {activeEnvironment === 'macOS' ? <DesktopEnv /> : <MobileEnv />}
+          {activeEnvironment === 'macOS' && <DesktopEnv />}
+          {activeEnvironment === 'iPadOS' && <TabletEnv />}
+          {activeEnvironment === 'iOS' && <MobileEnv />}
         </Suspense>
       </ErrorBoundary>
       <SpotlightSearch />

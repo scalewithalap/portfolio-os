@@ -33,7 +33,7 @@ export const DESKTOP_ITEMS: DesktopItem[] = [
   },
   {
     id: "folder-vibe44",
-    title: "Vibe44",
+    title: "Vibe44 Website",
     appId: "folder-vibe44",
     appTitle: "Vibe44 Marketing Website",
     iconImage: "/images/folder.png",
@@ -42,7 +42,7 @@ export const DESKTOP_ITEMS: DesktopItem[] = [
   },
   {
     id: "folder-vibe44-demo",
-    title: "Vibe44 Demo",
+    title: "Vibe44 (Product)",
     appId: "folder-vibe44-demo",
     appTitle: "Vibe44 Next.js Starter Kit Demo",
     iconImage: "/images/folder.png",
@@ -51,7 +51,7 @@ export const DESKTOP_ITEMS: DesktopItem[] = [
   },
   {
     id: "folder-zeroheadache",
-    title: "Zero Headache",
+    title: "Zero Headache Website",
     appId: "folder-zeroheadache",
     appTitle: "Zero Headache Marketing",
     iconImage: "/images/folder.png",

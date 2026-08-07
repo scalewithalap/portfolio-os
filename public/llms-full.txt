@@ -19,7 +19,7 @@ Founded Scale with Alap, co-founded and leads Zero Headache as CEO, and shipped 
 - **Category:** Interactive Desktop Portfolio & Web System
 - **URL:** https://scalewithalap.com/projects/scalewithalap
 - **Codebase Size:** 39 Files, React 19 + TypeScript + Vite + Tailwind CSS v4 + Zustand + Immer + Web Audio API
-- **Overview:** Built a 39-file application that recreates macOS and iOS windowing systems, featuring a custom window manager for drag, 8-axis resize, edge snapping, and z-index ordering. Manages state in a 484-line Zustand and Immer store, code-splits 13 apps with React.lazy and Suspense, and uses a requestAnimationFrame dock magnification system with GPU-accelerated transforms.
+- **Overview:** Built a 39-file application that recreates macOS and iOS windowing systems, featuring a custom window manager for drag, 8-axis resize, edge snapping, and z-index ordering. Manages state in a 755-line Zustand and Immer store, code-splits 13 apps with React.lazy and Suspense, and uses a requestAnimationFrame dock magnification system with GPU-accelerated transforms.
 - **Key Metrics:**
   - 39 App Files
   - 30+ UI State Fields in Zustand/Immer

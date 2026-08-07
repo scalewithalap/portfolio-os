@@ -199,7 +199,7 @@ export default function DesktopDock() {
             }}
             className="px-3.5 py-1.5 rounded-full bg-slate-900/85 text-white/90 border border-white/20 backdrop-blur-xl shadow-2xl flex items-center space-x-1.5 text-xs font-semibold hover:bg-blue-600 transition-all cursor-pointer group"
           >
-            <ChevronUp className="w-3.5 h-3.5 text-blue-400 group-hover:text-white" />
+            <ChevronUp className="w-4 h-4 text-white mb-0.5" />
             <span>Show Dock</span>
           </button>
         </div>

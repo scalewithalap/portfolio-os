@@ -30,22 +30,22 @@ export default function AboutApp() {
 
   return (
     <div
-      className={`flex h-full w-full font-sans transition-colors duration-200 ${
+      className={`flex flex-col md:flex-row h-full w-full font-sans transition-colors duration-200 ${
         isLight ? "bg-slate-50 text-slate-900" : "bg-[#1e1e1e] text-white"
       }`}
     >
       {/* Sidebar - Settings style */}
       <div
-        className={`w-60 border-r flex flex-col transition-colors duration-200 shrink-0 ${
+        className={`w-full md:w-60 border-b md:border-b-0 md:border-r flex flex-col transition-colors duration-200 shrink-0 ${
           isLight
             ? "bg-slate-100/90 border-slate-200 text-slate-800"
             : "bg-[#1e1e1e]/80 border-white/10 text-white"
         }`}
       >
         {/* Profile Card */}
-        <div className="px-3 pt-3 mb-2">
+        <div className="px-3 pt-3 mb-1 md:mb-2">
           <div
-            className={`rounded-lg p-3 flex items-center space-x-3 cursor-pointer transition-colors border ${
+            className={`rounded-lg p-2.5 md:p-3 flex items-center space-x-3 cursor-pointer transition-colors border ${
               isLight
                 ? "bg-white border-slate-200/80 hover:bg-slate-200/50 text-slate-900 shadow-xs"
                 : "bg-white/5 border-white/10 hover:bg-white/10 text-white"
@@ -54,7 +54,7 @@ export default function AboutApp() {
             <LazyImage
               src="/images/alap.webp"
               alt="Alap Putatunda"
-              className={`w-10 h-10 rounded-full object-cover shrink-0 shadow-xs border object-[center_10%] ${
+              className={`w-9 h-9 md:w-10 md:h-10 rounded-full object-cover shrink-0 shadow-xs border object-[center_10%] ${
                 isLight ? "border-black/30" : "border-white/30"
               }`}
             />
@@ -73,8 +73,8 @@ export default function AboutApp() {
           </div>
         </div>
 
-        {/* Navigation List */}
-        <div className="px-3 space-y-0.5 mt-2">
+        {/* Navigation List - Horizontal scroll on mobile, vertical list on desktop */}
+        <div className="px-3 py-1.5 md:py-0 flex flex-row overflow-x-auto md:flex-col space-x-1 md:space-x-0 md:space-y-0.5 md:mt-2 scrollbar-none">
           {TABS.map((tab) => {
             const isActive = activeTab === tab.id;
 
@@ -82,7 +82,7 @@ export default function AboutApp() {
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`relative w-full flex items-center space-x-2 px-2.5 py-1.5 rounded-md text-xs md:text-sm transition-colors select-none cursor-pointer ${
+                className={`relative shrink-0 md:w-full flex items-center space-x-2 px-3 py-1.5 rounded-md text-xs md:text-sm transition-colors select-none cursor-pointer ${
                   isActive
                     ? "text-white font-medium"
                     : isLight
@@ -98,13 +98,13 @@ export default function AboutApp() {
                   />
                 )}
                 <div
-                  className={`relative z-10 w-6 h-6 rounded flex items-center justify-center shrink-0 ${
+                  className={`relative z-10 w-5 h-5 md:w-6 md:h-6 rounded flex items-center justify-center shrink-0 ${
                     isActive ? "bg-white/20" : "bg-[#0058d0]"
                   }`}
                 >
-                  <tab.icon className="w-3.5 h-3.5 text-white" />
+                  <tab.icon className="w-3 h-3 md:w-3.5 md:h-3.5 text-white" />
                 </div>
-                <span className="relative z-10 text-xs md:text-sm">
+                <span className="relative z-10 text-xs md:text-sm whitespace-nowrap">
                   {tab.label}
                 </span>
               </button>
@@ -119,20 +119,20 @@ export default function AboutApp() {
           isLight ? "bg-white text-slate-900" : "bg-[#1e1e1e]"
         }`}
       >
-        <div className="w-full px-6 py-6 md:px-8 md:py-8">
+        <div className="w-full px-4 py-4 md:px-8 md:py-8">
           {activeTab === "general" && (
             <div className="animate-in fade-in duration-300 space-y-6">
               <div className="flex items-center space-x-4">
                 <LazyImage
                   src="/images/alap.webp"
                   alt="Alap Putatunda"
-                  className={`w-16 h-16 rounded-full object-cover shadow-md border shrink-0 object-[center_10%] ${
+                  className={`w-14 h-14 md:w-16 md:h-16 rounded-full object-cover shadow-md border shrink-0 object-[center_10%] ${
                     isLight ? "border-black/30" : "border-white/30"
                   }`}
                 />
                 <div>
                   <h1
-                    className={`text-xl md:text-2xl font-bold tracking-tight ${isLight ? "text-slate-900" : "text-white"}`}
+                    className={`text-lg md:text-2xl font-bold tracking-tight ${isLight ? "text-slate-900" : "text-white"}`}
                   >
                     Alap Putatunda
                   </h1>
@@ -154,10 +154,10 @@ export default function AboutApp() {
                 }`}
               >
                 <div
-                  className={`flex border-b px-4 py-3 ${isLight ? "border-slate-200" : "border-white/10"}`}
+                  className={`flex flex-col sm:flex-row border-b px-4 py-3 gap-1 sm:gap-0 ${isLight ? "border-slate-200" : "border-white/10"}`}
                 >
                   <span
-                    className={`w-32 font-medium shrink-0 ${isLight ? "text-slate-500" : "text-white/50"}`}
+                    className={`w-full sm:w-32 font-medium shrink-0 ${isLight ? "text-slate-500" : "text-white/50"}`}
                   >
                     Location
                   </span>
@@ -167,10 +167,10 @@ export default function AboutApp() {
                   </span>
                 </div>
                 <div
-                  className={`flex border-b px-4 py-3 ${isLight ? "border-slate-200" : "border-white/10"}`}
+                  className={`flex flex-col sm:flex-row border-b px-4 py-3 gap-1 sm:gap-0 ${isLight ? "border-slate-200" : "border-white/10"}`}
                 >
                   <span
-                    className={`w-32 font-medium shrink-0 ${isLight ? "text-slate-500" : "text-white/50"}`}
+                    className={`w-full sm:w-32 font-medium shrink-0 ${isLight ? "text-slate-500" : "text-white/50"}`}
                   >
                     Experience
                   </span>
@@ -179,10 +179,10 @@ export default function AboutApp() {
                   </span>
                 </div>
                 <div
-                  className={`flex border-b px-4 py-3 items-center ${isLight ? "border-slate-200" : "border-white/10"}`}
+                  className={`flex flex-col sm:flex-row border-b px-4 py-3 gap-1 sm:gap-0 items-start sm:items-center ${isLight ? "border-slate-200" : "border-white/10"}`}
                 >
                   <span
-                    className={`w-32 font-medium shrink-0 ${isLight ? "text-slate-500" : "text-white/50"}`}
+                    className={`w-full sm:w-32 font-medium shrink-0 ${isLight ? "text-slate-500" : "text-white/50"}`}
                   >
                     Open to Work
                   </span>
@@ -190,9 +190,9 @@ export default function AboutApp() {
                     AI Engineer & Full-Stack AI-Native Developer roles at early-stage startups (≤200 people), remote or relocation with visa sponsorship
                   </span>
                 </div>
-                <div className="flex px-4 py-3 items-center">
+                <div className="flex flex-col sm:flex-row px-4 py-3 gap-1 sm:gap-0 items-start sm:items-center">
                   <span
-                    className={`w-32 font-medium shrink-0 ${isLight ? "text-slate-500" : "text-white/50"}`}
+                    className={`w-full sm:w-32 font-medium shrink-0 ${isLight ? "text-slate-500" : "text-white/50"}`}
                   >
                     Email me
                   </span>
