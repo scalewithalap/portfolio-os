@@ -86,7 +86,7 @@ export default function ContextMenu() {
         {/* Use Stacks / Stack by Kind */}
         <button
           onClick={() => {
-            stackByKind();
+            toggleStacks();
             closeContextMenu();
           }}
           className={`w-full px-3 py-2 rounded-xl flex items-center justify-between transition-colors group ${
@@ -112,48 +112,6 @@ export default function ContextMenu() {
           {isStacksEnabled && <Check className="w-4 h-4 text-white" />}
         </button>
 
-        {/* Use Stacks Toggle */}
-        <button
-          onClick={() => {
-            toggleStacks();
-            closeContextMenu();
-          }}
-          className={`w-full px-3 py-1.5 rounded-xl flex items-center justify-between transition-colors group text-[11px] ${
-            isLight
-              ? "hover:bg-blue-600 hover:text-white text-slate-700"
-              : "hover:bg-white/10 text-white/80 hover:text-white"
-          }`}
-        >
-          <span className="pl-6 font-medium">Use Stacks</span>
-          <span
-            className={`px-1.5 py-0.5 rounded text-[10px] uppercase tracking-wider font-bold ${
-              isStacksEnabled
-                ? "bg-emerald-500/20 text-emerald-600 dark:text-emerald-300"
-                : isLight
-                  ? "bg-slate-200/80 text-slate-600 group-hover:bg-blue-500 group-hover:text-white"
-                  : "bg-white/10 text-white/40 group-hover:text-white"
-            }`}
-          >
-            {isStacksEnabled ? "ON" : "OFF"}
-          </span>
-        </button>
-
-        {isStacksEnabled && (
-          <button
-            onClick={() => {
-              collapseAllStacks();
-              closeContextMenu();
-            }}
-            className={`w-full px-3 py-1.5 rounded-xl flex items-center justify-between transition-colors group text-[11px] ${
-              isLight
-                ? "hover:bg-blue-600 hover:text-white text-slate-700"
-                : "hover:bg-white/10 text-white/70 hover:text-white"
-            }`}
-          >
-            <span className="pl-6">Collapse All Stacks</span>
-          </button>
-        )}
-
         <div
           className={`h-px my-1 ${isLight ? "bg-slate-200" : "bg-white/10"}`}
         />
@@ -176,11 +134,6 @@ export default function ContextMenu() {
             />
             <span className="font-medium">Change Wallpaper</span>
           </div>
-          <span
-            className={`text-[10px] ${isLight ? "text-slate-400 group-hover:text-white/90" : "text-white/40 group-hover:text-white/80"}`}
-          >
-            ⌘ / W
-          </span>
         </button>
 
         {/* Wallpaper Picker Sublist Pill */}
@@ -266,7 +219,7 @@ export default function ContextMenu() {
           <span
             className={`text-[10px] ${isLight ? "text-slate-400 group-hover:text-white/90" : "text-white/40 group-hover:text-white/80"}`}
           >
-            ⌘ / K
+            ⌘ + K
           </span>
         </button>
 

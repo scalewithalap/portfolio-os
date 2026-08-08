@@ -218,7 +218,7 @@ export default function ControlCenter() {
                 <span
                   className={`text-[10px] block ${isLight ? "text-slate-500" : "text-white/50"}`}
                 >
-                  Search projects, skills & apps
+                  Search skills, projects, experience, etc.
                 </span>
               </div>
             </div>
@@ -229,7 +229,7 @@ export default function ControlCenter() {
                   : "bg-white/10 border-white/10 text-white/60"
               }`}
             >
-              ⌘ K
+              ⌘ + K
             </span>
           </button>
         </div>

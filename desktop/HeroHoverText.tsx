@@ -108,10 +108,10 @@ export default function HeroHoverText() {
   return (
     <div
       ref={containerRef}
-      className="select-none text-center pointer-events-auto flex flex-col items-center justify-center py-6 px-4 drop-shadow-[0_5px_5px_rgba(0,0,0,0.55)]"
+      className="select-none text-center pointer-events-auto flex flex-col items-center justify-center py-6 px-4 drop-shadow-[0_5px_5px_rgba(0,0,0,0.35)] md:drop-shadow-[0_5px_5px_rgba(0,0,0,0.55)]"
     >
       {/* Top Line */}
-      <div className="flex flex-wrap justify-center items-center gap-x-[0.65em]">
+      <div className="flex flex-wrap justify-center items-center gap-x-[0.35em] md:gap-x-[0.65em]">
         {line1Text.split(" ").map((word, wIdx) => (
           <span key={wIdx} className="inline-block whitespace-nowrap">
             {word.split("").map((char, cIdx) => {
@@ -122,7 +122,7 @@ export default function HeroHoverText() {
                   ref={(el) => {
                     charsRef.current[myIdx] = el;
                   }}
-                  className="inline-block font-sans font-normal text-white text-2xl sm:text-3xl md:text-[55px] tracking-tighter cursor-default transition-transform drop-shadow-[0_8px_24px_rgba(0,0,0,0.75)]"
+                  className="inline-block font-sans font-normal text-white text-3xl sm:text-3xl md:text-[55px] leading-none md:leading-tight tracking-tighter cursor-default transition-transform drop-shadow-[0_8px_24px_rgba(0,0,0,0.75)]"
                 >
                   {char}
                 </span>
@@ -133,7 +133,7 @@ export default function HeroHoverText() {
       </div>
 
       {/* Bottom Line */}
-      <div className="flex flex-wrap justify-center items-center gap-x-[1.5em] mt-2.5 md:mt-0">
+      <div className="flex flex-wrap justify-center items-center gap-x-[0.65em] md:gap-x-[1.5em] mt-2.5 md:mt-0.5">
         {line2Text.split(" ").map((word, wIdx) => (
           <span key={wIdx} className="inline-block whitespace-nowrap">
             {word.split("").map((char, cIdx) => {
@@ -144,7 +144,7 @@ export default function HeroHoverText() {
                   ref={(el) => {
                     charsRef.current[myIdx] = el;
                   }}
-                  className="md:mt-7 inline-block font-serif italic font-normal text-white text-6xl sm:text-8xl md:text-[112px] tracking-tight drop-shadow-[0_20px_50px_rgba(0,0,0,0.85)] cursor-default transition-transform"
+                  className="md:mt-7 inline-block font-serif italic font-normal text-white text-[36px] sm:text-8xl md:text-[112px] tracking-tight drop-shadow-[0_20px_50px_rgba(0,0,0,0.85)] cursor-default transition-transform"
                 >
                   {char}
                 </span>

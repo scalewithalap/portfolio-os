@@ -69,7 +69,7 @@ const OUTPUT_LINES = [
   { text: "Loading production projects...", type: "sys" },
   { text: "[ OK ] Production Projects & Applications", type: "success" },
   {
-    text: "  ├─ Scale with Alap | Interactive macOS-style Portfolio OS built by Alap Putatunda (AI Engineer & Full-stack Developer).",
+    text: "  ├─ Scale with Alap | Interactive macOS-style Portfolio OS built by Alap Putatunda.",
     type: "item",
   },
   {

@@ -1,0 +1,49 @@
+Copyright (c) 2026 Alap Putatunda or Scale with Alap (scalewithalap.com)
+
+All rights reserved.
+
+PERMITTED USE
+
+You may fork, clone, and study the source code in this repository for
+personal, educational, or non-commercial purposes. You may use the
+underlying code patterns, architecture, and technical approach as a
+reference or starting point to build your own original portfolio or
+personal website, provided that your project does not replicate the
+visual design, branding, or identity described below.
+
+RESTRICTIONS
+
+The following elements are proprietary and may NOT be copied, reused,
+redistributed, or included in derivative works without prior written
+permission from the copyright holder:
+
+1. Visual design: page layouts, color schemes, typography
+   combinations, UI component styling, animations, transitions,
+   and the overall look and feel of the site as presented at
+   scalewithalap.com.
+
+2. Brand assets: the "Scale with Alap" name, logos, icons, favicons,
+   illustrations, photographs, screenshots, and any other graphic
+   files included in the public/ directory or any project asset folders.
+
+3. Personal content: biographical text, project descriptions,
+   resume data, testimonials, and any copy written specifically
+   for Alap Putatunda's portfolio.
+
+4. Commercial use: using this code, in whole or in part, to build
+   a product or service that is sold, licensed, or monetized in
+   any form without separate written agreement.
+
+IN SHORT
+
+- Want to learn from the code and build something that looks and
+  feels like your own? Go ahead.
+
+- Want to ship a site that looks like a copy of scalewithalap.com,
+  or use my name and assets as if they were yours? Don't.
+
+DISCLAIMER
+
+This software is provided "as is", without warranty of any kind,
+express or implied. The copyright holder is not liable for any claim,
+damages, or other liability arising from the use of this software.

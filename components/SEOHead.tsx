@@ -11,7 +11,7 @@ export default function SEOHead() {
     // Determine current view details based on active/focused app
     let title = "Scale with Alap - Founding AI Engineer";
     let description =
-      "Interactive macOS-style Portfolio OS built by Alap Putatunda (AI Engineer & Full-stack Developer).";
+      "Interactive macOS-style Portfolio OS built by Alap Putatunda.";
     let canonicalUrl = "https://scalewithalap.com/";
     let activeProjectId: string | null = null;
 
@@ -127,7 +127,7 @@ export default function SEOHead() {
       url: "https://scalewithalap.com/",
       name: "Scale with Alap",
       description:
-        "Interactive macOS-style Portfolio OS built by Alap Putatunda (AI Engineer & Full-stack Developer).",
+        "Interactive macOS-style Portfolio OS built by Alap Putatunda.",
       publisher: {
         "@id": "https://scalewithalap.com/#person",
       },

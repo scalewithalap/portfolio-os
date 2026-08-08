@@ -29,9 +29,9 @@ export const WALLPAPERS = [
     url: "/images/wallpaper.webp",
   },
   {
-    id: "golden-gate",
-    name: "Golden Gate Bridge",
-    url: "https://images.unsplash.com/photo-1449034446853-66c86144b0ad?q=80&w=2500&auto=format&fit=crop&fm=webp",
+    id: "man-silhouette",
+    name: "Man Silhouette",
+    url: "https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?q=80&w=2500&auto=format&fit=crop&fm=webp",
   },
   {
     id: "neon-mesh",
@@ -39,9 +39,9 @@ export const WALLPAPERS = [
     url: "https://images.unsplash.com/photo-1614850523459-c2f4c699c52e?q=80&w=2500&auto=format&fit=crop&fm=webp",
   },
   {
-    id: "man-silhouette",
-    name: "Man Silhouette",
-    url: "https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?q=80&w=2500&auto=format&fit=crop&fm=webp",
+    id: "golden-gate",
+    name: "Golden Gate Bridge",
+    url: "https://images.unsplash.com/photo-1449034446853-66c86144b0ad?q=80&w=2500&auto=format&fit=crop&fm=webp",
   },
   {
     id: "monterey-waves",
@@ -221,16 +221,22 @@ function getDefaultWindowGeometry() {
   const menuH = 28;
 
   // Target dimensions with screen bounds safety
-  const width = Math.min(1300, Math.max(320, screenW - (screenW < 768 ? 16 : screenW < 1024 ? 32 : 40)));
-  const height = Math.min(680, Math.max(300, screenH - menuH - (screenW < 1024 ? 60 : 80)));
+  const width = Math.min(
+    1300,
+    Math.max(320, screenW - (screenW < 768 ? 16 : screenW < 1024 ? 32 : 40)),
+  );
+  const height = Math.min(
+    680,
+    Math.max(300, screenH - menuH - (screenW < 1024 ? 60 : 80)),
+  );
 
   // Position: Centered cleanly on tablet screens, slightly offset on desktop
-  const x = screenW < 1024 
-    ? Math.max(8, (screenW - width) / 2) 
-    : Math.max(0, Math.min(screenW - width, 135));
-  const y = screenW < 1024 
-    ? 36 
-    : Math.max(menuH, Math.min(screenH - height, 60));
+  const x =
+    screenW < 1024
+      ? Math.max(8, (screenW - width) / 2)
+      : Math.max(0, Math.min(screenW - width, 135));
+  const y =
+    screenW < 1024 ? 36 : Math.max(menuH, Math.min(screenH - height, 60));
 
   return {
     position: { x, y },
@@ -422,7 +428,10 @@ export const useEcosystemStore = create<EcosystemState>()(
         state.activeEnvironment = env;
         if (env === "iOS" || env === "iPadOS") {
           state.systemTheme = "dark";
-        } else if (env === "macOS" && (prevEnv === "iOS" || prevEnv === "iPadOS")) {
+        } else if (
+          env === "macOS" &&
+          (prevEnv === "iOS" || prevEnv === "iPadOS")
+        ) {
           state.systemTheme = "light";
         }
       }),

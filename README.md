@@ -24,7 +24,7 @@ This repository contains the source code for `scalewithalap.com`. The applicatio
 ## Key architecture features
 
 - **Custom 8-axis window geometry manager:** Handles window dragging, 8-axis resizing (`n`, `s`, `e`, `w`, `ne`, `nw`, `se`, `sw`), quadrant edge snapping, z-index ordering, focus tracking, and window state persistence.
-- **Zustand & Immer state engine:** Centralized state in `src/store/useEcosystemStore.ts` tracking open application instances, window geometries, theme selections, system notifications, audio settings, and command terminal history across 30+ state fields.
+- **Zustand & Immer state engine:** Centralized state in `store/useEcosystemStore.ts` tracking open application instances, window geometries, theme selections, system notifications, audio settings, and command terminal history across 30+ state fields.
 - **Dock magnification system:** Runs a cosine distance scaling algorithm via `requestAnimationFrame` with GPU-accelerated CSS 3D transforms.
 - **Lazy-loaded code-splitting:** Uses `React.lazy` and `Suspense` to partition 13 separate application modules into individual JavaScript chunks.
 - **Web Audio API synthesizer:** Generates real-time interactive audio feedback for UI clicks, window minimize actions, window close actions, and desktop interactions.
@@ -41,7 +41,7 @@ This repository contains the source code for `scalewithalap.com`. The applicatio
 
 ## Case studies and projects
 
-The portfolio includes 9 project case studies defined in `src/data/projectsData.ts` and `public/llms-full.txt`:
+The portfolio includes 9 project case studies defined in `data/projectsData.ts` and `public/llms-full.txt`:
 
 | Project                       | Category            | Live / Repo URL                                                                    | Codebase & Tech Stack                                                  | Key Metrics                                                     |
 | :---------------------------- | :------------------ | :--------------------------------------------------------------------------------- | :--------------------------------------------------------------------- | :-------------------------------------------------------------- |
@@ -68,46 +68,45 @@ scalewithalap/
 │   ├── robots.txt            # Crawler indexation directives
 │   ├── site.webmanifest      # Web application manifest
 │   └── sitemap.xml           # XML sitemap index
-├── src/
-│   ├── apps/                 # 13 code-split application components
-│   │   ├── projects/         # Individual project case study views
-│   │   │   ├── FreecomApp.tsx
-│   │   │   ├── MakeMeSoundApp.tsx
-│   │   │   ├── OpenUIApp.tsx
-│   │   │   ├── ScaleWithAlapApp.tsx
-│   │   │   ├── SoothlyApp.tsx
-│   │   │   ├── Vibe44App.tsx
-│   │   │   ├── Vibe44DemoApp.tsx
-│   │   │   ├── ZeroHeadacheApp.tsx
-│   │   │   └── ZeroHeadachePlatformApp.tsx
-│   │   ├── AboutApp.tsx      # Developer biography and experience history
-│   │   ├── MailApp.tsx       # Contact form and message sender
-│   │   ├── PhotosApp.tsx     # Screenshot gallery viewer
-│   │   ├── ResumeApp.tsx     # Full interactive resume viewer
-│   │   ├── SafariApp.tsx     # Simulated web browser
-│   │   ├── SingleProjectApp.tsx # Case study renderer
-│   │   ├── TerminalApp.tsx   # Interactive terminal simulator
-│   │   └── TrashApp.tsx      # System trash viewer
-│   ├── components/           # System UI overlays and shared elements
-│   │   ├── ContextMenu.tsx
-│   │   ├── ControlCenter.tsx
-│   │   ├── ErrorBoundary.tsx
-│   │   ├── LazyImage.tsx
-│   │   ├── NotificationCenter.tsx
-│   │   ├── SEOHead.tsx
-│   │   ├── ShortcutsHintOverlay.tsx
-│   │   ├── SpotlightSearch.tsx
-│   │   └── ToastContainer.tsx
-│   ├── desktop/              # macOS desktop interface components
-│   │   ├── DesktopDock.tsx
-│   │   ├── DesktopEnvironment.tsx
-│   │   ├── DesktopFolders.tsx
-│   │   ├── DesktopMenu.tsx
-│   │   ├── DesktopWindowManager.tsx
-│   │   ├── HeroHoverText.tsx
-│   │   └── WindowFrame.tsx
-│   ├── mobile/               # iOS mobile layout components
-│   │   ├── DynamicIsland.tsx
+├── apps/                     # 13 code-split application components
+│   ├── projects/             # Individual project case study views
+│   │   ├── FreecomApp.tsx
+│   │   ├── MakeMeSoundApp.tsx
+│   │   ├── OpenUIApp.tsx
+│   │   ├── ScaleWithAlapApp.tsx
+│   │   ├── SoothlyApp.tsx
+│   │   ├── Vibe44App.tsx
+│   │   ├── Vibe44DemoApp.tsx
+│   │   ├── ZeroHeadacheApp.tsx
+│   │   └── ZeroHeadachePlatformApp.tsx
+│   ├── AboutApp.tsx          # Developer biography and experience history
+│   ├── MailApp.tsx           # Contact form and message sender
+│   ├── PhotosApp.tsx         # Screenshot gallery viewer
+│   ├── ResumeApp.tsx         # Full interactive resume viewer
+│   ├── SafariApp.tsx         # Simulated web browser
+│   ├── SingleProjectApp.tsx     # Case study renderer
+│   ├── TerminalApp.tsx       # Interactive terminal simulator
+│   └── TrashApp.tsx          # System trash viewer
+├── components/               # System UI overlays and shared elements
+│   ├── ContextMenu.tsx
+│   ├── ControlCenter.tsx
+│   ├── ErrorBoundary.tsx
+│   ├── LazyImage.tsx
+│   ├── NotificationCenter.tsx
+│   ├── SEOHead.tsx
+│   ├── ShortcutsHintOverlay.tsx
+│   ├── SpotlightSearch.tsx
+│   └── ToastContainer.tsx
+├── desktop/                  # macOS desktop interface components
+│   ├── DesktopDock.tsx
+│   ├── DesktopEnvironment.tsx
+│   ├── DesktopFolders.tsx
+│   ├── DesktopMenu.tsx
+│   ├── DesktopWindowManager.tsx
+│   ├── HeroHoverText.tsx
+│   └── WindowFrame.tsx
+├── mobile/                   # iOS mobile layout components
+│   ├── DynamicIsland.tsx
 │   │   ├── MobileEnvironment.tsx
 │   │   └── MobileHome.tsx
 │   ├── store/

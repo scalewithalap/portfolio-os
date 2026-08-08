@@ -17,6 +17,10 @@ import {
   Linkedin,
   Twitter,
   Mail,
+  Facebook,
+  Send,
+  Phone,
+  MessageCircle,
 } from "lucide-react";
 import {
   Project,
@@ -90,10 +94,10 @@ export default function SingleProjectApp({ projectId }: SingleProjectAppProps) {
       typeof window !== "undefined" && window.location.origin
         ? window.location.origin
         : "https://scalewithalap.com";
-    const shareUrl = encodeURIComponent(`${origin}/projects/${project.id}`);
-    const titleText = encodeURIComponent(
-      `${project.title} - ${project.tagline}`,
-    );
+    const rawUrl = `${origin}/projects/${project.id}`;
+    const shareUrl = encodeURIComponent(rawUrl);
+    const shareTitle = `${project.title} - ${project.tagline}`;
+    const encodedTitle = encodeURIComponent(shareTitle);
 
     setFlashingPlatform(platform);
 
@@ -101,21 +105,37 @@ export default function SingleProjectApp({ projectId }: SingleProjectAppProps) {
       setFlashingPlatform(null);
       setIsShareOpen(false);
 
-      if (platform === "LinkedIn") {
-        window.open(
-          `https://www.linkedin.com/sharing/share-offsite/?url=${shareUrl}`,
-          "_blank",
-        );
-      } else if (platform === "Twitter / X") {
-        window.open(
-          `https://twitter.com/intent/tweet?text=${titleText}&url=${shareUrl}`,
-          "_blank",
-        );
-      } else if (platform === "Email") {
-        window.location.href = `mailto:?subject=${titleText}&body=Check out ${project.title}: ${shareUrl}`;
+      let url = "";
+      switch (platform) {
+        case "LinkedIn":
+          url = `https://www.linkedin.com/sharing/share-offsite/?url=${shareUrl}`;
+          break;
+        case "Twitter / X":
+          url = `https://x.com/intent/post?text=${encodedTitle}&url=${shareUrl}`;
+          break;
+        case "Facebook":
+          url = `https://www.facebook.com/sharer/sharer.php?u=${shareUrl}`;
+          break;
+        case "Reddit":
+          url = `https://www.reddit.com/submit?url=${shareUrl}&title=${encodedTitle}`;
+          break;
+        case "WhatsApp":
+          url = `https://wa.me/?text=${encodeURIComponent(`${shareTitle} ${rawUrl}`)}`;
+          break;
+        case "Telegram":
+          url = `https://t.me/share/url?url=${shareUrl}&text=${encodedTitle}`;
+          break;
+        case "Email":
+          window.location.href = `mailto:?subject=${encodedTitle}&body=${encodeURIComponent(`Check out ${project.title}: ${rawUrl}`)}`;
+          showToast(`Opened email client for ${project.title}`, "info");
+          return;
       }
 
-      showToast(`Shared ${project.title} on ${platform}!`, "info");
+      if (url) {
+        window.open(url, "_blank", "noopener,noreferrer");
+      }
+
+      showToast(`Sharing ${project.title} on ${platform}`, "info");
     }, 180);
   };
 
@@ -147,21 +167,21 @@ export default function SingleProjectApp({ projectId }: SingleProjectAppProps) {
           )}
           <div className="flex items-center">
             <span
-              className={`text-xs md:text-sm font-semibold ${isLight ? "text-slate-900" : "text-white"}`}
+              className={`text-sm md:text-lg leading-none font-semibold ${isLight ? "text-slate-900" : "text-white"}`}
             >
               {project.title}
             </span>
             <button
               onClick={handleCopyProjectUrl}
-              className={`text-[11px] ml-2 hidden sm:inline-flex items-center space-x-1 px-2 py-0.5 rounded-md transition-colors cursor-pointer ${
+              className={`text-xs ml-2 hidden sm:inline-flex items-center space-x-1 px-2 py-1.5 leading-none rounded-md transition-colors cursor-pointer ${
                 isLight
-                  ? "bg-slate-300/60 hover:bg-slate-300 text-slate-700 font-mono"
-                  : "bg-white/10 hover:bg-white/20 text-white/70 font-mono"
+                  ? "bg-slate-300 hover:bg-slate-350 text-slate-900 font-mono"
+                  : "bg-white/10 hover:bg-white/20 text-white/90 font-mono"
               }`}
               title="Click to copy shareable project URL"
             >
               <span>scalewithalap.com/projects/{project.id}</span>
-              <Copy className="w-3 h-3 opacity-60" />
+              <Copy className="w-3 h-3 opacity-80 ml-1" />
             </button>
           </div>
         </div>
@@ -193,19 +213,21 @@ export default function SingleProjectApp({ projectId }: SingleProjectAppProps) {
                   onClick={() => setIsShareOpen(false)}
                 />
                 <div
-                  className={`absolute right-0 top-full mt-1.5 w-64 rounded-xl border p-3 shadow-2xl z-50 space-y-2 animate-slideDown ${
+                  className={`absolute right-0 top-full mt-1.5 w-64 rounded-xl border p-3 shadow-2xl z-50 space-y-1 animate-slideDown ${
                     isLight
                       ? "bg-white border-slate-200 text-slate-800"
                       : "bg-[#282830] border-white/15 text-white"
                   }`}
                 >
-                  <div className="text-xs font-semibold px-1 text-slate-500 dark:text-white/60 flex items-center justify-between">
-                    <span>Share Project</span>
+                  <div
+                    className={`text-xs font-semibold px-1 pb-1.75 text-slate-500 dark:text-white/60 flex items-center justify-between border-b ${isLight ? "border-slate-200" : "border-white/10"}`}
+                  >
+                    <span>Share this Project</span>
                   </div>
 
                   <button
                     onClick={handleCopyProjectUrl}
-                    className={`w-full flex items-center justify-between p-2 rounded-lg text-xs font-medium transition-all duration-150 cursor-pointer ${
+                    className={`w-full flex items-center justify-between p-2 rounded-lg text-xs md:text-sm font-medium transition-all duration-150 cursor-pointer ${
                       copiedUrl
                         ? "bg-emerald-500/15 text-emerald-500 border border-emerald-500/30"
                         : isLight
@@ -227,24 +249,11 @@ export default function SingleProjectApp({ projectId }: SingleProjectAppProps) {
                         {copiedUrl ? "Copied URL!" : "Copy Project URL"}
                       </span>
                     </div>
-                    {copiedUrl ? (
-                      <Check className="w-3.5 h-3.5 text-emerald-500" />
-                    ) : (
-                      <Copy className="w-3.5 h-3.5 opacity-60" />
-                    )}
                   </button>
-
-                  <div
-                    className={`border-t my-1 ${isLight ? "border-slate-200" : "border-white/10"}`}
-                  />
-
-                  <div className="text-[10px] font-bold uppercase tracking-wider px-1 text-slate-400 dark:text-white/40">
-                    Share to Networks
-                  </div>
 
                   <button
                     onClick={() => handleShareSocial("LinkedIn")}
-                    className={`w-full flex items-center space-x-2 p-2 rounded-lg text-xs font-medium transition-all duration-150 cursor-pointer hover:scale-[1.02] ${
+                    className={`w-full flex items-center space-x-2 p-2 rounded-lg text-xs md:text-sm font-medium transition-all duration-150 cursor-pointer hover:scale-[1.02] ${
                       flashingPlatform === "LinkedIn"
                         ? "bg-blue-600 text-white scale-95 shadow-md ring-2 ring-blue-400/50"
                         : isLight
@@ -258,7 +267,7 @@ export default function SingleProjectApp({ projectId }: SingleProjectAppProps) {
 
                   <button
                     onClick={() => handleShareSocial("Twitter / X")}
-                    className={`w-full flex items-center space-x-2 p-2 rounded-lg text-xs font-medium transition-all duration-150 cursor-pointer hover:scale-[1.02] ${
+                    className={`w-full flex items-center space-x-2 p-2 rounded-lg text-xs md:text-sm font-medium transition-all duration-150 cursor-pointer hover:scale-[1.02] ${
                       flashingPlatform === "Twitter / X"
                         ? "bg-sky-500 text-white scale-95 shadow-md ring-2 ring-sky-300/50"
                         : isLight
@@ -271,8 +280,64 @@ export default function SingleProjectApp({ projectId }: SingleProjectAppProps) {
                   </button>
 
                   <button
+                    onClick={() => handleShareSocial("Facebook")}
+                    className={`w-full flex items-center space-x-2 p-2 rounded-lg text-xs md:text-sm font-medium transition-all duration-150 cursor-pointer hover:scale-[1.02] ${
+                      flashingPlatform === "Facebook"
+                        ? "bg-blue-500 text-white scale-95 shadow-md ring-2 ring-blue-300/50"
+                        : isLight
+                          ? "hover:bg-slate-100 active:bg-blue-100 text-slate-800"
+                          : "hover:bg-white/10 active:bg-blue-900/40 text-white"
+                    }`}
+                  >
+                    <Facebook className="w-4 h-4 text-blue-500" />
+                    <span>Share on Facebook</span>
+                  </button>
+
+                  <button
+                    onClick={() => handleShareSocial("Reddit")}
+                    className={`w-full flex items-center space-x-2 p-2 rounded-lg text-xs md:text-sm font-medium transition-all duration-150 cursor-pointer hover:scale-[1.02] ${
+                      flashingPlatform === "Reddit"
+                        ? "bg-orange-500 text-white scale-95 shadow-md ring-2 ring-orange-300/50"
+                        : isLight
+                          ? "hover:bg-slate-100 active:bg-orange-100 text-slate-800"
+                          : "hover:bg-white/10 active:bg-orange-900/40 text-white"
+                    }`}
+                  >
+                    <MessageCircle className="w-4 h-4 text-orange-500" />
+                    <span>Share on Reddit</span>
+                  </button>
+
+                  <button
+                    onClick={() => handleShareSocial("WhatsApp")}
+                    className={`w-full flex items-center space-x-2 p-2 rounded-lg text-xs md:text-sm font-medium transition-all duration-150 cursor-pointer hover:scale-[1.02] ${
+                      flashingPlatform === "WhatsApp"
+                        ? "bg-green-500 text-white scale-95 shadow-md ring-2 ring-green-300/50"
+                        : isLight
+                          ? "hover:bg-slate-100 active:bg-green-100 text-slate-800"
+                          : "hover:bg-white/10 active:bg-green-900/40 text-white"
+                    }`}
+                  >
+                    <Phone className="w-4 h-4 text-green-500" />
+                    <span>Share on WhatsApp</span>
+                  </button>
+
+                  <button
+                    onClick={() => handleShareSocial("Telegram")}
+                    className={`w-full flex items-center space-x-2 p-2 rounded-lg text-xs md:text-sm font-medium transition-all duration-150 cursor-pointer hover:scale-[1.02] ${
+                      flashingPlatform === "Telegram"
+                        ? "bg-sky-400 text-white scale-95 shadow-md ring-2 ring-sky-200/50"
+                        : isLight
+                          ? "hover:bg-slate-100 active:bg-sky-100 text-slate-800"
+                          : "hover:bg-white/10 active:bg-sky-900/40 text-white"
+                    }`}
+                  >
+                    <Send className="w-4 h-4 text-sky-400" />
+                    <span>Share on Telegram</span>
+                  </button>
+
+                  <button
                     onClick={() => handleShareSocial("Email")}
-                    className={`w-full flex items-center space-x-2 p-2 rounded-lg text-xs font-medium transition-all duration-150 cursor-pointer hover:scale-[1.02] ${
+                    className={`w-full flex items-center space-x-2 p-2 rounded-lg text-xs md:text-sm font-medium transition-all duration-150 cursor-pointer hover:scale-[1.02] ${
                       flashingPlatform === "Email"
                         ? "bg-emerald-600 text-white scale-95 shadow-md ring-2 ring-emerald-400/50"
                         : isLight
@@ -334,7 +399,7 @@ export default function SingleProjectApp({ projectId }: SingleProjectAppProps) {
 
       {/* Main Container - Tabless Continuous Layout */}
       <div
-        className={`flex-1 overflow-y-auto p-6 md:p-8 pb-28 md:pb-32 space-y-8 transition-colors ${
+        className={`flex-1 overflow-y-auto p-4 md:p-6 pb-22 md:pb-28 space-y-8 transition-colors ${
           isLight ? "bg-slate-50" : "bg-[#121215]"
         }`}
       >
@@ -350,7 +415,6 @@ export default function SingleProjectApp({ projectId }: SingleProjectAppProps) {
             {/* Hero Details (Left) */}
             <div className="lg:col-span-6 space-y-4">
               <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-black/40 border border-white/15 backdrop-blur-md text-xs font-semibold text-white">
-                <Sparkles className="w-3 h-3 text-white" />
                 <span>{project.badge || project.category}</span>
                 <span className="opacity-40">•</span>
                 <span className="text-white/80">{project.tagline}</span>

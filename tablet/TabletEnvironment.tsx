@@ -2,7 +2,8 @@ import React, { Suspense, useState, useEffect } from "react";
 import { X, Minus, Maximize2 } from "lucide-react";
 import { useEcosystemStore } from "../store/useEcosystemStore";
 import { APPS_CONFIG } from "../utils/apps";
-import HeroHoverText from "../desktop/HeroHoverText";
+import { DESKTOP_ITEMS } from "../desktop/DesktopFolders";
+import StaticHeroText from "../components/StaticHeroText";
 import DesktopMenu from "../desktop/DesktopMenu";
 import ControlCenter from "../components/ControlCenter";
 import NotificationCenter from "../components/NotificationCenter";
@@ -20,6 +21,8 @@ export default function TabletEnvironment() {
   } = useEcosystemStore();
 
   const activeApps = openApps.filter((a) => a.isOpen && !a.isMinimized);
+
+  const dockApps = APPS_CONFIG.filter((app) => !app.id.startsWith("folder-"));
 
   return (
     <div className="relative h-screen w-screen overflow-hidden bg-black text-white select-none font-sans flex flex-col">
@@ -41,47 +44,34 @@ export default function TabletEnvironment() {
       <div className="absolute inset-0 pt-12 pb-24 px-8 z-10 flex flex-col justify-between overflow-y-auto">
         {/* iPad Hero Visual Header */}
         <div className="w-full flex justify-center my-2">
-          <HeroHoverText />
+          <StaticHeroText />
         </div>
 
-        {/* iPad 6-Column App Grid */}
-        <div className="grid grid-cols-6 gap-6 my-auto max-w-4xl mx-auto w-full">
-          {APPS_CONFIG.map((app) => {
-            const Icon = app.icon;
+        {/* iPad 4-Column Desktop Items Grid */}
+        <div className="grid grid-cols-4 gap-6 my-auto max-w-3xl mx-auto w-full">
+          {DESKTOP_ITEMS.map((item) => {
             const isOpen = openApps.some(
-              (a) => a.id === app.id && a.isOpen && !a.isMinimized,
+              (a) => a.id === item.appId && a.isOpen && !a.isMinimized,
             );
 
             return (
               <div
-                key={app.id}
+                key={item.id}
                 className="flex flex-col items-center group cursor-pointer"
               >
                 <button
-                  onClick={() => openApp(app.id, app.title)}
-                  className={`w-16 h-16 rounded-2xl flex items-center justify-center text-white shadow-2xl active:scale-90 hover:scale-105 transition-all duration-200 relative ${
-                    app.iconImage
-                      ? "bg-transparent border-0 shadow-none"
-                      : `${app.color} border border-white/20`
-                  }`}
+                  onClick={() => openApp(item.appId, item.appTitle)}
+                  className="w-16 h-16 rounded-2xl flex items-center justify-center text-white shadow-2xl active:scale-90 hover:scale-105 transition-all duration-200 relative bg-transparent border-0"
                   style={{ borderRadius: "22.5%" }}
                 >
-                  {app.iconImage ? (
-                    <img
-                      src={app.iconImage}
-                      alt={app.title}
-                      className="w-15 h-15 object-contain drop-shadow-md group-hover:scale-105 transition-transform"
-                    />
-                  ) : (
-                    <Icon
-                      size={32}
-                      strokeWidth={1.5}
-                      className="drop-shadow-md"
-                    />
-                  )}
+                  <img
+                    src={item.iconImage}
+                    alt={item.title}
+                    className="w-15 h-15 object-contain drop-shadow-md group-hover:scale-105 transition-transform"
+                  />
                 </button>
-                <span className="text-xs font-medium text-white/90 mt-2 drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)] text-center line-clamp-1">
-                  {app.title}
+                <span className="text-xs font-medium text-white/90 mt-2 drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)] text-center line-clamp-2 max-w-24">
+                  {item.title}
                 </span>
                 {isOpen && (
                   <div className="w-1.5 h-1.5 rounded-full bg-white mt-1 shadow-md" />
@@ -178,7 +168,7 @@ export default function TabletEnvironment() {
 
       {/* iPad Floating Bottom Dock */}
       <div className="fixed bottom-3 left-1/2 -translate-x-1/2 z-50 flex items-center space-x-3 px-4 py-2 rounded-3xl bg-black/40 backdrop-blur-3xl border border-white/20 shadow-2xl">
-        {APPS_CONFIG.map((app) => {
+        {dockApps.map((app) => {
           const Icon = app.icon;
           const isOpen = openApps.some(
             (a) => a.id === app.id && a.isOpen && !a.isMinimized,

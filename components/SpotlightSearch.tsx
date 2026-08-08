@@ -131,7 +131,7 @@ const SEARCH_ITEMS: SearchItem[] = [
     appId: "safari",
     title: "Scale with Alap",
     subtitle:
-      "Interactive macOS-style Portfolio OS built by Alap Putatunda (AI Engineer & Full-stack Developer).",
+      "Interactive macOS-style Portfolio OS built by Alap Putatunda.",
     category: "Projects",
     icon: Sparkles,
     color: "bg-blue-600 text-white",
@@ -593,7 +593,7 @@ export default function SpotlightSearch() {
           className={`flex items-center px-4 py-3.5 border-b relative ${isLight ? "border-slate-200" : "border-white/10"}`}
         >
           <Search
-            className={`w-5 h-5 shrink-0 mr-3 ${isLight ? "text-slate-400" : "text-white/50"}`}
+            className={`w-5 h-5 shrink-0 mr-3 ${isLight ? "text-slate-500" : "text-white/60"}`}
           />
           <input
             ref={inputRef}
@@ -601,11 +601,11 @@ export default function SpotlightSearch() {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             onKeyDown={handleInputKeyDown}
-            placeholder="Spotlight Search — search apps, projects, skills, contact..."
+            placeholder="Spotlight Search — search apps, projects, skills, experience, etc."
             className={`w-full bg-transparent text-[16px] focus:outline-none font-medium tracking-wide ${
               isLight
-                ? "text-slate-900 placeholder:text-slate-400"
-                : "text-white placeholder:text-white/40"
+                ? "text-slate-900 placeholder:text-slate-500"
+                : "text-white placeholder:text-white/60"
             }`}
           />
           {query && (
@@ -628,7 +628,6 @@ export default function SpotlightSearch() {
             >
               ESC
             </kbd>
-            <span>close</span>
           </div>
         </div>
 
@@ -812,7 +811,7 @@ export default function SpotlightSearch() {
 
         {/* Footer Shortcut Bar */}
         <div
-          className={`border-t px-4 py-2 flex items-center justify-between text-[11px] ${
+          className={`border-t px-4 py-2 hidden md:flex items-center justify-between text-[11px] ${
             isLight
               ? "bg-slate-50 border-slate-200 text-slate-500"
               : "bg-black/30 border-white/10 text-white/40"
@@ -847,9 +846,9 @@ export default function SpotlightSearch() {
               <kbd
                 className={`px-1.5 py-0.5 rounded border ${isLight ? "bg-slate-200 border-slate-300 text-slate-700" : "bg-white/10 border-white/10 text-white/60"}`}
               >
-                ⌘K
+                ⌘ + K
               </kbd>{" "}
-              anytime
+              to open this search box
             </span>
           </div>
         </div>
