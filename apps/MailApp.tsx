@@ -1,3 +1,13 @@
+/**
+ * @file apps/MailApp.tsx
+ * @description Interactive macOS Mail Client Window Component.
+ *
+ * Responsibilities:
+ * - Renders an inbox list with simulated messages (Welcome email, project inquiries, social links).
+ * - Provides an interactive email composer form allowing users to send direct messages to hi@scalewithalap.com via mailto triggers.
+ * - Displays social profile links (GitHub, LinkedIn, Twitter/X, YouTube, Instagram) and contact details.
+ */
+
 import { useState } from "react";
 import {
   MailIcon,

@@ -1,7 +1,17 @@
-import React, { useState } from "react";
+/**
+ * @file apps/PhotosApp.tsx
+ * @description Screenshot Gallery & Portfolio Media Viewer Window Component.
+ *
+ * Responsibilities:
+ * - Displays a high-resolution grid of project screenshots, architectural diagrams, and UI mockups.
+ * - Supports category filtering (All Photos, Case Studies, AI Products, Next.js Architectures).
+ * - Renders a full-screen image lightbox overlay with zoom controls, metadata details, and direct project navigation links.
+ */
+
+import { useState } from "react";
 import { Image as ImageIcon, ExternalLink, X, Maximize2 } from "lucide-react";
 import { useEcosystemStore } from "../store/useEcosystemStore";
-import LazyImage from "../components/LazyImage";
+import LazyImage from "../components/common/LazyImage";
 
 export interface ScreenshotPhoto {
   id: string;

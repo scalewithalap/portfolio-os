@@ -1,3 +1,13 @@
+/**
+ * @file apps/ResumeApp.tsx
+ * @description Interactive Resume & Curriculum Vitae Viewer Window Component.
+ *
+ * Responsibilities:
+ * - Renders Alap Putatunda's full interactive resume document matching PDF design standards.
+ * - Displays executive summary, core engineering competencies, detailed work experience history, key achievements, and education.
+ * - Provides action buttons for downloading the official PDF resume file and initiating contact.
+ */
+
 import {
   Download,
   ExternalLink,
@@ -11,7 +21,7 @@ import {
   Code2,
 } from "lucide-react";
 import { useEcosystemStore } from "../store/useEcosystemStore";
-import { LazyImage } from "../components/LazyImage";
+import { LazyImage } from "../components/common/LazyImage";
 
 export default function ResumeApp() {
   const { systemTheme, showToast } = useEcosystemStore();

@@ -1,3 +1,13 @@
+/**
+ * @file components/overlays/SpotlightSearch.tsx
+ * @description macOS Spotlight Global Search Overlay Component.
+ *
+ * Responsibilities:
+ * - Triggered via `Cmd/Ctrl + K` or by clicking search icons in menu bar / desktop home.
+ * - Searches across system applications, portfolio project case studies, biography sections, social media links, and technical skills with instant keyword matching.
+ * - Supports keyboard navigation (Up/Down arrow keys to highlight, Enter to launch) and recency-based result sorting.
+ */
+
 import React, { useState, useEffect, useRef } from "react";
 import {
   Search,
@@ -16,29 +26,25 @@ import {
   Youtube,
   Instagram,
   Facebook,
-  ExternalLink,
   Sparkles,
-  Layout,
-  Bot,
-  MessageSquare,
-  ShoppingBag,
-  Workflow,
   Send,
   CornerDownLeft,
   X,
   Clock,
-  FileText,
+  AppWindow,
+  Folder,
+  Layers,
 } from "lucide-react";
-import { useEcosystemStore } from "../store/useEcosystemStore";
-import { APPS_CONFIG } from "../utils/apps";
-import { PROJECTS_DATA } from "../data/projectsData";
+import { useEcosystemStore } from "../../store/useEcosystemStore";
+import { APPS_CONFIG } from "../../config/apps.config";
+import { PROJECTS_DATA } from "../../data/projectsData";
 
 export interface SearchItem {
   id: string;
   appId: string;
   title: string;
   subtitle: string;
-  category: "Applications" | "Projects" | "Sections" | "Contact & Links";
+  category: "Application" | "Project" | "Section" | "Contact";
   icon: React.ElementType;
   color?: string;
   tags?: string[];
@@ -48,6 +54,27 @@ export interface SearchItem {
   iconImage?: string;
 }
 
+function CategoryIcon({
+  category,
+  className = "w-2.5 h-2.5",
+}: {
+  category: string;
+  className?: string;
+}) {
+  switch (category) {
+    case "Application":
+      return <AppWindow className={className} />;
+    case "Project":
+      return <Folder className={className} />;
+    case "Section":
+      return <Layers className={className} />;
+    case "Contact":
+      return <Send className={className} />;
+    default:
+      return <AppWindow className={className} />;
+  }
+}
+
 const SEARCH_ITEMS: SearchItem[] = [
   // Applications
   {
@@ -55,7 +82,7 @@ const SEARCH_ITEMS: SearchItem[] = [
     appId: "about",
     title: "About Me",
     subtitle: "About Alap, Work Experience, Education & Recognition",
-    category: "Applications",
+    category: "Application",
     icon: Settings,
     color: "bg-zinc-700 text-zinc-100",
     keywords: [
@@ -76,7 +103,7 @@ const SEARCH_ITEMS: SearchItem[] = [
     appId: "safari",
     title: "Safari",
     subtitle: "Explore Featured Projects, Live Demos & Architecture",
-    category: "Applications",
+    category: "Application",
     icon: Compass,
     color: "bg-blue-500 text-white",
     keywords: [
@@ -96,7 +123,7 @@ const SEARCH_ITEMS: SearchItem[] = [
     appId: "terminal",
     title: "Terminal",
     subtitle: "Interactive CLI Shell, Tech Stack & Shell Commands",
-    category: "Applications",
+    category: "Application",
     icon: Terminal,
     color: "bg-black text-green-400",
     keywords: [
@@ -116,7 +143,7 @@ const SEARCH_ITEMS: SearchItem[] = [
     appId: "mail",
     title: "Mail App",
     subtitle: "Send Email, Hire or Contact Alap Putatunda Directly",
-    category: "Applications",
+    category: "Application",
     icon: Mail,
     color: "bg-sky-400 text-white",
     keywords: [
@@ -131,172 +158,32 @@ const SEARCH_ITEMS: SearchItem[] = [
     ],
   },
 
-  // Projects
-  {
-    id: "proj-scalewithalap",
-    appId: "safari",
-    title: "Scale with Alap",
-    subtitle: "Interactive macOS-style Portfolio OS built by Alap Putatunda.",
-    category: "Projects",
+  // Projects (derived dynamically from PROJECTS_DATA)
+  ...PROJECTS_DATA.map((p) => ({
+    id: `proj-${p.id}`,
+    appId: `folder-${p.id}`,
+    title: p.title,
+    subtitle: p.tagline || p.description,
+    category: "Project" as const,
     icon: Sparkles,
     color: "bg-blue-600 text-white",
-    tags: ["React 19", "Vite", "Zustand", "Web Audio"],
+    tags: (p.skills || []).slice(0, 4),
     keywords: [
-      "scale with alap",
-      "portfolio",
-      "macos",
-      "react 19",
-      "vite",
-      "zustand",
-      "window manager",
-      "dock",
+      p.title.toLowerCase(),
+      p.id,
+      ...(p.skills || []).map((s) => s.toLowerCase()),
     ],
-  },
-  {
-    id: "proj-vibe44",
-    appId: "safari",
-    title: "Vibe44 Marketing & MCP",
-    subtitle: "Serverless MCP server with JSON-RPC 2.0 & webhook fulfillment",
-    category: "Projects",
-    icon: Sparkles,
-    color: "bg-indigo-600 text-white",
-    tags: ["MCP", "JSON-RPC 2.0", "Next.js 16", "Creem"],
-    keywords: [
-      "vibe44",
-      "mcp",
-      "json-rpc",
-      "serverless",
-      "creem",
-      "resend",
-      "llms.txt",
-      "saas",
-    ],
-  },
-  {
-    id: "proj-vibe44-demo",
-    appId: "safari",
-    title: "Vibe44 Next.js Starter Kit",
-    subtitle:
-      "165k-line Next.js 16 Next.js Starter Kit with Universal Adapter Pattern",
-    category: "Projects",
-    icon: Layout,
-    color: "bg-blue-700 text-white",
-    tags: ["Next.js 16", "Postgres", "RLS", "Trigger.dev"],
-    keywords: [
-      "Vibe44 Starter Kit",
-      "universal adapter",
-      "rag",
-      "pii",
-      "postgres",
-      "playwright",
-      "vitest",
-    ],
-  },
-  {
-    id: "proj-zeroheadache",
-    appId: "safari",
-    title: "Zero Headache Marketing",
-    subtitle: "12-channel inbound AI engine for local service businesses",
-    category: "Projects",
-    icon: Bot,
-    color: "bg-emerald-600 text-white",
-    tags: ["Next.js 16", "12 Channels", "ROI Simulator", "YC F26 Applicant"],
-    keywords: [
-      "zero headache",
-      "ai front desk",
-      "inbound",
-      "qualification",
-      "roi simulator",
-      "yc",
-    ],
-  },
-  {
-    id: "proj-zeroheadache-app",
-    appId: "safari",
-    title: "Zero Headache Platform",
-    subtitle: "Multi-tenant dashboard with sandboxed AI agents per client",
-    category: "Projects",
-    icon: Bot,
-    color: "bg-teal-600 text-white",
-    tags: ["Supabase RLS", "OpenRouter", "LangChain", "MCP"],
-    keywords: [
-      "zero headache app",
-      "multi-tenant",
-      "sandboxed agents",
-      "openrouter",
-      "langchain",
-      "dodo",
-    ],
-  },
-  {
-    id: "proj-openui",
-    appId: "safari",
-    title: "OpenUI",
-    subtitle:
-      "Local-first open-source UI generator & Google Stitch alternative",
-    category: "Projects",
-    icon: Layout,
-    color: "bg-sky-600 text-white",
-    tags: ["Next.js 16", "React 19", "Prisma 7", "Local First"],
-    keywords: [
-      "openui",
-      "stitch",
-      "local first",
-      "prisma 7",
-      "react 19",
-      "tailwind v4",
-      "mit",
-    ],
-  },
-  {
-    id: "proj-makemesound",
-    appId: "safari",
-    title: "Make Me Sound",
-    subtitle:
-      "Parallel multi-stream engine converting drafts into 105 tone variations",
-    category: "Projects",
-    icon: MessageSquare,
-    color: "bg-amber-600 text-white",
-    tags: ["Tone Copilot", "Sub-second", "Multi-Stream"],
-    keywords: [
-      "make me sound",
-      "tone",
-      "copilot",
-      "sub-second",
-      "parallel stream",
-      "communication",
-    ],
-  },
-  {
-    id: "proj-freecom",
-    appId: "safari",
-    title: "Freecom AI",
-    subtitle:
-      "Open-source digital-download eCommerce platform with agent swarm",
-    category: "Projects",
-    icon: ShoppingBag,
-    color: "bg-zinc-800 text-white",
-    tags: ["Store Manager Agent", "Agent Swarm", "Digital Commerce"],
-    keywords: [
-      "freecom",
-      "ecommerce",
-      "trigger.dev",
-      "composio",
-      "supabase",
-      "agent",
-      "digital downloads",
-    ],
-  },
+  })),
 
-  // Sections & Resume
+  // Section & Resume
   {
     id: "sec-general",
-    appId: "settings",
+    appId: "about",
     actionTab: "general",
     title: "About Alap Putatunda",
     subtitle:
       "Founding AI Engineer & Product Builder (Remote / Visa Sponsorship)",
-    category: "Sections",
+    category: "Section",
     icon: User,
     color: "bg-blue-600 text-white",
     keywords: [
@@ -319,7 +206,7 @@ const SEARCH_ITEMS: SearchItem[] = [
     title: "Work Experience Timeline",
     subtitle:
       "Scale with Alap (Founder), Zero Headache (CEO), Pharmison Valentes (CTO)",
-    category: "Sections",
+    category: "Section",
     icon: Briefcase,
     color: "bg-emerald-600 text-white",
     keywords: [
@@ -343,7 +230,7 @@ const SEARCH_ITEMS: SearchItem[] = [
     title: "Education & Academic Background",
     subtitle:
       "BCA coursework (JIS College of Engineering) & Krishnagar Collegiate School",
-    category: "Sections",
+    category: "Section",
     icon: GraduationCap,
     color: "bg-indigo-600 text-white",
     keywords: [
@@ -364,7 +251,7 @@ const SEARCH_ITEMS: SearchItem[] = [
     title: "Recognition & Awards",
     subtitle:
       "The Founding 500 by Hyperagent (Airtable) — US$20,000 platform credits",
-    category: "Sections",
+    category: "Section",
     icon: Award,
     color: "bg-amber-600 text-white",
     keywords: [
@@ -384,7 +271,7 @@ const SEARCH_ITEMS: SearchItem[] = [
     appId: "mail",
     title: "Contact Alap via Email",
     subtitle: "hi@scalewithalap.com — Send direct message or hire inquiry",
-    category: "Contact & Links",
+    category: "Contact",
     icon: Send,
     color: "bg-sky-500 text-white",
     keywords: [
@@ -404,7 +291,7 @@ const SEARCH_ITEMS: SearchItem[] = [
     title: "GitHub Profile",
     subtitle:
       "github.com/scalewithalap — Open-source repositories & source code",
-    category: "Contact & Links",
+    category: "Contact",
     icon: Github,
     color: "bg-zinc-900 text-white border border-white/20",
     keywords: ["github", "open source", "git", "repos", "code", "profile"],
@@ -416,10 +303,17 @@ const SEARCH_ITEMS: SearchItem[] = [
     title: "LinkedIn Profile",
     subtitle:
       "linkedin.com/in/scalewithalap — Professional experience & connections",
-    category: "Contact & Links",
+    category: "Contact",
     icon: Linkedin,
     color: "bg-blue-600 text-white",
-    keywords: ["linkedin", "career", "experience", "profile", "connect", "hire"],
+    keywords: [
+      "linkedin",
+      "career",
+      "experience",
+      "profile",
+      "connect",
+      "hire",
+    ],
   },
   {
     id: "cnt-x",
@@ -427,7 +321,7 @@ const SEARCH_ITEMS: SearchItem[] = [
     url: "https://x.com/scalewithalap",
     title: "X / Twitter Profile",
     subtitle: "x.com/scalewithalap — AI engineering updates & posts",
-    category: "Contact & Links",
+    category: "Contact",
     icon: Twitter,
     color: "bg-black text-white border border-white/20",
     keywords: ["x", "twitter", "social", "updates", "posts"],
@@ -438,7 +332,7 @@ const SEARCH_ITEMS: SearchItem[] = [
     url: "https://www.threads.com/@scalewithalap",
     title: "Threads Profile",
     subtitle: "threads.com/@scalewithalap — Microblogging & AI insights",
-    category: "Contact & Links",
+    category: "Contact",
     icon: AtSign,
     color: "bg-zinc-800 text-white",
     keywords: ["threads", "meta", "microblogging", "social"],
@@ -449,7 +343,7 @@ const SEARCH_ITEMS: SearchItem[] = [
     url: "https://www.youtube.com/@scalewithalap",
     title: "YouTube Channel",
     subtitle: "youtube.com/@scalewithalap — Video demos & AI build tutorials",
-    category: "Contact & Links",
+    category: "Contact",
     icon: Youtube,
     color: "bg-red-600 text-white",
     keywords: ["youtube", "video", "channel", "tutorials", "demos"],
@@ -459,8 +353,9 @@ const SEARCH_ITEMS: SearchItem[] = [
     appId: "external",
     url: "https://www.instagram.com/scalewithalap",
     title: "Instagram Profile",
-    subtitle: "instagram.com/scalewithalap — Visual updates & behind the scenes",
-    category: "Contact & Links",
+    subtitle:
+      "instagram.com/scalewithalap — Visual updates & behind the scenes",
+    category: "Contact",
     icon: Instagram,
     color: "bg-pink-600 text-white",
     keywords: ["instagram", "photos", "visuals", "social"],
@@ -471,7 +366,7 @@ const SEARCH_ITEMS: SearchItem[] = [
     url: "https://www.facebook.com/scalewithalap",
     title: "Facebook Page",
     subtitle: "facebook.com/scalewithalap — Community page & announcements",
-    category: "Contact & Links",
+    category: "Contact",
     icon: Facebook,
     color: "bg-blue-700 text-white",
     keywords: ["facebook", "fb", "page", "social"],
@@ -482,7 +377,7 @@ const getItemRecentIndex = (item: SearchItem, recentAppIds: string[]) => {
   if (!recentAppIds || recentAppIds.length === 0) return 999;
 
   const rawId = item.id;
-  const cleanId = rawId.replace(/^(proj|app)-/, "");
+  const cleanId = rawId.replace(/^(proj|app|sec|cnt)-/, "");
   const folderId = `folder-${cleanId}`;
 
   for (let i = 0; i < recentAppIds.length; i++) {
@@ -491,19 +386,7 @@ const getItemRecentIndex = (item: SearchItem, recentAppIds: string[]) => {
       rId === rawId ||
       rId === cleanId ||
       rId === folderId ||
-      rId === item.appId ||
-      (cleanId === "scalewithalap" &&
-        (rId === "folder-scalewithalap" || rId === "scalewithalap")) ||
-      (cleanId === "vibe44" && (rId === "folder-vibe44" || rId === "vibe44")) ||
-      (cleanId === "zeroheadache" &&
-        (rId === "folder-zeroheadache" || rId === "zeroheadache")) ||
-      (cleanId === "openui" && (rId === "folder-openui" || rId === "openui")) ||
-      (cleanId === "makemesound" &&
-        (rId === "folder-makemesound" || rId === "makemesound")) ||
-      (cleanId === "freecom" &&
-        (rId === "folder-freecom" || rId === "freecom")) ||
-      (cleanId === "soothly-ai" &&
-        (rId === "folder-soothly-ai" || rId === "soothly-ai"))
+      rId === item.appId
     ) {
       return i;
     }
@@ -515,7 +398,6 @@ const getItemRecentIndex = (item: SearchItem, recentAppIds: string[]) => {
 export default function SpotlightSearch() {
   const {
     isSpotlightOpen,
-    openSpotlight,
     closeSpotlight,
     toggleSpotlight,
     openApp,
@@ -644,7 +526,7 @@ export default function SpotlightSearch() {
 
   return (
     <div
-      className={`fixed inset-0 z-100 flex items-start justify-center pt-[15vh] px-4 animate-in fade-in duration-200 ${
+      className={`fixed inset-0 z-100 flex items-start justify-center pt-0 md:pt-[12.5vh] px-0 md:px-4 animate-in fade-in duration-200 ${
         isLight
           ? "bg-black/25 backdrop-blur-xs"
           : "bg-black/60 backdrop-blur-md"
@@ -654,7 +536,7 @@ export default function SpotlightSearch() {
       <div
         ref={containerRef}
         onClick={(e) => e.stopPropagation()}
-        className={`w-full max-w-2xl rounded-2xl shadow-2xl backdrop-blur-2xl overflow-hidden flex flex-col font-sans transition-all border ${
+        className={`w-full h-full md:h-auto max-w-none md:max-w-2xl rounded-none md:rounded-2xl shadow-2xl backdrop-blur-2xl overflow-hidden flex flex-col font-sans transition-all border-0 md:border ${
           isLight
             ? "bg-white/95 text-slate-900 border-slate-200 shadow-[0_25px_60px_rgba(0,0,0,0.18)]"
             : "bg-[#1e1e1e]/90 text-white border-white/20 shadow-[0_25px_60px_rgba(0,0,0,0.8)]"
@@ -662,10 +544,10 @@ export default function SpotlightSearch() {
       >
         {/* Spotlight Input Header */}
         <div
-          className={`flex items-center px-4 py-3.5 border-b relative ${isLight ? "border-slate-200" : "border-white/10"}`}
+          className={`flex items-center px-4 py-3.5 border-b relative shrink-0 ${isLight ? "border-slate-200" : "border-white/10"}`}
         >
           <Search
-            className={`w-5 h-5 shrink-0 mr-3 ${isLight ? "text-slate-500" : "text-white/60"}`}
+            className={`w-4 h-4 md:w-5 md:h-5 shrink-0 mr-2 md:mr-3 ${isLight ? "text-slate-500" : "text-white/60"}`}
           />
           <input
             ref={inputRef}
@@ -674,7 +556,7 @@ export default function SpotlightSearch() {
             onChange={(e) => setQuery(e.target.value)}
             onKeyDown={handleInputKeyDown}
             placeholder="Spotlight Search — search apps, projects, skills, experience, etc."
-            className={`w-full bg-transparent text-[16px] focus:outline-none font-medium tracking-wide ${
+            className={`w-full bg-transparent text-sm md:text-[16px] focus:outline-none font-medium tracking-wide ${
               isLight
                 ? "text-slate-900 placeholder:text-slate-500"
                 : "text-white placeholder:text-white/60"
@@ -692,8 +574,20 @@ export default function SpotlightSearch() {
               <X className="w-4 h-4" />
             </button>
           )}
+          {/* Mobile & Tablet Close Button */}
+          <button
+            onClick={closeSpotlight}
+            className={`md:hidden p-1.25 rounded-lg shrink-0 ml-1 transition-colors cursor-pointer ${
+              isLight
+                ? "bg-slate-200 text-slate-900"
+                : "bg-white/20 text-white/90"
+            }`}
+          >
+            <X className="w-4.5 h-4.5" strokeWidth={2.5} />
+          </button>
+          {/* Desktop ESC hint */}
           <div
-            className={`flex items-center space-x-1.5 shrink-0 text-[11px] font-medium ${isLight ? "text-slate-400" : "text-white/40"}`}
+            className={`hidden md:flex items-center space-x-1.5 shrink-0 text-[11px] font-medium ${isLight ? "text-slate-400" : "text-white/40"}`}
           >
             <kbd
               className={`px-1.5 py-0.5 rounded border ${isLight ? "bg-slate-100 border-slate-200 text-slate-600" : "bg-white/10 border-white/10 text-white/60"}`}
@@ -704,7 +598,7 @@ export default function SpotlightSearch() {
         </div>
 
         {/* Results Body */}
-        <div className="max-h-105 overflow-y-auto p-2 space-y-1">
+        <div className="flex-1 md:max-h-105 overflow-y-auto p-2 space-y-1">
           {!query && (
             <div
               className={`px-3 py-1.5 flex items-center justify-between text-[11px] font-bold uppercase tracking-wider ${isLight ? "text-blue-600" : "text-blue-400"}`}
@@ -722,7 +616,7 @@ export default function SpotlightSearch() {
               <p
                 className={`text-[14px] font-medium ${isLight ? "text-slate-800" : "text-white/70"}`}
               >
-                No results found for "{query}"
+                No results found for {query}!
               </p>
               <p
                 className={`text-[12px] ${isLight ? "text-slate-400" : "text-white/40"}`}
@@ -753,7 +647,7 @@ export default function SpotlightSearch() {
                   <div
                     onClick={() => handleSelectItem(item)}
                     onMouseEnter={() => setSelectedIndex(index)}
-                    className={`flex items-center justify-between p-3 rounded-xl cursor-pointer transition-colors ${
+                    className={`flex items-center justify-between p-1.75 md:p-3 rounded-xl cursor-pointer transition-colors ${
                       isSelected
                         ? "bg-blue-600 text-white"
                         : isLight
@@ -764,7 +658,7 @@ export default function SpotlightSearch() {
                     <div className="flex items-center space-x-3.5 min-w-0 flex-1">
                       {(() => {
                         let img = item.iconImage;
-                        if (item.category === "Projects") {
+                        if (item.category === "Project") {
                           const cleanId = item.id.replace(/^proj-/, "");
                           const proj = PROJECTS_DATA.find(
                             (p) =>
@@ -811,7 +705,7 @@ export default function SpotlightSearch() {
                           </span>
                           {!query && index < 6 ? (
                             <span
-                              className={`text-[10px] px-2 py-0.5 rounded-full font-semibold border flex items-center gap-1 ${
+                              className={`text-[10px] leading-none px-2 py-1 rounded-full font-semibold border flex items-center gap-1 ${
                                 isSelected
                                   ? "bg-white/20 text-white border-white/30"
                                   : isLight
@@ -819,11 +713,12 @@ export default function SpotlightSearch() {
                                     : "bg-blue-500/30 text-blue-300 border-blue-400/30"
                               }`}
                             >
-                              <Clock className="w-2.5 h-2.5" /> Recent
+                              <CategoryIcon category={item.category} />{" "}
+                              {item.category}
                             </span>
                           ) : (
                             <span
-                              className={`text-[10px] px-2 py-0.5 rounded-full font-medium ${
+                              className={`text-[10px] leading-none px-2 py-1 flex items-center gap-1 rounded-full font-medium ${
                                 isSelected
                                   ? "bg-white/20 text-white"
                                   : isLight
@@ -831,12 +726,13 @@ export default function SpotlightSearch() {
                                     : "bg-white/10 text-white/60"
                               }`}
                             >
+                              <CategoryIcon category={item.category} />{" "}
                               {item.category}
                             </span>
                           )}
                         </div>
                         <p
-                          className={`text-[12px] truncate mt-0.5 ${
+                          className={`text-xs leading-3.5 md:leading-tight md:truncate mt-0.5 ${
                             isSelected
                               ? "text-white/90"
                               : isLight
@@ -851,7 +747,7 @@ export default function SpotlightSearch() {
                             {item.tags.map((tag) => (
                               <span
                                 key={tag}
-                                className={`text-[10px] px-1.5 py-0.2 rounded ${
+                                className={`text-[10px] px-1.25 py-0.2 rounded ${
                                   isSelected
                                     ? "bg-white/20 text-white"
                                     : isLight
@@ -867,7 +763,7 @@ export default function SpotlightSearch() {
                       </div>
                     </div>
 
-                    <div className="shrink-0 ml-3 flex items-center text-white/50">
+                    <div className="shrink-0 ml-3 hidden md:flex items-center text-white/50">
                       {isSelected && (
                         <span className="flex items-center text-[12px] font-medium text-white/90 bg-white/20 px-2 py-1 rounded-lg">
                           Open <CornerDownLeft className="w-3.5 h-3.5 ml-1" />

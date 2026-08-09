@@ -1,14 +1,22 @@
+/**
+ * @file mobile/MobileEnvironment.tsx
+ * @description iOS Mobile Environment Container View Component.
+ *
+ * Responsibilities:
+ * - Serves as the primary mobile layout wrapper for small screen viewports (<768px).
+ * - Manages iOS Lock Screen unlock gestures (`IOSLockScreen`) and app container transitions.
+ * - Renders active full-screen app windows with swipe-up-to-home gesture handling.
+ */
+
 import { Suspense, useEffect, useRef, useState } from "react";
 import gsap from "gsap";
-import { ChevronLeft, X } from "lucide-react";
 import { useEcosystemStore, WALLPAPERS } from "../store/useEcosystemStore";
-import MobileHome from "./MobileHome";
-import DynamicIsland from "./DynamicIsland";
-import IOSLockScreen from "./IOSLockScreen";
-import DesktopMenu from "../desktop/DesktopMenu";
-import ControlCenter from "../components/ControlCenter";
-import NotificationCenter from "../components/NotificationCenter";
-import { APPS_CONFIG } from "../utils/apps";
+import MobileHome from "./components/MobileHome";
+import IOSLockScreen from "./components/IOSLockScreen";
+import DesktopMenu from "../desktop/components/DesktopMenu";
+import ControlCenter from "../components/overlays/ControlCenter";
+import NotificationCenter from "../components/overlays/NotificationCenter";
+import { APPS_CONFIG } from "../config/apps.config";
 
 export default function MobileEnvironment() {
   const { openApps, focusedAppId, closeApp, wallpaper } = useEcosystemStore();
@@ -17,7 +25,7 @@ export default function MobileEnvironment() {
   const appConfig = APPS_CONFIG.find((c) => c.id === focusedApp?.id);
 
   const mobileWallpaper =
-    WALLPAPERS.find((w) => w.id === "man-silhouette")?.url || wallpaper;
+    WALLPAPERS.find((w) => w.id === "purple-abstract")?.url || wallpaper;
 
   const appContainerRef = useRef<HTMLDivElement>(null);
   const touchStartY = useRef(0);

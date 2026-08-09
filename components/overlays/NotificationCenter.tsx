@@ -1,4 +1,14 @@
-import React, { useState, useRef, useEffect } from "react";
+/**
+ * @file components/overlays/NotificationCenter.tsx
+ * @description System Notification Center Drawer Component.
+ *
+ * Responsibilities:
+ * - Slides out from the top right edge of the screen when date/time is clicked in the menu bar.
+ * - Displays system notifications (e.g., Hyperagent Founding 500 selection, new project releases, contact invites).
+ * - Houses interactive desktop widgets (System Calendar, Quick Contact card, Featured Project highlight).
+ */
+
+import { useState, useRef, useEffect } from "react";
 import {
   X,
   Mail,
@@ -16,8 +26,8 @@ import {
   Youtube,
   AtSign,
 } from "lucide-react";
-import { useEcosystemStore } from "../store/useEcosystemStore";
-import { PROJECTS_DATA } from "../data/projectsData";
+import { useEcosystemStore } from "../../store/useEcosystemStore";
+import { PROJECTS_DATA } from "../../data/projectsData";
 
 function ProjectIcon({
   iconImage,
@@ -76,11 +86,6 @@ export default function NotificationCenter() {
         closeNotificationCenter();
       }
     };
-
-    const timer = setTimeout(() => {
-      document.addEventListener("mousedown", handleClickOutside);
-      document.addEventListener("touchstart", handleClickOutside);
-    }, 0);
 
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);

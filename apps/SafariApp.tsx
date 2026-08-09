@@ -1,3 +1,13 @@
+/**
+ * @file apps/SafariApp.tsx
+ * @description Simulated macOS Safari Browser Window Component.
+ *
+ * Responsibilities:
+ * - Recreates a simulated web browser UI complete with URL address bar, back/forward navigation history, reload animation, and tab toggles.
+ * - Displays a grid/list catalog of all 9 portfolio project case studies with search filtering and category tags.
+ * - Allows opening dedicated project windows or launching live project URLs in external browser tabs.
+ */
+
 import React, { useState, useMemo, useRef } from "react";
 import {
   ChevronLeft,
@@ -20,7 +30,7 @@ import {
   getProjectCoverImage,
 } from "../data/projectsData";
 import { useEcosystemStore } from "../store/useEcosystemStore";
-import LazyImage from "../components/LazyImage";
+import LazyImage from "../components/common/LazyImage";
 
 function TiltProjectCard({
   project,
@@ -209,9 +219,9 @@ function TiltProjectCard({
             ))}
           </div>
 
-          {/* Tags */}
+          {/* Skills */}
           <div className="flex flex-wrap gap-1.5 pt-1">
-            {project.tags.slice(0, 4).map((tag) => (
+            {(project.skills || []).slice(0, 4).map((tag) => (
               <span
                 key={tag}
                 className={`px-2 py-0.5 rounded-md border text-[10px] ${
@@ -244,16 +254,17 @@ function TiltProjectCard({
 }
 
 export default function SafariApp() {
-  const { openApp, systemTheme, showToast } = useEcosystemStore();
+  const { openApp, systemTheme } = useEcosystemStore();
   const isLight = systemTheme === "light";
-  const [selectedCategory, setSelectedCategory] = useState<string>("all");
+  const [selectedCategory] = useState<string>("all");
   const [searchQuery, setSearchQuery] = useState<string>("");
-  const [sortBy, setSortBy] = useState<"latest" | "category" | "techStack">(
-    "latest",
-  );
-  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [sortBy] = useState<"latest" | "category" | "techStack">("latest");
+  const setSelectedProject = (project: Project | null) => {
+    if (project) {
+      openApp(`folder-${project.id}`, project.title);
+    }
+  };
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
-  const [copiedCode, setCopiedCode] = useState<boolean>(false);
 
   // Filter and sort projects by category, search, and sort option
   const filteredProjects = useMemo(() => {
@@ -269,7 +280,9 @@ export default function SafariApp() {
       const matchesSearch =
         p.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
         p.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        p.tags.some((t) => t.toLowerCase().includes(searchQuery.toLowerCase()));
+        (p.skills || []).some((t) =>
+          t.toLowerCase().includes(searchQuery.toLowerCase()),
+        );
 
       return matchesCategory && matchesSearch;
     });
@@ -280,21 +293,14 @@ export default function SafariApp() {
     } else if (sortBy === "techStack") {
       sorted.sort(
         (a, b) =>
-          b.tags.length - a.tags.length || a.title.localeCompare(b.title),
+          (b.skills || []).length - (a.skills || []).length ||
+          a.title.localeCompare(b.title),
       );
     }
     return sorted;
   }, [selectedCategory, searchQuery, sortBy]);
 
   const featuredProject = PROJECTS_DATA[0]; // Vibe44
-
-  const handleCopyCode = (code?: string) => {
-    if (!code) return;
-    navigator.clipboard.writeText(code);
-    setCopiedCode(true);
-    showToast("Copied code snippet to clipboard!", "copy");
-    setTimeout(() => setCopiedCode(false), 2000);
-  };
 
   return (
     <div

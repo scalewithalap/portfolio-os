@@ -1,3 +1,13 @@
+/**
+ * @file apps/AboutApp.tsx
+ * @description About Me System Window Component for Alap Putatunda.
+ *
+ * Responsibilities:
+ * - Displays developer biography, core technical skills, work experience history, education, and honors/awards.
+ * - Provides tabbed sub-navigation (General, Experience, Education, Recognition) with smooth motion transitions.
+ * - Allows quick-copy functionality for contact email and social profiles with toast alerts.
+ */
+
 import {
   User,
   GraduationCap,
@@ -9,7 +19,7 @@ import {
 import { useState } from "react";
 import { motion } from "motion/react";
 import { useEcosystemStore } from "../store/useEcosystemStore";
-import LazyImage from "../components/LazyImage";
+import LazyImage from "../components/common/LazyImage";
 
 const TABS = [
   { id: "general", icon: User, label: "General" },

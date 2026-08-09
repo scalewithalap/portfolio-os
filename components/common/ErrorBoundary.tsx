@@ -1,3 +1,13 @@
+/**
+ * @file components/common/ErrorBoundary.tsx
+ * @description React Class Component Error Boundary Fallback Wrapper.
+ *
+ * Responsibilities:
+ * - Catches JavaScript runtime rendering errors in child component subtrees.
+ * - Renders a sleek fallback UI alert card with error trace details.
+ * - Provides a "Reload Component" action button to recover gracefully without crashing the whole OS session.
+ */
+
 import React from 'react';
 import { RefreshCw, AlertTriangle } from 'lucide-react';
 

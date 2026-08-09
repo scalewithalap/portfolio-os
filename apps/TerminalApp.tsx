@@ -1,3 +1,13 @@
+/**
+ * @file apps/TerminalApp.tsx
+ * @description Interactive Developer CLI Terminal Simulator Window Component.
+ *
+ * Responsibilities:
+ * - Recreates a UNIX terminal shell supporting custom commands (`help`, `cat`, `skills`, `projects`, `clear`, `theme`, `date`, `whoami`, `contact`).
+ * - Features command history navigation (Up/Down arrow keys), tab auto-completion, synthetic typing audio feedback, and colorful ANSI output formatting.
+ * - Displays Alap's engineering biography, skill summaries, and project manifests in raw terminal text.
+ */
+
 import { useEffect, useState, useRef } from "react";
 import { useEcosystemStore } from "../store/useEcosystemStore";
 

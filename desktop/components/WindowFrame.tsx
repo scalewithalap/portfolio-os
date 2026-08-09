@@ -1,10 +1,21 @@
+/**
+ * @file desktop/components/WindowFrame.tsx
+ * @description Native-Feel macOS Draggable & 8-Axis Resizable Window Container.
+ *
+ * Responsibilities:
+ * - Implements window title bar dragging, z-index focus elevation, and window control buttons (Close, Minimize, Maximize).
+ * - Provides 8-axis directional window resizing (`n`, `s`, `e`, `w`, `ne`, `nw`, `se`, `sw`) with boundary clamping.
+ * - Supports quadrant edge snapping (Left Half, Right Half, Top Left, Top Right, Bottom Left, Bottom Right, Full Screen) with animated snap preview overlay.
+ * - Uses GSAP for window opening zoom, minimize drop, and restore transitions.
+ */
+
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import {
   AppWindow,
   SnapPreviewTarget,
   useEcosystemStore,
-} from "../store/useEcosystemStore";
+} from "../../store/useEcosystemStore";
 import { X, Minus, Maximize2 } from "lucide-react";
 
 interface WindowFrameProps {
@@ -23,7 +34,6 @@ export default function WindowFrame({ app, children }: WindowFrameProps) {
     maximizeApp,
     updateWindowPosition,
     updateWindowSize,
-    openApps,
     focusedAppId,
     setSnapPreview,
     systemTheme,
@@ -52,64 +62,8 @@ export default function WindowFrame({ app, children }: WindowFrameProps) {
 
   const clampY = (y: number, height: number = app.size.height) => {
     const minY = 28; // Below top menu bar
-    const maxY = Math.max(minY, window.innerHeight - 40); // Ensure titlebar stays grabbable
+    const maxY = Math.max(minY, window.innerHeight - Math.min(40, height)); // Ensure titlebar stays grabbable
     return Math.max(minY, Math.min(maxY, y));
-  };
-
-  // Grid / Edge Snapping Helper
-  const applySnapToGrid = (
-    x: number,
-    y: number,
-    width: number,
-    height: number,
-  ) => {
-    const SNAP_THRESHOLD = 20; // Distance in px to trigger snap
-    let snappedX = x;
-    let snappedY = y;
-
-    // Screen Edges
-    const leftEdge = 0;
-    const rightEdge = window.innerWidth - width;
-    const topEdge = 28; // Menu bar height
-    const bottomEdge = window.innerHeight - height - 80; // Dock offset
-    const centerX = (window.innerWidth - width) / 2;
-    const centerY = (window.innerHeight - height) / 2;
-
-    // Snap to Left/Right/Center
-    if (Math.abs(x - leftEdge) < SNAP_THRESHOLD) snappedX = leftEdge;
-    else if (Math.abs(x - rightEdge) < SNAP_THRESHOLD) snappedX = rightEdge;
-    else if (Math.abs(x - centerX) < SNAP_THRESHOLD) snappedX = centerX;
-
-    // Snap to Top/Bottom/Center
-    if (Math.abs(y - topEdge) < SNAP_THRESHOLD) snappedY = topEdge;
-    else if (Math.abs(y - bottomEdge) < SNAP_THRESHOLD) snappedY = bottomEdge;
-    else if (Math.abs(y - centerY) < SNAP_THRESHOLD) snappedY = centerY;
-
-    // Snap to Other Windows
-    openApps.forEach((otherApp) => {
-      if (otherApp.id === app.id || otherApp.isMinimized) return;
-
-      const otherX = otherApp.position.x;
-      const otherY = otherApp.position.y;
-      const otherW = otherApp.size.width;
-      const otherH = otherApp.size.height;
-
-      // Align Left to Left / Right to Right
-      if (Math.abs(x - otherX) < SNAP_THRESHOLD) snappedX = otherX;
-      if (Math.abs(x - (otherX + otherW)) < SNAP_THRESHOLD)
-        snappedX = otherX + otherW;
-      if (Math.abs(x + width - otherX) < SNAP_THRESHOLD)
-        snappedX = otherX - width;
-
-      // Align Top to Top / Bottom to Bottom
-      if (Math.abs(y - otherY) < SNAP_THRESHOLD) snappedY = otherY;
-      if (Math.abs(y - (otherY + otherH)) < SNAP_THRESHOLD)
-        snappedY = otherY + otherH;
-      if (Math.abs(y + height - otherY) < SNAP_THRESHOLD)
-        snappedY = otherY - height;
-    });
-
-    return { x: snappedX, y: snappedY };
   };
 
   // Handle Dragging

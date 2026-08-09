@@ -1,7 +1,17 @@
+/**
+ * @file components/common/ToastContainer.tsx
+ * @description Floating Notification Toast Alert System Component.
+ *
+ * Responsibilities:
+ * - Renders stacked toast alert pills (info, success, copy) at the top center of the viewport with framer-motion animations.
+ * - Manages auto-dismiss timers (3000ms) and manual dismissal actions.
+ * - Connects to global `showToast` action in store with Web Audio chime feedback.
+ */
+
 import React, { useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { CheckCircle2, Copy, Info, X } from 'lucide-react';
-import { useEcosystemStore } from '../store/useEcosystemStore';
+import { useEcosystemStore } from "../../store/useEcosystemStore";
 
 export function ToastItem({ id, message, type }: { key?: React.Key; id: string; message: string; type?: 'info' | 'success' | 'copy' }) {
   const { removeToast } = useEcosystemStore();

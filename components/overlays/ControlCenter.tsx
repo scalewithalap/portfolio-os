@@ -1,6 +1,16 @@
-import React, { useState, useRef, useEffect } from "react";
-import { Moon, Sun, LayoutGrid, Search, Sparkles } from "lucide-react";
-import { useEcosystemStore } from "../store/useEcosystemStore";
+/**
+ * @file components/overlays/ControlCenter.tsx
+ * @description macOS System Control Center Dropdown Drawer Component.
+ *
+ * Responsibilities:
+ * - Toggled from top menu bar control center icon.
+ * - Controls light/dark theme, system volume/mute slider, screen brightness filter, desktop stacks, and quick launcher shortcuts.
+ * - Includes interactive media player tile and quick system status toggles.
+ */
+
+import { useRef, useEffect } from "react";
+import { Moon, Sun, LayoutGrid, Search, Volume2, VolumeX } from "lucide-react";
+import { useEcosystemStore } from "../../store/useEcosystemStore";
 
 export default function ControlCenter() {
   const {
@@ -16,18 +26,9 @@ export default function ControlCenter() {
     setVolume,
     isMuted,
     toggleMute,
-    isWifiOn,
-    toggleWifi,
-    isBluetoothOn,
-    toggleBluetooth,
-    isAirDropOn,
-    toggleAirDrop,
     openSpotlight,
-    openApp,
-    showToast,
   } = useEcosystemStore();
 
-  const [copiedEmail, setCopiedEmail] = useState(false);
   const controlCenterRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -56,14 +57,6 @@ export default function ControlCenter() {
 
   if (!isControlCenterOpen) return null;
 
-  const handleCopyEmail = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    navigator.clipboard.writeText("scalewithalap@gmail.com");
-    setCopiedEmail(true);
-    showToast("Copied email to clipboard!", "copy");
-    setTimeout(() => setCopiedEmail(false), 2000);
-  };
-
   const isLight = systemTheme === "light";
 
   return (
@@ -90,36 +83,72 @@ export default function ControlCenter() {
           Control Center
         </h3>
 
-        {/* 2x2 Grid for Core Portfolio Toggles */}
-        <div className="grid grid-cols-2 gap-2.5">
+        {/* Grid for Core Portfolio Toggles */}
+        <div className="grid grid-cols-3 gap-2">
           {/* Appearance Toggle */}
           <button
             onClick={toggleSystemTheme}
-            className={`border rounded-2xl p-3 flex flex-col justify-between space-y-3 transition-all text-left group cursor-pointer ${
+            className={`border rounded-2xl p-2.5 flex flex-col justify-between space-y-2 transition-all text-left group cursor-pointer ${
               isLight
                 ? "bg-slate-100 hover:bg-slate-200 border-slate-200 text-slate-900"
                 : "bg-white/10 hover:bg-white/20 border-white/10 text-white"
             }`}
           >
             <div
-              className={`w-8 h-8 rounded-full flex items-center justify-center transition-transform group-hover:scale-110 ${
+              className={`w-7 h-7 rounded-full flex items-center justify-center transition-transform group-hover:scale-110 ${
                 systemTheme === "dark"
                   ? "bg-indigo-600/50 text-indigo-300"
                   : "bg-amber-500/20 text-amber-600 border border-amber-500/30"
               }`}
             >
               {systemTheme === "dark" ? (
-                <Moon className="w-4 h-4" />
+                <Moon className="w-3.5 h-3.5" />
               ) : (
-                <Sun className="w-4 h-4 text-amber-500" />
+                <Sun className="w-3.5 h-3.5 text-amber-500" />
               )}
             </div>
             <div>
-              <span className="text-[12px] font-bold block">Appearance</span>
+              <span className="text-[11px] font-bold block truncate">
+                Theme
+              </span>
               <span
-                className={`text-[10px] block capitalize ${isLight ? "text-slate-500" : "text-white/50"}`}
+                className={`text-[9.5px] block capitalize truncate ${isLight ? "text-slate-500" : "text-white/50"}`}
               >
-                {systemTheme} Theme
+                {systemTheme}
+              </span>
+            </div>
+          </button>
+
+          {/* Sound SFX Toggle */}
+          <button
+            onClick={toggleMute}
+            className={`border rounded-2xl p-2.5 flex flex-col justify-between space-y-2 transition-all text-left group cursor-pointer ${
+              isLight
+                ? "bg-slate-100 hover:bg-slate-200 border-slate-200 text-slate-900"
+                : "bg-white/10 hover:bg-white/20 border-white/10 text-white"
+            }`}
+          >
+            <div
+              className={`w-7 h-7 rounded-full flex items-center justify-center transition-transform group-hover:scale-110 ${
+                !isMuted
+                  ? "bg-blue-500/30 text-blue-400 border border-blue-400/30"
+                  : "bg-red-500/20 text-red-400 border border-red-500/30"
+              }`}
+            >
+              {!isMuted ? (
+                <Volume2 className="w-3.5 h-3.5" />
+              ) : (
+                <VolumeX className="w-3.5 h-3.5" />
+              )}
+            </div>
+            <div>
+              <span className="text-[11px] font-bold block truncate">
+                Sound SFX
+              </span>
+              <span
+                className={`text-[9.5px] block truncate ${isLight ? "text-slate-500" : "text-white/50"}`}
+              >
+                {isMuted ? "Muted" : "Enabled"}
               </span>
             </div>
           </button>
@@ -127,14 +156,14 @@ export default function ControlCenter() {
           {/* Desktop Stacks Toggle */}
           <button
             onClick={toggleStacks}
-            className={`border rounded-2xl p-3 flex flex-col justify-between space-y-3 transition-all text-left group cursor-pointer ${
+            className={`border rounded-2xl p-2.5 flex flex-col justify-between space-y-2 transition-all text-left group cursor-pointer ${
               isLight
                 ? "bg-slate-100 hover:bg-slate-200 border-slate-200 text-slate-900"
                 : "bg-white/10 hover:bg-white/20 border-white/10 text-white"
             }`}
           >
             <div
-              className={`w-8 h-8 rounded-full flex items-center justify-center transition-transform group-hover:scale-110 ${
+              className={`w-7 h-7 rounded-full flex items-center justify-center transition-transform group-hover:scale-110 ${
                 isStacksEnabled
                   ? "bg-emerald-500/30 text-emerald-500 border border-emerald-500/30"
                   : isLight
@@ -142,16 +171,16 @@ export default function ControlCenter() {
                     : "bg-white/10 text-white/50"
               }`}
             >
-              <LayoutGrid className="w-4 h-4" />
+              <LayoutGrid className="w-3.5 h-3.5" />
             </div>
             <div>
-              <span className="text-[12px] font-bold block">
-                Desktop Stacks
+              <span className="text-[11px] font-bold block truncate">
+                Stacks
               </span>
               <span
-                className={`text-[10px] block ${isLight ? "text-slate-500" : "text-white/50"}`}
+                className={`text-[9.5px] block truncate ${isLight ? "text-slate-500" : "text-white/50"}`}
               >
-                {isStacksEnabled ? "Grouped by Kind" : "Freeform Layout"}
+                {isStacksEnabled ? "Stacked" : "Off"}
               </span>
             </div>
           </button>
@@ -159,7 +188,7 @@ export default function ControlCenter() {
 
         {/* Interactive Brightness & Volume Sliders Container */}
         <div
-          className={`border rounded-2xl p-3 space-y-2.5 ${
+          className={`border rounded-2xl p-3 space-y-3 ${
             isLight
               ? "bg-slate-100 border-slate-200 text-slate-900"
               : "bg-white/10 border-white/10 text-white"
@@ -186,6 +215,40 @@ export default function ControlCenter() {
               max={100}
               value={brightness}
               onChange={(e) => setBrightness(Number(e.target.value))}
+              className={`w-full accent-blue-500 cursor-pointer h-1.5 rounded-lg border-0 ${
+                isLight ? "bg-slate-200" : "bg-white/20"
+              }`}
+            />
+          </div>
+
+          {/* Sound SFX Volume Slider */}
+          <div className="space-y-1">
+            <div className="flex justify-between items-center text-[11px] font-semibold">
+              <button
+                onClick={toggleMute}
+                className={`flex items-center space-x-1.5 hover:opacity-80 transition-opacity cursor-pointer ${
+                  isLight ? "text-slate-700" : "text-white/80"
+                }`}
+              >
+                {isMuted || volume === 0 ? (
+                  <VolumeX className="w-3.5 h-3.5 text-red-400" />
+                ) : (
+                  <Volume2 className="w-3.5 h-3.5 text-blue-400" />
+                )}
+                <span>Sound SFX Volume</span>
+              </button>
+              <span
+                className={`font-mono text-[10px] ${isLight ? "text-slate-500" : "text-white/60"}`}
+              >
+                {isMuted ? "Muted" : `${volume}%`}
+              </span>
+            </div>
+            <input
+              type="range"
+              min={0}
+              max={100}
+              value={isMuted ? 0 : volume}
+              onChange={(e) => setVolume(Number(e.target.value))}
               className={`w-full accent-blue-500 cursor-pointer h-1.5 rounded-lg border-0 ${
                 isLight ? "bg-slate-200" : "bg-white/20"
               }`}
@@ -223,7 +286,7 @@ export default function ControlCenter() {
               </div>
             </div>
             <span
-              className={`text-[10px] font-mono px-2 py-1 rounded-md border ${
+              className={`text-[10px] font-mono px-2 py-1 rounded-md border hidden md:inline-block ${
                 isLight
                   ? "bg-slate-200 border-slate-300 text-slate-600"
                   : "bg-white/10 border-white/10 text-white/60"

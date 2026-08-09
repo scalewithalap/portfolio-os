@@ -1,12 +1,21 @@
-import React, { Suspense, useState, useEffect } from "react";
+/**
+ * @file tablet/TabletEnvironment.tsx
+ * @description iPadOS Tablet Environment Container View Component.
+ *
+ * Responsibilities:
+ * - Serves as the primary layout wrapper for tablet viewports (768px - 1023px).
+ * - Combines tablet top menu bar (`DesktopMenu`), hero title banner (`StaticHeroText`), folder grid, floating bottom dock, and full-bleed active window containers.
+ */
+
+import { Suspense } from "react";
 import { X, Minus, Maximize2 } from "lucide-react";
 import { useEcosystemStore } from "../store/useEcosystemStore";
-import { APPS_CONFIG } from "../utils/apps";
-import { DESKTOP_ITEMS } from "../desktop/DesktopFolders";
-import StaticHeroText from "../components/StaticHeroText";
-import DesktopMenu from "../desktop/DesktopMenu";
-import ControlCenter from "../components/ControlCenter";
-import NotificationCenter from "../components/NotificationCenter";
+import { APPS_CONFIG } from "../config/apps.config";
+import { DESKTOP_ITEMS } from "../desktop/components/DesktopFolders";
+import StaticHeroText from "../components/common/StaticHeroText";
+import DesktopMenu from "../desktop/components/DesktopMenu";
+import ControlCenter from "../components/overlays/ControlCenter";
+import NotificationCenter from "../components/overlays/NotificationCenter";
 
 export default function TabletEnvironment() {
   const {
@@ -22,7 +31,16 @@ export default function TabletEnvironment() {
 
   const activeApps = openApps.filter((a) => a.isOpen && !a.isMinimized);
 
+  // Dock apps excluding project folders on tablet
   const dockApps = APPS_CONFIG.filter((app) => !app.id.startsWith("folder-"));
+
+  // Desktop items grid excluding Soothly AI, Photos, and Terminal from tablet screen grid
+  const tabletDesktopItems = DESKTOP_ITEMS.filter(
+    (item) =>
+      item.id !== "folder-soothly" &&
+      item.appId !== "photos" &&
+      item.appId !== "terminal",
+  );
 
   return (
     <div className="relative h-screen w-screen overflow-hidden bg-black text-white select-none font-sans flex flex-col">
@@ -49,7 +67,7 @@ export default function TabletEnvironment() {
 
         {/* iPad 4-Column Desktop Items Grid */}
         <div className="grid grid-cols-4 gap-6 my-auto max-w-3xl mx-auto w-full">
-          {DESKTOP_ITEMS.map((item) => {
+          {tabletDesktopItems.map((item) => {
             const isOpen = openApps.some(
               (a) => a.id === item.appId && a.isOpen && !a.isMinimized,
             );

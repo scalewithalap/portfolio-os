@@ -1,3 +1,13 @@
+/**
+ * @file config/apps.config.ts
+ * @description Central Application Registry & Dynamic Module Component Factory for Portfolio OS.
+ *
+ * Responsibilities:
+ * - Defines the master `APPS_CONFIG` registry array for all 13 application windows (About, Safari, Resume, Terminal, Photos, Mail, Trash, and 9 project case study folders).
+ * - Utilizes React.lazy code-splitting to isolate application modules into distinct JS chunks.
+ * - Employs a higher-order component factory (`createProjectApp`) to dynamically map project folders (`folder-vibe44`, `folder-openui`, etc.) to SingleProjectApp with props, eliminating boilerplate wrapper files.
+ */
+
 import React, { lazy } from "react";
 import {
   Settings,
@@ -8,16 +18,26 @@ import {
   Trash2,
   FileText,
   Folder,
+  LucideIcon,
 } from "lucide-react";
 
 export interface AppConfig {
   id: string;
   title: string;
-  icon?: any;
+  icon?: LucideIcon;
   iconImage?: string;
   color?: string;
   component: React.LazyExoticComponent<any>;
 }
+
+// Factory helper to map project folders directly to SingleProjectApp without boilerplate wrapper files
+const createProjectApp = (projectId: string) =>
+  lazy(() =>
+    import("../apps/SingleProjectApp").then((mod) => ({
+      default: (props: any) =>
+        React.createElement(mod.default, { projectId, ...props }),
+    })),
+  );
 
 export const APPS_CONFIG: AppConfig[] = [
   {
@@ -76,68 +96,68 @@ export const APPS_CONFIG: AppConfig[] = [
     color: "bg-zinc-800",
     component: lazy(() => import("../apps/TrashApp")),
   },
-  // Project Folders
+  // Project Folders (Mapped directly to SingleProjectApp)
   {
     id: "folder-scalewithalap",
     title: "Scale with Alap",
     iconImage: "/images/folder.png",
     icon: Folder,
-    component: lazy(() => import("../apps/projects/ScaleWithAlapApp")),
+    component: createProjectApp("scalewithalap"),
   },
   {
     id: "folder-vibe44",
     title: "Vibe44 Marketing & MCP",
     iconImage: "/images/folder.png",
     icon: Folder,
-    component: lazy(() => import("../apps/projects/Vibe44App")),
+    component: createProjectApp("vibe44"),
   },
   {
     id: "folder-vibe44-demo",
     title: "Vibe44 Next.js Starter Kit Demo",
     iconImage: "/images/folder.png",
     icon: Folder,
-    component: lazy(() => import("../apps/projects/Vibe44DemoApp")),
+    component: createProjectApp("vibe44-demo"),
   },
   {
     id: "folder-openui",
     title: "OpenUI",
     iconImage: "/images/folder.png",
     icon: Folder,
-    component: lazy(() => import("../apps/projects/OpenUIApp")),
+    component: createProjectApp("openui"),
   },
   {
     id: "folder-zeroheadache",
     title: "Zero Headache Marketing",
     iconImage: "/images/folder.png",
     icon: Folder,
-    component: lazy(() => import("../apps/projects/ZeroHeadacheApp")),
+    component: createProjectApp("zeroheadache"),
   },
   {
     id: "folder-zeroheadache-app",
     title: "Zero Headache Platform",
     iconImage: "/images/folder.png",
     icon: Folder,
-    component: lazy(() => import("../apps/projects/ZeroHeadachePlatformApp")),
+    component: createProjectApp("zeroheadache-app"),
   },
   {
     id: "folder-makemesound",
     title: "Make Me Sound",
     iconImage: "/images/folder.png",
     icon: Folder,
-    component: lazy(() => import("../apps/projects/MakeMeSoundApp")),
+    component: createProjectApp("makemesound"),
   },
   {
     id: "folder-freecom",
     title: "Freecom AI Store",
     iconImage: "/images/folder.png",
     icon: Folder,
-    component: lazy(() => import("../apps/projects/FreecomApp")),
+    component: createProjectApp("freecom"),
   },
   {
     id: "folder-soothly-ai",
     title: "Soothly AI",
     iconImage: "/images/folder.png",
     icon: Folder,
-    component: lazy(() => import("../apps/projects/SoothlyApp")),
+    component: createProjectApp("soothly-ai"),
   },
 ];

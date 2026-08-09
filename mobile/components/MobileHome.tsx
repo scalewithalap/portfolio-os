@@ -1,8 +1,17 @@
-import { APPS_CONFIG } from "../utils/apps";
-import { DESKTOP_ITEMS } from "../desktop/DesktopFolders";
-import { useEcosystemStore } from "../store/useEcosystemStore";
+/**
+ * @file mobile/components/MobileHome.tsx
+ * @description iOS Home Launcher Grid & Pinned App Dock Component.
+ *
+ * Responsibilities:
+ * - Renders mobile search bar, touch-optimized static hero banner (`StaticHeroText`), and app grid icons.
+ * - Displays a sleek mobile bottom dock hosting system app launcher icons.
+ */
+
+import { APPS_CONFIG } from "../../config/apps.config";
+import { DESKTOP_ITEMS } from "../../desktop/components/DesktopFolders";
+import { useEcosystemStore } from "../../store/useEcosystemStore";
 import { Search } from "lucide-react";
-import StaticHeroText from "../components/StaticHeroText";
+import StaticHeroText from "../../components/common/StaticHeroText";
 
 export default function MobileHome() {
   const { openApp, openSpotlight, openApps } = useEcosystemStore();
@@ -12,10 +21,18 @@ export default function MobileHome() {
     (app) => !app.id.startsWith("folder-") && app.id !== "resume",
   );
 
+  // Desktop Folders & Files Grid (excluding Soothly AI, Photos, and Terminal from mobile screen grid)
+  const mobileDesktopItems = DESKTOP_ITEMS.filter(
+    (item) =>
+      item.id !== "folder-soothly" &&
+      item.appId !== "photos" &&
+      item.appId !== "terminal",
+  );
+
   return (
     <div className="absolute inset-0 z-10 flex flex-col justify-between overflow-hidden select-none font-sans">
       {/* Top Section: Full-Width Spotlight Search Bar */}
-      <div className="w-full pt-8 px-4 shrink-0 z-20">
+      <div className="w-full pt-5 px-4 shrink-0 z-20">
         <button
           onClick={openSpotlight}
           className="w-full flex items-center justify-between px-4 py-2.5 rounded-xl bg-black/40 backdrop-blur-2xl border border-white/20 text-white/90 shadow-2xl active:scale-[0.99] hover:bg-black/50 transition-all cursor-pointer group"
@@ -38,7 +55,7 @@ export default function MobileHome() {
       <div className="flex-1 overflow-y-auto px-4 pt-4 pb-28 space-y-6 scrollbar-none">
         {/* Desktop Folders & Files Grid */}
         <div className="grid grid-cols-3 gap-y-6 gap-x-4 pt-2">
-          {DESKTOP_ITEMS.map((item) => {
+          {mobileDesktopItems.map((item) => {
             const isOpen = openApps.some(
               (a) => a.id === item.appId && a.isOpen && !a.isMinimized,
             );

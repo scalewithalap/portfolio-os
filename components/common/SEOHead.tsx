@@ -1,6 +1,16 @@
-import React, { useEffect } from "react";
-import { useEcosystemStore } from "../store/useEcosystemStore";
-import { PROJECTS_DATA } from "../data/projectsData";
+/**
+ * @file components/common/SEOHead.tsx
+ * @description Dynamic SEO Meta Tag & JSON-LD Structured Data Injector Component.
+ *
+ * Responsibilities:
+ * - Dynamically updates document.title, meta description, and OpenGraph/Twitter social cards based on active focused window.
+ * - Injects Google rich result JSON-LD structured schema script (Person schema, WebSite schema).
+ * - Manages canonical URLs dynamically for search engine indexation.
+ */
+
+import { useEffect } from "react";
+import { useEcosystemStore } from "../../store/useEcosystemStore";
+import { PROJECTS_DATA } from "../../data/projectsData";
 
 export default function SEOHead() {
   const { openApps, focusedAppId } = useEcosystemStore();
@@ -172,7 +182,7 @@ export default function SEOHead() {
           author: {
             "@id": "https://scalewithalap.com/#person",
           },
-          keywords: proj.tags.join(", "),
+          keywords: (proj.skills || []).join(", "),
         };
 
         const breadcrumbSchema = {

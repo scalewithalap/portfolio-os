@@ -1,5 +1,25 @@
+/**
+ * @file store/useEcosystemStore.ts
+ * @description Centralized Global State Store Engine built with Zustand & Immer middleware.
+ *
+ * Responsibilities:
+ * - Manages application window lifecycle (open, close, minimize, maximize, bring-to-front focus, 8-axis window positions and dimensions).
+ * - Controls ecosystem theme state (light/dark mode toggle) and Web Audio sound feedback triggers.
+ * - Handles wallpaper index selection, desktop icons grid sorting, desktop stacks mode toggle, and trash bin items state.
+ * - Drives active UI overlay drawers (Control Center, Notification Center, Spotlight Search modal, Context Menu, Shortcuts Overlay, Toast alerts).
+ */
+
 import { create } from "zustand";
 import { immer } from "zustand/middleware/immer";
+import {
+  playWindowOpenSound,
+  playWindowCloseSound,
+  playWindowMinimizeSound,
+  playSpotlightSound,
+  playToastSound,
+  playCopySound,
+  playThemeToggleSound,
+} from "../utils/soundEffects";
 
 export type Environment = "macOS" | "iPadOS" | "iOS" | null;
 
@@ -361,6 +381,11 @@ export const useEcosystemStore = create<EcosystemState>()(
         const id =
           Date.now().toString() + Math.random().toString(36).substring(2, 5);
         state.toasts.push({ id, message, type });
+        if (type === "copy") {
+          playCopySound();
+        } else {
+          playToastSound();
+        }
       }),
     removeToast: (id) =>
       set((state) => {
@@ -446,6 +471,7 @@ export const useEcosystemStore = create<EcosystemState>()(
       }),
     openSpotlight: () =>
       set((state) => {
+        playSpotlightSound();
         state.isSpotlightOpen = true;
         state.isControlCenterOpen = false;
         state.isNotificationCenterOpen = false;
@@ -459,6 +485,7 @@ export const useEcosystemStore = create<EcosystemState>()(
       set((state) => {
         state.isSpotlightOpen = !state.isSpotlightOpen;
         if (state.isSpotlightOpen) {
+          playSpotlightSound();
           state.isControlCenterOpen = false;
           state.isNotificationCenterOpen = false;
           state.isBatteryMenuOpen = false;
@@ -551,6 +578,7 @@ export const useEcosystemStore = create<EcosystemState>()(
     toggleSystemTheme: () =>
       set((state) => {
         state.systemTheme = state.systemTheme === "dark" ? "light" : "dark";
+        playThemeToggleSound();
       }),
 
     setRandomWallpaper: () =>
@@ -621,11 +649,15 @@ export const useEcosystemStore = create<EcosystemState>()(
         );
 
         if (app) {
+          if (!app.isOpen || app.isMinimized) {
+            playWindowOpenSound();
+          }
           app.isOpen = true;
           app.isMinimized = false;
           app.title = targetTitle;
           app.zIndex = maxZ + 1;
         } else {
+          playWindowOpenSound();
           const { size, position } = getDefaultWindowGeometry();
           state.openApps.push({
             id: targetId,
@@ -647,16 +679,18 @@ export const useEcosystemStore = create<EcosystemState>()(
     toggleAppFromDock: (id, title) =>
       set((state) => {
         const targetId = id === "settings" ? "about" : id;
-        const targetTitle = targetId === "about" ? "About Me" : title;
-
         const app = state.openApps.find((a) => a.id === targetId);
         const maxZ = state.openApps.reduce(
           (max, a) => Math.max(max, a.zIndex),
           0,
         );
 
-        if (!app || !app.isOpen) {
-          // App not open -> open it
+        if (state.focusedAppId === targetId && app?.isOpen && !app.isMinimized) {
+          playWindowMinimizeSound();
+          app.isMinimized = true;
+          state.focusedAppId = null;
+        } else {
+          playWindowOpenSound();
           if (app) {
             app.isOpen = true;
             app.isMinimized = false;
@@ -664,7 +698,7 @@ export const useEcosystemStore = create<EcosystemState>()(
           } else {
             const { size, position } = getDefaultWindowGeometry();
             state.openApps.push({
-              id,
+              id: targetId,
               title,
               isOpen: true,
               isMinimized: false,
@@ -674,44 +708,30 @@ export const useEcosystemStore = create<EcosystemState>()(
               size,
             });
           }
-          state.focusedAppId = id;
+          state.focusedAppId = targetId;
           state.recentAppIds = [
-            id,
-            ...state.recentAppIds.filter((x) => x !== id),
-          ];
-        } else if (app.isMinimized) {
-          // App is minimized -> restore it
-          app.isMinimized = false;
-          app.zIndex = maxZ + 1;
-          state.focusedAppId = id;
-          state.recentAppIds = [
-            id,
-            ...state.recentAppIds.filter((x) => x !== id),
-          ];
-        } else if (state.focusedAppId === id) {
-          // App is open, not minimized, and currently focused -> minimize it!
-          app.isMinimized = true;
-          state.focusedAppId = null;
-        } else {
-          // App is open and not minimized, but behind another window -> bring to front & focus
-          app.zIndex = maxZ + 1;
-          state.focusedAppId = id;
-          state.recentAppIds = [
-            id,
-            ...state.recentAppIds.filter((x) => x !== id),
+            targetId,
+            ...state.recentAppIds.filter((x) => x !== targetId),
           ];
         }
       }),
     closeApp: (id) =>
       set((state) => {
         const app = state.openApps.find((a) => a.id === id);
-        if (app) app.isOpen = false;
-        if (state.focusedAppId === id) state.focusedAppId = null;
+        if (app && app.isOpen) {
+          playWindowCloseSound();
+          app.isOpen = false;
+        }
+        state.recentAppIds = state.recentAppIds.filter((x) => x !== id);
+        if (state.focusedAppId === id) {
+          state.focusedAppId = state.recentAppIds[0] || null;
+        }
       }),
     minimizeApp: (id) =>
       set((state) => {
         const app = state.openApps.find((a) => a.id === id);
-        if (app) {
+        if (app && !app.isMinimized) {
+          playWindowMinimizeSound();
           app.isMinimized = true;
         }
         if (state.focusedAppId === id) state.focusedAppId = null;

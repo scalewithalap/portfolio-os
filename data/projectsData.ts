@@ -1,3 +1,13 @@
+/**
+ * @file data/projectsData.ts
+ * @description Master Data Store & Case Study Dataset for Alap Putatunda's Portfolio Projects.
+ *
+ * Responsibilities:
+ * - Contains comprehensive structured metadata for all 9 portfolio project case studies (Scale with Alap, Vibe44, Zero Headache, OpenUI, Make Me Sound, Freecom AI, Soothly AI).
+ * - Stores project titles, badges, taglines, live URLs, full Markdown case study content, key tech stack tags, architecture highlights, and screenshot image paths.
+ * - Exports helper utilities like `getProjectById` and `getProjectCoverImage`.
+ */
+
 export interface Project {
   id: string;
   title: string;
@@ -20,13 +30,13 @@ export interface Project {
   coverImageDark?: string;
   description: string;
   longDescription: string;
-  tags: string[];
   color: string;
   accentColor: string;
   highlights: string[];
   metrics: { label: string; value: string }[];
   techStack: { category: string; items: string[] }[];
   features: { title: string; description: string }[];
+  skills?: string[];
   codeSnippet?: { language: string; code: string };
 }
 
@@ -34,8 +44,7 @@ export const PROJECTS_DATA: Project[] = [
   {
     id: "scalewithalap",
     title: "Scale with Alap (This site)",
-    tagline:
-      "Interactive macOS-style Portfolio OS built by Alap Putatunda.",
+    tagline: "Interactive macOS-style Portfolio OS built by Alap Putatunda.",
     badge: "Shipped & Live",
     category: "Portfolio",
     url: "scalewithalap.com",
@@ -49,14 +58,23 @@ export const PROJECTS_DATA: Project[] = [
       "A 39-file React 19 application recreating macOS and iOS desktop environments with custom window management and Web Audio synthesis.",
     longDescription:
       "Built a 39-file application that recreates macOS and iOS windowing systems, featuring a custom window manager for drag, 8-axis resize, edge snapping, and z-index ordering. Manages state in a 755-line Zustand and Immer store, code-splits 13 apps with React.lazy and Suspense, and uses a requestAnimationFrame dock magnification system with GPU-accelerated transforms.",
-    tags: [
-      "React 19",
+    skills: [
       "TypeScript",
+      "React 19",
       "Vite",
-      "Tailwind v4",
+      "Tailwind CSS v4",
       "Zustand",
       "Immer",
       "Web Audio API",
+      "requestAnimationFrame",
+      "IntersectionObserver",
+      "React.lazy",
+      "Suspense",
+      "CSS 3D Transforms",
+      "Clipboard API",
+      "Dark/Light Theming",
+      "Touch Gestures",
+      "Responsive UI",
     ],
     color: "from-blue-600 to-indigo-900",
     accentColor: "#3b82f6",
@@ -145,7 +163,7 @@ export const useEcosystemStore = create<EcosystemState>()(
   {
     id: "vibe44",
     title: "Vibe44 Marketing Site",
-    tagline: "Marketing site & Model Context Protocol server for Vibe44",
+    tagline: "Marketing site, Docs & MCP server for Vibe44 Next.js Starter Kit",
     badge: "Shipped & Live",
     category: "Next.js Starter Kit",
     url: "vibe44.com",
@@ -156,21 +174,26 @@ export const useEcosystemStore = create<EcosystemState>()(
     coverImageDark: "/images/screenshots/vibe44-dark.webp",
     coverImageLight: "/images/screenshots/vibe44-light.webp",
     description:
-      "A serverless Model Context Protocol server exposing 6 tools, 4 resource templates, /llms.txt endpoints, and Creem payment webhook fulfillment.",
+      "A serverless MCP exposing 6 tools, 4 resource templates, /llms.txt endpoints, and Creem payment webhook fulfillment.",
     longDescription:
-      "Built a serverless MCP server implementing JSON-RPC 2.0 with 6 tools, 4 resource templates, rate limiting, and /llms.txt documentation endpoints for AI agent and RAG ingestion. Handles automated webhook fulfillment from Creem payments to GitHub repository access, single-use Cal.com booking link generation, Resend email dispatch, and Notion CRM synchronization with idempotency guards.",
-    tags: [
+      "Built a serverless MCP implementing JSON-RPC 2.0 with 6 tools, 4 resource templates, rate limiting, and /llms.txt documentation endpoints for AI agent and RAG ingestion. Handles automated webhook fulfillment from Creem payments to GitHub repository access, single-use Cal.com booking link generation, Resend email dispatch, and Notion CRM synchronization with idempotency guards.",
+    skills: [
+      "TypeScript",
       "Next.js 16",
-      "Model Context Protocol",
+      "MCP",
       "JSON-RPC 2.0",
       "Creem Webhooks",
-      "Resend",
+      "GitHub API",
+      "Cal.com API",
+      "Resend API",
       "Notion API",
+      "Rate Limiting",
+      "Webhook Idempotency",
     ],
     color: "from-indigo-600 to-slate-900",
     accentColor: "#6366f1",
     highlights: [
-      "Serverless MCP server with JSON-RPC 2.0, 6 tools & 4 resource templates",
+      "Serverless MCP with JSON-RPC 2.0, 6 tools & 4 resource templates",
       "Automated Creem payment webhook processing with idempotency guards",
       "Single-use Cal.com booking links and GitHub repository access automated on purchase",
       "/llms.txt endpoint formatted for agent and RAG documentation indexing",
@@ -255,13 +278,18 @@ export async function POST(request: Request) {
       "A 12-channel inbound lead engine with 10 qualification playbooks, 35+ CRM integrations, and interactive ROI simulator.",
     longDescription:
       "Built a conversion-first marketing and lead intake engine across 12 inbound communication channels. Features 10 industry qualification playbooks (plumbing, HVAC, legal, dental, home services), 35+ CRM webhook integrations with Google Sheets fallback, interactive lead-loss ROI calculator, JSON-LD structured schema across 40+ routes, and Lenis smooth scrolling with GSAP ScrollTrigger animations in a ~17,200-line Next.js 16 codebase.",
-    tags: [
+    skills: [
+      "TypeScript",
       "Next.js 16",
       "React 19",
-      "Tailwind v4",
-      "GSAP ScrollTrigger",
-      "Lenis",
-      "JSON-LD",
+      "Tailwind CSS v4",
+      "GSAP + ScrollTrigger",
+      "Lenis Smooth Scroll",
+      "Motion",
+      "JSON-LD Schema",
+      "Webhooks",
+      "Google Sheets API",
+      "Responsive UI",
     ],
     color: "from-emerald-600 to-teal-900",
     accentColor: "#10b981",
@@ -350,14 +378,34 @@ export async function dispatchLeadIntake(lead: LeadIntakeData) {
       "A 687-file, ~165,000-line Next.js 16 engine featuring multi-provider LLM orchestration, 5 payment gateways, and a 32-table PostgreSQL schema.",
     longDescription:
       "Built a 687-file, ~165,000-line Next.js 16 engine across ~810 files using a Universal Adapter Pattern. Supports 4 LLM providers (Anthropic, OpenAI, Gemini, DeepSeek) with PII redaction and structured output generation. Integrates 5 payment gateways (Stripe, Dodo Payments, Polar, Lemon Squeezy, Creem), Drizzle ORM over PostgreSQL with Supabase RLS, Trigger.dev v4 background jobs, Upstash Redis/QStash, WebAuthn authentication, and Sentry telemetry; validated by 900+ unit tests across 84 Vitest suites and 9 Playwright E2E test suites.",
-    tags: [
+    skills: [
+      "TypeScript",
       "Next.js 16",
       "React 19",
+      "Tailwind CSS v4",
       "PostgreSQL",
+      "Supabase RLS",
       "Drizzle ORM",
       "Trigger.dev",
+      "QStash",
+      "Upstash Redis",
+      "OpenAI",
+      "Claude",
+      "Gemini",
+      "DeepSeek",
+      "Stripe",
+      "Dodo Payments",
+      "Polar",
+      "Lemon Squeezy",
+      "Creem",
+      "WebAuthn",
+      "HMAC Tokens",
+      "CSRF Protection",
+      "Rate Limiting",
+      "PII Redaction",
       "Vitest",
       "Playwright",
+      "Sentry",
     ],
     color: "from-blue-600 to-cyan-900",
     accentColor: "#0284c7",
@@ -454,13 +502,18 @@ export async function generateUniversalStream(params: LLMStreamParams) {
       "Multi-tenant Next.js 16 platform running sandboxed AI agents with persistent memory, OpenRouter failover, and Supabase RLS.",
     longDescription:
       "Building from scratch a Next.js 16 platform that runs one sandboxed AI Agent per client with persistent memory and self-refining communication skills; OpenRouter provides multi-model routing and automatic failover. Connects channels and tools through MCP, with per-client Supabase RLS, Trigger.dev pipelines, PostHog/Langfuse observability, Dodo billing, and a LangChain operations orchestrator that requests permission before difficult actions.",
-    tags: [
+    skills: [
+      "TypeScript",
       "Next.js 16",
-      "Supabase RLS",
-      "OpenRouter",
+      "Supabase PostgreSQL",
+      "Row-Level Security",
+      "pgvector",
       "LangChain",
-      "MCP",
+      "OpenRouter",
+      "Model Context Protocol (MCP)",
       "Trigger.dev",
+      "PostHog",
+      "Langfuse",
       "Dodo Payments",
     ],
     color: "from-teal-600 to-slate-900",
@@ -550,13 +603,15 @@ export async function executeAgentTask(tenantId: string, taskInput: TaskInput) {
       "An MIT-licensed UI generator running local component synthesis across multiple LLM providers without cloud database dependencies.",
     longDescription:
       "Built an MIT-licensed, provider-agnostic platform for generating React and TypeScript component code locally without cloud databases, user tracking, or subscription requirements. Built with Next.js 16, React 19, Prisma 7 with SQLite, Tailwind CSS v4, and Redux Toolkit; connects directly to local or cloud LLMs via Vercel AI SDK and OpenRouter.",
-    tags: [
+    skills: [
+      "TypeScript",
       "Next.js 16",
       "React 19",
+      "Tailwind CSS v4",
       "Prisma 7",
-      "Tailwind v4",
       "SQLite",
-      "MIT License",
+      "Vercel AI SDK",
+      "OpenRouter",
     ],
     color: "from-sky-600 to-blue-900",
     accentColor: "#0284c7",
@@ -606,7 +661,7 @@ export async function executeAgentTask(tenantId: string, taskInput: TaskInput) {
     id: "makemesound",
     title: "Make Me Sound",
     tagline: "AI communication copilot with 105-tone transformation matrix",
-    badge: "Under Development",
+    badge: "Under Active Development",
     category: "Desktop App",
     url: "makemesound.xyz",
     demoUrl: "https://makemesound.xyz",
@@ -618,13 +673,17 @@ export async function executeAgentTask(tenantId: string, taskInput: TaskInput) {
       "A parallel multi-stream engine converting drafts into 105 tone variations across 15 categories with sub-second streaming speed.",
     longDescription:
       "Building an AI communication copilot with a 105-tone matrix (15 categories with 7 sub-variants each) for precise linguistic adjustments. Employs a parallel multi-stream engine on Next.js 16 and OpenRouter for sub-second streaming responses. Uses Supabase RLS, Upstash Redis rate limiting, Lemonsqueezy subscription billing, and a cross-platform architecture expanding to Tauri v2 desktop floating toolboxes and WXT browser extensions.",
-    tags: [
+    skills: [
+      "TypeScript",
       "Next.js 16",
       "Vercel AI SDK",
       "OpenRouter",
-      "Supabase",
+      "Supabase PostgreSQL",
+      "Row-Level Security",
       "Upstash Redis",
       "Lemonsqueezy",
+      "Tauri v2",
+      "WXT Browser Extension",
     ],
     color: "from-amber-600 to-orange-900",
     accentColor: "#f59e0b",
@@ -668,7 +727,7 @@ export async function executeAgentTask(tenantId: string, taskInput: TaskInput) {
     title: "Freecom AI",
     tagline:
       "Open-source digital download eCommerce platform with autonomous agent swarm",
-    badge: "Under Development & Open Sourced",
+    badge: "Under Development",
     category: "eCommerce",
     url: "github.com/scalewithalap/freecom-ai",
     githubUrl: "https://github.com/scalewithalap/freecom-ai",
@@ -680,14 +739,15 @@ export async function executeAgentTask(tenantId: string, taskInput: TaskInput) {
       "An open-source digital product commerce platform featuring a self-hosted Store Manager Agent and cloud agent swarm.",
     longDescription:
       "Building an open-source digital download commerce platform with an Open-Core architecture. Combines a self-hosted Store Manager Agent for inventory and checkout management with a cloud agent swarm (SEO, Content, Marketing, Analytics, Customer Support). Uses Next.js 16, Supabase PostgreSQL, Trigger.dev background workers, Composio.dev, Zernio social API, and Human-in-the-Loop approval controls.",
-    tags: [
-      "Open Source",
-      "eCommerce",
+    skills: [
+      "TypeScript",
       "Next.js 16",
-      "Supabase",
-      "Trigger.dev",
-      "Composio",
-      "Zernio API",
+      "Supabase PostgreSQL",
+      "Trigger.dev v4",
+      "Composio.dev",
+      "Zernio Social API",
+      "OpenRouter",
+      "Human-in-the-Loop",
     ],
     color: "from-zinc-700 to-zinc-900",
     accentColor: "#71717a",
@@ -736,7 +796,7 @@ export async function executeAgentTask(tenantId: string, taskInput: TaskInput) {
     title: "Soothly AI",
     tagline:
       "Autonomous 8-agent revenue platform with durable workflow execution",
-    badge: "Under Development & Open Sourced",
+    badge: "Under Development",
     category: "AI Agents",
     url: "github.com/scalewithalap/soothly-ai",
     githubUrl: "https://github.com/scalewithalap/soothly-ai",
@@ -748,14 +808,20 @@ export async function executeAgentTask(tenantId: string, taskInput: TaskInput) {
       "An autonomous revenue platform running an 8-agent ecosystem coordinated by a Superagent manager using Inngest durable functions and Supabase pgvector.",
     longDescription:
       "Building an autonomous revenue operations platform with an 8-agent ecosystem (Lead Gen, SEO, Partnership, Proposal, Competitor Intel, Revenue Recovery, Onboarding, and Customer Success) orchestrated by a central Superagent manager. Runs durable workflow functions with Inngest step execution, stores embeddings in Supabase pgvector with Row-Level Security, and features 3-tier autonomy settings (manual, smart, auto).",
-    tags: [
+    skills: [
+      "TypeScript",
       "Next.js 16",
-      "Supabase",
-      "Inngest",
+      "Supabase PostgreSQL",
+      "Row-Level Security",
       "pgvector",
-      "Lexical",
-      "Polar",
+      "Inngest",
+      "Zustand",
+      "Tailwind CSS v4",
+      "Gemini 3 Flash",
+      "Lexical Editor",
+      "ReactFlow",
       "Apify",
+      "Polar",
     ],
     color: "from-purple-600 to-indigo-900",
     accentColor: "#9382ff",

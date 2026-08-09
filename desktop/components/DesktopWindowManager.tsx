@@ -1,7 +1,17 @@
+/**
+ * @file desktop/components/DesktopWindowManager.tsx
+ * @description Desktop Window Instance Manager Component.
+ *
+ * Responsibilities:
+ * - Reads open application instances (`openApps`) from store state.
+ * - Maps active window IDs against `APPS_CONFIG` to resolve lazy-loaded application components.
+ * - Wraps lazy component instances in React `<Suspense>` and `<WindowFrame>` for drag, resize, and window controls.
+ */
+
 import { Suspense } from "react";
-import { useEcosystemStore } from "../store/useEcosystemStore";
+import { useEcosystemStore } from "../../store/useEcosystemStore";
 import WindowFrame from "./WindowFrame";
-import { APPS_CONFIG } from "../utils/apps";
+import { APPS_CONFIG } from "../../config/apps.config";
 
 export default function DesktopWindowManager() {
   const { openApps } = useEcosystemStore();

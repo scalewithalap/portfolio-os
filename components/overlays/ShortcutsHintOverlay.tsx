@@ -1,4 +1,14 @@
-import React, { useState, useEffect } from "react";
+/**
+ * @file components/overlays/ShortcutsHintOverlay.tsx
+ * @description Keyboard Shortcuts Cheat Sheet Overlay Modal Component.
+ *
+ * Responsibilities:
+ * - Listens for `Cmd/Ctrl + /` to toggle a full-screen keyboard shortcuts guide overlay on desktop screens (hidden on mobile/tablet).
+ * - Categorizes shortcuts into Navigation (Spotlight search), Window Controls (Minimize, Close, Focus), and Desktop Gestures.
+ * - Provides interactive keyboard key visualizers and dismiss controls.
+ */
+
+import { useState, useEffect } from "react";
 import {
   Command,
   X,
@@ -11,7 +21,7 @@ import {
   Layers,
   Move,
 } from "lucide-react";
-import { useEcosystemStore } from "../store/useEcosystemStore";
+import { useEcosystemStore } from "../../store/useEcosystemStore";
 
 export default function ShortcutsHintOverlay() {
   const [isOpen, setIsOpen] = useState(false);
@@ -155,9 +165,9 @@ export default function ShortcutsHintOverlay() {
 
   return (
     <>
-      {/* Bottom-Right Key Hint Button */}
+      {/* Floating System Shortcuts Trigger Button */}
       <div
-        className={`fixed bottom-4 right-4 z-20 transition-opacity duration-200 ${
+        className={`fixed bottom-4 right-4 z-40 hidden md:flex transition-opacity duration-200 ${
           hasMaximizedWindow
             ? "opacity-0 pointer-events-none"
             : "opacity-100 pointer-events-auto"

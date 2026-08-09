@@ -1,5 +1,16 @@
+/**
+ * @file desktop/components/DesktopFolders.tsx
+ * @description Desktop Folders & Grid Icon Management System Component.
+ *
+ * Responsibilities:
+ * - Renders free-position desktop icons and folder stacks (Projects, PDF Resume, Photos, Terminal).
+ * - Implements custom mouse dragging for unstacked items, updating x/y coordinates directly without hijacking native mouse click events.
+ * - Supports Desktop Stacks view (groups items into stacked expandable folder cards with item count badges).
+ * - Integrates right-click context menu options (sorting by Name, Kind, Date Modified).
+ */
+
 import React, { useState, useRef, useEffect } from "react";
-import { useEcosystemStore } from "../store/useEcosystemStore";
+import { useEcosystemStore } from "../../store/useEcosystemStore";
 import {
   Folder,
   FileText,
@@ -17,7 +28,6 @@ export interface DesktopItem {
   iconImage: string;
   kind: "Projects" | "PDF Documents" | "Images" | "Developer Scripts";
   size?: string;
-  dateModified?: string;
 }
 
 export const DESKTOP_ITEMS: DesktopItem[] = [
@@ -29,7 +39,6 @@ export const DESKTOP_ITEMS: DesktopItem[] = [
     appTitle: "Scale with Alap",
     iconImage: "/images/folder.png",
     kind: "Projects",
-    dateModified: "Today, 3:15 PM",
   },
   {
     id: "folder-vibe44",
@@ -38,7 +47,6 @@ export const DESKTOP_ITEMS: DesktopItem[] = [
     appTitle: "Vibe44 - Marketing Website",
     iconImage: "/images/folder.png",
     kind: "Projects",
-    dateModified: "Today, 2:45 PM",
   },
   {
     id: "folder-vibe44-demo",
@@ -47,7 +55,6 @@ export const DESKTOP_ITEMS: DesktopItem[] = [
     appTitle: "Vibe44 - Next.js Starter Kit",
     iconImage: "/images/folder.png",
     kind: "Projects",
-    dateModified: "Yesterday, 6:30 PM",
   },
   {
     id: "folder-zeroheadache",
@@ -56,7 +63,6 @@ export const DESKTOP_ITEMS: DesktopItem[] = [
     appTitle: "Zero Headache - Marketing Website",
     iconImage: "/images/folder.png",
     kind: "Projects",
-    dateModified: "Jul 26, 2026",
   },
   {
     id: "folder-zeroheadache-app",
@@ -65,7 +71,6 @@ export const DESKTOP_ITEMS: DesktopItem[] = [
     appTitle: "Zero Headache App",
     iconImage: "/images/folder.png",
     kind: "Projects",
-    dateModified: "Jul 25, 2026",
   },
   {
     id: "folder-makemesound",
@@ -74,7 +79,6 @@ export const DESKTOP_ITEMS: DesktopItem[] = [
     appTitle: "Make Me Sound",
     iconImage: "/images/folder.png",
     kind: "Projects",
-    dateModified: "Jul 24, 2026",
   },
   {
     id: "folder-openui",
@@ -83,7 +87,6 @@ export const DESKTOP_ITEMS: DesktopItem[] = [
     appTitle: "OpenUI",
     iconImage: "/images/folder.png",
     kind: "Projects",
-    dateModified: "Yesterday, 5:12 PM",
   },
   {
     id: "folder-freecom",
@@ -92,7 +95,6 @@ export const DESKTOP_ITEMS: DesktopItem[] = [
     appTitle: "Freecom AI",
     iconImage: "/images/folder.png",
     kind: "Projects",
-    dateModified: "Jul 20, 2026",
   },
   {
     id: "folder-soothly",
@@ -101,19 +103,17 @@ export const DESKTOP_ITEMS: DesktopItem[] = [
     appTitle: "Soothly AI",
     iconImage: "/images/folder.png",
     kind: "Projects",
-    dateModified: "Jul 18, 2026",
   },
 
   // PDF Document
   {
     id: "folder-resume",
-    title: "Resume",
+    title: "My Resume",
     appId: "resume",
     appTitle: "My Resume",
     iconImage: "/images/pdf.png",
     kind: "PDF Documents",
     size: "240 KB",
-    dateModified: "Today, 10:15 AM",
   },
 
   // Developer Scripts
@@ -125,7 +125,6 @@ export const DESKTOP_ITEMS: DesktopItem[] = [
     iconImage: "/images/terminal.png",
     kind: "Developer Scripts",
     size: "4 KB",
-    dateModified: "Today, 9:15 AM",
   },
 
   // Images
@@ -137,7 +136,6 @@ export const DESKTOP_ITEMS: DesktopItem[] = [
     iconImage: "/images/photos.png",
     kind: "Images",
     size: "1.8 MB",
-    dateModified: "Today, 8:00 AM",
   },
 ];
 
@@ -584,17 +582,6 @@ export default function DesktopProjects() {
                               <div className="min-w-0">
                                 <span className="text-xs font-semibold block truncate leading-tight">
                                   {item.title}
-                                </span>
-                                <span
-                                  className={`text-[10px] block mt-0.5 ${
-                                    isSelected
-                                      ? "text-white/80"
-                                      : isLight
-                                        ? "text-slate-500"
-                                        : "text-white/50"
-                                  }`}
-                                >
-                                  {item.dateModified}
                                 </span>
                               </div>
                             </div>

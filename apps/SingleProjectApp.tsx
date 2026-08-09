@@ -1,8 +1,17 @@
-import React, { useState, useRef, useEffect } from "react";
+/**
+ * @file apps/SingleProjectApp.tsx
+ * @description Dynamic Case Study Renderer Component for Portfolio Projects.
+ *
+ * Responsibilities:
+ * - Accepts a `projectId` prop (e.g. "scalewithalap", "vibe44", "openui") and dynamically renders its complete deep-dive case study.
+ * - Displays project hero banners, key engineering metrics, tech stack badges, architecture highlights, and full Markdown documentation.
+ * - Provides interactive CTA buttons for launching live web app demos and opening GitHub source code repositories.
+ */
+
+import { useState, useRef, useEffect } from "react";
 import {
   ExternalLink,
   Github,
-  Sparkles,
   CheckCircle2,
   Copy,
   Check,
@@ -28,7 +37,7 @@ import {
   getProjectCoverImage,
 } from "../data/projectsData";
 import { useEcosystemStore } from "../store/useEcosystemStore";
-import LazyImage from "../components/LazyImage";
+import LazyImage from "../components/common/LazyImage";
 
 interface SingleProjectAppProps {
   projectId: string;
@@ -158,7 +167,7 @@ export default function SingleProjectApp({ projectId }: SingleProjectAppProps) {
             <img
               src={project.iconImage}
               alt={project.title}
-              className="w-7 h-7 object-contain rounded-lg shadow-sm shrink-0"
+              className="w-7 h-7 object-contain rounded-full shadow-sm shrink-0"
             />
           ) : (
             <div className="w-7 h-7 rounded-lg bg-linear-to-tr from-blue-500 to-indigo-600 flex items-center justify-center text-white shadow-md font-bold text-xs shrink-0">
@@ -413,33 +422,32 @@ export default function SingleProjectApp({ projectId }: SingleProjectAppProps) {
 
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
             {/* Hero Details (Left) */}
-            <div className="lg:col-span-6 space-y-4">
-              <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-black/40 border border-white/15 backdrop-blur-md text-xs font-semibold text-white">
+            <div className="lg:col-span-6">
+              <div className="mb-2 md:mb-4 inline-flex items-center space-x-2 px-3 py-1.25 rounded-lg bg-black/40 border border-white/15 backdrop-blur-md text-xs font-semibold text-white">
                 <span>{project.badge || project.category}</span>
-                <span className="opacity-40">•</span>
-                <span className="text-white/80">{project.tagline}</span>
+                <span>•</span>
+                <span>{project.tagline}</span>
               </div>
 
-              <h1 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-none mb-1 md:mb-1.5">
                 {project.title}
               </h1>
 
-              <p className="text-white/85 text-sm sm:text-base leading-relaxed font-normal">
+              <p className="text-white/85 text-sm sm:text-base leading-tight font-normal mb-2 md:mb-4">
                 {project.description}
               </p>
 
               {/* Action Buttons */}
-              <div className="flex flex-wrap items-center gap-3 pt-1">
+              <div className="flex flex-wrap items-center gap-3 mb-3 md:mb-6">
                 {project.demoUrl && (
                   <a
                     href={project.demoUrl}
                     target="_blank"
                     rel="noreferrer"
-                    className="px-4 py-2 bg-white text-slate-900 hover:bg-slate-100 font-bold text-xs rounded-xl flex items-center space-x-2 shadow-lg transition-transform active:scale-95 cursor-pointer"
+                    className="px-4 py-2 bg-white text-slate-900 hover:bg-slate-100 font-bold text-xs md:text-sm tracking-tight rounded-lg flex items-center space-x-2 shadow-lg transition-transform active:scale-95 cursor-pointer"
                   >
-                    <Globe className="w-4 h-4 text-blue-600" />
-                    <span>Visit Live Site</span>
-                    <ExternalLink className="w-3.5 h-3.5 opacity-60" />
+                    <span className="leading-none">Visit Live Site</span>
+                    <ExternalLink className="w-3.5 h-3.5" />
                   </a>
                 )}
 
@@ -448,33 +456,32 @@ export default function SingleProjectApp({ projectId }: SingleProjectAppProps) {
                     href={project.githubUrl}
                     target="_blank"
                     rel="noreferrer"
-                    className="px-4 py-2 bg-black/40 hover:bg-black/60 border border-white/20 text-white font-medium text-xs rounded-xl flex items-center space-x-2 backdrop-blur-md transition-all active:scale-95 cursor-pointer"
+                    className="px-4 py-2 bg-black/40 hover:bg-black/60 border border-white/20 text-white font-medium text-xs md:text-sm tracking-tight rounded-lg flex items-center space-x-2 backdrop-blur-md transition-all active:scale-95 cursor-pointer"
                   >
-                    <Github className="w-4 h-4" />
-                    <span>GitHub Repo</span>
+                    <Github className="w-3.5 h-3.5" />
+                    <span className="leading-none">GitHub Repo</span>
                   </a>
                 )}
-
-                <button
-                  onClick={handleCopyProjectUrl}
-                  className="px-3.5 py-2 bg-black/30 hover:bg-black/50 border border-white/15 text-white/90 text-xs font-medium rounded-xl flex items-center space-x-1.5 backdrop-blur-md transition-all cursor-pointer"
-                >
-                  <Link2 className="w-3.5 h-3.5 text-blue-300" />
-                  <span>{copiedUrl ? "Copied!" : "Copy Link"}</span>
-                </button>
               </div>
 
-              {/* Tags */}
-              <div className="flex flex-wrap gap-2 pt-2">
-                {project.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="px-2.5 py-1 rounded-lg bg-black/40 border border-white/10 text-[11px] font-medium text-white/90 backdrop-blur-sm"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
+              {/* Skills */}
+              {project.skills && project.skills.length > 0 && (
+                <div className="mb-2 md:mb-4">
+                  <p className="text-[11px] font-bold uppercase tracking-wider text-white/80 mb-1.5">
+                    Skills I've Used to Build This
+                  </p>
+                  <div className="flex flex-wrap gap-1.5">
+                    {project.skills.map((skill) => (
+                      <span
+                        key={skill}
+                        className="px-2.5 leading-none py-1.5 rounded-lg bg-blue-950/80 border border-blue-400/40 text-xs font-medium text-blue-100 backdrop-blur-md shadow-xs hover:border-blue-300 transition-colors"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
 
             {/* Integrated Cover Image Mockup (Right) */}

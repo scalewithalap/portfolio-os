@@ -1,14 +1,25 @@
+/**
+ * @file desktop/components/DesktopMenu.tsx
+ * @description macOS Top System Menu Bar Component.
+ *
+ * Responsibilities:
+ * - Renders the top menu bar featuring Apple logo menu options, active app name, File/Edit submenus, and status tray icons.
+ * - Displays dynamic clock time, battery status, Wi-Fi status, volume toggle, theme toggle button, Control Center trigger, and Notification Center trigger.
+ * - Displays Spotlight Search trigger icon and quick portfolio share action.
+ */
+
 import { useEffect, useState } from "react";
 import {
   Search,
   SlidersHorizontal,
-  Bell,
   Sun,
   Moon,
+  Volume2,
+  VolumeX,
   Share2,
   Calendar,
 } from "lucide-react";
-import { useEcosystemStore } from "../store/useEcosystemStore";
+import { useEcosystemStore } from "../../store/useEcosystemStore";
 
 export default function DesktopMenu() {
   const [time, setTime] = useState(new Date());
@@ -16,11 +27,11 @@ export default function DesktopMenu() {
     openApp,
     openSpotlight,
     toggleControlCenter,
-    isControlCenterOpen,
     toggleNotificationCenter,
-    isNotificationCenterOpen,
     systemTheme,
     toggleSystemTheme,
+    isMuted,
+    toggleMute,
     showToast,
     minimizeAllApps,
   } = useEcosystemStore();
@@ -156,6 +167,27 @@ export default function DesktopMenu() {
             />
           ) : (
             <Sun
+              size={13}
+              strokeWidth={2.2}
+              className={`${iconColor} shrink-0`}
+            />
+          )}
+        </button>
+
+        {/* Sound SFX On/Off Toggle */}
+        <button
+          onClick={toggleMute}
+          className="cursor-pointer p-1 rounded transition-all inline-flex items-center justify-center leading-none"
+          title={isMuted ? "Unmute System Sound SFX" : "Mute System Sound SFX"}
+        >
+          {isMuted ? (
+            <VolumeX
+              size={13}
+              strokeWidth={2.2}
+              className="text-red-400 shrink-0"
+            />
+          ) : (
+            <Volume2
               size={13}
               strokeWidth={2.2}
               className={`${iconColor} shrink-0`}

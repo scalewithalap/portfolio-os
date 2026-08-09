@@ -1,14 +1,25 @@
+/**
+ * @file App.tsx
+ * @description Main Application Controller & Responsive Router for Scale with Alap (Portfolio OS).
+ *
+ * Responsibilities:
+ * - Dynamically routes between DesktopEnvironment (macOS), TabletEnvironment (iPadOS), and MobileEnvironment (iOS) based on window width.
+ * - Handles deep-linking via URL search parameters (e.g. ?app=about, ?project=vibe44) to automatically launch target apps on load.
+ * - Listens for global keyboard shortcuts (Cmd/Ctrl+K for Spotlight search).
+ * - Mounts root UI overlays (SEOHead, SpotlightSearch, ToastContainer, ErrorBoundary).
+ */
+
 import { useEffect, Suspense, lazy } from 'react';
 import { useEcosystemStore } from './store/useEcosystemStore';
-import SpotlightSearch from './components/SpotlightSearch';
-import ToastContainer from './components/ToastContainer';
-import ErrorBoundary from './components/ErrorBoundary';
-import SEOHead from './components/SEOHead';
+import SpotlightSearch from './components/overlays/SpotlightSearch';
+import ToastContainer from './components/common/ToastContainer';
+import ErrorBoundary from './components/common/ErrorBoundary';
+import SEOHead from './components/common/SEOHead';
 import { getAppInfoByProjectId } from './data/projectsData';
 
-const DesktopEnv = lazy(() => import('./desktop/DesktopEnvironment'));
-const TabletEnv = lazy(() => import('./tablet/TabletEnvironment'));
-const MobileEnv = lazy(() => import('./mobile/MobileEnvironment'));
+const DesktopEnv = lazy(() => import('./desktop'));
+const TabletEnv = lazy(() => import('./tablet'));
+const MobileEnv = lazy(() => import('./mobile'));
 
 export default function App() {
   const { activeEnvironment, setEnvironment, openApp } = useEcosystemStore();

@@ -1,15 +1,24 @@
-import React, { useState, useEffect, useRef } from "react";
+/**
+ * @file mobile/components/IOSLockScreen.tsx
+ * @description iOS Style Lock Screen Component for Mobile Layout.
+ *
+ * Responsibilities:
+ * - Displays a sleek iOS lock screen with real-time clock, date widget, profile picture, and swipe-up hint bar.
+ * - Handles drag/swipe-up gestures with GSAP spring physics to unlock the mobile device UI.
+ */
+
+import { useState, useEffect, useRef } from "react";
 import { ChevronUp } from "lucide-react";
 import gsap from "gsap";
-import { useEcosystemStore } from "../store/useEcosystemStore";
-import LazyImage from "../components/LazyImage";
+import { useEcosystemStore } from "../../store/useEcosystemStore";
+import LazyImage from "../../components/common/LazyImage";
 
 interface IOSLockScreenProps {
   onUnlock: () => void;
 }
 
 export default function IOSLockScreen({ onUnlock }: IOSLockScreenProps) {
-  const { wallpaper, systemTheme } = useEcosystemStore();
+  const { systemTheme } = useEcosystemStore();
   const isLight = systemTheme === "light";
   const [time, setTime] = useState(new Date());
 

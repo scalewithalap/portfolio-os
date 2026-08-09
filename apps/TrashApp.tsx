@@ -1,3 +1,13 @@
+/**
+ * @file apps/TrashApp.tsx
+ * @description System Trash Manager Window Component.
+ *
+ * Responsibilities:
+ * - Displays deleted files and deprecated project archives stored in the system trash bin.
+ * - Allows users to restore items back to the desktop grid or permanently delete items with audio feedback.
+ * - Supports an "Empty Trash" action with an animated empty state graphic.
+ */
+
 import React, { useState } from "react";
 import {
   Trash2,
@@ -5,10 +15,10 @@ import {
   Sparkles,
   FileX,
   RotateCcw,
-  Search,
 } from "lucide-react";
 import { useEcosystemStore } from "../store/useEcosystemStore";
-import { DESKTOP_ITEMS } from "../desktop/DesktopFolders";
+import { DESKTOP_ITEMS } from "../desktop/components/DesktopFolders";
+import { playTrashWhooshSound } from "../utils/soundEffects";
 
 export default function TrashApp() {
   const {
@@ -21,73 +31,16 @@ export default function TrashApp() {
     systemTheme,
   } = useEcosystemStore();
 
-  const [searchQuery, setSearchQuery] = useState("");
+  const [searchQuery] = useState("");
   const [isWhooshing, setIsWhooshing] = useState(false);
   const [deletingId, setDeletingId] = useState<string | null>(null);
   const [isDragOver, setIsDragOver] = useState(false);
 
   const isLight = systemTheme === "light";
 
-  // Shared AudioContext for subtle SFX
-  let sharedAudioCtx: AudioContext | null = null;
-  const getAudioContext = (): AudioContext | null => {
-    if (typeof window === "undefined") return null;
-    const AudioCtx = window.AudioContext || (window as any).webkitAudioContext;
-    if (!AudioCtx) return null;
-    if (!sharedAudioCtx || sharedAudioCtx.state === "closed") {
-      sharedAudioCtx = new AudioCtx();
-    }
-    if (sharedAudioCtx.state === "suspended") {
-      sharedAudioCtx.resume();
-    }
-    return sharedAudioCtx;
-  };
-
-  const playWhooshSound = () => {
-    try {
-      const ctx = getAudioContext();
-      if (!ctx) return;
-
-      const bufferSize = ctx.sampleRate * 0.35;
-      const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
-      const data = buffer.getChannelData(0);
-      for (let i = 0; i < bufferSize; i++) {
-        data[i] = Math.random() * 2 - 1;
-      }
-
-      const noise = ctx.createBufferSource();
-      noise.buffer = buffer;
-
-      const filter = ctx.createBiquadFilter();
-      filter.type = "bandpass";
-      filter.frequency.setValueAtTime(150, ctx.currentTime);
-      filter.frequency.exponentialRampToValueAtTime(
-        1400,
-        ctx.currentTime + 0.18,
-      );
-      filter.frequency.exponentialRampToValueAtTime(
-        100,
-        ctx.currentTime + 0.35,
-      );
-      filter.Q.value = 2.5;
-
-      const gain = ctx.createGain();
-      gain.gain.setValueAtTime(0.35, ctx.currentTime);
-      gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.35);
-
-      noise.connect(filter);
-      filter.connect(gain);
-      gain.connect(ctx.destination);
-
-      noise.start();
-    } catch (e) {
-      console.warn("Audio playback error:", e);
-    }
-  };
-
   const handleEmptyTrash = () => {
     if (trashItems.length === 0) return;
-    playWhooshSound();
+    playTrashWhooshSound();
     setIsWhooshing(true);
 
     setTimeout(() => {
@@ -96,8 +49,8 @@ export default function TrashApp() {
     }, 380);
   };
 
-  const handleSingleDelete = (id: string, name: string) => {
-    playWhooshSound();
+  const handleSingleDelete = (id: string) => {
+    playTrashWhooshSound();
     setDeletingId(id);
     setTimeout(() => {
       deleteTrashItemPermanently(id);
@@ -113,12 +66,16 @@ export default function TrashApp() {
   const handleDragOver = (e: React.DragEvent) => {
     e.preventDefault();
     e.stopPropagation();
-    setIsDragOver(true);
+    e.dataTransfer.dropEffect = "move";
+    if (!isDragOver) {
+      setIsDragOver(true);
+    }
   };
 
   const handleDragLeave = (e: React.DragEvent) => {
     e.preventDefault();
     e.stopPropagation();
+    if (e.currentTarget.contains(e.relatedTarget as Node)) return;
     setIsDragOver(false);
   };
 
@@ -181,6 +138,7 @@ export default function TrashApp() {
         type: fileType,
         iconImage: iconImg,
       });
+      playTrashWhooshSound();
     }
   };
 
@@ -350,7 +308,7 @@ export default function TrashApp() {
 
                     {/* Per-item Permanent Delete Button */}
                     <button
-                      onClick={() => handleSingleDelete(item.id, item.name)}
+                      onClick={() => handleSingleDelete(item.id)}
                       className={`p-1.5 rounded-lg border transition-all cursor-pointer ${
                         isLight
                           ? "bg-slate-100 hover:bg-red-50 text-slate-600 hover:text-red-600 border-slate-200 hover:border-red-300"

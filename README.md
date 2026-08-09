@@ -59,70 +59,64 @@ The portfolio includes 9 project case studies defined in `data/projectsData.ts` 
 
 ```
 scalewithalap/
-├── public/
-│   ├── files/                # Static downloadable files and resume PDFs
-│   ├── icons/                # System application and dock icons
-│   ├── images/               # Screenshots and portfolio assets
-│   ├── llms.txt              # RAG ingestion summary file
-│   ├── llms-full.txt         # Full Markdown documentation for LLM readers
-│   ├── robots.txt            # Crawler indexation directives
-│   ├── site.webmanifest      # Web application manifest
-│   └── sitemap.xml           # XML sitemap index
-├── apps/                     # 13 code-split application components
-│   ├── projects/             # Individual project case study views
-│   │   ├── FreecomApp.tsx
-│   │   ├── MakeMeSoundApp.tsx
-│   │   ├── OpenUIApp.tsx
-│   │   ├── ScaleWithAlapApp.tsx
-│   │   ├── SoothlyApp.tsx
-│   │   ├── Vibe44App.tsx
-│   │   ├── Vibe44DemoApp.tsx
-│   │   ├── ZeroHeadacheApp.tsx
-│   │   └── ZeroHeadachePlatformApp.tsx
-│   ├── AboutApp.tsx          # Developer biography and experience history
-│   ├── MailApp.tsx           # Contact form and message sender
+├── apps/                     # System application components
+│   ├── AboutApp.tsx          # Developer biography & experience history
+│   ├── MailApp.tsx           # Contact form & message sender
 │   ├── PhotosApp.tsx         # Screenshot gallery viewer
 │   ├── ResumeApp.tsx         # Full interactive resume viewer
 │   ├── SafariApp.tsx         # Simulated web browser
-│   ├── SingleProjectApp.tsx     # Case study renderer
+│   ├── SingleProjectApp.tsx  # Dynamic case study renderer
 │   ├── TerminalApp.tsx       # Interactive terminal simulator
-│   └── TrashApp.tsx          # System trash viewer
-├── components/               # System UI overlays and shared elements
-│   ├── ContextMenu.tsx
-│   ├── ControlCenter.tsx
-│   ├── ErrorBoundary.tsx
-│   ├── LazyImage.tsx
-│   ├── NotificationCenter.tsx
-│   ├── SEOHead.tsx
-│   ├── ShortcutsHintOverlay.tsx
-│   ├── SpotlightSearch.tsx
-│   └── ToastContainer.tsx
-├── desktop/                  # macOS desktop interface components
-│   ├── DesktopDock.tsx
-│   ├── DesktopEnvironment.tsx
-│   ├── DesktopFolders.tsx
-│   ├── DesktopMenu.tsx
-│   ├── DesktopWindowManager.tsx
-│   ├── HeroHoverText.tsx
-│   └── WindowFrame.tsx
-├── mobile/                   # iOS mobile layout components
-│   ├── DynamicIsland.tsx
-│   │   ├── MobileEnvironment.tsx
-│   │   └── MobileHome.tsx
-│   ├── store/
-│   │   └── useEcosystemStore.ts # Zustand + Immer state management store
-│   ├── utils/
-│   │   └── apps.ts           # Registry configurations for desktop applications
-│   ├── data/
-│   │   └── projectsData.ts   # Project case study datasets
-│   ├── App.tsx               # Root app router and view renderer
-│   ├── index.css             # CSS entry point with Tailwind directives
-│   └── main.tsx              # React entry point
-├── index.html                # HTML entry file
-├── metadata.json             # Application metadata manifest
-├── package.json              # NPM dependencies and script tasks
-├── tsconfig.json             # TypeScript config
-└── vite.config.ts            # Vite bundler setup
+│   └── TrashApp.tsx          # System trash manager
+├── components/               # Categorized shared UI components
+│   ├── common/               # Core shared UI primitives
+│   │   ├── ErrorBoundary.tsx # React error boundary fallback
+│   │   ├── LazyImage.tsx     # IntersectionObserver image loader
+│   │   ├── SEOHead.tsx       # Dynamic JSON-LD & meta tag manager
+│   │   ├── StaticHeroText.tsx# Mobile/tablet static hero title
+│   │   └── ToastContainer.tsx# Floating system toast alerts
+│   └── overlays/             # System UI overlays & popups
+│       ├── ContextMenu.tsx   # Desktop right-click context menu
+│       ├── ControlCenter.tsx # System settings control center drawer
+│       ├── NotificationCenter.tsx # System notification drawer
+│       ├── ShortcutsHintOverlay.tsx # Keyboard shortcuts hint overlay
+│       └── SpotlightSearch.tsx    # macOS Spotlight search overlay
+├── config/                   # Central configuration & registries
+│   └── apps.config.ts        # Dynamic application registry & lazy loader
+├── data/                     # Project datasets and metadata
+│   └── projectsData.ts       # Structured project case study dataset
+├── desktop/                  # macOS desktop environment domain
+│   ├── components/           # Desktop interface components
+│   │   ├── DesktopDock.tsx   # macOS animated dock menu
+│   │   ├── DesktopFolders.tsx# Desktop grid & file icon manager
+│   │   ├── DesktopMenu.tsx   # Top menu bar & system status
+│   │   ├── DesktopWindowManager.tsx # Window manager renderer
+│   │   ├── HeroHoverText.tsx # Interactive magnetic 3D title text
+│   │   └── WindowFrame.tsx   # Draggable & resizable window frame
+│   ├── DesktopEnvironment.tsx # Main desktop workspace view
+│   └── index.ts              # Desktop domain barrel export
+├── mobile/                   # iOS mobile environment domain
+│   ├── components/           # Mobile interface components
+│   │   ├── IOSLockScreen.tsx # iOS swipe-to-unlock lock screen
+│   │   └── MobileHome.tsx    # Mobile app launcher home grid
+│   ├── MobileEnvironment.tsx # Main mobile environment view
+│   └── index.ts              # Mobile domain barrel export
+├── tablet/                   # iPadOS tablet environment domain
+│   ├── TabletEnvironment.tsx # Main tablet workspace view
+│   └── index.ts              # Tablet domain barrel export
+├── store/                    # Global state management
+│   └── useEcosystemStore.ts  # Zustand + Immer global ecosystem store
+├── utils/                    # Utility engines & helpers
+│   └── soundEffects.ts       # Web Audio API sound synthesizer
+├── public/                   # Static assets, PDFs, icons & AI guidance manifests
+├── App.tsx                   # Root environment switcher & deep-link router
+├── index.css                 # Global CSS design system & Tailwind v4 rules
+├── index.html                # Main HTML entry document
+├── main.tsx                  # React 19 application root entry point
+├── metadata.json             # Workspace metadata
+├── package.json              # Project dependencies & build scripts
+├── tsconfig.json             # TypeScript compiler settings
+└── vite.config.ts            # Vite bundler configuration
 ```
 
 ## State management model

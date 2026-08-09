@@ -1,16 +1,26 @@
+/**
+ * @file desktop/DesktopEnvironment.tsx
+ * @description macOS Desktop Environment Container View.
+ *
+ * Responsibilities:
+ * - Serves as the primary desktop view wrapper on desktop-class viewports (>=1024px).
+ * - Assembles top menu bar (`DesktopMenu`), floating dock (`DesktopDock`), desktop grid icons (`DesktopFolders`), interactive magnetic 3D title (`HeroHoverText`), and window manager (`DesktopWindowManager`).
+ * - Handles right-click context menu events, wallpaper backgrounds, and GSAP startup animations.
+ */
+
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { LayoutGrid } from "lucide-react";
 import { useEcosystemStore } from "../store/useEcosystemStore";
-import DesktopMenu from "./DesktopMenu";
-import DesktopDock from "./DesktopDock";
-import DesktopWindowManager from "./DesktopWindowManager";
-import DesktopFolders from "./DesktopFolders";
-import HeroHoverText from "./HeroHoverText";
-import ContextMenu from "../components/ContextMenu";
-import ControlCenter from "../components/ControlCenter";
-import NotificationCenter from "../components/NotificationCenter";
-import ShortcutsHintOverlay from "../components/ShortcutsHintOverlay";
+import DesktopMenu from "./components/DesktopMenu";
+import DesktopDock from "./components/DesktopDock";
+import DesktopWindowManager from "./components/DesktopWindowManager";
+import DesktopFolders from "./components/DesktopFolders";
+import HeroHoverText from "./components/HeroHoverText";
+import ContextMenu from "../components/overlays/ContextMenu";
+import ControlCenter from "../components/overlays/ControlCenter";
+import NotificationCenter from "../components/overlays/NotificationCenter";
+import ShortcutsHintOverlay from "../components/overlays/ShortcutsHintOverlay";
 
 export default function DesktopEnvironment() {
   const {
@@ -72,7 +82,7 @@ export default function DesktopEnvironment() {
     openContextMenu(e.clientX, e.clientY);
   };
 
-  const handleDesktopClick = (e: React.MouseEvent) => {
+  const handleDesktopClick = () => {
     closeContextMenu();
   };
 

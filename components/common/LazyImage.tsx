@@ -1,3 +1,13 @@
+/**
+ * @file components/common/LazyImage.tsx
+ * @description Optimized IntersectionObserver Progressive Image Component.
+ *
+ * Responsibilities:
+ * - Deferred loading of images until they enter the browser viewport using IntersectionObserver API.
+ * - Shows an animated skeleton pulse placeholder during image fetching.
+ * - Provides graceful fallback image handling when network errors occur.
+ */
+
 import React, { useState, useEffect, useRef } from 'react';
 import { Image as ImageIcon, Loader2 } from 'lucide-react';
 

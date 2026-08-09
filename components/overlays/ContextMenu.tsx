@@ -1,4 +1,14 @@
-import React, { useRef, useEffect } from "react";
+/**
+ * @file components/overlays/ContextMenu.tsx
+ * @description Desktop Right-Click Context Menu Popup Component.
+ *
+ * Responsibilities:
+ * - Positioned dynamically at cursor coordinates when users right-click anywhere on the desktop environment.
+ * - Options for changing desktop wallpaper, sorting icons (Name, Kind, Date Modified), toggling Desktop Stacks mode, opening Spotlight Search, and launching Terminal.
+ * - Auto-dismisses when clicking outside the menu popup bounds.
+ */
+
+import { useRef, useEffect } from "react";
 import {
   Image,
   Grid,
@@ -8,7 +18,7 @@ import {
   FileText,
   Check,
 } from "lucide-react";
-import { useEcosystemStore, WALLPAPERS } from "../store/useEcosystemStore";
+import { useEcosystemStore, WALLPAPERS } from "../../store/useEcosystemStore";
 
 export default function ContextMenu() {
   const {
@@ -258,7 +268,7 @@ export default function ContextMenu() {
             </div>
           </div>
           <span
-            className={`text-[10px] shrink-0 ${isLight ? "text-slate-400 group-hover:text-white/90" : "text-white/40 group-hover:text-white/80"}`}
+            className={`text-[10px] shrink-0 hidden md:inline-block ${isLight ? "text-slate-400 group-hover:text-white/90" : "text-white/40 group-hover:text-white/80"}`}
           >
             ⌘ + K
           </span>
