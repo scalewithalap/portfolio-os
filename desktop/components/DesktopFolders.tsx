@@ -26,7 +26,12 @@ export interface DesktopItem {
   appId: string;
   appTitle: string;
   iconImage: string;
-  kind: "Projects" | "PDF Documents" | "Images" | "Developer Scripts";
+  kind:
+    | "Projects"
+    | "PDF Documents"
+    | "Images"
+    | "Developer Scripts"
+    | "System Apps";
   size?: string;
 }
 
@@ -97,12 +102,12 @@ export const DESKTOP_ITEMS: DesktopItem[] = [
     kind: "Projects",
   },
   {
-    id: "folder-soothly",
-    title: "Soothly AI",
-    appId: "folder-soothly",
-    appTitle: "Soothly AI",
-    iconImage: "/images/folder.png",
-    kind: "Projects",
+    id: "app-about",
+    title: "About Me",
+    appId: "about",
+    appTitle: "About Alap",
+    iconImage: "/images/finder.png",
+    kind: "System Apps",
   },
 
   // PDF Document

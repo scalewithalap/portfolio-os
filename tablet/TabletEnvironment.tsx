@@ -37,7 +37,7 @@ export default function TabletEnvironment() {
   // Desktop items grid excluding Soothly AI, Photos, and Terminal from tablet screen grid
   const tabletDesktopItems = DESKTOP_ITEMS.filter(
     (item) =>
-      item.id !== "folder-soothly" &&
+      item.appId !== "about" &&
       item.appId !== "photos" &&
       item.appId !== "terminal",
   );

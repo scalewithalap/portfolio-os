@@ -908,7 +908,6 @@ export const PROJECT_APP_MAPPING: Record<
   makemesound: { appId: "folder-makemesound", title: "Make Me Sound" },
   freecom: { appId: "folder-freecom", title: "Freecom AI Store" },
   soothly: { appId: "folder-soothly-ai", title: "Soothly AI" },
-  "soothly-ai": { appId: "folder-soothly-ai", title: "Soothly AI" },
 };
 
 export function getAppInfoByProjectId(

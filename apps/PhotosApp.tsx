@@ -170,7 +170,7 @@ export const SCREENSHOT_PHOTOS: ScreenshotPhoto[] = [
     url: "/images/screenshots/soothly-ai.webp",
     details:
       "Autonomous 8-agent revenue platform coordinated by a Superagent meta-orchestrator with Inngest durable workflow functions.",
-    appId: "folder-soothly",
+    appId: "folder-soothly-ai",
     appTitle: "Soothly AI Revenue Platform",
     badge: "Under Development",
   },

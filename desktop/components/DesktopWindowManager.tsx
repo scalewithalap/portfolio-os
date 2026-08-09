@@ -21,12 +21,7 @@ export default function DesktopWindowManager() {
       {openApps
         .filter((app) => app.isOpen)
         .map((app) => {
-          const config = APPS_CONFIG.find(
-            (c) =>
-              c.id === app.id ||
-              (c.id === "about" && app.id === "settings") ||
-              (c.id === "settings" && app.id === "about"),
-          );
+          const config = APPS_CONFIG.find((c) => c.id === app.id);
           if (!config) return null;
 
           const AppComponent = config.component;

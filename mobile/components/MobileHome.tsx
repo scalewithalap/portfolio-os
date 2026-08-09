@@ -24,7 +24,7 @@ export default function MobileHome() {
   // Desktop Folders & Files Grid (excluding Soothly AI, Photos, and Terminal from mobile screen grid)
   const mobileDesktopItems = DESKTOP_ITEMS.filter(
     (item) =>
-      item.id !== "folder-soothly" &&
+      item.appId !== "about" &&
       item.appId !== "photos" &&
       item.appId !== "terminal",
   );
