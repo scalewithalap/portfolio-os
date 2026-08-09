@@ -7,7 +7,6 @@ import {
   Terminal,
   FileText,
   Check,
-  ChevronRight,
 } from "lucide-react";
 import { useEcosystemStore, WALLPAPERS } from "../store/useEcosystemStore";
 
@@ -15,7 +14,7 @@ export default function ContextMenu() {
   const {
     contextMenu,
     closeContextMenu,
-    cycleWallpaper,
+    setRandomWallpaper,
     setWallpaperIndex,
     currentWallpaperIndex,
     sortDesktopIcons,
@@ -23,8 +22,6 @@ export default function ContextMenu() {
     openApp,
     isStacksEnabled,
     toggleStacks,
-    stackByKind,
-    collapseAllStacks,
     systemTheme,
   } = useEcosystemStore();
 
@@ -56,8 +53,8 @@ export default function ContextMenu() {
   if (!contextMenu) return null;
 
   // Keep menu inside viewport bounds
-  const menuWidth = 230;
-  const menuHeight = 340;
+  const menuWidth = 250;
+  const menuHeight = 390;
   const x = Math.min(contextMenu.x, window.innerWidth - menuWidth - 10);
   const y = Math.min(contextMenu.y, window.innerHeight - menuHeight - 10);
 
@@ -77,71 +74,52 @@ export default function ContextMenu() {
       <div
         ref={menuRef}
         style={{ top: `${y}px`, left: `${x}px` }}
-        className={`fixed z-50 w-56 backdrop-blur-2xl border rounded-2xl shadow-2xl p-1.5 font-sans text-xs select-none animate-fadeIn space-y-0.5 transition-colors ${
+        className={`fixed z-50 w-64 backdrop-blur-2xl border rounded-2xl shadow-2xl p-1.5 font-sans text-xs select-none animate-fadeIn space-y-0.5 transition-colors ${
           isLight
             ? "bg-white/95 text-slate-900 border-slate-200 shadow-[0_15px_40px_rgba(0,0,0,0.15)]"
             : "bg-[#1a1a20]/90 text-white border-white/20 shadow-[0_15px_40px_rgba(0,0,0,0.6)]"
         }`}
       >
-        {/* Use Stacks / Stack by Kind */}
-        <button
-          onClick={() => {
-            toggleStacks();
-            closeContextMenu();
-          }}
-          className={`w-full px-3 py-2 rounded-xl flex items-center justify-between transition-colors group ${
-            isStacksEnabled
-              ? "bg-blue-600 text-white font-medium shadow-sm"
-              : isLight
-                ? "hover:bg-blue-600 hover:text-white text-slate-800"
-                : "hover:bg-blue-600 hover:text-white text-white"
-          }`}
-        >
-          <div className="flex items-center space-x-2.5">
-            <Layers
-              className={`w-4 h-4 ${
-                isStacksEnabled
-                  ? "text-white"
-                  : isLight
-                    ? "text-blue-600 group-hover:text-white"
-                    : "text-blue-400 group-hover:text-white"
-              }`}
-            />
-            <span className="font-semibold">Stack by Type</span>
-          </div>
-          {isStacksEnabled && <Check className="w-4 h-4 text-white" />}
-        </button>
-
-        <div
-          className={`h-px my-1 ${isLight ? "bg-slate-200" : "bg-white/10"}`}
-        />
-
         {/* Change Wallpaper */}
         <button
           onClick={() => {
-            cycleWallpaper();
+            setRandomWallpaper();
             closeContextMenu();
           }}
-          className={`w-full px-3 py-2 rounded-xl flex items-center justify-between transition-colors group ${
+          className={`w-full px-2 py-2 rounded-xl flex items-center justify-between transition-colors group ${
             isLight
               ? "hover:bg-blue-600 hover:text-white text-slate-800"
               : "hover:bg-blue-600 hover:text-white text-white"
           }`}
         >
-          <div className="flex items-center space-x-2.5">
+          <div className="flex items-center space-x-2">
             <Image
-              className={`w-4 h-4 group-hover:text-white ${isLight ? "text-indigo-600" : "text-indigo-400"}`}
+              className={`w-6.5 h-6.5 shrink-0 -mt-px group-hover:text-white ${isLight ? "text-indigo-600" : "text-indigo-400"}`}
             />
-            <span className="font-medium">Change Wallpaper</span>
+            <div className="flex flex-col text-left">
+              <span className="font-medium leading-none">Change Wallpaper</span>
+              <span
+                className={`text-[11px] leading-none mt-px ${
+                  isLight
+                    ? "text-slate-600 group-hover:text-white/90"
+                    : "text-white/60 group-hover:text-white/90"
+                }`}
+              >
+                Randomize background
+              </span>
+            </div>
           </div>
         </button>
 
         {/* Wallpaper Picker Sublist Pill */}
+        <div className="px-2 pt-1 pb-0.5">
+          <span className="font-medium leading-none">Choose Wallpaper</span>
+        </div>
         <div
-          className={`px-2 py-1.5 flex items-center space-x-1.5 overflow-x-auto rounded-xl my-1 scrollbar-none border ${
+          className={`px-3 py-2 flex items-center space-x-1.25 justify-center overflow-x-auto rounded-full my-0.5 scrollbar-none border ${
             isLight
-              ? "bg-slate-100/90 border-slate-200"
-              : "bg-white/5 border-white/10"
+              ? "bg-slate-200/50 border-slate-200"
+              : "bg-white/5 border-white/20"
           }`}
         >
           {WALLPAPERS.map((wp, idx) => (
@@ -151,9 +129,9 @@ export default function ContextMenu() {
                 setWallpaperIndex(idx);
                 closeContextMenu();
               }}
-              className={`w-6 h-6 rounded-lg overflow-hidden border transition-transform ${
+              className={`w-7 h-7 rounded-full overflow-hidden border transition-transform shrink-0 ${
                 currentWallpaperIndex === idx
-                  ? "border-blue-500 ring-1 ring-blue-500/50 scale-110 shadow-md"
+                  ? "border-blue-500 ring-1 ring-blue-500/50 shadow-md"
                   : isLight
                     ? "border-slate-300 hover:scale-105"
                     : "border-white/20 hover:scale-105"
@@ -169,29 +147,81 @@ export default function ContextMenu() {
           ))}
         </div>
 
+        {/* Use Stacks / Stack by Kind */}
+        <button
+          onClick={() => {
+            toggleStacks();
+            closeContextMenu();
+          }}
+          className={`w-full px-2 py-2 rounded-xl flex items-center justify-between transition-colors group ${
+            isStacksEnabled
+              ? "bg-blue-600 text-white font-medium shadow-sm"
+              : isLight
+                ? "hover:bg-blue-600 hover:text-white text-slate-800"
+                : "hover:bg-blue-600 hover:text-white text-white"
+          }`}
+        >
+          <div className="flex items-center space-x-2">
+            <Layers
+              className={`w-6.5 h-6.5 -mt-px shrink-0 ${
+                isStacksEnabled
+                  ? "text-white"
+                  : isLight
+                    ? "text-blue-600 group-hover:text-white"
+                    : "text-blue-400 group-hover:text-white"
+              }`}
+            />
+            <div className="flex flex-col text-left">
+              <span className="font-medium leading-none">Stack by Type</span>
+              <span
+                className={`text-[11px] leading-none mt-px ${
+                  isStacksEnabled
+                    ? "text-white/80"
+                    : isLight
+                      ? "text-slate-600 group-hover:text-white/90"
+                      : "text-white/60 group-hover:text-white/90"
+                }`}
+              >
+                Group files by kind
+              </span>
+            </div>
+          </div>
+          {isStacksEnabled && <Check className="w-4 h-4 text-white shrink-0" />}
+        </button>
+
+        <div
+          className={`h-px my-1 ${isLight ? "bg-slate-200" : "bg-white/10"}`}
+        />
+
         {/* Sort Icons */}
         <button
           onClick={() => {
             sortDesktopIcons();
             closeContextMenu();
           }}
-          className={`w-full px-3 py-2 rounded-xl flex items-center justify-between transition-colors group ${
+          className={`w-full px-2 py-2 rounded-xl flex items-center justify-between transition-colors group ${
             isLight
               ? "hover:bg-blue-600 hover:text-white text-slate-800"
               : "hover:bg-blue-600 hover:text-white text-white"
           }`}
         >
-          <div className="flex items-center space-x-2.5">
+          <div className="flex items-center space-x-2">
             <Grid
-              className={`w-4 h-4 group-hover:text-white ${isLight ? "text-amber-600" : "text-amber-400"}`}
+              className={`w-6.5 h-6.5 -mt-px shrink-0 group-hover:text-white ${isLight ? "text-amber-600" : "text-amber-400"}`}
             />
-            <span className="font-medium">Sort Icons</span>
+            <div className="flex flex-col text-left">
+              <span className="font-medium leading-none">Clean Desktop</span>
+              <span
+                className={`text-[11px] leading-none mt-px ${
+                  isLight
+                    ? "text-slate-600 group-hover:text-white/90"
+                    : "text-white/60 group-hover:text-white/90"
+                }`}
+              >
+                Align items to grid
+              </span>
+            </div>
           </div>
-          <span
-            className={`text-[10px] ${isLight ? "text-slate-400 group-hover:text-white/90" : "text-white/40 group-hover:text-white/80"}`}
-          >
-            Clean Grid
-          </span>
         </button>
 
         <div
@@ -204,20 +234,31 @@ export default function ContextMenu() {
             openSpotlight();
             closeContextMenu();
           }}
-          className={`w-full px-3 py-2 rounded-xl flex items-center justify-between transition-colors group ${
+          className={`w-full px-2 py-2 rounded-xl flex items-center justify-between transition-colors group ${
             isLight
               ? "hover:bg-blue-600 hover:text-white text-slate-800"
               : "hover:bg-blue-600 hover:text-white text-white"
           }`}
         >
-          <div className="flex items-center space-x-2.5">
+          <div className="flex items-center space-x-2">
             <Search
-              className={`w-4 h-4 group-hover:text-white ${isLight ? "text-purple-600" : "text-purple-400"}`}
+              className={`w-6 h-6 -mt-px shrink-0 group-hover:text-white ${isLight ? "text-purple-600" : "text-purple-400"}`}
             />
-            <span className="font-medium">Spotlight Search</span>
+            <div className="flex flex-col text-left">
+              <span className="font-medium leading-none">Spotlight Search</span>
+              <span
+                className={`text-[11px] leading-none mt-px ${
+                  isLight
+                    ? "text-slate-600 group-hover:text-white/90"
+                    : "text-white/60 group-hover:text-white/90"
+                }`}
+              >
+                Search apps & projects
+              </span>
+            </div>
           </div>
           <span
-            className={`text-[10px] ${isLight ? "text-slate-400 group-hover:text-white/90" : "text-white/40 group-hover:text-white/80"}`}
+            className={`text-[10px] shrink-0 ${isLight ? "text-slate-400 group-hover:text-white/90" : "text-white/40 group-hover:text-white/80"}`}
           >
             ⌘ + K
           </span>
@@ -229,17 +270,28 @@ export default function ContextMenu() {
             openApp("resume", "Resume");
             closeContextMenu();
           }}
-          className={`w-full px-3 py-2 rounded-xl flex items-center justify-between transition-colors group ${
+          className={`w-full px-2 py-2 rounded-xl flex items-center justify-between transition-colors group ${
             isLight
               ? "hover:bg-blue-600 hover:text-white text-slate-800"
               : "hover:bg-blue-600 hover:text-white text-white"
           }`}
         >
-          <div className="flex items-center space-x-2.5">
+          <div className="flex items-center space-x-2">
             <FileText
-              className={`w-4 h-4 group-hover:text-white ${isLight ? "text-emerald-600" : "text-emerald-400"}`}
+              className={`w-6.5 h-6.5 -mt-px shrink-0 group-hover:text-white ${isLight ? "text-emerald-600" : "text-emerald-400"}`}
             />
-            <span className="font-medium">Explore Resume</span>
+            <div className="flex flex-col text-left">
+              <span className="font-medium leading-none">View Resume</span>
+              <span
+                className={`text-[11px] leading-none mt-px ${
+                  isLight
+                    ? "text-slate-600 group-hover:text-white/90"
+                    : "text-white/60 group-hover:text-white/90"
+                }`}
+              >
+                Explore Alap's CV
+              </span>
+            </div>
           </div>
         </button>
 
@@ -249,17 +301,28 @@ export default function ContextMenu() {
             openApp("terminal", "Terminal");
             closeContextMenu();
           }}
-          className={`w-full px-3 py-2 rounded-xl flex items-center justify-between transition-colors group ${
+          className={`w-full px-2 py-2 rounded-xl flex items-center justify-between transition-colors group ${
             isLight
               ? "hover:bg-blue-600 hover:text-white text-slate-800"
               : "hover:bg-blue-600 hover:text-white text-white"
           }`}
         >
-          <div className="flex items-center space-x-2.5">
+          <div className="flex items-center space-x-2">
             <Terminal
-              className={`w-4 h-4 group-hover:text-white ${isLight ? "text-teal-600" : "text-teal-400"}`}
+              className={`w-6.5 h-6.5 -mt-px shrink-0 group-hover:text-white ${isLight ? "text-teal-600" : "text-teal-400"}`}
             />
-            <span className="font-medium">Launch Terminal</span>
+            <div className="flex flex-col text-left">
+              <span className="font-medium leading-none">Launch Terminal</span>
+              <span
+                className={`text-[11px] leading-none mt-px ${
+                  isLight
+                    ? "text-slate-600 group-hover:text-white/90"
+                    : "text-white/60 group-hover:text-white/90"
+                }`}
+              >
+                Open CLI simulator
+              </span>
+            </div>
           </div>
         </button>
       </div>

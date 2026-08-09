@@ -11,6 +11,12 @@
 - **Email:** hi@scalewithalap.com
 - **Website:** https://scalewithalap.com
 - **GitHub:** https://github.com/scalewithalap
+- **LinkedIn:** https://linkedin.com/in/scalewithalap
+- **X / Twitter:** https://x.com/scalewithalap
+- **Threads:** https://www.threads.com/@scalewithalap
+- **YouTube:** https://www.youtube.com/@scalewithalap
+- **Instagram:** https://www.instagram.com/scalewithalap
+- **Facebook:** https://www.facebook.com/scalewithalap
 - **Recognition:** "The Founding 500" by Hyperagent (by Airtable) - June 2026 ($20,000 credit recipient)
 
 ## Technical Architecture Competencies

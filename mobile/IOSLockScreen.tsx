@@ -154,7 +154,7 @@ export default function IOSLockScreen({ onUnlock }: IOSLockScreenProps) {
             </h4>
             <p className="text-xs text-white/85 leading-tight mt-0.5">
               Founding AI Engineer & Full-Stack AI-native Developer. For the
-              full macOS experience, view this website on a desktop.
+              full macOS experience, explore this website on a desktop.
             </p>
           </div>
         </div>

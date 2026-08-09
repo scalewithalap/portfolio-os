@@ -170,6 +170,28 @@ export default function ResumeApp() {
                   </a>
                   <span>•</span>
                   <a
+                    href="https://www.threads.com/@scalewithalap"
+                    target="_blank"
+                    rel="noreferrer"
+                    className={
+                      isLight ? "hover:text-blue-800" : "hover:text-blue-400"
+                    }
+                  >
+                    Threads
+                  </a>
+                  <span>•</span>
+                  <a
+                    href="https://www.youtube.com/@scalewithalap"
+                    target="_blank"
+                    rel="noreferrer"
+                    className={
+                      isLight ? "hover:text-blue-800" : "hover:text-blue-400"
+                    }
+                  >
+                    YouTube
+                  </a>
+                  <span>•</span>
+                  <a
                     href="https://www.instagram.com/scalewithalap"
                     target="_blank"
                     rel="noreferrer"
@@ -178,6 +200,17 @@ export default function ResumeApp() {
                     }
                   >
                     Instagram
+                  </a>
+                  <span>•</span>
+                  <a
+                    href="https://www.facebook.com/scalewithalap"
+                    target="_blank"
+                    rel="noreferrer"
+                    className={
+                      isLight ? "hover:text-blue-800" : "hover:text-blue-400"
+                    }
+                  >
+                    Facebook
                   </a>
                 </div>
               </div>

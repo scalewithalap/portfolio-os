@@ -239,7 +239,7 @@ export default function AboutApp() {
                   CEO, and shipped Vibe44 and OpenUI. Uses AI coding agents to
                   accelerate delivery while retaining ownership of architecture,
                   testing, security, and reliability. Selected for Hyperagent's
-                  "The Founding 500" in June 2026.
+                  "The Founding 500" ($20,000 in platform credits) in June 2026.
                 </p>
               </div>
             </div>
@@ -391,13 +391,24 @@ export default function AboutApp() {
                   <p className="text-xs md:text-sm font-semibold text-blue-600 mt-0.5">
                     Freelancer
                   </p>
-                  <p
-                    className={`mt-2 text-xs md:text-sm leading-relaxed ${isLight ? "text-slate-700" : "text-white/80"}`}
+                  <ul
+                    className={`mt-3 space-y-1.5 list-disc list-inside text-xs md:text-sm leading-relaxed ${isLight ? "text-slate-700" : "text-white/80"}`}
                   >
-                    Built websites, web and mobile applications, AI systems, and
-                    automations for clients, developing hands-on experience
-                    across product engineering and delivery.
-                  </p>
+                    <li>
+                      Designed, built, and deployed custom web applications, REST
+                      APIs, and automation scripts for small businesses and
+                      startup clients using Next.js, Node.js, and Python.
+                    </li>
+                    <li>
+                      Integrated LLM streaming routes, vector search stores,
+                      third-party payment gateways (Stripe, Lemonsqueezy), and
+                      CRM webhooks.
+                    </li>
+                    <li>
+                      Set up automated CI/CD workflows, unit test suites with
+                      Vitest, and error tracking with Sentry.
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>

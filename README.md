@@ -177,4 +177,10 @@ From `package.json`:
 - **Website:** [scalewithalap.com](https://scalewithalap.com)
 - **Email:** hi@scalewithalap.com
 - **GitHub:** [github.com/scalewithalap](https://github.com/scalewithalap)
+- **LinkedIn:** [linkedin.com/in/scalewithalap](https://linkedin.com/in/scalewithalap)
+- **X / Twitter:** [x.com/scalewithalap](https://x.com/scalewithalap)
+- **Threads:** [threads.com/@scalewithalap](https://www.threads.com/@scalewithalap)
+- **YouTube:** [youtube.com/@scalewithalap](https://www.youtube.com/@scalewithalap)
+- **Instagram:** [instagram.com/scalewithalap](https://www.instagram.com/scalewithalap)
+- **Facebook:** [facebook.com/scalewithalap](https://www.facebook.com/scalewithalap)
 - **Full LLM documentation:** [scalewithalap.com/llms-full.txt](https://scalewithalap.com/llms-full.txt)

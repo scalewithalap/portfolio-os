@@ -35,7 +35,7 @@ export const DESKTOP_ITEMS: DesktopItem[] = [
     id: "folder-vibe44",
     title: "Vibe44 Website",
     appId: "folder-vibe44",
-    appTitle: "Vibe44 Marketing Website",
+    appTitle: "Vibe44 - Marketing Website",
     iconImage: "/images/folder.png",
     kind: "Projects",
     dateModified: "Today, 2:45 PM",
@@ -44,7 +44,7 @@ export const DESKTOP_ITEMS: DesktopItem[] = [
     id: "folder-vibe44-demo",
     title: "Vibe44 (Product)",
     appId: "folder-vibe44-demo",
-    appTitle: "Vibe44 Next.js Starter Kit Demo",
+    appTitle: "Vibe44 - Next.js Starter Kit",
     iconImage: "/images/folder.png",
     kind: "Projects",
     dateModified: "Yesterday, 6:30 PM",
@@ -53,7 +53,7 @@ export const DESKTOP_ITEMS: DesktopItem[] = [
     id: "folder-zeroheadache",
     title: "Zero Headache Website",
     appId: "folder-zeroheadache",
-    appTitle: "Zero Headache Marketing",
+    appTitle: "Zero Headache - Marketing Website",
     iconImage: "/images/folder.png",
     kind: "Projects",
     dateModified: "Jul 26, 2026",
@@ -62,7 +62,7 @@ export const DESKTOP_ITEMS: DesktopItem[] = [
     id: "folder-zeroheadache-app",
     title: "Zero Headache App",
     appId: "folder-zeroheadache-app",
-    appTitle: "Zero Headache Platform",
+    appTitle: "Zero Headache App",
     iconImage: "/images/folder.png",
     kind: "Projects",
     dateModified: "Jul 25, 2026",
@@ -85,17 +85,59 @@ export const DESKTOP_ITEMS: DesktopItem[] = [
     kind: "Projects",
     dateModified: "Yesterday, 5:12 PM",
   },
+  {
+    id: "folder-freecom",
+    title: "Freecom AI",
+    appId: "folder-freecom",
+    appTitle: "Freecom AI",
+    iconImage: "/images/folder.png",
+    kind: "Projects",
+    dateModified: "Jul 20, 2026",
+  },
+  {
+    id: "folder-soothly",
+    title: "Soothly AI",
+    appId: "folder-soothly",
+    appTitle: "Soothly AI",
+    iconImage: "/images/folder.png",
+    kind: "Projects",
+    dateModified: "Jul 18, 2026",
+  },
 
-  // PDF Documents
+  // PDF Document
   {
     id: "folder-resume",
-    title: "Alap's Resume",
+    title: "Resume",
     appId: "resume",
-    appTitle: "Resume",
+    appTitle: "My Resume",
     iconImage: "/images/pdf.png",
     kind: "PDF Documents",
     size: "240 KB",
     dateModified: "Today, 10:15 AM",
+  },
+
+  // Developer Scripts
+  {
+    id: "script-terminal",
+    title: "Terminal",
+    appId: "terminal",
+    appTitle: "Terminal",
+    iconImage: "/images/terminal.png",
+    kind: "Developer Scripts",
+    size: "4 KB",
+    dateModified: "Today, 9:15 AM",
+  },
+
+  // Images
+  {
+    id: "img-gallery",
+    title: "Photos",
+    appId: "photos",
+    appTitle: "My Photos",
+    iconImage: "/images/photos.png",
+    kind: "Images",
+    size: "1.8 MB",
+    dateModified: "Today, 8:00 AM",
   },
 ];
 
@@ -105,8 +147,9 @@ const STACK_KINDS: Array<{
   icon: any;
 }> = [
   { kind: "Projects", label: "Projects", icon: Folder },
+  { kind: "PDF Documents", label: "Documents", icon: FileText },
+  { kind: "Developer Scripts", label: "Developer Scripts", icon: Terminal },
   { kind: "Images", label: "Images", icon: ImageIcon },
-  { kind: "PDF Documents", label: "PDF Documents", icon: FileText },
 ];
 
 export default function DesktopProjects() {

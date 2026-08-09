@@ -34,9 +34,9 @@ export const WALLPAPERS = [
     url: "https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?q=80&w=2500&auto=format&fit=crop&fm=webp",
   },
   {
-    id: "neon-mesh",
-    name: "Neon Mesh",
-    url: "https://images.unsplash.com/photo-1614850523459-c2f4c699c52e?q=80&w=2500&auto=format&fit=crop&fm=webp",
+    id: "purple-abstract",
+    name: "Purple Abstract",
+    url: "https://images.unsplash.com/photo-1672009190560-12e7bade8d09?q=80&w=2500&auto=format&fit=crop&fm=webp",
   },
   {
     id: "golden-gate",
@@ -52,6 +52,11 @@ export const WALLPAPERS = [
     id: "alpine-sunset",
     name: "Alpine Sunset",
     url: "https://images.unsplash.com/photo-1508739773434-c26b3d09e071?q=80&w=2500&auto=format&fit=crop&fm=webp",
+  },
+  {
+    id: "neon-mesh",
+    name: "Neon Mesh",
+    url: "https://images.unsplash.com/photo-1614850523459-c2f4c699c52e?q=80&w=2500&auto=format&fit=crop&fm=webp",
   },
 ];
 
@@ -194,7 +199,7 @@ export interface EcosystemState {
   toggleAirDrop: () => void;
   toggleSystemTheme: () => void;
 
-  cycleWallpaper: () => void;
+  setRandomWallpaper: () => void;
   setWallpaperIndex: (index: number) => void;
 
   openContextMenu: (x: number, y: number) => void;
@@ -548,11 +553,15 @@ export const useEcosystemStore = create<EcosystemState>()(
         state.systemTheme = state.systemTheme === "dark" ? "light" : "dark";
       }),
 
-    cycleWallpaper: () =>
+    setRandomWallpaper: () =>
       set((state) => {
-        state.currentWallpaperIndex =
-          (state.currentWallpaperIndex + 1) % WALLPAPERS.length;
-        const wp = WALLPAPERS[state.currentWallpaperIndex];
+        if (WALLPAPERS.length <= 1) return;
+        let randomIndex = Math.floor(Math.random() * WALLPAPERS.length);
+        while (randomIndex === state.currentWallpaperIndex) {
+          randomIndex = Math.floor(Math.random() * WALLPAPERS.length);
+        }
+        state.currentWallpaperIndex = randomIndex;
+        const wp = WALLPAPERS[randomIndex];
         state.wallpaper = wp.url;
         const id =
           Date.now().toString() + Math.random().toString(36).substring(2, 5);

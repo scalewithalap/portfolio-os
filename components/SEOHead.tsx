@@ -77,7 +77,7 @@ export default function SEOHead() {
     updateMeta("author", "Alap Putatunda");
     updateMeta(
       "keywords",
-      "Alap Putatunda, Founding AI Engineer, Full-Stack AI Developer, React 19, Next.js 16, TypeScript, Multi-Agent Orchestration, Model Context Protocol, LLM RAG, Zero Headache, Vibe44, OpenUI, Hyperagent Founding 500",
+      "Alap Putatunda, Founding AI Engineer, Full-stack AI-native Developer, React 19, Next.js 16, TypeScript, Multi-Agent Orchestration, Model Context Protocol, LLM RAG, Voice AI, Supabase, PostgreSQL, Zero Headache, Vibe44, OpenUI, Make Me Sound, Soothly AI, Freecom AI, Hyperagent Founding 500",
     );
 
     // Open Graph
@@ -106,14 +106,25 @@ export default function SEOHead() {
         "Model Context Protocol (MCP)",
         "Retrieval-Augmented Generation (RAG)",
         "LLM Infrastructure",
+        "Voice AI",
         "React 19",
         "Next.js 16",
         "TypeScript",
         "Python",
+        "Supabase",
+        "PostgreSQL",
+        "Inngest",
+        "Zustand",
         "Web Audio API",
       ],
       sameAs: [
         "https://github.com/scalewithalap",
+        "https://linkedin.com/in/scalewithalap",
+        "https://x.com/scalewithalap",
+        "https://www.threads.com/@scalewithalap",
+        "https://www.youtube.com/@scalewithalap",
+        "https://www.instagram.com/scalewithalap",
+        "https://www.facebook.com/scalewithalap",
         "https://hyperagent.com/s/6YBNB4VIO26vErBhadK36w",
       ],
       award:

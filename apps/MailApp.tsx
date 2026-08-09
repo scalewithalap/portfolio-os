@@ -2,10 +2,15 @@ import { useState } from "react";
 import {
   MailIcon,
   Paperclip,
-  ExternalLink,
   Inbox,
   Github,
   Trash2,
+  Linkedin,
+  Twitter,
+  AtSign,
+  Youtube,
+  Instagram,
+  Facebook,
 } from "lucide-react";
 import { useEcosystemStore } from "../store/useEcosystemStore";
 
@@ -16,8 +21,8 @@ const EMAILS = [
     subject: "Founder & AI Engineer",
     date: "May 2026 – Present",
     preview:
-      "Architecting and directing AI coding agents to deliver production software fast...",
-    body: `Founded Scale with Alap as a personal brand under which content, products, and AI-native ventures are created and shipped.\n\nBuilds and ships a portfolio of production AI products end to end (Vibe44, OpenUI, Make Me Sound, Freecom AI, Soothly AI) and designs and ships the personal portfolio at scalewithalap.com.\n\nArchitecting and directing AI coding agents (Claude Code, Cursor, Codex, GitHub Copilot) to deliver production software fast with high ownership across any stack.`,
+      "Founded Scale with Alap to publish technical content and build AI products...",
+    body: `Founded Scale with Alap to publish technical content and build AI products, including Vibe44, OpenUI, Make Me Sound, Freecom AI, and the Scale with Alap portfolio.\n\nDirects AI-assisted engineering workflows across architecture, implementation, testing, review, and CI using Claude Code, Cursor, Codex, and GitHub Copilot.`,
   },
   {
     id: "2",
@@ -25,24 +30,24 @@ const EMAILS = [
     subject: "Co-founder & CEO",
     date: "July 2026 – Present",
     preview:
-      "Architecting a 24/7 omnichannel AI lead-capture, qualification...",
-    body: `Architecting a 24/7 omnichannel AI lead-capture, qualification, and booking platform across 12 channels (phone, SMS, email, web chat, contact form, FB leads, Messenger, IG leads, IG DMs, WhatsApp, Google LSA, Telegram), built on a scalable multi-agent orchestration infrastructure that automates high-throughput client workflows — Applied to Y Combinator Fall 2026 batch.\n\nFully-managed, outcome-based service for high-ticket local service businesses: every lead answered in under 10 seconds, booked appointments and conversations metered, never per voice minute, SMS segment, or AI token.`,
+      "Leads product and engineering for a 24/7 AI lead-capture service...",
+    body: `Leads product and engineering for a 24/7 AI lead-capture, qualification, booking, and recovery service across 12 voice and messaging channels for high-ticket local service businesses.\n\nDefined the multi-tenant product direction, industry qualification playbooks, sub-10-second call-answer target, and outcome-based billing around booked appointments and conversations. Applied to Y Combinator Fall 2026.`,
   },
   {
     id: "3",
     sender: "Pharmison Valentes Pharma",
-    subject: "Co-founder, CTO & Director",
+    subject: "Co-founder & CTO",
     date: "May 2019 – Present",
     preview: "Co-founded a registered Indian pharmaceutical company...",
     body: `Co-founded a registered Indian pharmaceutical company and led all technology end to end — company website, internal tooling and systems, and digital operations.\n\nNow holds a non-executive Director & Shareholder position with no active operational role.`,
   },
   {
     id: "4",
-    sender: "Independent Web & App Developer",
-    subject: "Freelancer",
+    sender: "Freelance Clients",
+    subject: "Full-Stack AI & Software Engineer",
     date: "2019 – 2026",
-    preview: "Built websites, web and app projects, AI systems...",
-    body: `Built websites, web and app projects, AI systems, and automations for clients, establishing hands-on full-stack engineering foundations.`,
+    preview: "Designed, built, and deployed custom web applications...",
+    body: `Designed, built, and deployed custom web applications, REST APIs, and automation scripts for small businesses and startup clients using Next.js, Node.js, and Python.\n\nIntegrated LLM streaming routes, vector search stores, third-party payment gateways (Stripe, Lemonsqueezy), and CRM webhooks.\n\nSet up automated CI/CD workflows, automated unit test suites with Vitest, and error tracking with Sentry.`,
   },
 ];
 
@@ -85,9 +90,9 @@ export default function MailApp() {
             isLight ? "text-slate-400" : "text-white/50"
           }`}
         >
-          Contact
+          Contact & Social
         </div>
-        <div className="px-2 space-y-0.5">
+        <div className="px-2 space-y-0.5 overflow-y-auto max-h-[calc(100vh-220px)] scrollbar-none">
           <a
             href="mailto:hi@scalewithalap.com"
             className={`flex items-center space-x-2 px-2 py-1.5 rounded text-[13px] font-medium transition-colors ${
@@ -98,19 +103,6 @@ export default function MailApp() {
           >
             <MailIcon className="w-4 h-4 text-blue-500" />
             <span className="truncate">Email Address</span>
-          </a>
-          <a
-            href="https://linkedin.com/in/scalewithalap"
-            target="_blank"
-            rel="noreferrer"
-            className={`flex items-center space-x-2 px-2 py-1.5 rounded text-[13px] font-medium transition-colors ${
-              isLight
-                ? "text-slate-700 hover:bg-slate-200/70"
-                : "text-white/80 hover:bg-white/10"
-            }`}
-          >
-            <ExternalLink className="w-4 h-4 text-blue-500" />
-            <span>LinkedIn</span>
           </a>
           <a
             href="https://github.com/scalewithalap"
@@ -124,6 +116,84 @@ export default function MailApp() {
           >
             <Github className="w-4 h-4 text-blue-500" />
             <span>GitHub</span>
+          </a>
+          <a
+            href="https://linkedin.com/in/scalewithalap"
+            target="_blank"
+            rel="noreferrer"
+            className={`flex items-center space-x-2 px-2 py-1.5 rounded text-[13px] font-medium transition-colors ${
+              isLight
+                ? "text-slate-700 hover:bg-slate-200/70"
+                : "text-white/80 hover:bg-white/10"
+            }`}
+          >
+            <Linkedin className="w-4 h-4 text-blue-500" />
+            <span>LinkedIn</span>
+          </a>
+          <a
+            href="https://x.com/scalewithalap"
+            target="_blank"
+            rel="noreferrer"
+            className={`flex items-center space-x-2 px-2 py-1.5 rounded text-[13px] font-medium transition-colors ${
+              isLight
+                ? "text-slate-700 hover:bg-slate-200/70"
+                : "text-white/80 hover:bg-white/10"
+            }`}
+          >
+            <Twitter className="w-4 h-4 text-blue-500" />
+            <span>X / Twitter</span>
+          </a>
+          <a
+            href="https://www.threads.com/@scalewithalap"
+            target="_blank"
+            rel="noreferrer"
+            className={`flex items-center space-x-2 px-2 py-1.5 rounded text-[13px] font-medium transition-colors ${
+              isLight
+                ? "text-slate-700 hover:bg-slate-200/70"
+                : "text-white/80 hover:bg-white/10"
+            }`}
+          >
+            <AtSign className="w-4 h-4 text-blue-500" />
+            <span>Threads</span>
+          </a>
+          <a
+            href="https://www.youtube.com/@scalewithalap"
+            target="_blank"
+            rel="noreferrer"
+            className={`flex items-center space-x-2 px-2 py-1.5 rounded text-[13px] font-medium transition-colors ${
+              isLight
+                ? "text-slate-700 hover:bg-slate-200/70"
+                : "text-white/80 hover:bg-white/10"
+            }`}
+          >
+            <Youtube className="w-4 h-4 text-blue-500" />
+            <span>YouTube</span>
+          </a>
+          <a
+            href="https://www.instagram.com/scalewithalap"
+            target="_blank"
+            rel="noreferrer"
+            className={`flex items-center space-x-2 px-2 py-1.5 rounded text-[13px] font-medium transition-colors ${
+              isLight
+                ? "text-slate-700 hover:bg-slate-200/70"
+                : "text-white/80 hover:bg-white/10"
+            }`}
+          >
+            <Instagram className="w-4 h-4 text-blue-500" />
+            <span>Instagram</span>
+          </a>
+          <a
+            href="https://www.facebook.com/scalewithalap"
+            target="_blank"
+            rel="noreferrer"
+            className={`flex items-center space-x-2 px-2 py-1.5 rounded text-[13px] font-medium transition-colors ${
+              isLight
+                ? "text-slate-700 hover:bg-slate-200/70"
+                : "text-white/80 hover:bg-white/10"
+            }`}
+          >
+            <Facebook className="w-4 h-4 text-blue-500" />
+            <span>Facebook</span>
           </a>
         </div>
       </div>

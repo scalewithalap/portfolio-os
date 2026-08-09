@@ -7,10 +7,14 @@ import {
   Linkedin,
   ExternalLink,
   Copy,
-  Globe,
   Zap,
   ArrowUpRight,
   CircleCheckBig,
+  MapPin,
+  Facebook,
+  Instagram,
+  Youtube,
+  AtSign,
 } from "lucide-react";
 import { useEcosystemStore } from "../store/useEcosystemStore";
 import { PROJECTS_DATA } from "../data/projectsData";
@@ -79,9 +83,7 @@ export default function NotificationCenter() {
     }, 0);
 
     return () => {
-      clearTimeout(timer);
       document.removeEventListener("mousedown", handleClickOutside);
-      document.removeEventListener("touchstart", handleClickOutside);
     };
   }, [isNotificationCenterOpen, closeNotificationCenter]);
 
@@ -105,16 +107,40 @@ export default function NotificationCenter() {
       icon: Github,
     },
     {
+      name: "LinkedIn",
+      handle: "Alap Putatunda",
+      url: "https://linkedin.com/in/scalewithalap",
+      icon: Linkedin,
+    },
+    {
       name: "X / Twitter",
       handle: "@scalewithalap",
       url: "https://x.com/scalewithalap",
       icon: Twitter,
     },
     {
-      name: "LinkedIn",
-      handle: "Alap Putatunda",
-      url: "https://linkedin.com/in/scalewithalap",
-      icon: Linkedin,
+      name: "Threads",
+      handle: "@scalewithalap",
+      url: "https://www.threads.com/@scalewithalap",
+      icon: AtSign,
+    },
+    {
+      name: "YouTube",
+      handle: "@scalewithalap",
+      url: "https://www.youtube.com/@scalewithalap",
+      icon: Youtube,
+    },
+    {
+      name: "Instagram",
+      handle: "@scalewithalap",
+      url: "https://www.instagram.com/scalewithalap",
+      icon: Instagram,
+    },
+    {
+      name: "Facebook",
+      handle: "@scalewithalap",
+      url: "https://www.facebook.com/scalewithalap",
+      icon: Facebook,
     },
   ];
 
@@ -183,24 +209,24 @@ export default function NotificationCenter() {
                     : "bg-linear-to-br from-blue-950/50 via-slate-900/60 to-zinc-950/90 border-blue-500/20 text-white"
                 }`}
               >
-                <div className="flex items-center space-x-1.5 text-blue-500">
-                  <Globe className="w-3.5 h-3.5" />
+                <div className="flex items-center gap-1.5 text-blue-500">
+                  <MapPin className="w-3 h-3" />
                   <span
-                    className={`text-[10px] font-bold uppercase tracking-wider ${isLight ? "text-blue-700" : "text-blue-300"}`}
+                    className={`text-xs leading-0 font-semibold uppercase tracking-wider ${isLight ? "text-blue-700" : "text-blue-300"}`}
                   >
                     Location
                   </span>
                 </div>
-                <div className="mt-2">
+                <div className="mt-2.5">
                   <span
-                    className={`text-xs font-bold tracking-tight block ${isLight ? "text-slate-900" : "text-white"}`}
+                    className={`text-xs md:text-sm font-bold tracking-tight block ${isLight ? "text-slate-900" : "text-white"}`}
                   >
                     Kolkata, India
                   </span>
                   <span
-                    className={`text-[10px] block mt-0.5 ${isLight ? "text-slate-500" : "text-white/60"}`}
+                    className={`text-[11px] leading-3 block mt-0.5 ${isLight ? "text-slate-500" : "text-white/60"}`}
                   >
-                    Remote / Need Sponsorship
+                    Open for Visa Sponsored or Remote Job.
                   </span>
                 </div>
               </div>
@@ -213,22 +239,24 @@ export default function NotificationCenter() {
                     : "bg-linear-to-br from-emerald-950/50 via-slate-900/60 to-zinc-950/90 border-emerald-500/20 text-white"
                 }`}
               >
-                <div className="flex items-center space-x-1.5 text-emerald-500">
-                  <Zap className="w-3.5 h-3.5" />
+                <div className="flex items-center gap-1.5 text-emerald-500">
+                  <Zap className="w-3 h-3" />
                   <span
-                    className={`text-[10px] font-bold uppercase tracking-wider ${isLight ? "text-emerald-700" : "text-emerald-300"}`}
+                    className={`text-xs leading-0 font-semibold uppercase tracking-wider ${isLight ? "text-emerald-700" : "text-emerald-300"}`}
                   >
                     Status
                   </span>
                 </div>
-                <div className="mt-2">
-                  <span className="text-xs font-bold text-emerald-600 dark:text-emerald-400 block">
+                <div className="mt-2.5">
+                  <span
+                    className={`text-xs md:text-sm font-bold tracking-tight block text-emerald-600 dark:text-emerald-400`}
+                  >
                     Available for Hire
                   </span>
                   <span
-                    className={`text-[10px] block mt-0.5 ${isLight ? "text-slate-500" : "text-white/60"}`}
+                    className={`text-[11px] leading-3 block mt-0.5 ${isLight ? "text-slate-500" : "text-white/60"}`}
                   >
-                    Founding AI Engineer
+                    Founding AI Engineer & Full-stack AI Developer.
                   </span>
                 </div>
               </div>
@@ -253,14 +281,14 @@ export default function NotificationCenter() {
                   >
                     <Mail className="w-4 h-4" />
                   </div>
-                  <div className="min-w-0">
+                  <div className="min-w-0 flex flex-col justify-center md:mt-0.75">
                     <span
-                      className={`text-[10px] font-bold uppercase tracking-wider block ${isLight ? "text-slate-500" : "text-white/50"}`}
+                      className={`text-[10px] font-semibold leading-none uppercase tracking-wider block ${isLight ? "text-slate-500" : "text-white/50"}`}
                     >
-                      Direct Email Me
+                      Email Me Directly
                     </span>
                     <span
-                      className={`text-xs font-bold block truncate select-all ${isLight ? "text-slate-900" : "text-white"}`}
+                      className={`text-xs md:text-sm font-bold block truncate select-all ${isLight ? "text-slate-900" : "text-white"}`}
                     >
                       {email}
                     </span>
@@ -352,12 +380,12 @@ export default function NotificationCenter() {
                 <span
                   className={`text-[10px] font-bold uppercase tracking-wider ${isLight ? "text-slate-500" : "text-white/40"}`}
                 >
-                  Live Products & Codebases
+                  Live Projects & Codebases
                 </span>
                 <span
                   className={`text-[10px] font-semibold font-mono ${isLight ? "text-blue-600" : "text-blue-400"}`}
                 >
-                  {PROJECTS_DATA.length} Apps
+                  {PROJECTS_DATA.length} Projects
                 </span>
               </div>
 

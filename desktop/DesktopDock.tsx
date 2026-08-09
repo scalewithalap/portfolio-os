@@ -249,6 +249,9 @@ export default function DesktopDock() {
                 ref={(el) => {
                   wrapperRefs.current[i] = el;
                 }}
+                style={{
+                  zIndex: isHovered ? 60 : isFocused ? 50 : isRecent ? 40 : 10,
+                }}
                 className="relative flex flex-col items-center w-12 h-12 justify-end group/icon"
               >
                 {/* Tooltip Speech Bubble Pill */}
@@ -393,7 +396,7 @@ export default function DesktopDock() {
                   {/* MRU Badge Badge */}
                   {isRecent && app.id !== "trash" && (
                     <div
-                      className={`absolute -top-1.5 -right-1.5 px-2 py-0.5 rounded-full text-[10px] font-black tracking-wider text-white shadow-xl border border-white/30 backdrop-blur-md animate-pulse ${
+                      className={`leading-none absolute -top-1.5 -right-1.5 px-1.75 py-1 rounded-full text-[11px] font-black tracking-wider text-white shadow-xl border border-white/30 backdrop-blur-md ${
                         isFocused
                           ? "bg-blue-600 shadow-[0_0_10px_rgba(37,99,235,0.8)]"
                           : recentRank === 1
