@@ -156,33 +156,34 @@ export default function SingleProjectApp({ projectId }: SingleProjectAppProps) {
     >
       {/* Window Secondary Header */}
       <div
-        className={`h-12 backdrop-blur-xl border-b px-4 flex items-center justify-between shrink-0 transition-colors relative z-30 ${
+        className={`h-12 backdrop-blur-xl border-b px-2 md:px-4 flex items-center justify-between shrink-0 transition-colors relative z-30 min-w-0 flex-nowrap ${
           isLight
             ? "bg-slate-200/90 border-slate-300 text-slate-800"
             : "bg-[#282830]/90 border-white/10 text-white"
         }`}
       >
-        <div className="flex items-center space-x-3">
+        <div className="flex items-center space-x-2 sm:space-x-3 min-w-0 flex-1 mr-2">
           {project.iconImage ? (
             <img
               src={project.iconImage}
               alt={project.title}
-              className="w-7 h-7 object-contain rounded-full shadow-sm shrink-0"
+              className="w-6 h-6 sm:w-7 sm:h-7 object-contain rounded-full shadow-xs shrink-0"
             />
           ) : (
-            <div className="w-7 h-7 rounded-lg bg-linear-to-tr from-blue-500 to-indigo-600 flex items-center justify-center text-white shadow-md font-bold text-xs shrink-0">
+            <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-lg bg-linear-to-tr from-blue-500 to-indigo-600 flex items-center justify-center text-white shadow-xs font-bold text-xs shrink-0">
               {project.title.substring(0, 1)}
             </div>
           )}
-          <div className="flex items-center">
+          <div className="flex items-center min-w-0 truncate">
             <span
-              className={`text-sm md:text-lg leading-none font-semibold ${isLight ? "text-slate-900" : "text-white"}`}
+              className={`text-xs sm:text-sm md:text-base font-semibold truncate leading-tight ${isLight ? "text-slate-900" : "text-white"}`}
+              title={project.title}
             >
               {project.title}
             </span>
             <button
               onClick={handleCopyProjectUrl}
-              className={`text-xs ml-2 hidden sm:inline-flex items-center space-x-1 px-2 py-1.5 leading-none rounded-md transition-colors cursor-pointer ${
+              className={`text-xs ml-2 hidden lg:inline-flex items-center space-x-1 px-2 py-1.5 leading-none rounded-md transition-colors cursor-pointer shrink-0 ${
                 isLight
                   ? "bg-slate-300 hover:bg-slate-350 text-slate-900 font-mono"
                   : "bg-white/10 hover:bg-white/20 text-white/90 font-mono"
@@ -196,14 +197,14 @@ export default function SingleProjectApp({ projectId }: SingleProjectAppProps) {
         </div>
 
         {/* Action Controls */}
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center space-x-1 sm:space-x-2 shrink-0">
           {/* Share Button & Popover */}
           <div ref={shareContainerRef} className="relative">
             <button
               onClick={() => setIsShareOpen(!isShareOpen)}
-              className={`px-2.5 py-1.5 text-xs font-medium rounded-lg flex items-center space-x-1.5 transition-colors cursor-pointer ${
+              className={`p-1.5 md:px-2.5 md:py-1.5 text-xs font-medium rounded-lg flex items-center md:space-x-1.5 transition-colors cursor-pointer ${
                 isShareOpen
-                  ? "bg-blue-600 text-white shadow-sm"
+                  ? "bg-blue-600 text-white shadow-xs"
                   : isLight
                     ? "bg-slate-300/80 hover:bg-slate-300 text-slate-800"
                     : "bg-white/10 hover:bg-white/20 text-white/90"
@@ -211,7 +212,7 @@ export default function SingleProjectApp({ projectId }: SingleProjectAppProps) {
               title="Share project"
             >
               <Share2 className="w-3.5 h-3.5" />
-              <span className="hidden sm:inline">Share</span>
+              <span className="hidden md:inline">Share</span>
             </button>
 
             {/* Share Popover Menu */}
@@ -367,14 +368,15 @@ export default function SingleProjectApp({ projectId }: SingleProjectAppProps) {
               href={project.githubUrl}
               target="_blank"
               rel="noreferrer"
-              className={`px-2.5 py-1.5 text-xs font-medium rounded-lg flex items-center space-x-1.5 transition-colors ${
+              className={`p-1.5 sm:px-2.5 sm:py-1.5 text-xs font-medium rounded-lg hidden md:flex items-center space-x-1.5 transition-colors ${
                 isLight
                   ? "bg-slate-300/80 hover:bg-slate-300 text-slate-800"
                   : "bg-white/10 hover:bg-white/20 text-white/90"
               }`}
+              title="GitHub Repository"
             >
               <Github className="w-3.5 h-3.5" />
-              <span className="hidden sm:inline">GitHub</span>
+              <span className="hidden md:inline">GitHub</span>
             </a>
           )}
 
@@ -383,32 +385,33 @@ export default function SingleProjectApp({ projectId }: SingleProjectAppProps) {
               href={project.demoUrl}
               target="_blank"
               rel="noreferrer"
-              className="px-3 py-1.5 bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold rounded-lg flex items-center space-x-1.5 shadow-md shadow-blue-600/30 transition-all active:scale-95"
+              className="px-2.5 py-1.5 bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold rounded-lg hidden md:flex items-center space-x-1 shadow-md shadow-blue-600/30 transition-all active:scale-95 whitespace-nowrap"
+              title="Visit Live Site"
             >
-              <Globe className="w-3.5 h-3.5" />
-              <span>Live Site</span>
-              <ExternalLink className="w-3 h-3 ml-0.5 opacity-70" />
+              <Globe className="w-3.5 h-3.5 shrink-0" />
+              <span className="hidden sm:inline">Live Site</span>
+              <ExternalLink className="w-3 h-3 ml-0.5 opacity-70 shrink-0" />
             </a>
           )}
 
           <button
             onClick={() => openApp("safari", "Safari")}
-            className={`px-2.5 py-1.5 text-xs font-medium rounded-lg flex items-center space-x-1 transition-colors ${
+            className={`p-1.5 sm:px-2.5 sm:py-1.5 text-xs font-medium rounded-lg flex items-center space-x-1 transition-colors ${
               isLight
                 ? "bg-slate-300/80 hover:bg-slate-300 text-slate-800"
                 : "bg-white/10 hover:bg-white/20 text-white/80"
             }`}
             title="Browse all projects in Safari"
           >
-            <span>All Projects</span>
-            <ArrowRight className="w-3 h-3" />
+            <span className="leading-none">All Projects</span>
+            <ArrowRight className="w-3.5 h-3.5" />
           </button>
         </div>
       </div>
 
       {/* Main Container - Tabless Continuous Layout */}
       <div
-        className={`flex-1 overflow-y-auto p-4 md:p-6 pb-22 md:pb-28 space-y-8 transition-colors ${
+        className={`flex-1 overflow-y-auto pt-3 pb-5 px-2 md:p-4 md:pb-24 space-y-8 transition-colors ${
           isLight ? "bg-slate-50" : "bg-[#121215]"
         }`}
       >
@@ -499,26 +502,28 @@ export default function SingleProjectApp({ projectId }: SingleProjectAppProps) {
         </div>
 
         {/* Metrics Ribbon Bar */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
           {project.metrics.map((m, idx) => (
             <div
               key={idx}
-              className={`border rounded-2xl p-4 flex flex-col justify-between shadow-xs transition-colors ${
+              className={`border rounded-2xl p-3.5 sm:p-4 flex flex-col justify-between shadow-xs transition-colors min-w-0 ${
                 isLight
                   ? "bg-white border-slate-200/90"
                   : "bg-[#1a1a20] border-white/10"
               }`}
             >
               <span
-                className={`text-[11px] font-bold uppercase tracking-wider ${
+                className={`text-[10px] sm:text-[11px] font-bold uppercase tracking-wider truncate ${
                   isLight ? "text-slate-500" : "text-white/50"
                 }`}
+                title={m.label}
               >
                 {m.label}
               </span>
               <span
-                className="text-2xl font-black mt-2 font-mono tabular-nums tracking-tight"
+                className="text-base sm:text-2xl font-black mt-1.5 sm:mt-2 font-mono tabular-nums tracking-tight truncate leading-tight"
                 style={{ color: project.accentColor }}
+                title={m.value}
               >
                 {m.value}
               </span>

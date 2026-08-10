@@ -19,7 +19,7 @@ import NotificationCenter from "../components/overlays/NotificationCenter";
 import { APPS_CONFIG } from "../config/apps.config";
 
 export default function MobileEnvironment() {
-  const { openApps, focusedAppId, closeApp, wallpaper } = useEcosystemStore();
+  const { openApps, focusedAppId, wallpaper } = useEcosystemStore();
   const [isLocked, setIsLocked] = useState(true);
   const focusedApp = openApps.find((a) => a.id === focusedAppId && a.isOpen);
   const appConfig = APPS_CONFIG.find((c) => c.id === focusedApp?.id);
@@ -28,45 +28,6 @@ export default function MobileEnvironment() {
     WALLPAPERS.find((w) => w.id === "purple-abstract")?.url || wallpaper;
 
   const appContainerRef = useRef<HTMLDivElement>(null);
-  const touchStartY = useRef(0);
-
-  // Handle Swipe up to close
-  useEffect(() => {
-    if (!focusedApp || !appContainerRef.current) return;
-
-    const el = appContainerRef.current;
-
-    const handleTouchStart = (e: TouchEvent) => {
-      touchStartY.current = e.touches[0].clientY;
-    };
-
-    const handleTouchMove = (e: TouchEvent) => {
-      const currentY = e.touches[0].clientY;
-      const dy = currentY - touchStartY.current;
-
-      // If swiping up from bottom area (home bar indicator area)
-      if (touchStartY.current > window.innerHeight * 0.85 && dy < -50) {
-        gsap.to(el, {
-          scale: 0.85,
-          opacity: 0,
-          y: -80,
-          duration: 0.25,
-          ease: "power2.in",
-          onComplete: () => {
-            closeApp(focusedApp.id);
-          },
-        });
-      }
-    };
-
-    window.addEventListener("touchstart", handleTouchStart);
-    window.addEventListener("touchmove", handleTouchMove);
-
-    return () => {
-      window.removeEventListener("touchstart", handleTouchStart);
-      window.removeEventListener("touchmove", handleTouchMove);
-    };
-  }, [focusedApp, closeApp]);
 
   // Entrance animation for opening an app
   useEffect(() => {
@@ -110,7 +71,7 @@ export default function MobileEnvironment() {
       {focusedApp && appConfig && (
         <div
           ref={appContainerRef}
-          className="absolute inset-0 top-8 z-40 bg-zinc-950 overflow-hidden flex flex-col"
+          className="absolute inset-0 top-8 z-50 bg-zinc-950 overflow-hidden flex flex-col"
         >
           <div className="flex-1 overflow-y-auto relative bg-zinc-950">
             {APPS_CONFIG.map((config) => {
@@ -131,15 +92,6 @@ export default function MobileEnvironment() {
               }
               return null;
             })}
-          </div>
-
-          {/* Home Bar Indicator & Close Button */}
-          <div
-            onClick={() => closeApp(focusedApp.id)}
-            className="h-6 w-full flex items-center justify-center shrink-0 bg-zinc-950 border-t border-white/5 cursor-pointer active:bg-white/5 transition-colors"
-            title="Tap to Close App"
-          >
-            <div className="w-1/3 h-1 bg-white/50 rounded-full" />
           </div>
         </div>
       )}

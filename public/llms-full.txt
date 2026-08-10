@@ -86,7 +86,7 @@ Founded Scale with Alap, co-founded and leads Zero Headache as CEO, and shipped 
 
 ## Work Experience & History
 
-1. **Scale with Alap (Personal Brand)** - *Founder & AI Engineer* (May 2026 - Present)
+1. **Scale with Alap (Personal Brand)** - *Founder & Full-stack AI-native Developer* (May 2026 - Present)
    - Founded Scale with Alap to publish technical content and build AI products (Vibe44, OpenUI, Make Me Sound, Freecom AI).
    - Directs AI-assisted engineering workflows across architecture, implementation, testing, and CI using Claude Code, Cursor, Codex, and Copilot.
 

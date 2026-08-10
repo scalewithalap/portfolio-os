@@ -9,6 +9,7 @@
  */
 
 import React, { useRef, useEffect, useState, useMemo } from "react";
+import { ChevronUp } from "lucide-react";
 import { APPS_CONFIG, AppConfig } from "../../config/apps.config";
 import { useEcosystemStore } from "../../store/useEcosystemStore";
 import { DESKTOP_ITEMS } from "./DesktopFolders";
@@ -25,6 +26,7 @@ export default function DesktopDock() {
     toggleAppFromDock,
     openApps,
     focusedAppId,
+    recentAppIds,
     systemTheme,
     moveToTrash,
     isDockAutoHideEnabled,
@@ -47,7 +49,7 @@ export default function DesktopDock() {
     hideTimerRef.current = setTimeout(() => {
       setIsNearBottom(false);
       hideTimerRef.current = null;
-    }, 1000);
+    }, 1500);
   };
 
   useEffect(() => {
@@ -251,6 +253,8 @@ export default function DesktopDock() {
           const Icon = app.icon;
           const isHovered = hoveredIndex === i;
           const isFocused = focusedAppId === app.id && isOpen;
+          const recentRank = recentAppIds.indexOf(app.id);
+          const isRecent = recentRank !== -1 && recentRank < 3;
 
           return (
             <div
@@ -259,7 +263,7 @@ export default function DesktopDock() {
                 wrapperRefs.current[i] = el;
               }}
               style={{
-                zIndex: isHovered ? 60 : isFocused ? 50 : 10,
+                zIndex: isHovered ? 60 : isFocused ? 50 : isRecent ? 40 : 10,
               }}
               className="relative flex flex-col items-center w-12 h-12 justify-end group/icon"
             >
@@ -273,6 +277,21 @@ export default function DesktopDock() {
               >
                 <div className="bg-white/95 backdrop-blur-xl text-zinc-900 text-[12px] font-bold px-3 py-1 rounded-lg whitespace-nowrap shadow-xl border border-black/10 tracking-tight flex flex-col items-center font-sans">
                   <span>{app.title}</span>
+                  {isFocused && (
+                    <span className="text-[10px] text-blue-600 font-bold tracking-wider uppercase -mt-0.5">
+                      Active App
+                    </span>
+                  )}
+                  {!isFocused && recentRank === 1 && isOpen && (
+                    <span className="text-[10px] text-indigo-600 font-bold tracking-wider uppercase -mt-0.5">
+                      2nd Recent
+                    </span>
+                  )}
+                  {!isFocused && recentRank === 2 && isOpen && (
+                    <span className="text-[10px] text-cyan-600 font-bold tracking-wider uppercase -mt-0.5">
+                      3rd Recent
+                    </span>
+                  )}
                   <div className="w-2 h-2 bg-white/95 border-r border-b border-black/10 rotate-45 -mb-2 mt-0.5" />
                 </div>
               </div>
@@ -360,8 +379,12 @@ export default function DesktopDock() {
                 }}
                 className={`w-19.5 h-19.5 rounded-[22px] flex items-center justify-center text-white relative cursor-pointer transition-shadow duration-150 ${
                   isFocused
-                    ? "ring-4 ring-blue-400 shadow-[0_0_25px_rgba(59,130,246,0.85)] scale-105"
-                    : ""
+                    ? "ring-4 ring-blue-500 shadow-[0_0_25px_rgba(59,130,246,0.85)] scale-105"
+                    : recentRank === 1 && isOpen
+                      ? "ring-3 ring-indigo-400/90 shadow-[0_0_18px_rgba(129,140,248,0.7)]"
+                      : recentRank === 2 && isOpen
+                        ? "ring-2 ring-cyan-400/70 shadow-[0_0_12px_rgba(34,211,238,0.5)]"
+                        : ""
                 } ${
                   app.iconImage
                     ? "bg-transparent border-0"
@@ -377,7 +400,12 @@ export default function DesktopDock() {
                       backfaceVisibility: "hidden",
                       WebkitBackfaceVisibility: "hidden",
                     }}
-                    className="w-19.5 h-19.5 object-contain drop-shadow-[0_8px_18px_rgba(0,0,0,0.5)] pointer-events-none"
+                    className={`object-contain drop-shadow-[0_8px_18px_rgba(0,0,0,0.5)] pointer-events-none ${
+                      app.iconImage.includes("folder.png") ||
+                      app.id.startsWith("folder-")
+                        ? "w-16.5 h-16.5 p-0.5"
+                        : "w-19.5 h-19.5"
+                    }`}
                   />
                 ) : (
                   <Icon
@@ -385,6 +413,21 @@ export default function DesktopDock() {
                     strokeWidth={1.5}
                     className="drop-shadow-md pointer-events-none"
                   />
+                )}
+
+                {/* MRU Rank Badge */}
+                {isRecent && app.id !== "trash" && (
+                  <div
+                    className={`leading-none absolute -top-1.5 -right-1.5 px-1.75 py-1 rounded-full text-[11px] font-black tracking-wider text-white shadow-xl border border-white/30 backdrop-blur-md ${
+                      isFocused
+                        ? "bg-blue-600 shadow-[0_0_10px_rgba(37,99,235,0.8)]"
+                        : recentRank === 1
+                          ? "bg-indigo-600 shadow-[0_0_8px_rgba(79,70,229,0.7)]"
+                          : "bg-cyan-600 shadow-[0_0_8px_rgba(8,145,178,0.7)]"
+                    }`}
+                  >
+                    {isFocused ? "1" : recentRank + 1}
+                  </div>
                 )}
               </button>
 
@@ -400,6 +443,29 @@ export default function DesktopDock() {
           );
         })}
       </div>
+
+      {/* Floating "Show Dock" Trigger Button when Dock is Hidden */}
+      {isDockHidden && (
+        <button
+          onClick={() => {
+            resetHideTimer();
+            setIsNearBottom(true);
+          }}
+          onMouseEnter={() => {
+            resetHideTimer();
+            setIsNearBottom(true);
+          }}
+          className={`fixed bottom-2 left-1/2 -translate-x-1/2 z-50 pointer-events-auto px-3.5 py-1.5 rounded-full text-xs font-semibold flex items-center space-x-1.5 backdrop-blur-2xl border shadow-2xl transition-all duration-200 cursor-pointer ${
+            isLight
+              ? "bg-white/90 border-slate-300 text-slate-900 shadow-slate-400/20 hover:bg-white"
+              : "bg-black/80 border-white/20 text-white shadow-black/60 hover:bg-black/95"
+          }`}
+          title="Click or hover to reveal bottom dock"
+        >
+          <ChevronUp className="w-3.75 h-3.75" />
+          <span className="tracking-tight leading-none">Show Dock</span>
+        </button>
+      )}
     </div>
   );
 }

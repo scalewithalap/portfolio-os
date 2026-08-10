@@ -7,8 +7,8 @@
  * - Combines tablet top menu bar (`DesktopMenu`), hero title banner (`StaticHeroText`), folder grid, floating bottom dock, and full-bleed active window containers.
  */
 
-import { Suspense } from "react";
-import { X, Minus, Maximize2 } from "lucide-react";
+import { Suspense, useState } from "react";
+import { X, Minus, Maximize2, ChevronUp } from "lucide-react";
 import { useEcosystemStore } from "../store/useEcosystemStore";
 import { APPS_CONFIG } from "../config/apps.config";
 import { DESKTOP_ITEMS } from "../desktop/components/DesktopFolders";
@@ -27,9 +27,14 @@ export default function TabletEnvironment() {
     maximizeApp,
     focusApp,
     wallpaper,
+    systemTheme,
   } = useEcosystemStore();
 
+  const [isTabletDockRevealed, setIsTabletDockRevealed] = useState(false);
   const activeApps = openApps.filter((a) => a.isOpen && !a.isMinimized);
+
+  const isTabletDockHidden = activeApps.length > 0 && !isTabletDockRevealed;
+  const isLight = systemTheme === "light";
 
   // Dock apps excluding project folders on tablet
   const dockApps = APPS_CONFIG.filter((app) => !app.id.startsWith("folder-"));
@@ -130,13 +135,13 @@ export default function TabletEnvironment() {
               {/* iPadOS Stage Manager Header with 3 Dots Multitasking Bar */}
               <div className="h-10 px-4 shrink-0 bg-zinc-900/90 backdrop-blur-2xl border-b border-white/10 flex items-center justify-between select-none">
                 {/* 3 Multitasking Dots */}
-                <div className="flex items-center space-x-2">
-                  <div className="flex items-center space-x-1.5 px-2 py-1 rounded-full bg-white/10 border border-white/10">
+                <div className="flex items-center space-x-2 min-w-0 flex-1 mr-2">
+                  <div className="flex items-center space-x-1.5 px-2 py-1 rounded-full bg-white/10 border border-white/10 shrink-0">
                     <div className="w-2.5 h-2.5 rounded-full bg-white/60" />
                     <div className="w-2.5 h-2.5 rounded-full bg-white/60" />
                     <div className="w-2.5 h-2.5 rounded-full bg-white/60" />
                   </div>
-                  <span className="text-xs font-semibold text-white/90">
+                  <span className="text-xs font-semibold text-white/90 truncate">
                     {app.title}
                   </span>
                 </div>
@@ -185,7 +190,14 @@ export default function TabletEnvironment() {
       </div>
 
       {/* iPad Floating Bottom Dock */}
-      <div className="fixed bottom-3 left-1/2 -translate-x-1/2 z-50 flex items-center space-x-3 px-4 py-2 rounded-3xl bg-black/40 backdrop-blur-3xl border border-white/20 shadow-2xl">
+      <div
+        onMouseLeave={() => setIsTabletDockRevealed(false)}
+        className={`fixed bottom-3 left-1/2 -translate-x-1/2 z-50 flex items-center space-x-3 px-4 py-2 rounded-3xl bg-black/40 backdrop-blur-3xl border border-white/20 shadow-2xl transition-all duration-300 ${
+          isTabletDockHidden
+            ? "translate-y-28 opacity-0 pointer-events-none"
+            : "translate-y-0 opacity-100 pointer-events-auto"
+        }`}
+      >
         {dockApps.map((app) => {
           const Icon = app.icon;
           const isOpen = openApps.some(
@@ -195,7 +207,10 @@ export default function TabletEnvironment() {
           return (
             <div key={app.id} className="relative flex flex-col items-center">
               <button
-                onClick={() => openApp(app.id, app.title)}
+                onClick={() => {
+                  openApp(app.id, app.title);
+                  setIsTabletDockRevealed(false);
+                }}
                 className="w-12 h-12 rounded-2xl flex items-center justify-center text-white active:scale-90 hover:scale-110 transition-all duration-200 cursor-pointer shadow-lg"
                 style={{ borderRadius: "22.5%" }}
                 title={app.title}
@@ -217,6 +232,23 @@ export default function TabletEnvironment() {
           );
         })}
       </div>
+
+      {/* Floating "Show Dock" Pill Button when Tablet Dock is Hidden */}
+      {isTabletDockHidden && (
+        <button
+          onClick={() => setIsTabletDockRevealed(true)}
+          onMouseEnter={() => setIsTabletDockRevealed(true)}
+          className={`fixed bottom-2 left-1/2 -translate-x-1/2 z-50 pointer-events-auto px-3.5 py-1.5 rounded-full text-xs font-semibold flex items-center space-x-1.5 backdrop-blur-2xl border shadow-2xl transition-all duration-200 hover:scale-105 active:scale-95 cursor-pointer ${
+            isLight
+              ? "bg-white/90 border-slate-300 text-slate-900 shadow-slate-400/20 hover:bg-white"
+              : "bg-black/80 border-white/20 text-white shadow-black/60 hover:bg-black/95"
+          }`}
+          title="Click or hover to reveal bottom dock"
+        >
+          <ChevronUp className="w-3.5 h-3.5 text-blue-500 animate-pulse" />
+          <span className="tracking-tight">Show Dock</span>
+        </button>
+      )}
 
       {/* Control Center & Notification Overlays */}
       <ControlCenter />

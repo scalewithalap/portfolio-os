@@ -15,9 +15,12 @@ const OUTPUT_LINES = [
   // ── Summary ──
   { cmd: "cat --summary", type: "input" },
   { text: "Resolving identity...", type: "sys" },
-  { text: "[ OK ] Alap Putatunda — Founding AI Engineer & Full-Stack AI-native Developer", type: "success" },
   {
-    text: "  └─ 6+ years taking software from empty repo to deployment, monitoring, and operation. Builds production LLM and multi-agent systems with RAG, semantic search, provider-agnostic model orchestration, voice AI, workflow automation, metered billing, and observability. Founded Scale with Alap, co-founded Zero Headache as CEO, shipped Vibe44 and OpenUI. Selected for Hyperagent's \"The Founding 500\" ($20,000 in platform credits) in June 2026.",
+    text: "[ OK ] Alap Putatunda — Founding AI Engineer & Full-Stack AI-native Developer",
+    type: "success",
+  },
+  {
+    text: '  └─ 6+ years taking software from empty repo to deployment, monitoring, and operation. Builds production LLM and multi-agent systems with RAG, semantic search, provider-agnostic model orchestration, voice AI, workflow automation, metered billing, and observability. Founded Scale with Alap, co-founded Zero Headache as CEO, shipped Vibe44 and OpenUI. Selected for Hyperagent\'s "The Founding 500" ($20,000 in platform credits) in June 2026.',
     type: "item",
   },
   { text: "", type: "empty" },
@@ -144,7 +147,7 @@ const OUTPUT_LINES = [
   { text: "Loading work history...", type: "sys" },
   { text: "[ OK ] Work Experience", type: "success" },
   {
-    text: "  ├─ Founder & AI Engineer | Scale with Alap (Personal Brand) | May 2026 – Present",
+    text: "  ├─ Founder & Full-stack AI-native Developer | Scale with Alap (Personal Brand) | May 2026 – Present",
     type: "item",
   },
   {

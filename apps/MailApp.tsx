@@ -28,7 +28,7 @@ const EMAILS = [
   {
     id: "1",
     sender: "Scale with Alap",
-    subject: "Founder & AI Engineer",
+    subject: "Founder & Full-stack AI-native Developer",
     date: "May 2026 – Present",
     preview:
       "Founded Scale with Alap to publish technical content and build AI products...",

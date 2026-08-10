@@ -160,23 +160,14 @@ export interface EcosystemState {
   currentWallpaperIndex: number;
   wallpaper: string;
 
-  // Control Center & Notification Center & Mission Control
+  // Control Center & Notification Center
   isControlCenterOpen: boolean;
   isNotificationCenterOpen: boolean;
-  isBatteryMenuOpen: boolean;
-  isMissionControlOpen: boolean;
 
   // About Me Control
   brightness: number; // 0 - 100
   volume: number; // 0 - 100
   isMuted: boolean;
-  isWifiOn: boolean;
-  isBluetoothOn: boolean;
-  isAirDropOn: boolean;
-
-  // Battery status
-  batteryLevel: number;
-  isCharging: boolean;
 
   // Context Menu & Desktop
   contextMenu: ContextMenuState | null;
@@ -192,7 +183,6 @@ export interface EcosystemState {
   isStacksEnabled: boolean;
   expandedStackKind: string | null;
   toggleStacks: () => void;
-  stackByKind: () => void;
   toggleExpandStack: (kind: string) => void;
   collapseAllStacks: () => void;
 
@@ -206,17 +196,10 @@ export interface EcosystemState {
   closeControlCenter: () => void;
   toggleNotificationCenter: () => void;
   closeNotificationCenter: () => void;
-  toggleBatteryMenu: () => void;
-  closeBatteryMenu: () => void;
-  toggleMissionControl: () => void;
-  closeMissionControl: () => void;
 
   setBrightness: (val: number) => void;
   setVolume: (val: number) => void;
   toggleMute: () => void;
-  toggleWifi: () => void;
-  toggleBluetooth: () => void;
-  toggleAirDrop: () => void;
   toggleSystemTheme: () => void;
 
   setRandomWallpaper: () => void;
@@ -362,18 +345,10 @@ export const useEcosystemStore = create<EcosystemState>()(
 
     isControlCenterOpen: false,
     isNotificationCenterOpen: false,
-    isBatteryMenuOpen: false,
-    isMissionControlOpen: false,
 
     brightness: 100,
-    volume: 85,
+    volume: 100,
     isMuted: false,
-    isWifiOn: true,
-    isBluetoothOn: true,
-    isAirDropOn: true,
-
-    batteryLevel: 98,
-    isCharging: true,
 
     toasts: [],
     showToast: (message, type = "info") =>
@@ -397,7 +372,7 @@ export const useEcosystemStore = create<EcosystemState>()(
     snapPreview: null,
     recentAppIds: [],
 
-    isDockAutoHideEnabled: false,
+    isDockAutoHideEnabled: true,
     toggleDockAutoHide: () =>
       set((state) => {
         state.isDockAutoHideEnabled = !state.isDockAutoHideEnabled;
@@ -428,17 +403,6 @@ export const useEcosystemStore = create<EcosystemState>()(
           message: state.isStacksEnabled
             ? "Desktop Stacks Enabled"
             : "Desktop Stacks Disabled",
-          type: "info",
-        });
-      }),
-    stackByKind: () =>
-      set((state) => {
-        state.isStacksEnabled = true;
-        const id =
-          Date.now().toString() + Math.random().toString(36).substring(2, 5);
-        state.toasts.push({
-          id,
-          message: "Stacked desktop by Kind",
           type: "info",
         });
       }),
@@ -475,7 +439,6 @@ export const useEcosystemStore = create<EcosystemState>()(
         state.isSpotlightOpen = true;
         state.isControlCenterOpen = false;
         state.isNotificationCenterOpen = false;
-        state.isBatteryMenuOpen = false;
       }),
     closeSpotlight: () =>
       set((state) => {
@@ -488,7 +451,6 @@ export const useEcosystemStore = create<EcosystemState>()(
           playSpotlightSound();
           state.isControlCenterOpen = false;
           state.isNotificationCenterOpen = false;
-          state.isBatteryMenuOpen = false;
         }
       }),
 
@@ -497,7 +459,6 @@ export const useEcosystemStore = create<EcosystemState>()(
         state.isControlCenterOpen = !state.isControlCenterOpen;
         if (state.isControlCenterOpen) {
           state.isNotificationCenterOpen = false;
-          state.isBatteryMenuOpen = false;
           state.isSpotlightOpen = false;
         }
       }),
@@ -511,43 +472,12 @@ export const useEcosystemStore = create<EcosystemState>()(
         state.isNotificationCenterOpen = !state.isNotificationCenterOpen;
         if (state.isNotificationCenterOpen) {
           state.isControlCenterOpen = false;
-          state.isBatteryMenuOpen = false;
           state.isSpotlightOpen = false;
         }
       }),
     closeNotificationCenter: () =>
       set((state) => {
         state.isNotificationCenterOpen = false;
-      }),
-
-    toggleBatteryMenu: () =>
-      set((state) => {
-        state.isBatteryMenuOpen = !state.isBatteryMenuOpen;
-        if (state.isBatteryMenuOpen) {
-          state.isControlCenterOpen = false;
-          state.isNotificationCenterOpen = false;
-          state.isSpotlightOpen = false;
-          state.isMissionControlOpen = false;
-        }
-      }),
-    closeBatteryMenu: () =>
-      set((state) => {
-        state.isBatteryMenuOpen = false;
-      }),
-
-    toggleMissionControl: () =>
-      set((state) => {
-        state.isMissionControlOpen = !state.isMissionControlOpen;
-        if (state.isMissionControlOpen) {
-          state.isControlCenterOpen = false;
-          state.isNotificationCenterOpen = false;
-          state.isBatteryMenuOpen = false;
-          state.isSpotlightOpen = false;
-        }
-      }),
-    closeMissionControl: () =>
-      set((state) => {
-        state.isMissionControlOpen = false;
       }),
 
     setBrightness: (val) =>
@@ -562,18 +492,6 @@ export const useEcosystemStore = create<EcosystemState>()(
     toggleMute: () =>
       set((state) => {
         state.isMuted = !state.isMuted;
-      }),
-    toggleWifi: () =>
-      set((state) => {
-        state.isWifiOn = !state.isWifiOn;
-      }),
-    toggleBluetooth: () =>
-      set((state) => {
-        state.isBluetoothOn = !state.isBluetoothOn;
-      }),
-    toggleAirDrop: () =>
-      set((state) => {
-        state.isAirDropOn = !state.isAirDropOn;
       }),
     toggleSystemTheme: () =>
       set((state) => {
@@ -618,7 +536,6 @@ export const useEcosystemStore = create<EcosystemState>()(
         state.contextMenu = { x, y };
         state.isControlCenterOpen = false;
         state.isNotificationCenterOpen = false;
-        state.isBatteryMenuOpen = false;
       }),
     closeContextMenu: () =>
       set((state) => {

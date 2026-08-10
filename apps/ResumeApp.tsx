@@ -758,7 +758,8 @@ export default function ResumeApp() {
                   <h3
                     className={`font-bold text-sm md:text-base ${isLight ? "text-blue-800" : "text-blue-400"}`}
                   >
-                    Founder & AI Engineer | Scale with Alap (Personal Brand)
+                    Founder & Full-stack AI-native Developer | Scale with Alap
+                    (Personal Brand)
                   </h3>
                   <span
                     className={`px-2.5 py-0.5 rounded-full font-mono text-[11px] font-medium shrink-0 self-start sm:self-auto ${

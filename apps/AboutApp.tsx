@@ -275,7 +275,7 @@ export default function AboutApp() {
                     <h3
                       className={`text-base md:text-lg font-bold ${isLight ? "text-slate-900" : "text-white"}`}
                     >
-                      Founder & AI Engineer
+                      Founder & Full-stack AI-native Developer
                     </h3>
                     <span
                       className={`text-[11px] md:text-xs font-mono ${isLight ? "text-slate-500" : "text-white/50"}`}
@@ -405,8 +405,8 @@ export default function AboutApp() {
                     className={`mt-3 space-y-1.5 list-disc list-inside text-xs md:text-sm leading-relaxed ${isLight ? "text-slate-700" : "text-white/80"}`}
                   >
                     <li>
-                      Designed, built, and deployed custom web applications, REST
-                      APIs, and automation scripts for small businesses and
+                      Designed, built, and deployed custom web applications,
+                      REST APIs, and automation scripts for small businesses and
                       startup clients using Next.js, Node.js, and Python.
                     </li>
                     <li>
