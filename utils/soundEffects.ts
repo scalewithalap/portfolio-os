@@ -30,7 +30,10 @@ const getAudioContext = (): AudioContext | null => {
 };
 
 // Helper to check mute and scale gain by global volume (0 - 100)
-const getScaledGain = (ctx: AudioContext, baseGain: number): GainNode | null => {
+const getScaledGain = (
+  ctx: AudioContext,
+  baseGain: number,
+): GainNode | null => {
   const store = useEcosystemStore.getState();
   if (store.isMuted || store.volume <= 0) return null;
   const volScale = Math.max(0, Math.min(1, store.volume / 100));
@@ -387,6 +390,53 @@ export const playThemeToggleSound = () => {
 
     osc.start(now);
     osc.stop(now + 0.04);
+  } catch (e) {
+    console.warn("Audio playback error:", e);
+  }
+};
+
+// 10. Official iPhone Lock Screen Unlock Sound (Authentic percussive pitch-drop click)
+export const playLockUnlockSound = () => {
+  try {
+    const ctx = getAudioContext();
+    if (!ctx) return;
+    const masterGain = getScaledGain(ctx, 0.75);
+    if (!masterGain) return;
+    masterGain.connect(ctx.destination);
+
+    const now = ctx.currentTime;
+
+    // Layer 1: Percussive pitch drop sweep (800Hz -> 380Hz)
+    const osc1 = ctx.createOscillator();
+    const gain1 = ctx.createGain();
+    osc1.type = "sine";
+    osc1.frequency.setValueAtTime(800, now);
+    osc1.frequency.exponentialRampToValueAtTime(380, now + 0.08);
+
+    gain1.gain.setValueAtTime(0.7, now);
+    gain1.gain.exponentialRampToValueAtTime(0.001, now + 0.08);
+
+    // Layer 2: Ultra-short high metallic click accent (1600Hz -> 900Hz)
+    const osc2 = ctx.createOscillator();
+    const gain2 = ctx.createGain();
+    osc2.type = "triangle";
+    osc2.frequency.setValueAtTime(1600, now);
+    osc2.frequency.exponentialRampToValueAtTime(900, now + 0.03);
+
+    gain2.gain.setValueAtTime(0.5, now);
+    gain2.gain.exponentialRampToValueAtTime(0.001, now + 0.03);
+
+    osc1.connect(gain1);
+    gain1.connect(masterGain);
+
+    osc2.connect(gain2);
+    gain2.connect(masterGain);
+
+    osc1.start(now);
+    osc1.stop(now + 0.08);
+
+    osc2.start(now);
+    osc2.stop(now + 0.03);
   } catch (e) {
     console.warn("Audio playback error:", e);
   }

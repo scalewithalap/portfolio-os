@@ -154,7 +154,7 @@ export default function NotificationCenter() {
       {/* Backdrop overlay for closing */}
       <div
         onClick={closeNotificationCenter}
-        className={`fixed inset-0 z-40 backdrop-blur-xs transition-opacity animate-fadeIn cursor-pointer ${
+        className={`fixed inset-0 z-100 backdrop-blur-xs transition-opacity animate-fadeIn cursor-pointer ${
           isLight ? "bg-black/15" : "bg-black/40"
         }`}
       />
@@ -162,7 +162,7 @@ export default function NotificationCenter() {
       {/* Sliding Notification Sidebar — Doppelrand Hardware Enclosure */}
       <div
         ref={notificationCenterRef}
-        className={`fixed top-9 right-3 bottom-3 w-92 sm:w-100 backdrop-blur-3xl rounded-[28px] z-50 flex flex-col overflow-hidden font-sans animate-slideInRight select-none border transition-colors ${
+        className={`fixed top-9 right-3 bottom-3 w-92 sm:w-100 backdrop-blur-3xl rounded-[28px] z-100 flex flex-col overflow-hidden font-sans animate-slideInRight select-none border transition-colors ${
           isLight
             ? "bg-white/90 border-slate-300 text-slate-900 shadow-[0_25px_60px_rgba(0,0,0,0.2)]"
             : "bg-zinc-950/80 border-white/20 text-white shadow-[0_25px_60px_rgba(0,0,0,0.75)]"
@@ -184,7 +184,7 @@ export default function NotificationCenter() {
             }`}
           >
             <h3
-              className={`font-serif font-semibold mt-1.5 text-sm ${isLight ? "text-slate-900" : "text-white/95"}`}
+              className={`font-serif font-semibold tracking-normal mt-1.5 text-lg ${isLight ? "text-slate-900" : "text-white/95"}`}
             >
               Contact Hub
             </h3>

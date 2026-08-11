@@ -171,23 +171,23 @@ export default function TrashApp() {
 
       {/* Top Action & Search Bar */}
       <div
-        className={`h-12 border-b px-4 flex items-center justify-between shrink-0 transition-colors ${
+        className={`h-12 border-b px-3 sm:px-4 flex items-center justify-between shrink-0 transition-colors ${
           isLight
             ? "bg-slate-200/90 border-slate-300 text-slate-800"
             : "bg-[#1e1e24] border-white/10 text-white"
         }`}
       >
-        <div className="flex items-center space-x-3 text-xs">
+        <div className="flex items-center space-x-2.5 sm:space-x-3 text-xs min-w-0">
           <div className="w-7 h-7 rounded-lg bg-red-500/15 border border-red-500/30 text-red-500 flex items-center justify-center shrink-0">
             <Trash2 className="w-4 h-4" />
           </div>
-          <div>
+          <div className="min-w-0 flex-1">
             <div className="flex items-center space-x-2">
-              <span className="font-bold text-xs">Trash Bin</span>
+              <span className="font-bold text-xs truncate">Trash Bin</span>
             </div>
             {trashItems.length > 0 && (
               <span
-                className={`text-[10px] block ${
+                className={`text-[10px] block truncate ${
                   isLight ? "text-slate-500" : "text-white/40"
                 }`}
               >
@@ -198,13 +198,13 @@ export default function TrashApp() {
         </div>
 
         {/* Right Action Controls */}
-        <div className="flex items-center space-x-2.5">
+        <div className="flex items-center space-x-2 shrink-0">
           {trashItems.length > 0 ? (
             <>
               <button
                 onClick={handleEmptyTrash}
                 disabled={isWhooshing}
-                className="px-3.5 py-1.5 bg-red-600 hover:bg-red-500 active:scale-95 text-white text-xs font-semibold rounded-lg shadow-md transition-all flex items-center space-x-1.5 cursor-pointer"
+                className="px-3 py-1.5 sm:px-3.5 sm:py-1.5 bg-red-600 hover:bg-red-500 active:scale-95 text-white text-xs font-semibold rounded-lg shadow-md transition-all flex items-center space-x-1.5 cursor-pointer"
               >
                 <Trash2 className="w-3.5 h-3.5" />
                 <span>Empty Trash</span>
@@ -213,7 +213,7 @@ export default function TrashApp() {
           ) : (
             <button
               onClick={resetTrashItems}
-              className={`px-3.5 py-1.5 text-xs font-semibold rounded-lg transition-all flex items-center space-x-1.5 cursor-pointer ${
+              className={`px-3 py-1.5 sm:px-3.5 sm:py-1.5 text-xs font-semibold rounded-lg transition-all flex items-center space-x-1.5 cursor-pointer active:scale-95 ${
                 isLight
                   ? "bg-slate-300 hover:bg-slate-400/70 text-slate-800"
                   : "bg-white/10 hover:bg-white/20 text-white/90"
@@ -227,7 +227,7 @@ export default function TrashApp() {
       </div>
 
       {/* Main Content Area */}
-      <div className="flex-1 p-5 overflow-y-auto flex flex-col items-center justify-start relative">
+      <div className="flex-1 p-3.5 sm:p-5 overflow-y-auto overflow-x-hidden max-w-full pb-24 md:pb-24 flex flex-col items-center justify-start relative">
         {filteredItems.length > 0 ? (
           <div
             className={`w-full space-y-2 transition-all duration-300 ${
@@ -241,7 +241,6 @@ export default function TrashApp() {
                 isLight ? "text-slate-400" : "text-white/40"
               }`}
             >
-              <span>Items in Trash ({filteredItems.length})</span>
               <span>Drag files onto Trash to recycle</span>
             </div>
 

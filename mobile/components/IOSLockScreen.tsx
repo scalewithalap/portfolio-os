@@ -12,6 +12,7 @@ import { ChevronUp } from "lucide-react";
 import gsap from "gsap";
 import { useEcosystemStore } from "../../store/useEcosystemStore";
 import LazyImage from "../../components/common/LazyImage";
+import { playLockUnlockSound } from "../../utils/soundEffects";
 
 interface IOSLockScreenProps {
   onUnlock: () => void;
@@ -79,6 +80,7 @@ export default function IOSLockScreen({ onUnlock }: IOSLockScreenProps) {
     const threshold = 70; // minimum swipe distance to unlock
 
     if (currentYRef.current >= threshold && lockScreenRef.current) {
+      playLockUnlockSound();
       // Trigger smooth swipe-up unlock animation off-screen
       gsap.to(lockScreenRef.current, {
         y: -window.innerHeight,

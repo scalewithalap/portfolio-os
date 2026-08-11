@@ -3,7 +3,7 @@
  * @description Magnetic 3D Kinetic Hover Title Component for Desktop Environment.
  *
  * Responsibilities:
- * - Renders desktop hero title text ("You landed here on purpose. Respect." / "Now Hire Me.").
+ * - Renders desktop hero title text ("I built this portfolio to impress you." / "Now Hire Me.").
  * - Runs a real-time mouse proximity tracking loop via requestAnimationFrame for 3D kinetic character depth surge and tilt.
  * - Automatically disables JS mouse hover calculations on touch screens and viewports <1024px for optimal performance.
  */
@@ -14,7 +14,7 @@ export default function HeroHoverText() {
   const containerRef = useRef<HTMLDivElement>(null);
   const charsRef = useRef<(HTMLSpanElement | null)[]>([]);
 
-  const line1Text = "You landed here on purpose. Respect.";
+  const line1Text = "I built this portfolio to impress you.";
   const line2Text = "Now Hire Me.";
   const line1CharCount = line1Text.replace(/ /g, "").length;
 
@@ -148,7 +148,7 @@ export default function HeroHoverText() {
                   ref={(el) => {
                     charsRef.current[myIdx] = el;
                   }}
-                  className="inline-block font-sans font-normal text-white text-[55px] leading-tight tracking-tighter cursor-default transition-transform drop-shadow-[0_8px_24px_rgba(0,0,0,0.75)]"
+                  className="inline-block font-sans font-normal text-white text-[65px] leading-tight tracking-tighter transition-transform drop-shadow-[0_8px_24px_rgba(0,0,0,0.75)]"
                 >
                   {char}
                 </span>
@@ -159,7 +159,7 @@ export default function HeroHoverText() {
       </div>
 
       {/* Bottom Line */}
-      <div className="flex flex-wrap justify-center items-center gap-x-[1.5em] mt-6">
+      <div className="flex flex-wrap justify-center items-center gap-x-[1.25em] mt-1.5">
         {line2Text.split(" ").map((word, wIdx) => (
           <span key={wIdx} className="inline-block whitespace-nowrap">
             {word.split("").map((char, cIdx) => {
@@ -170,7 +170,7 @@ export default function HeroHoverText() {
                   ref={(el) => {
                     charsRef.current[myIdx] = el;
                   }}
-                  className="inline-block font-serif italic font-normal text-white text-[102px] leading-none tracking-tight drop-shadow-[0_20px_50px_rgba(0,0,0,0.85)] cursor-default transition-transform"
+                  className="inline-block font-serif italic font-normal text-white text-[165px] leading-none tracking-tight drop-shadow-[0_20px_50px_rgba(0,0,0,0.85)] transition-transform"
                 >
                   {char}
                 </span>

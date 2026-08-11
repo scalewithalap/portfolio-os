@@ -14,12 +14,12 @@ export default function StaticHeroText() {
   return (
     <div className="px-2 select-none text-center pointer-events-auto flex flex-col items-center justify-center drop-shadow-[0_15px_35px_rgba(0,0,0,0.85)]">
       {/* Top Line */}
-      <h2 className="font-sans font-normal text-white text-[32.5px] sm:text-4xl tracking-tighter leading-snug cursor-default drop-shadow-[0_8px_24px_rgba(0,0,0,0.75)]">
+      <h2 className="font-sans font-normal text-white text-[32.5px] sm:text-4xl tracking-tighter leading-snug drop-shadow-[0_8px_24px_rgba(0,0,0,0.75)]">
         {line1Text}
       </h2>
 
       {/* Bottom Line */}
-      <h1 className="font-serif italic font-normal text-white text-[43.5px] sm:text-5xl leading-none tracking-tight cursor-default drop-shadow-[0_20px_50px_rgba(0,0,0,0.85)] mt-2">
+      <h1 className="font-serif italic font-normal text-white text-[55.5px] sm:text-5xl leading-none tracking-tight drop-shadow-[0_20px_50px_rgba(0,0,0,0.85)] -mt-0.5">
         {line2Text}
       </h1>
     </div>

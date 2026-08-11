@@ -277,13 +277,13 @@ export default function TerminalApp() {
   return (
     <div
       ref={scrollRef}
-      className={`h-full w-full p-4 font-mono text-[13px] overflow-y-auto transition-colors duration-200 ${
+      className={`h-full w-full max-w-full p-3.5 sm:p-5 pb-24 md:pb-24 font-mono text-xs sm:text-[13px] overflow-y-auto overflow-x-hidden transition-colors duration-200 ${
         isLight
           ? "bg-slate-50 text-slate-800 selection:bg-blue-100"
           : "bg-black/95 text-zinc-100 selection:bg-zinc-700"
       }`}
     >
-      <div className={`mb-4 ${isLight ? "text-slate-400" : "text-zinc-400"}`}>
+      <div className={`mb-4 wrap-break-word ${isLight ? "text-slate-400" : "text-zinc-400"}`}>
         Last login: {new Date().toDateString()} on ttys001
         <br />
       </div>
@@ -291,7 +291,7 @@ export default function TerminalApp() {
       {OUTPUT_LINES.slice(0, lines).map((line, i) => {
         if (line.type === "input") {
           return (
-            <div key={i} className="mb-2">
+            <div key={i} className="mb-2 wrap-break-word max-w-full">
               <PromptPrefix isLight={isLight} /> {line.cmd}
             </div>
           );
@@ -300,7 +300,7 @@ export default function TerminalApp() {
           return (
             <div
               key={i}
-              className={isLight ? "text-slate-400" : "text-zinc-500"}
+              className={`wrap-break-word ${isLight ? "text-slate-400" : "text-zinc-500"}`}
             >
               {line.text}
             </div>
@@ -310,23 +310,23 @@ export default function TerminalApp() {
           return (
             <div
               key={i}
-              className={`font-bold mt-2 ${isLight ? "text-blue-600" : "text-blue-400"}`}
+              className={`font-bold mt-2 wrap-break-word ${isLight ? "text-blue-600" : "text-blue-400"}`}
             >
               {line.text}
             </div>
           );
         }
         if (line.type === "item") {
-          return <div key={i}>{renderItemContent(line.text)}</div>;
+          return <div key={i} className="wrap-break-word max-w-full">{renderItemContent(line.text)}</div>;
         }
-        return <div key={i} className="h-4" />;
+        return <div key={i} className="h-3 sm:h-4" />;
       })}
 
       {lines >= OUTPUT_LINES.length && (
-        <div className="mt-2 flex items-center">
+        <div className="mt-2 flex items-center space-x-1.5 flex-wrap">
           <PromptPrefix isLight={isLight} />
           <span
-            className={`w-2 h-3.75 ml-2 animate-pulse ${isLight ? "bg-slate-700" : "bg-zinc-400"}`}
+            className={`w-2 h-3.75 inline-block animate-pulse ${isLight ? "bg-slate-700" : "bg-zinc-400"}`}
           />
         </div>
       )}

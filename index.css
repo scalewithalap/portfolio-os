@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=Cutive&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Instrument+Serif:ital@0;1&display=swap");
 @import "tailwindcss";
 
 @theme {
   --font-sans: "Bricolage Grotesque", sans-serif;
-  --font-serif: "Cutive", sans-serif;
+  --font-serif: "Instrument Serif", serif;
   --font-mono: "JetBrains Mono", monospace;
 }
 
@@ -17,6 +17,9 @@
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    cursor:
+      url("/images/cursor.svg") 0 0,
+      auto;
   }
 
   h1,
@@ -40,8 +43,45 @@
   }
 }
 
-button {
-  cursor: pointer;
+/* Custom macOS SVG Cursor System */
+a,
+button,
+[role="button"],
+input[type="button"],
+input[type="submit"],
+.cursor-pointer {
+  cursor:
+    url("/images/cursor.svg") 0 0,
+    pointer !important;
+}
+
+/* Open Hand Cursor (Before & After Dragging Windows/Items) */
+.cursor-grab,
+[draggable="true"],
+.grab-handle {
+  cursor:
+    url("/images/cursor-openhand.svg") 10 10,
+    grab !important;
+}
+
+/* Closed Hand Cursor (While Dragging Windows/Items) */
+.cursor-grabbing,
+.cursor-grab:active,
+.cursor-grabbing:active,
+[draggable="true"]:active,
+.is-dragging,
+body.is-dragging,
+body.is-dragging * {
+  cursor:
+    url("/images/cursor-closedhand.svg") 8 8,
+    grabbing !important;
+}
+
+input[type="text"],
+input[type="search"],
+textarea,
+.select-text {
+  cursor: text !important;
 }
 
 /* Monospace & Tabular Figures Utility */

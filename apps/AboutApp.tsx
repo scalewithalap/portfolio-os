@@ -52,39 +52,8 @@ export default function AboutApp() {
             : "bg-[#1e1e1e]/80 border-white/10 text-white"
         }`}
       >
-        {/* Profile Card */}
-        <div className="px-3 pt-3 mb-1 md:mb-2">
-          <div
-            className={`rounded-lg p-2.5 md:p-3 flex items-center space-x-3 cursor-pointer transition-colors border ${
-              isLight
-                ? "bg-white border-slate-200/80 hover:bg-slate-200/50 text-slate-900 shadow-xs"
-                : "bg-white/5 border-white/10 hover:bg-white/10 text-white"
-            }`}
-          >
-            <LazyImage
-              src="/images/alap.webp"
-              alt="Alap Putatunda"
-              className={`w-9 h-9 md:w-10 md:h-10 rounded-full object-cover shrink-0 shadow-xs border object-[center_10%] ${
-                isLight ? "border-black/30" : "border-white/30"
-              }`}
-            />
-            <div className="overflow-hidden">
-              <div
-                className={`text-xs md:text-sm font-semibold truncate ${isLight ? "text-slate-900" : "text-white"}`}
-              >
-                Alap Putatunda
-              </div>
-              <div
-                className={`text-[11px] md:text-xs truncate ${isLight ? "text-slate-500" : "text-white/60"}`}
-              >
-                Founding AI Engineer
-              </div>
-            </div>
-          </div>
-        </div>
-
         {/* Navigation List - Horizontal scroll on mobile, vertical list on desktop */}
-        <div className="px-3 py-1.5 md:py-0 flex flex-row overflow-x-auto md:flex-col space-x-1 md:space-x-0 md:space-y-0.5 md:mt-2 scrollbar-none">
+        <div className="px-3 py-2 md:py-0 flex flex-row overflow-x-auto md:flex-col space-x-1.5 md:space-x-0 md:space-y-0.5 md:mt-2 scrollbar-none">
           {TABS.map((tab) => {
             const isActive = activeTab === tab.id;
 
@@ -92,29 +61,37 @@ export default function AboutApp() {
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`relative shrink-0 md:w-full flex items-center space-x-2 px-3 py-1.5 rounded-md text-xs md:text-sm transition-colors select-none cursor-pointer ${
+                className={`relative shrink-0 md:w-full flex items-center justify-center md:justify-start px-3.5 py-1.5 rounded-lg md:rounded-md text-xs md:text-sm transition-all select-none cursor-pointer active:scale-95 md:active:scale-100 ${
                   isActive
                     ? "text-white font-medium"
                     : isLight
-                      ? "text-slate-700 hover:bg-slate-200/80"
-                      : "text-white/80 hover:bg-white/10"
+                      ? "bg-slate-200/70 hover:bg-slate-200 text-slate-700 md:bg-transparent md:hover:bg-slate-200/80"
+                      : "bg-zinc-800/70 hover:bg-zinc-800 border border-white/10 text-white/80 md:bg-transparent md:border-transparent md:hover:bg-white/10"
                 }`}
               >
                 {isActive && (
                   <motion.div
                     layoutId="activeAboutSidebarTab"
-                    className="absolute inset-0 bg-[#0058d0] rounded-md shadow-xs"
+                    className="absolute inset-0 bg-[#0058d0] rounded-lg md:rounded-md shadow-xs"
                     transition={{ type: "spring", stiffness: 400, damping: 32 }}
                   />
                 )}
                 <div
-                  className={`relative z-10 w-5 h-5 md:w-6 md:h-6 rounded flex items-center justify-center shrink-0 ${
-                    isActive ? "bg-white/20" : "bg-[#0058d0]"
+                  className={`relative z-10 flex items-center justify-center shrink-0 md:w-6 md:h-6 md:rounded ${
+                    isActive ? "md:bg-white/20" : "md:bg-[#0058d0]"
                   }`}
                 >
-                  <tab.icon className="w-3 h-3 md:w-3.5 md:h-3.5 text-white" />
+                  <tab.icon
+                    className={`w-3.5 h-3.5 md:w-3.5 md:h-3.5 mr-1 md:mr-0 ${
+                      isActive
+                        ? "text-white"
+                        : isLight
+                          ? "text-blue-600 md:text-white"
+                          : "text-blue-400 md:text-white"
+                    }`}
+                  />
                 </div>
-                <span className="relative z-10 text-xs md:text-sm whitespace-nowrap">
+                <span className="md:ml-2.5 ml-0 relative z-10 text-xs md:text-sm whitespace-nowrap leading-none">
                   {tab.label}
                 </span>
               </button>
@@ -125,11 +102,11 @@ export default function AboutApp() {
 
       {/* Main Content Pane */}
       <div
-        className={`flex-1 overflow-y-auto transition-colors duration-200 ${
+        className={`flex-1 overflow-y-auto overflow-x-hidden max-w-full transition-colors duration-200 ${
           isLight ? "bg-white text-slate-900" : "bg-[#1e1e1e]"
         }`}
       >
-        <div className="w-full px-4 py-4 md:px-8 md:py-8">
+        <div className="w-full px-3.5 py-4 sm:px-6 md:px-8 md:py-8 pb-24 md:pb-24">
           {activeTab === "general" && (
             <div className="animate-in fade-in duration-300 space-y-6">
               <div className="flex items-center space-x-4">
@@ -199,9 +176,8 @@ export default function AboutApp() {
                   <span
                     className={`font-semibold ${isLight ? "text-emerald-700" : "text-emerald-400"}`}
                   >
-                    AI Engineer & Full-Stack AI-Native Developer roles at
-                    early-stage startups (≤200 people), remote or relocation
-                    with visa sponsorship
+                    AI Engineer & Full-Stack AI-Native Developer roles at AI
+                    startups, remote or relocation with visa sponsorship.
                   </span>
                 </div>
                 <div className="flex flex-col sm:flex-row px-4 py-3 gap-1 sm:gap-0 items-start sm:items-center">

@@ -150,13 +150,13 @@ export default function SingleProjectApp({ projectId }: SingleProjectAppProps) {
 
   return (
     <div
-      className={`flex flex-col h-full w-full font-sans overflow-hidden select-none transition-colors duration-200 ${
+      className={`flex flex-col h-full w-full max-w-full font-sans overflow-hidden select-none transition-colors duration-200 ${
         isLight ? "bg-slate-100 text-slate-900" : "bg-[#1e1e24] text-white"
       }`}
     >
       {/* Window Secondary Header */}
       <div
-        className={`h-12 backdrop-blur-xl border-b px-2 md:px-4 flex items-center justify-between shrink-0 transition-colors relative z-30 min-w-0 flex-nowrap ${
+        className={`h-12 backdrop-blur-xl border-b px-2.5 md:px-4 flex items-center justify-between shrink-0 transition-colors relative z-30 min-w-0 flex-nowrap ${
           isLight
             ? "bg-slate-200/90 border-slate-300 text-slate-800"
             : "bg-[#282830]/90 border-white/10 text-white"
@@ -202,7 +202,7 @@ export default function SingleProjectApp({ projectId }: SingleProjectAppProps) {
           <div ref={shareContainerRef} className="relative">
             <button
               onClick={() => setIsShareOpen(!isShareOpen)}
-              className={`p-1.5 md:px-2.5 md:py-1.5 text-xs font-medium rounded-lg flex items-center md:space-x-1.5 transition-colors cursor-pointer ${
+              className={`p-1.5 md:px-2.5 md:py-1.5 text-xs font-medium rounded-lg flex items-center md:space-x-1.5 transition-colors cursor-pointer active:scale-95 ${
                 isShareOpen
                   ? "bg-blue-600 text-white shadow-xs"
                   : isLight
@@ -230,14 +230,14 @@ export default function SingleProjectApp({ projectId }: SingleProjectAppProps) {
                   }`}
                 >
                   <div
-                    className={`text-xs font-semibold px-1 pb-1.75 text-slate-500 dark:text-white/60 flex items-center justify-between border-b ${isLight ? "border-slate-200" : "border-white/10"}`}
+                    className={`text-xs font-semibold px-1 pb-1.75 flex items-center justify-between border-b ${isLight ? "border-slate-200 text-slate-600" : "text-white/60 border-white/10"}`}
                   >
                     <span>Share this Project</span>
                   </div>
 
                   <button
                     onClick={handleCopyProjectUrl}
-                    className={`w-full flex items-center justify-between p-2 rounded-lg text-xs md:text-sm font-medium transition-all duration-150 cursor-pointer ${
+                    className={`w-full flex items-center justify-between p-2 rounded-lg text-xs md:text-sm font-medium transition-all duration-150 cursor-pointer active:scale-95 ${
                       copiedUrl
                         ? "bg-emerald-500/15 text-emerald-500 border border-emerald-500/30"
                         : isLight
@@ -263,7 +263,7 @@ export default function SingleProjectApp({ projectId }: SingleProjectAppProps) {
 
                   <button
                     onClick={() => handleShareSocial("LinkedIn")}
-                    className={`w-full flex items-center space-x-2 p-2 rounded-lg text-xs md:text-sm font-medium transition-all duration-150 cursor-pointer hover:scale-[1.02] ${
+                    className={`w-full flex items-center space-x-2 p-2 rounded-lg text-xs md:text-sm font-medium transition-all duration-150 cursor-pointer hover:scale-[1.02] active:scale-95 ${
                       flashingPlatform === "LinkedIn"
                         ? "bg-blue-600 text-white scale-95 shadow-md ring-2 ring-blue-400/50"
                         : isLight
@@ -277,7 +277,7 @@ export default function SingleProjectApp({ projectId }: SingleProjectAppProps) {
 
                   <button
                     onClick={() => handleShareSocial("Twitter / X")}
-                    className={`w-full flex items-center space-x-2 p-2 rounded-lg text-xs md:text-sm font-medium transition-all duration-150 cursor-pointer hover:scale-[1.02] ${
+                    className={`w-full flex items-center space-x-2 p-2 rounded-lg text-xs md:text-sm font-medium transition-all duration-150 cursor-pointer hover:scale-[1.02] active:scale-95 ${
                       flashingPlatform === "Twitter / X"
                         ? "bg-sky-500 text-white scale-95 shadow-md ring-2 ring-sky-300/50"
                         : isLight
@@ -291,7 +291,7 @@ export default function SingleProjectApp({ projectId }: SingleProjectAppProps) {
 
                   <button
                     onClick={() => handleShareSocial("Facebook")}
-                    className={`w-full flex items-center space-x-2 p-2 rounded-lg text-xs md:text-sm font-medium transition-all duration-150 cursor-pointer hover:scale-[1.02] ${
+                    className={`w-full flex items-center space-x-2 p-2 rounded-lg text-xs md:text-sm font-medium transition-all duration-150 cursor-pointer hover:scale-[1.02] active:scale-95 ${
                       flashingPlatform === "Facebook"
                         ? "bg-blue-500 text-white scale-95 shadow-md ring-2 ring-blue-300/50"
                         : isLight
@@ -305,7 +305,7 @@ export default function SingleProjectApp({ projectId }: SingleProjectAppProps) {
 
                   <button
                     onClick={() => handleShareSocial("Reddit")}
-                    className={`w-full flex items-center space-x-2 p-2 rounded-lg text-xs md:text-sm font-medium transition-all duration-150 cursor-pointer hover:scale-[1.02] ${
+                    className={`w-full flex items-center space-x-2 p-2 rounded-lg text-xs md:text-sm font-medium transition-all duration-150 cursor-pointer hover:scale-[1.02] active:scale-95 ${
                       flashingPlatform === "Reddit"
                         ? "bg-orange-500 text-white scale-95 shadow-md ring-2 ring-orange-300/50"
                         : isLight
@@ -319,7 +319,7 @@ export default function SingleProjectApp({ projectId }: SingleProjectAppProps) {
 
                   <button
                     onClick={() => handleShareSocial("WhatsApp")}
-                    className={`w-full flex items-center space-x-2 p-2 rounded-lg text-xs md:text-sm font-medium transition-all duration-150 cursor-pointer hover:scale-[1.02] ${
+                    className={`w-full flex items-center space-x-2 p-2 rounded-lg text-xs md:text-sm font-medium transition-all duration-150 cursor-pointer hover:scale-[1.02] active:scale-95 ${
                       flashingPlatform === "WhatsApp"
                         ? "bg-green-500 text-white scale-95 shadow-md ring-2 ring-green-300/50"
                         : isLight
@@ -333,7 +333,7 @@ export default function SingleProjectApp({ projectId }: SingleProjectAppProps) {
 
                   <button
                     onClick={() => handleShareSocial("Telegram")}
-                    className={`w-full flex items-center space-x-2 p-2 rounded-lg text-xs md:text-sm font-medium transition-all duration-150 cursor-pointer hover:scale-[1.02] ${
+                    className={`w-full flex items-center space-x-2 p-2 rounded-lg text-xs md:text-sm font-medium transition-all duration-150 cursor-pointer hover:scale-[1.02] active:scale-95 ${
                       flashingPlatform === "Telegram"
                         ? "bg-sky-400 text-white scale-95 shadow-md ring-2 ring-sky-200/50"
                         : isLight
@@ -347,7 +347,7 @@ export default function SingleProjectApp({ projectId }: SingleProjectAppProps) {
 
                   <button
                     onClick={() => handleShareSocial("Email")}
-                    className={`w-full flex items-center space-x-2 p-2 rounded-lg text-xs md:text-sm font-medium transition-all duration-150 cursor-pointer hover:scale-[1.02] ${
+                    className={`w-full flex items-center space-x-2 p-2 rounded-lg text-xs md:text-sm font-medium transition-all duration-150 cursor-pointer hover:scale-[1.02] active:scale-95 ${
                       flashingPlatform === "Email"
                         ? "bg-emerald-600 text-white scale-95 shadow-md ring-2 ring-emerald-400/50"
                         : isLight
@@ -376,7 +376,7 @@ export default function SingleProjectApp({ projectId }: SingleProjectAppProps) {
               title="GitHub Repository"
             >
               <Github className="w-3.5 h-3.5" />
-              <span className="hidden md:inline">GitHub</span>
+              <span>GitHub</span>
             </a>
           )}
 
@@ -389,14 +389,14 @@ export default function SingleProjectApp({ projectId }: SingleProjectAppProps) {
               title="Visit Live Site"
             >
               <Globe className="w-3.5 h-3.5 shrink-0" />
-              <span className="hidden sm:inline">Live Site</span>
+              <span>Live Site</span>
               <ExternalLink className="w-3 h-3 ml-0.5 opacity-70 shrink-0" />
             </a>
           )}
 
           <button
             onClick={() => openApp("safari", "Safari")}
-            className={`p-1.5 sm:px-2.5 sm:py-1.5 text-xs font-medium rounded-lg flex items-center space-x-1 transition-colors ${
+            className={`p-1.5 sm:px-2.5 sm:py-1.5 text-xs font-medium rounded-lg flex items-center space-x-1 transition-colors active:scale-95 ${
               isLight
                 ? "bg-slate-300/80 hover:bg-slate-300 text-slate-800"
                 : "bg-white/10 hover:bg-white/20 text-white/80"
@@ -411,45 +411,47 @@ export default function SingleProjectApp({ projectId }: SingleProjectAppProps) {
 
       {/* Main Container - Tabless Continuous Layout */}
       <div
-        className={`flex-1 overflow-y-auto pt-3 pb-5 px-2 md:p-4 md:pb-24 space-y-8 transition-colors ${
+        className={`flex-1 overflow-y-auto overflow-x-hidden max-w-full pb-24 md:pb-24 md:p-4 space-y-6 md:space-y-8 transition-colors ${
           isLight ? "bg-slate-50" : "bg-[#121215]"
         }`}
       >
-        {/* Banner Hero Section with Integrated Project Image */}
         <div
-          className={`relative rounded-2xl overflow-hidden bg-linear-to-br ${project.color} p-6 md:p-8 border shadow-2xl ${
+          className={`relative md:rounded-[20px] overflow-hidden bg-linear-to-br ${project.color} py-4 px-3 md:p-6 border shadow-inner ${
             isLight ? "border-slate-300/60" : "border-white/15"
           }`}
         >
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,var(--tw-gradient-stops))] from-white/10 via-transparent to-black/40 pointer-events-none" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,var(--tw-gradient-stops))] from-white/15 via-transparent to-black/50 pointer-events-none" />
 
-          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
+          <div className="relative z-10 grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 items-center">
             {/* Hero Details (Left) */}
-            <div className="lg:col-span-6">
-              <div className="mb-2 md:mb-4 inline-flex items-center space-x-2 px-3 py-1.25 rounded-lg bg-black/40 border border-white/15 backdrop-blur-md text-xs font-semibold text-white">
-                <span>{project.badge || project.category}</span>
-                <span>•</span>
-                <span>{project.tagline}</span>
+            <div className="md:col-span-6">
+              <div className="mb-2 md:mb-4 flex flex-wrap items-center gap-2">
+                <span className="px-3 py-1 rounded-lg md:rounded-md bg-amber-400 text-slate-950 border border-amber-300 font-extrabold text-[10px] md:text-xs uppercase tracking-wider shadow-md shadow-amber-500/20">
+                  {project.badge || project.category}
+                </span>
+                <span className="px-3 py-1 rounded-xl md:rounded-lg bg-black/40 border border-white/20 text-white/90 text-xs md:text-sm font-medium tracking-wide backdrop-blur-md shadow-xs">
+                  {project.tagline}
+                </span>
               </div>
 
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-none mb-1 md:mb-1.5">
+              <h1 className="text-2xl sm:text-3xl md:text-5xl font-extrabold text-white tracking-tight leading-tight md:leading-none mb-1 md:mb-3">
                 {project.title}
               </h1>
 
-              <p className="text-white/85 text-sm sm:text-base leading-tight font-normal mb-2 md:mb-4">
+              <p className="text-white/85 text-sm md:text-base leading-tight md:leading-snug font-normal mb-3.5 md:mb-5 md:pr-12">
                 {project.description}
               </p>
 
-              {/* Action Buttons */}
-              <div className="flex flex-wrap items-center gap-3 mb-3 md:mb-6">
+              {/* Desktop Action Buttons */}
+              <div className="flex flex-wrap items-center gap-3 mb-4 md:mb-6">
                 {project.demoUrl && (
                   <a
                     href={project.demoUrl}
                     target="_blank"
                     rel="noreferrer"
-                    className="px-4 py-2 bg-white text-slate-900 hover:bg-slate-100 font-bold text-xs md:text-sm tracking-tight rounded-lg flex items-center space-x-2 shadow-lg transition-transform active:scale-95 cursor-pointer"
+                    className="px-5 py-2.5 bg-white text-slate-900 hover:bg-slate-100 font-bold text-sm md:text-base tracking-tight rounded-lg md:rounded-xl flex items-center space-x-1 md:space-x-2 shadow-lg transition-transform active:scale-95 cursor-pointer"
                   >
-                    <span className="leading-none">Visit Live Site</span>
+                    <span className="leading-none">Explore Live Site</span>
                     <ExternalLink className="w-3.5 h-3.5" />
                   </a>
                 )}
@@ -459,7 +461,7 @@ export default function SingleProjectApp({ projectId }: SingleProjectAppProps) {
                     href={project.githubUrl}
                     target="_blank"
                     rel="noreferrer"
-                    className="px-4 py-2 bg-black/40 hover:bg-black/60 border border-white/20 text-white font-medium text-xs md:text-sm tracking-tight rounded-lg flex items-center space-x-2 backdrop-blur-md transition-all active:scale-95 cursor-pointer"
+                    className="px-5 py-2.5 bg-black/40 hover:bg-black/60 border border-white/20 text-white font-medium text-sm md:text-base tracking-tight rounded-lg md:rounded-xl flex items-center space-x-1 md:space-x-2 backdrop-blur-md transition-all active:scale-95 cursor-pointer"
                   >
                     <Github className="w-3.5 h-3.5" />
                     <span className="leading-none">GitHub Repo</span>
@@ -467,17 +469,17 @@ export default function SingleProjectApp({ projectId }: SingleProjectAppProps) {
                 )}
               </div>
 
-              {/* Skills */}
+              {/* Skills Badges */}
               {project.skills && project.skills.length > 0 && (
-                <div className="mb-2 md:mb-4">
-                  <p className="text-[11px] font-bold uppercase tracking-wider text-white/80 mb-1.5">
-                    Skills I've Used to Build This
+                <div>
+                  <p className="text-[11px] md:text-xs font-bold uppercase tracking-wider text-white/80 mb-1.5">
+                    Skills I've Used
                   </p>
-                  <div className="flex flex-wrap gap-1.5">
+                  <div className="flex flex-wrap gap-1 md:gap-1.5">
                     {project.skills.map((skill) => (
                       <span
                         key={skill}
-                        className="px-2.5 leading-none py-1.5 rounded-lg bg-blue-950/80 border border-blue-400/40 text-xs font-medium text-blue-100 backdrop-blur-md shadow-xs hover:border-blue-300 transition-colors"
+                        className="px-2.5 py-1 rounded-lg bg-black/30 border border-white/15 text-[11px] md:text-xs font-medium text-white/90 backdrop-blur-md"
                       >
                         {skill}
                       </span>
@@ -488,334 +490,374 @@ export default function SingleProjectApp({ projectId }: SingleProjectAppProps) {
             </div>
 
             {/* Integrated Cover Image Mockup (Right) */}
-            <div className="lg:col-span-6">
-              <div className="relative group overflow-hidden rounded-xl border border-white/20 shadow-2xl bg-slate-900/60 backdrop-blur-md transition-transform duration-300 hover:scale-[1.01]">
-                <LazyImage
-                  src={getProjectCoverImage(project, systemTheme)}
-                  alt={project.title}
-                  containerClassName="w-full h-auto bg-slate-950"
-                  className="w-full h-auto block object-contain transition-transform duration-500 group-hover:scale-101"
-                />
+            <div className="md:col-span-6">
+              <div className="p-1 md:p-1.5 rounded-[18px] border border-white/20 bg-black/30 backdrop-blur-md shadow-2xl">
+                <div className="relative group overflow-hidden rounded-[14px] bg-slate-950">
+                  <LazyImage
+                    src={getProjectCoverImage(project, systemTheme)}
+                    alt={project.title}
+                    containerClassName="w-full h-auto bg-slate-950"
+                    className="w-full h-auto block object-contain transition-transform duration-500 group-hover:scale-102"
+                  />
+                </div>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Metrics Ribbon Bar */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
+        {/* Doppelrand Metrics Ribbon Bar */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 px-1 md:px-0">
           {project.metrics.map((m, idx) => (
             <div
               key={idx}
-              className={`border rounded-2xl p-3.5 sm:p-4 flex flex-col justify-between shadow-xs transition-colors min-w-0 ${
+              className={`p-1 rounded-xl md:rounded-[20px] border transition-all ${
                 isLight
-                  ? "bg-white border-slate-200/90"
-                  : "bg-[#1a1a20] border-white/10"
+                  ? "bg-slate-200/60 border-slate-300/70"
+                  : "bg-white/5 border-white/10"
               }`}
             >
-              <span
-                className={`text-[10px] sm:text-[11px] font-bold uppercase tracking-wider truncate ${
-                  isLight ? "text-slate-500" : "text-white/50"
+              <div
+                className={`rounded-[7px] md:rounded-[15px] p-3.5 sm:p-4 flex flex-col justify-between h-full shadow-inner ${
+                  isLight ? "bg-white" : "bg-[#18181d]"
                 }`}
-                title={m.label}
               >
-                {m.label}
-              </span>
-              <span
-                className="text-base sm:text-2xl font-black mt-1.5 sm:mt-2 font-mono tabular-nums tracking-tight truncate leading-tight"
-                style={{ color: project.accentColor }}
-                title={m.value}
-              >
-                {m.value}
-              </span>
+                <span
+                  className={`text-[9.5px] sm:text-[11px] font-bold uppercase tracking-wider truncate ${
+                    isLight ? "text-slate-500" : "text-white/50"
+                  }`}
+                  title={m.label}
+                >
+                  {m.label}
+                </span>
+                <span
+                  className="text-md sm:text-2xl font-black mt-1.5 sm:mt-2 font-mono tabular-nums tracking-tight truncate leading-tight"
+                  style={{ color: project.accentColor }}
+                  title={m.value}
+                >
+                  {m.value}
+                </span>
+              </div>
             </div>
           ))}
         </div>
 
         {/* Section 1: Executive Summary & Architecture */}
         <div
-          className={`border rounded-2xl p-6 md:p-7 shadow-xs space-y-6 transition-colors ${
+          className={`p-1 md:p-1.5 rounded-xl md:rounded-[22px] border transition-colors shadow-xs ${
             isLight
-              ? "bg-white border-slate-200/90"
-              : "bg-[#1a1a20] border-white/10"
+              ? "bg-slate-200/60 border-slate-300/80"
+              : "bg-white/5 border-white/10"
           }`}
         >
-          <div className="flex items-center space-x-2.5">
-            <div className="w-8 h-8 rounded-lg bg-blue-500/15 flex items-center justify-center text-blue-500">
-              <Layers className="w-4 h-4" />
-            </div>
-            <div>
-              <h2
-                className={`text-base md:text-lg font-bold tracking-tight ${
-                  isLight ? "text-slate-900" : "text-white"
-                }`}
-              >
-                Executive Summary & Architecture
-              </h2>
-              <p
-                className={`text-xs md:text-sm ${
-                  isLight ? "text-slate-500" : "text-white/50"
-                }`}
-              >
-                Deep dive into system design and core implementation objectives
-              </p>
-            </div>
-          </div>
-
-          <p
-            className={`text-xs md:text-sm leading-relaxed ${
-              isLight ? "text-slate-700" : "text-white/80"
+          <div
+            className={`rounded-lg md:rounded-2xl p-3 md:p-6 space-y-4 md:space-y-6 shadow-inner ${
+              isLight ? "bg-white" : "bg-[#18181d]"
             }`}
           >
-            {project.longDescription}
-          </p>
-
-          {/* Highlights Checklist */}
-          <div className="space-y-3 pt-2">
-            <h3
-              className={`text-xs md:text-sm font-bold uppercase tracking-wider ${
-                isLight ? "text-slate-500" : "text-white/50"
-              }`}
-            >
-              Key Architecture Highlights
-            </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              {project.highlights.map((h, idx) => (
-                <div
-                  key={idx}
-                  className={`flex items-start space-x-3 p-3.5 rounded-xl border transition-colors ${
-                    isLight
-                      ? "bg-slate-50 border-slate-200/80"
-                      : "bg-white/5 border-white/5"
+            <div className="flex items-center space-x-2.5">
+              <div className="w-10 h-10 md:w-10 md:h-10 rounded-xl bg-blue-500/15 flex items-center justify-center text-blue-500 shrink-0">
+                <Layers className="w-4 h-4 md:w-5 md:h-5" />
+              </div>
+              <div>
+                <h2
+                  className={`text-sm md:text-lg font-bold leading-tight md:leading-none tracking-tight mb-0.5 md:mb-1 ${
+                    isLight ? "text-slate-900" : "text-white"
                   }`}
                 >
-                  <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
-                  <span
-                    className={`text-xs md:text-sm font-medium leading-relaxed ${
-                      isLight ? "text-slate-800" : "text-white/80"
+                  Executive Summary & Architecture
+                </h2>
+                <p
+                  className={`text-xs md:text-sm leading-tight md:leading-none ${
+                    isLight ? "text-slate-800" : "text-white/80"
+                  }`}
+                >
+                  Deep dive into system design & core implementation objectives.
+                </p>
+              </div>
+            </div>
+
+            <p
+              className={`text-sm md:text-base leading-tight md:leading-snug ${
+                isLight ? "text-slate-700" : "text-white/80"
+              }`}
+            >
+              {project.longDescription}
+            </p>
+
+            {/* Highlights Checklist */}
+            <div className="space-y-3 pt-1">
+              <h3
+                className={`text-xs md:text-sm font-bold uppercase tracking-wider ${
+                  isLight ? "text-slate-600" : "text-white/60"
+                }`}
+              >
+                Key Architecture Highlights
+              </h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {project.highlights.map((h, idx) => (
+                  <div
+                    key={idx}
+                    className={`flex items-start space-x-3 p-3.5 rounded-xl border transition-colors ${
+                      isLight
+                        ? "bg-slate-50 border-slate-200/80"
+                        : "bg-white/5 border-white/5"
                     }`}
                   >
-                    {h}
-                  </span>
-                </div>
-              ))}
+                    <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
+                    <span
+                      className={`text-xs md:text-sm font-medium leading-relaxed ${
+                        isLight ? "text-slate-800" : "text-white/80"
+                      }`}
+                    >
+                      {h}
+                    </span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
 
         {/* Section 2: Core Features */}
         <div
-          className={`border rounded-2xl p-6 md:p-7 shadow-xs space-y-6 transition-colors ${
+          className={`p-1 md:p-1.5 rounded-xl md:rounded-[22px] border transition-colors shadow-xs ${
             isLight
-              ? "bg-white border-slate-200/90"
-              : "bg-[#1a1a20] border-white/10"
+              ? "bg-slate-200/60 border-slate-300/80"
+              : "bg-white/5 border-white/10"
           }`}
         >
-          <div className="flex items-center space-x-2.5">
-            <div className="w-8 h-8 rounded-lg bg-emerald-500/15 flex items-center justify-center text-emerald-500">
-              <ShieldCheck className="w-4 h-4" />
-            </div>
-            <div>
-              <h2
-                className={`text-base md:text-lg font-bold tracking-tight ${
-                  isLight ? "text-slate-900" : "text-white"
-                }`}
-              >
-                Core Features ({project.features.length})
-              </h2>
-              <p
-                className={`text-xs md:text-sm ${
-                  isLight ? "text-slate-500" : "text-white/50"
-                }`}
-              >
-                Production capabilities and platform modules
-              </p>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {project.features.map((f, idx) => (
-              <div
-                key={idx}
-                className={`border rounded-xl p-5 shadow-xs space-y-2 transition-colors ${
-                  isLight
-                    ? "bg-slate-50/60 border-slate-200/80"
-                    : "bg-white/5 border-white/5"
-                }`}
-              >
-                <div className="flex items-center space-x-2 text-blue-500 font-bold text-xs md:text-sm">
-                  <div className="w-2 h-2 rounded-full bg-blue-500" />
-                  <span>{f.title}</span>
-                </div>
-                <p
-                  className={`text-xs md:text-sm leading-relaxed ${
-                    isLight ? "text-slate-600" : "text-white/70"
+          <div
+            className={`rounded-lg md:rounded-2xl p-3 md:p-6 space-y-4 md:space-y-6 shadow-inner ${
+              isLight ? "bg-white" : "bg-[#18181d]"
+            }`}
+          >
+            <div className="flex items-center space-x-2.5">
+              <div className="w-10 h-10 md:w-10 md:h-10 rounded-xl bg-emerald-500/15 flex items-center justify-center text-emerald-500 shrink-0">
+                <ShieldCheck className="w-4 h-4 md:w-5 md:h-5" />
+              </div>
+              <div>
+                <h2
+                  className={`text-sm md:text-lg font-bold leading-tight md:leading-none tracking-tight mb-0.5 md:mb-1 ${
+                    isLight ? "text-slate-900" : "text-white"
                   }`}
                 >
-                  {f.description}
+                  Core Features ({project.features.length})
+                </h2>
+                <p
+                  className={`text-xs md:text-sm leading-tight md:leading-none ${
+                    isLight ? "text-slate-800" : "text-white/80"
+                  }`}
+                >
+                  Production capabilities and platform modules
                 </p>
               </div>
-            ))}
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
+              {project.features.map((f, idx) => (
+                <div
+                  key={idx}
+                  className={`border rounded-xl p-3.5 md:p-4 shadow-xs space-y-1.5 md:space-y-2 transition-all active:scale-[0.99] ${
+                    isLight
+                      ? "bg-slate-50/80 border-slate-200/80"
+                      : "bg-white/5 border-white/5"
+                  }`}
+                >
+                  <div className="flex items-center space-x-2 text-blue-500 font-bold text-xs md:text-sm">
+                    <div className="w-2 h-2 rounded-full bg-blue-500" />
+                    <span>{f.title}</span>
+                  </div>
+                  <p
+                    className={`text-xs md:text-sm leading-relaxed ${
+                      isLight ? "text-slate-600" : "text-white/70"
+                    }`}
+                  >
+                    {f.description}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
-        {/* Section 3: Architecture & Tech Stack */}
+        {/* Section 3: Technology Stack */}
         <div
-          className={`border rounded-2xl p-6 md:p-7 shadow-xs space-y-6 transition-colors ${
+          className={`p-1 md:p-1.5 rounded-xl md:rounded-[22px] border transition-colors shadow-xs ${
             isLight
-              ? "bg-white border-slate-200/90"
-              : "bg-[#1a1a20] border-white/10"
+              ? "bg-slate-200/60 border-slate-300/80"
+              : "bg-white/5 border-white/10"
           }`}
         >
-          <div className="flex items-center space-x-2.5">
-            <div className="w-8 h-8 rounded-lg bg-indigo-500/15 flex items-center justify-center text-indigo-500">
-              <Cpu className="w-4 h-4" />
-            </div>
-            <div>
-              <h2
-                className={`text-base md:text-lg font-bold tracking-tight ${
-                  isLight ? "text-slate-900" : "text-white"
-                }`}
-              >
-                Technology Stack
-              </h2>
-              <p
-                className={`text-xs md:text-sm ${
-                  isLight ? "text-slate-500" : "text-white/50"
-                }`}
-              >
-                Frameworks, APIs, databases, and infrastructure tools
-              </p>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-            {project.techStack.map((stack, idx) => (
-              <div
-                key={idx}
-                className={`border rounded-xl p-5 shadow-xs space-y-3 transition-colors ${
-                  isLight
-                    ? "bg-slate-50/60 border-slate-200/80"
-                    : "bg-white/5 border-white/5"
-                }`}
-              >
-                <h3
-                  className={`text-xs md:text-sm font-bold uppercase tracking-wider ${
-                    isLight ? "text-slate-500" : "text-white/50"
+          <div
+            className={`rounded-lg md:rounded-2xl p-3 md:p-6 space-y-4 md:space-y-6 shadow-inner ${
+              isLight ? "bg-white" : "bg-[#18181d]"
+            }`}
+          >
+            <div className="flex items-center space-x-2.5">
+              <div className="w-10 h-10 md:w-10 md:h-10 rounded-xl bg-indigo-500/15 flex items-center justify-center text-indigo-500 shrink-0">
+                <Cpu className="w-4 h-4 md:w-5 md:h-5" />
+              </div>
+              <div>
+                <h2
+                  className={`text-sm md:text-lg font-bold leading-tight md:leading-none tracking-tight mb-0.5 md:mb-1 ${
+                    isLight ? "text-slate-900" : "text-white"
                   }`}
                 >
-                  {stack.category}
-                </h3>
-                <div className="flex flex-wrap gap-2">
-                  {stack.items.map((item) => (
-                    <span
-                      key={item}
-                      className={`px-3 py-1.5 rounded-lg border text-xs md:text-sm font-medium ${
-                        isLight
-                          ? "bg-white border-slate-200 text-slate-800 shadow-2xs"
-                          : "bg-white/10 border-white/10 text-white/90"
-                      }`}
-                    >
-                      {item}
-                    </span>
-                  ))}
-                </div>
+                  Technology Stack
+                </h2>
+                <p
+                  className={`text-xs md:text-sm leading-tight md:leading-none ${
+                    isLight ? "text-slate-800" : "text-white/80"
+                  }`}
+                >
+                  Frameworks, APIs, databases, and infrastructure tools
+                </p>
               </div>
-            ))}
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 md:gap-5">
+              {project.techStack.map((stack, idx) => (
+                <div
+                  key={idx}
+                  className={`border rounded-xl p-3.5 md:p-4 shadow-xs space-y-2.5 md:space-y-3 transition-colors ${
+                    isLight
+                      ? "bg-slate-50/80 border-slate-200/80"
+                      : "bg-white/5 border-white/5"
+                  }`}
+                >
+                  <h3
+                    className={`text-xs md:text-sm font-bold uppercase tracking-wider ${
+                      isLight ? "text-slate-600" : "text-white/60"
+                    }`}
+                  >
+                    {stack.category}
+                  </h3>
+                  <div className="flex flex-wrap gap-1.5 md:gap-2">
+                    {stack.items.map((item) => (
+                      <span
+                        key={item}
+                        className={`px-2.5 md:px-3 py-1 md:py-1.5 rounded-lg border text-xs md:text-sm font-medium ${
+                          isLight
+                            ? "bg-white border-slate-200 text-slate-800 shadow-2xs"
+                            : "bg-white/10 border-white/10 text-white/90"
+                        }`}
+                      >
+                        {item}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
         {/* Section 4: Implementation Code Snippet (If Exists) */}
         {project.codeSnippet && (
           <div
-            className={`border rounded-2xl p-6 md:p-7 shadow-xs space-y-4 transition-colors ${
+            className={`p-1 md:p-1.5 rounded-xl md:rounded-[22px] border transition-colors shadow-xs ${
               isLight
-                ? "bg-white border-slate-200/90"
-                : "bg-[#1a1a20] border-white/10"
+                ? "bg-slate-200/60 border-slate-300/80"
+                : "bg-white/5 border-white/10"
             }`}
           >
-            <div className="flex items-center justify-between">
-              <div className="flex items-center space-x-2.5">
-                <div className="w-8 h-8 rounded-lg bg-amber-500/15 flex items-center justify-center text-amber-500">
-                  <Code2 className="w-4 h-4" />
-                </div>
-                <div>
-                  <h2
-                    className={`text-base md:text-lg font-bold tracking-tight ${
-                      isLight ? "text-slate-900" : "text-white"
-                    }`}
-                  >
-                    Implementation Code Snippet
-                  </h2>
-                  <p
-                    className={`text-xs md:text-sm ${
-                      isLight ? "text-slate-500" : "text-white/50"
-                    }`}
-                  >
-                    Actual core logic extracted from production source code
-                  </p>
-                </div>
-              </div>
-            </div>
-
             <div
-              className={`border rounded-xl p-5 shadow-xl space-y-3 font-mono text-xs md:text-sm relative transition-colors ${
-                isLight
-                  ? "bg-slate-900 border-slate-800 text-slate-100"
-                  : "bg-[#0d0d11] border-white/10 text-white"
+              className={`rounded-lg md:rounded-2xl p-3 md:p-6 space-y-3 md:space-y-4 shadow-inner ${
+                isLight ? "bg-white" : "bg-[#18181d]"
               }`}
             >
-              <div className="flex items-center justify-between pb-3 border-b border-white/10 text-slate-400 text-xs font-mono">
-                <div className="flex items-center space-x-2">
-                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                  <span>source.{project.codeSnippet.language}</span>
+              <div className="flex items-center justify-between">
+                <div className="flex items-center space-x-2.5">
+                  <div className="w-10 h-10 md:w-10 md:h-10 rounded-xl bg-amber-500/15 flex items-center justify-center text-amber-500 shrink-0">
+                    <Code2 className="w-4 h-4 md:w-5 md:h-5" />
+                  </div>
+                  <div>
+                    <h2
+                      className={`text-sm md:text-lg font-bold leading-tight md:leading-none tracking-tight mb-0.5 md:mb-1 ${
+                        isLight ? "text-slate-900" : "text-white"
+                      }`}
+                    >
+                      Implementation Code Snippet
+                    </h2>
+                    <p
+                      className={`text-xs md:text-sm leading-tight md:leading-none ${
+                        isLight ? "text-slate-800" : "text-white/80"
+                      }`}
+                    >
+                      Actual core logic extracted from production source code
+                    </p>
+                  </div>
                 </div>
-                <button
-                  onClick={handleCopyCode}
-                  className="flex items-center space-x-1.5 px-2.5 py-1 bg-white/10 hover:bg-white/20 rounded-md text-white transition-colors cursor-pointer text-xs"
-                >
-                  {copied ? (
-                    <Check className="w-3.5 h-3.5 text-emerald-400" />
-                  ) : (
-                    <Copy className="w-3.5 h-3.5" />
-                  )}
-                  <span>{copied ? "Copied" : "Copy Snippet"}</span>
-                </button>
               </div>
-              <pre className="text-blue-300 overflow-x-auto p-2 leading-relaxed text-xs md:text-sm">
-                <code>{project.codeSnippet.code}</code>
-              </pre>
+
+              <div
+                className={`border rounded-xl p-3.5 md:p-5 shadow-xl space-y-2.5 md:space-y-3 font-mono text-xs md:text-sm relative transition-colors ${
+                  isLight
+                    ? "bg-slate-900 border-slate-800 text-slate-100"
+                    : "bg-[#0d0d11] border-white/10 text-white"
+                }`}
+              >
+                <div className="flex items-center justify-between pb-2.5 md:pb-3 border-b border-white/10 text-slate-400 text-xs font-mono">
+                  <div className="flex items-center space-x-2">
+                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                    <span>source.{project.codeSnippet.language}</span>
+                  </div>
+                  <button
+                    onClick={handleCopyCode}
+                    className="flex items-center space-x-1.5 px-2.5 py-1 bg-white/10 hover:bg-white/20 rounded-md text-white transition-colors cursor-pointer active:scale-95 text-xs"
+                  >
+                    {copied ? (
+                      <Check className="w-3.5 h-3.5 text-emerald-400" />
+                    ) : (
+                      <Copy className="w-3.5 h-3.5" />
+                    )}
+                    <span>{copied ? "Copied" : "Copy Snippet"}</span>
+                  </button>
+                </div>
+                <pre className="text-blue-300 overflow-x-auto p-1.5 md:p-2 leading-relaxed text-xs md:text-sm">
+                  <code>{project.codeSnippet.code}</code>
+                </pre>
+              </div>
             </div>
           </div>
         )}
 
         {/* Footer Contact CTA Banner */}
         <div
-          className={`border rounded-2xl p-6 md:p-8 text-center space-y-4 shadow-sm transition-colors ${
+          className={`p-1 md:p-1.5 rounded-xl md:rounded-[22px] border transition-colors shadow-sm ${
             isLight
-              ? "bg-linear-to-r from-blue-50 to-indigo-50 border-blue-200/80 text-slate-900"
-              : "bg-linear-to-r from-blue-950/40 to-slate-900 border-white/10 text-white"
+              ? "bg-slate-200/60 border-blue-200/80"
+              : "bg-white/5 border-white/10"
           }`}
         >
-          <h3 className="text-base md:text-lg font-bold">
-            Interested in building a custom web system or AI pipeline?
-          </h3>
-          <p
-            className={`text-xs md:text-sm w-full ${
-              isLight ? "text-slate-600" : "text-white/70"
+          <div
+            className={`rounded-lg md:rounded-2xl p-4 md:p-8 text-center space-y-3 md:space-y-4 shadow-inner ${
+              isLight
+                ? "bg-linear-to-r from-blue-50 to-indigo-50 text-slate-900"
+                : "bg-linear-to-r from-blue-950/40 to-slate-900 text-white"
             }`}
           >
-            I engineer high-performance web platforms, Next.js starter kits,
-            multi-provider LLM integrations, and desktop apps.
-          </p>
-          <div className="flex justify-center pt-1">
-            <button
-              onClick={() => openApp("mail", "Contact")}
-              className="px-5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs md:text-sm rounded-xl flex items-center space-x-2 shadow-lg shadow-blue-600/30 transition-all active:scale-95 cursor-pointer"
+            <h3 className="text-sm md:text-lg font-bold leading-tight md:leading-none tracking-tight">
+              Interested in building a custom web system or AI pipeline?
+            </h3>
+            <p
+              className={`text-xs md:text-sm leading-tight md:leading-none w-full ${
+                isLight ? "text-slate-600" : "text-white/70"
+              }`}
             >
-              <Mail className="w-4 h-4" />
-              <span>Get in Touch</span>
-              <ArrowRight className="w-3.5 h-3.5" />
-            </button>
+              I engineer high-performance web platforms, Next.js starter kits,
+              multi-provider LLM integrations, and desktop apps.
+            </p>
+            <div className="flex justify-center pt-1">
+              <button
+                onClick={() => openApp("mail", "Contact")}
+                className="px-5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs md:text-sm rounded-xl flex items-center space-x-2 shadow-lg shadow-blue-600/30 transition-all active:scale-95 cursor-pointer"
+              >
+                <Mail className="w-4 h-4" />
+                <span>Get in Touch</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </button>
+            </div>
           </div>
         </div>
       </div>

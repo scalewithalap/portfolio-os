@@ -193,33 +193,33 @@ export default function PhotosApp() {
 
   return (
     <div
-      className={`flex flex-col h-full w-full font-sans select-none overflow-hidden transition-colors duration-200 ${
+      className={`flex flex-col h-full w-full max-w-full font-sans select-none overflow-hidden transition-colors duration-200 ${
         isLight ? "bg-slate-100 text-slate-900" : "bg-[#18181c] text-white"
       }`}
     >
       {/* App Header */}
       <div
-        className={`px-6 py-4 border-b shrink-0 flex items-center justify-between gap-4 backdrop-blur-xl ${
+        className={`px-3.5 sm:px-6 py-3 sm:py-4 border-b shrink-0 flex items-center justify-between gap-3 backdrop-blur-xl ${
           isLight
             ? "bg-white/80 border-slate-200"
             : "bg-black/30 border-white/10"
         }`}
       >
-        <div className="flex items-center space-x-3">
-          <div className="w-10 h-10 rounded-xl bg-linear-to-tr from-rose-500 via-purple-500 to-indigo-500 flex items-center justify-center shadow-lg shadow-purple-500/20 shrink-0">
-            <ImageIcon className="w-5 h-5 text-white" />
+        <div className="flex items-center space-x-2.5 sm:space-x-3 min-w-0">
+          <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-linear-to-tr from-rose-500 via-purple-500 to-indigo-500 flex items-center justify-center shadow-lg shadow-purple-500/20 shrink-0">
+            <ImageIcon className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
           </div>
-          <div>
+          <div className="min-w-0 flex-1">
             <div className="flex items-center space-x-2">
               <h1
-                className={`text-lg font-bold tracking-tight ${
+                className={`text-base sm:text-lg font-bold tracking-tight truncate ${
                   isLight ? "text-slate-900" : "text-white"
                 }`}
               >
                 Photos Gallery
               </h1>
               <span
-                className={`text-[10px] font-mono px-2 py-0.5 rounded-full font-bold ${
+                className={`text-[10px] font-mono px-2 py-0.5 rounded-full font-bold shrink-0 ${
                   isLight
                     ? "bg-blue-100 text-blue-700 border border-blue-200"
                     : "bg-blue-500/20 text-blue-300 border border-blue-500/30"
@@ -229,7 +229,7 @@ export default function PhotosApp() {
               </span>
             </div>
             <p
-              className={`text-xs ${
+              className={`text-xs truncate ${
                 isLight ? "text-slate-500" : "text-white/50"
               }`}
             >
@@ -240,13 +240,13 @@ export default function PhotosApp() {
       </div>
 
       {/* Main Screenshots Grid */}
-      <div className="flex-1 overflow-y-auto p-6 scrollbar-none">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div className="flex-1 overflow-y-auto overflow-x-hidden max-w-full p-3 sm:p-6 pb-24 md:pb-24 scrollbar-none space-y-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-5">
           {SCREENSHOT_PHOTOS.map((photo) => (
             <div
               key={photo.id}
               onClick={() => setSelectedPhoto(photo)}
-              className={`group relative rounded-2xl overflow-hidden border shadow-xl transition-all duration-300 cursor-pointer hover:-translate-y-1.5 ${
+              className={`group relative rounded-2xl overflow-hidden border shadow-xl transition-all duration-300 cursor-pointer active:scale-[0.98] ${
                 isLight
                   ? "bg-white border-slate-200 hover:shadow-2xl hover:border-blue-400"
                   : "bg-zinc-900/90 border-white/10 hover:shadow-2xl hover:border-blue-500/40"
@@ -255,9 +255,9 @@ export default function PhotosApp() {
               {/* Lazy Image Container */}
               <div className="relative overflow-hidden bg-black/40">
                 {photo.badge && (
-                  <div className="absolute top-3 right-3 z-30 pointer-events-none">
+                  <div className="absolute top-2.5 right-2.5 z-30 pointer-events-none">
                     <span
-                      className={`text-[10px] font-bold px-2.5 py-1 rounded-full border shadow-lg backdrop-blur-md ${
+                      className={`text-[9px] sm:text-[10px] font-bold px-2.5 py-0.5 sm:py-1 rounded-full border shadow-lg backdrop-blur-md ${
                         photo.badge === "Shipped & Live"
                           ? isLight
                             ? "bg-emerald-600/90 text-white border-emerald-400/40 shadow-emerald-950/20"
@@ -279,31 +279,31 @@ export default function PhotosApp() {
                 <LazyImage
                   src={photo.url}
                   alt={photo.title}
-                  containerClassName="w-full h-auto min-h-48"
+                  containerClassName="w-full h-auto min-h-40 sm:min-h-48"
                   className="w-full border-b border-slate-300 h-auto object-contain object-top duration-500"
                 />
 
                 {/* Hover Overlay */}
-                <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 p-4 flex flex-col justify-end pointer-events-none">
+                <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 p-3 sm:p-4 flex flex-col justify-end pointer-events-none">
                   <div className="flex items-center justify-between gap-3">
                     <div className="flex flex-col items-start text-white min-w-0 flex-1">
-                      <span className="text-sm md:text-base font-bold leading-snug">
+                      <span className="text-xs sm:text-base font-bold leading-snug truncate">
                         {photo.title}
                       </span>
-                      <p className="text-xs text-white/80 line-clamp-2 leading-snug mt-0.5">
+                      <p className="text-[11px] sm:text-xs text-white/80 line-clamp-2 leading-snug mt-0.5">
                         {photo.details}
                       </p>
                     </div>
-                    <Maximize2 className="w-5 h-5 text-blue-400 shrink-0" />
+                    <Maximize2 className="w-4 h-4 sm:w-5 sm:h-5 text-blue-400 shrink-0" />
                   </div>
                 </div>
               </div>
 
               {/* Card Footer Info */}
-              <div className="p-3.5 flex items-center justify-between">
-                <div className="flex flex-col pr-2">
+              <div className="p-3 sm:p-3.5 flex items-center justify-between gap-2">
+                <div className="flex flex-col min-w-0 flex-1">
                   <h3
-                    className={`text-sm md:text-base font-bold leading-none truncate ${
+                    className={`text-xs sm:text-base font-bold leading-tight truncate ${
                       isLight ? "text-slate-800" : "text-white"
                     }`}
                   >
@@ -315,7 +315,7 @@ export default function PhotosApp() {
                     e.stopPropagation();
                     handleOpenCaseStudy(photo);
                   }}
-                  className={`leading-none text-[11px] font-medium px-2.5 py-1.5 rounded-lg transition-colors shrink-0 flex items-center space-x-1 cursor-pointer ${
+                  className={`leading-none text-[10px] sm:text-[11px] font-medium px-2.5 py-1.5 rounded-lg transition-colors shrink-0 flex items-center space-x-1 active:scale-95 cursor-pointer ${
                     isLight
                       ? "bg-blue-50 text-blue-600 hover:bg-blue-600 hover:text-white"
                       : "bg-blue-500/20 text-blue-300 hover:bg-blue-600 hover:text-white"
@@ -333,11 +333,11 @@ export default function PhotosApp() {
       {/* Lightbox Preview Modal */}
       {selectedPhoto && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-fadeIn"
+          className="fixed inset-0 z-50 flex items-center justify-center p-2.5 sm:p-4 bg-black/85 backdrop-blur-md animate-fadeIn"
           onClick={() => setSelectedPhoto(null)}
         >
           <div
-            className={`w-full max-w-4xl rounded-3xl overflow-hidden shadow-2xl border flex flex-col max-h-[90vh] animate-scaleUp ${
+            className={`w-full max-w-4xl max-h-[92vh] rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border flex flex-col animate-scaleUp ${
               isLight
                 ? "bg-white border-slate-200 text-slate-900"
                 : "bg-zinc-900 border-white/20 text-white"
@@ -346,18 +346,18 @@ export default function PhotosApp() {
           >
             {/* Modal Header */}
             <div
-              className={`px-6 py-4 border-b flex items-center justify-between shrink-0 ${
+              className={`px-4 sm:px-6 py-3 sm:py-4 border-b flex items-center justify-between shrink-0 ${
                 isLight
                   ? "bg-slate-50 border-slate-200"
                   : "bg-black/40 border-white/10"
               }`}
             >
-              <h2 className="text-sm sm:text-base font-bold truncate pr-4">
+              <h2 className="text-xs sm:text-base font-bold truncate pr-3">
                 {selectedPhoto.title}
               </h2>
               <button
                 onClick={() => setSelectedPhoto(null)}
-                className={`p-2 rounded-xl transition-colors cursor-pointer ${
+                className={`p-1.5 sm:p-2 rounded-xl transition-colors active:scale-95 cursor-pointer ${
                   isLight
                     ? "bg-slate-200 hover:bg-slate-300 text-slate-700"
                     : "bg-white/10 hover:bg-white/20 text-white"
@@ -368,26 +368,28 @@ export default function PhotosApp() {
             </div>
 
             {/* Modal Screenshot Body */}
-            <div className="flex-1 overflow-y-auto p-4 bg-black/90 flex items-center justify-center min-h-75">
+            <div className="flex-1 overflow-y-auto p-2 sm:p-4 bg-black/90 flex items-center justify-center min-h-56 sm:min-h-75">
               <img
                 src={selectedPhoto.url}
                 alt={selectedPhoto.title}
-                className="max-w-full max-h-[60vh] object-contain rounded-xl shadow-2xl border border-white/10"
+                className="max-w-full max-h-[55vh] sm:max-h-[60vh] object-contain rounded-xl shadow-2xl border border-white/10"
               />
             </div>
 
             {/* Modal Details Footer */}
             <div
-              className={`p-6 border-t flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 shrink-0 ${
+              className={`p-3.5 sm:p-6 border-t flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-4 shrink-0 ${
                 isLight
                   ? "bg-slate-50 border-slate-200"
                   : "bg-black/40 border-white/10"
               }`}
             >
-              <div className="space-y-1 max-w-2xl">
-                <h3 className="text-sm font-bold">{selectedPhoto.title}</h3>
+              <div className="space-y-1 max-w-2xl min-w-0">
+                <h3 className="text-xs sm:text-sm font-bold truncate">
+                  {selectedPhoto.title}
+                </h3>
                 <p
-                  className={`text-xs leading-relaxed ${
+                  className={`text-[11px] sm:text-xs leading-relaxed ${
                     isLight ? "text-slate-600" : "text-white/70"
                   }`}
                 >
@@ -398,7 +400,7 @@ export default function PhotosApp() {
               {selectedPhoto.appId && (
                 <button
                   onClick={() => handleOpenCaseStudy(selectedPhoto)}
-                  className="px-4 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold flex items-center justify-center space-x-2 transition-all shadow-lg shadow-blue-500/25 shrink-0 cursor-pointer"
+                  className="px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold flex items-center justify-center space-x-2 transition-all shadow-lg shadow-blue-500/25 shrink-0 active:scale-95 cursor-pointer"
                 >
                   <span>Open Full Case Study</span>
                   <ExternalLink className="w-3.5 h-3.5" />

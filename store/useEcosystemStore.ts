@@ -446,9 +446,9 @@ export const useEcosystemStore = create<EcosystemState>()(
       }),
     toggleSpotlight: () =>
       set((state) => {
+        playSpotlightSound();
         state.isSpotlightOpen = !state.isSpotlightOpen;
         if (state.isSpotlightOpen) {
-          playSpotlightSound();
           state.isControlCenterOpen = false;
           state.isNotificationCenterOpen = false;
         }
@@ -456,6 +456,7 @@ export const useEcosystemStore = create<EcosystemState>()(
 
     toggleControlCenter: () =>
       set((state) => {
+        playSpotlightSound();
         state.isControlCenterOpen = !state.isControlCenterOpen;
         if (state.isControlCenterOpen) {
           state.isNotificationCenterOpen = false;
@@ -469,6 +470,7 @@ export const useEcosystemStore = create<EcosystemState>()(
 
     toggleNotificationCenter: () =>
       set((state) => {
+        playSpotlightSound();
         state.isNotificationCenterOpen = !state.isNotificationCenterOpen;
         if (state.isNotificationCenterOpen) {
           state.isControlCenterOpen = false;

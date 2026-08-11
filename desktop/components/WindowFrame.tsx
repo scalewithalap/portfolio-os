@@ -75,6 +75,7 @@ export default function WindowFrame({ app, children }: WindowFrameProps) {
     if (target.closest("button") || target.closest("input")) return;
 
     isDragging.current = true;
+    document.body.classList.add("is-dragging");
     dragStart.current = { x: e.clientX, y: e.clientY };
     if (windowRef.current) {
       const rect = windowRef.current.getBoundingClientRect();
@@ -244,6 +245,7 @@ export default function WindowFrame({ app, children }: WindowFrameProps) {
     };
 
     const handleMouseUp = () => {
+      document.body.classList.remove("is-dragging");
       if (isDragging.current && windowRef.current) {
         isDragging.current = false;
 
@@ -535,7 +537,7 @@ export default function WindowFrame({ app, children }: WindowFrameProps) {
             title="Close"
           >
             <X
-              className="w-2.25 h-2.25 text-black/50 opacity-0 group-hover/traffic:opacity-100"
+              className="w-2.25 h-2.25 text-black/50 opacity-0 group-hover/traffic:opacity-100 mt-px"
               strokeWidth={3}
             />
           </button>
@@ -549,7 +551,7 @@ export default function WindowFrame({ app, children }: WindowFrameProps) {
             title="Minimize"
           >
             <Minus
-              className="w-2.25 h-2.25 text-black/50 opacity-0 group-hover/traffic:opacity-100"
+              className="w-2.25 h-2.25 text-black/50 opacity-0 group-hover/traffic:opacity-100 mt-[0.5px]"
               strokeWidth={3}
             />
           </button>

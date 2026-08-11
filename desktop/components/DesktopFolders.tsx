@@ -242,6 +242,7 @@ export default function DesktopProjects() {
 
         if (Math.abs(dx) > 2 || Math.abs(dy) > 2) {
           activeDragRef.current.hasMoved = true;
+          document.body.classList.add("is-dragging");
         }
 
         const newX = Math.max(
@@ -265,6 +266,7 @@ export default function DesktopProjects() {
     };
 
     const handleMouseUp = () => {
+      document.body.classList.remove("is-dragging");
       if (animFrameId !== null) cancelAnimationFrame(animFrameId);
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("mouseup", handleMouseUp);

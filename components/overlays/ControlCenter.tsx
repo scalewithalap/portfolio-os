@@ -9,8 +9,16 @@
  */
 
 import { useRef, useEffect } from "react";
-import { Moon, Sun, LayoutGrid, Search, Volume2, VolumeX } from "lucide-react";
-import { useEcosystemStore } from "../../store/useEcosystemStore";
+import {
+  Moon,
+  Sun,
+  LayoutGrid,
+  Search,
+  Volume2,
+  VolumeX,
+  ImageIcon,
+} from "lucide-react";
+import { useEcosystemStore, WALLPAPERS } from "../../store/useEcosystemStore";
 
 export default function ControlCenter() {
   const {
@@ -27,6 +35,8 @@ export default function ControlCenter() {
     isMuted,
     toggleMute,
     openSpotlight,
+    setRandomWallpaper,
+    currentWallpaperIndex,
   } = useEcosystemStore();
 
   const controlCenterRef = useRef<HTMLDivElement | null>(null);
@@ -64,13 +74,13 @@ export default function ControlCenter() {
       {/* Invisible backdrop to dismiss Control Center */}
       <div
         onClick={closeControlCenter}
-        className="fixed inset-0 z-40 bg-transparent"
+        className="fixed inset-0 z-100 bg-transparent"
       />
 
       {/* Control Center Popover */}
       <div
         ref={controlCenterRef}
-        className={`fixed top-9 right-3 w-[320px] sm:w-85 backdrop-blur-3xl border rounded-2xl shadow-2xl z-50 p-4 space-y-3 font-sans select-none animate-fadeIn transition-colors ${
+        className={`fixed top-9 right-3 w-[320px] sm:w-85 backdrop-blur-3xl border rounded-2xl shadow-2xl z-100 p-4 space-y-3 font-sans select-none animate-fadeIn transition-colors ${
           isLight
             ? "bg-white/95 border-slate-200 text-slate-900 shadow-[0_20px_50px_rgba(0,0,0,0.15)]"
             : "bg-[#1a1a20]/90 border-white/20 text-white shadow-[0_20px_50px_rgba(0,0,0,0.6)]"
@@ -78,7 +88,7 @@ export default function ControlCenter() {
       >
         {/* Header Title */}
         <h3
-          className={`font-serif font-semibold text-sm ${isLight ? "text-slate-900" : "text-white/95"}`}
+          className={`font-serif font-semibold tracking-normal text-lg ${isLight ? "text-slate-900" : "text-white/95"}`}
         >
           Control Center
         </h3>
@@ -258,6 +268,42 @@ export default function ControlCenter() {
 
         {/* Action Shortcuts */}
         <div className="space-y-2 pt-1">
+          {/* Change Wallpaper Button */}
+          <button
+            onClick={() => setRandomWallpaper()}
+            className={`w-full border rounded-2xl p-2.5 flex items-center justify-between transition-all text-left group cursor-pointer ${
+              isLight
+                ? "bg-slate-100 hover:bg-slate-200 border-slate-200 text-slate-900"
+                : "bg-white/10 hover:bg-white/20 border-white/10 text-white"
+            }`}
+          >
+            <div className="flex items-center space-x-3">
+              <div className="w-8 h-8 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center group-hover:bg-purple-600 group-hover:text-white transition-colors">
+                <ImageIcon className="w-4 h-4" />
+              </div>
+              <div>
+                <span className="text-xs font-bold block">
+                  Change Wallpaper
+                </span>
+                <span
+                  className={`text-[10px] block ${isLight ? "text-slate-500" : "text-white/50"}`}
+                >
+                  {WALLPAPERS[currentWallpaperIndex]?.name ||
+                    "Desktop Background"}
+                </span>
+              </div>
+            </div>
+            <span
+              className={`text-[10px] font-semibold px-2.5 py-1 rounded-full border transition-all ${
+                isLight
+                  ? "bg-white border-slate-300 text-slate-700 group-hover:bg-slate-200"
+                  : "bg-white/10 border-white/15 text-white/80 group-hover:bg-white/20"
+              }`}
+            >
+              Shuffle 🎲
+            </span>
+          </button>
+
           {/* Spotlight Search Shortcut */}
           <button
             onClick={() => {

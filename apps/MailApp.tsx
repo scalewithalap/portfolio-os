@@ -21,6 +21,7 @@ import {
   Youtube,
   Instagram,
   Facebook,
+  ChevronLeft,
 } from "lucide-react";
 import { useEcosystemStore } from "../store/useEcosystemStore";
 
@@ -62,20 +63,26 @@ const EMAILS = [
 ];
 
 export default function MailApp() {
-  const [selectedId, setSelectedId] = useState("1");
+  const [selectedId, setSelectedId] = useState<string | null>("1");
+  const [mobileShowDetail, setMobileShowDetail] = useState<boolean>(false);
   const selectedEmail = EMAILS.find((e) => e.id === selectedId);
   const { systemTheme } = useEcosystemStore();
   const isLight = systemTheme === "light";
 
+  const handleSelectEmail = (id: string) => {
+    setSelectedId(id);
+    setMobileShowDetail(true);
+  };
+
   return (
     <div
-      className={`flex h-full w-full font-sans transition-colors duration-200 ${
+      className={`flex h-full w-full max-w-full font-sans select-none overflow-hidden transition-colors duration-200 ${
         isLight ? "bg-slate-50 text-slate-900" : "bg-[#1e1e1e] text-white"
       }`}
     >
-      {/* Sidebar - Mailboxes */}
+      {/* Sidebar - Mailboxes (Hidden on mobile < md) */}
       <div
-        className={`w-48 border-r flex flex-col shrink-0 transition-colors duration-200 ${
+        className={`w-48 border-r hidden md:flex flex-col shrink-0 transition-colors duration-200 ${
           isLight
             ? "bg-slate-100/90 border-slate-200 text-slate-800"
             : "bg-[#1e1e1e]/80 border-white/10 text-white"
@@ -208,9 +215,11 @@ export default function MailApp() {
         </div>
       </div>
 
-      {/* Inbox List */}
+      {/* Inbox List (On mobile, hidden when detail view is active) */}
       <div
-        className={`w-72 border-r flex flex-col shrink-0 transition-colors duration-200 ${
+        className={`w-full md:w-72 border-r flex flex-col shrink-0 transition-colors duration-200 ${
+          mobileShowDetail ? "hidden md:flex" : "flex"
+        } ${
           isLight
             ? "bg-slate-100/60 border-slate-200 text-slate-900"
             : "bg-[#2d2d2d] border-white/10 text-white"
@@ -230,12 +239,12 @@ export default function MailApp() {
           />
         </div>
 
-        <div className="flex-1 overflow-y-auto">
+        <div className="flex-1 overflow-y-auto overflow-x-hidden max-w-full pb-24 md:pb-24">
           {EMAILS.map((email) => (
             <button
               key={email.id}
-              onClick={() => setSelectedId(email.id)}
-              className={`w-full text-left px-4 py-3 border-b transition-colors ${
+              onClick={() => handleSelectEmail(email.id)}
+              className={`w-full text-left px-4 py-3 border-b transition-colors active:scale-[0.99] cursor-pointer ${
                 isLight ? "border-slate-200/60" : "border-white/5"
               } ${
                 selectedId === email.id
@@ -296,48 +305,61 @@ export default function MailApp() {
         </div>
       </div>
 
-      {/* Main Content Pane */}
+      {/* Main Content Pane (On mobile, visible when detail view is active) */}
       <div
-        className={`flex-1 overflow-y-auto flex flex-col relative transition-colors duration-200 ${
+        className={`flex-1 overflow-y-auto overflow-x-hidden max-w-full flex-col relative transition-colors duration-200 ${
+          mobileShowDetail ? "flex" : "hidden md:flex"
+        } ${
           isLight ? "bg-white text-slate-900" : "bg-[#1e1e1e] text-white"
         }`}
       >
-        {/* Top toolbar spacer */}
+        {/* Top toolbar */}
         <div
-          className={`h-12 border-b flex items-center px-4 shrink-0 justify-end space-x-4 absolute top-0 w-full z-10 transition-colors ${
+          className={`h-12 border-b flex items-center px-4 shrink-0 justify-between space-x-2 absolute top-0 w-full z-10 transition-colors ${
             isLight
               ? "bg-slate-100/90 border-slate-200"
               : "bg-[#2d2d2d] border-black/40"
           }`}
         >
-          <Paperclip
-            className={`w-4 h-4 ${
-              isLight ? "text-slate-800" : "text-white/80"
-            }`}
-          />
-          <Trash2
-            className={`w-4 h-4 ${
-              isLight ? "text-slate-800" : "text-white/80"
-            }`}
-          />
+          {/* Mobile Back Button */}
+          <button
+            onClick={() => setMobileShowDetail(false)}
+            className="md:hidden flex items-center space-x-1 text-sm font-semibold text-blue-500 cursor-pointer active:scale-95"
+          >
+            <ChevronLeft className="w-4 h-4" />
+            <span>Inbox</span>
+          </button>
+
+          <div className="flex items-center space-x-4 ml-auto">
+            <Paperclip
+              className={`w-4 h-4 ${
+                isLight ? "text-slate-800" : "text-white/80"
+              }`}
+            />
+            <Trash2
+              className={`w-4 h-4 ${
+                isLight ? "text-slate-800" : "text-white/80"
+              }`}
+            />
+          </div>
         </div>
 
-        <div className="pt-12 flex-1">
+        <div className="pt-12 flex-1 pb-24 md:pb-24">
           {selectedEmail ? (
             <div className="animate-in fade-in duration-300">
               {/* Email Header */}
               <div
-                className={`p-6 border-b ${isLight ? "border-slate-200" : "border-white/10"}`}
+                className={`p-4 sm:p-6 border-b ${isLight ? "border-slate-200" : "border-white/10"}`}
               >
                 <h2
-                  className={`text-xl font-bold mb-4 tracking-tight ${isLight ? "text-slate-900" : "text-white"}`}
+                  className={`text-lg sm:text-xl font-bold mb-3 tracking-tight ${isLight ? "text-slate-900" : "text-white"}`}
                 >
                   {selectedEmail.subject}
                 </h2>
-                <div className="flex justify-between items-start">
-                  <div className="flex items-center">
+                <div className="flex justify-between items-start gap-2">
+                  <div className="flex items-center min-w-0">
                     <div
-                      className={`w-9 h-9 rounded-full flex items-center justify-center font-bold mr-3 shadow-sm text-sm ${
+                      className={`w-8 h-8 sm:w-9 sm:h-9 rounded-full flex items-center justify-center font-bold mr-2.5 shadow-sm text-xs sm:text-sm shrink-0 ${
                         isLight
                           ? "bg-slate-200 border border-slate-300 text-slate-800"
                           : "bg-linear-to-br from-zinc-600 to-zinc-800 border border-white/10 text-white"
@@ -345,21 +367,21 @@ export default function MailApp() {
                     >
                       {selectedEmail.sender.charAt(0)}
                     </div>
-                    <div>
+                    <div className="min-w-0">
                       <div
-                        className={`font-semibold text-[13px] ${isLight ? "text-slate-900" : "text-white"}`}
+                        className={`font-semibold text-xs sm:text-[13px] truncate ${isLight ? "text-slate-900" : "text-white"}`}
                       >
                         {selectedEmail.sender}
                       </div>
                       <div
-                        className={`text-[12px] ${isLight ? "text-slate-500" : "text-white/50"}`}
+                        className={`text-[11px] sm:text-[12px] ${isLight ? "text-slate-500" : "text-white/50"}`}
                       >
                         To: Scale with Alap
                       </div>
                     </div>
                   </div>
                   <div
-                    className={`text-[12px] ${isLight ? "text-slate-500" : "text-white/50"}`}
+                    className={`text-[11px] sm:text-[12px] shrink-0 ${isLight ? "text-slate-500" : "text-white/50"}`}
                   >
                     {selectedEmail.date}
                   </div>
@@ -368,7 +390,7 @@ export default function MailApp() {
 
               {/* Email Body */}
               <div
-                className={`p-6 text-[14px] leading-relaxed w-full whitespace-pre-wrap font-sans ${
+                className={`p-4 sm:p-6 text-xs sm:text-[14px] leading-relaxed w-full whitespace-pre-wrap font-sans ${
                   isLight ? "text-slate-800" : "text-white/80"
                 }`}
               >
@@ -377,12 +399,14 @@ export default function MailApp() {
             </div>
           ) : (
             <div
-              className={`flex-1 h-full flex flex-col items-center justify-center ${
+              className={`flex-1 h-full flex flex-col items-center justify-center p-6 ${
                 isLight ? "text-slate-400" : "text-white/30"
               }`}
             >
-              <MailIcon className="w-16 h-16 mb-4 opacity-30" />
-              <p className="text-[13px] font-medium">No Message Selected</p>
+              <MailIcon className="w-12 h-12 sm:w-16 sm:h-16 mb-3 opacity-30" />
+              <p className="text-xs sm:text-[13px] font-medium">
+                No Message Selected
+              </p>
             </div>
           )}
         </div>
