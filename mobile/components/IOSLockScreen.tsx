@@ -80,6 +80,8 @@ export default function IOSLockScreen({ onUnlock }: IOSLockScreenProps) {
     const threshold = 70; // minimum swipe distance to unlock
 
     if (currentYRef.current >= threshold && lockScreenRef.current) {
+      // Instantly disable pointer events on lock screen so subsequent taps land on home icons immediately
+      lockScreenRef.current.style.pointerEvents = "none";
       playLockUnlockSound();
       // Trigger smooth swipe-up unlock animation off-screen
       gsap.to(lockScreenRef.current, {

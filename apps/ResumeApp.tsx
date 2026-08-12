@@ -33,35 +33,35 @@ export default function ResumeApp() {
 
   return (
     <div
-      className={`flex flex-col h-full w-full font-sans transition-colors duration-200 ${
+      className={`flex flex-col h-full w-full max-w-full font-sans select-none overflow-hidden transition-colors duration-200 ${
         isLight ? "bg-slate-50 text-slate-900" : "bg-[#18181b]"
       }`}
     >
       {/* Top Controls Bar */}
       <div
-        className={`h-12 border-b px-4 flex items-center justify-between shrink-0 transition-colors ${
+        className={`h-11 sm:h-12 border-b px-3 sm:px-4 flex items-center justify-between gap-2 shrink-0 transition-colors ${
           isLight
             ? "bg-slate-100 border-slate-200 text-slate-800"
             : "bg-[#27272a] border-white/10 text-white"
         }`}
       >
-        <div className="flex items-center space-x-2.5">
+        <div className="flex items-center space-x-2 sm:space-x-2.5 min-w-0 flex-1">
           <img
             src="/images/pdf.png"
             alt="PDF"
-            className="w-5 h-5 object-contain"
+            className="w-4 h-4 sm:w-5 sm:h-5 object-contain shrink-0"
             onError={(e) => {
               (e.target as HTMLElement).style.display = "none";
             }}
           />
-          <div>
+          <div className="min-w-0 flex-1">
             <span
-              className={`text-xs sm:text-[13px] font-semibold block leading-normal ${isLight ? "text-slate-900" : "text-white"}`}
+              className={`text-xs sm:text-[13px] font-semibold block leading-tight truncate ${isLight ? "text-slate-900" : "text-white"}`}
             >
               Alap Putatunda's Resume
             </span>
             <span
-              className={`text-[10px] block leading-none ${isLight ? "text-slate-700" : "text-white/70"}`}
+              className={`text-[9px] sm:text-[10px] block leading-none truncate ${isLight ? "text-slate-700" : "text-white/70"}`}
             >
               Official Resume
             </span>
@@ -69,27 +69,27 @@ export default function ResumeApp() {
         </div>
 
         {/* Action Controls */}
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center space-x-2 shrink-0">
           <a
             href="/files/alap_resume.pdf"
             download="Alap's Resume"
             onClick={handleDownloadToast}
-            className="px-3 py-1.5 bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold rounded-lg flex items-center space-x-1.5 shadow-md shadow-blue-600/30 transition-all active:scale-95 cursor-pointer"
+            className="px-2.5 py-1.5 sm:px-3 sm:py-1.5 bg-blue-600 hover:bg-blue-500 text-white text-[11px] sm:text-xs font-semibold rounded-lg flex items-center space-x-1 sm:space-x-1.5 shadow-md shadow-blue-600/30 transition-all active:scale-95 cursor-pointer"
           >
             <Download className="w-3.5 h-3.5" />
-            <span>Download as PDF</span>
+            <span>Download PDF</span>
           </a>
         </div>
       </div>
 
       {/* Main Document Content */}
       <div
-        className={`flex-1 overflow-y-auto p-3 md:p-6 pb-28 md:pb-32 font-sans transition-colors duration-200 ${
+        className={`flex-1 overflow-y-auto overflow-x-hidden max-w-full p-2.5 sm:p-5 md:p-6 pb-24 md:pb-24 font-sans transition-colors duration-200 scrollbar-none ${
           isLight ? "bg-slate-100/60" : "bg-[#09090b]"
         }`}
       >
         <div
-          className={`w-full border rounded-2xl p-4 md:p-8 shadow-2xl space-y-8 transition-colors ${
+          className={`w-full max-w-full border rounded-xl sm:rounded-2xl p-3.5 sm:p-6 md:p-8 shadow-2xl space-y-6 sm:space-y-8 transition-colors ${
             isLight
               ? "bg-white border-slate-200 text-slate-900 shadow-slate-300/50"
               : "bg-[#18181b] border-white/10 text-white"
@@ -97,128 +97,141 @@ export default function ResumeApp() {
         >
           {/* Resume Document Header */}
           <div
-            className={`border-b pb-6 text-center md:text-left ${isLight ? "border-slate-200" : "border-white/10"}`}
+            className={`border-b pb-4 sm:pb-6 text-left ${isLight ? "border-slate-200" : "border-white/10"}`}
           >
-            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 sm:gap-4">
               <div>
                 <h1
-                  className={`text-4xl font-bold tracking-tight ${isLight ? "text-slate-900" : "text-white"}`}
+                  className={`text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight wrap-break-word ${isLight ? "text-slate-900" : "text-white"}`}
                 >
                   ALAP PUTATUNDA
                 </h1>
                 <p
-                  className={`font-bold text-lg ${isLight ? "text-blue-800" : "text-blue-400"}`}
+                  className={`font-bold text-sm sm:text-base md:text-lg mt-0.5 ${isLight ? "text-blue-800" : "text-blue-400"}`}
                 >
                   Founding AI Engineer & Full-Stack AI-native Developer
                 </p>
                 <p
-                  className={`flex items-center text-sm md:text-base mt-1 ${isLight ? "text-slate-800" : "text-white/80"}`}
+                  className={`flex items-start sm:items-center text-xs sm:text-sm md:text-base mt-1.5 leading-relaxed ${isLight ? "text-slate-800" : "text-white/80"}`}
                 >
                   <MapPin
-                    className={`mr-1 w-3.5 h-3.5 ${isLight ? "text-blue-800" : "text-blue-400"} shrink-0`}
+                    className={`mr-1.5 w-3.5 h-3.5 ${isLight ? "text-blue-800" : "text-blue-400"} shrink-0 mt-0.5 sm:mt-0`}
                   />
-                  From India | Open to remote jobs | Ready to relocate with visa
-                  sponsorship | DM or Email for demos or to schedule a call
+                  <span>
+                    From India | Open to remote jobs | Ready to relocate with visa sponsorship | DM or Email for demos
+                  </span>
                 </p>
                 <div
-                  className={`flex flex-wrap items-center justify-center md:justify-start gap-x-4 gap-y-1.5 mt-1 text-sm md:text-base ${
+                  className={`flex flex-wrap items-center gap-1.5 sm:gap-2 mt-2.5 text-xs sm:text-sm ${
                     isLight ? "text-slate-800" : "text-white/80"
                   }`}
                 >
                   <a
                     href="mailto:hi@scalewithalap.com"
-                    className={`flex items-center space-x-1 ${isLight ? "hover:text-blue-800" : "hover:text-blue-400"}`}
+                    className={`flex items-center space-x-1 px-2 py-0.5 rounded-md border text-xs transition-colors ${
+                      isLight
+                        ? "bg-slate-100 border-slate-200 hover:text-blue-800 hover:bg-slate-200"
+                        : "bg-white/5 border-white/10 hover:text-blue-400 hover:bg-white/10"
+                    }`}
                   >
                     <Mail
-                      className={`w-3.5 h-3.5 ${isLight ? "text-blue-800" : "text-blue-400"} shrink-0`}
+                      className={`w-3 h-3 ${isLight ? "text-blue-800" : "text-blue-400"} shrink-0`}
                     />
                     <span>hi@scalewithalap.com</span>
                   </a>
-                  <span>•</span>
                   <a
                     href="https://wa.me/917980301128/"
                     target="_blank"
                     rel="noreferrer"
-                    className={
-                      isLight ? "hover:text-blue-800" : "hover:text-blue-400"
-                    }
+                    className={`px-2 py-0.5 rounded-md border text-xs transition-colors ${
+                      isLight
+                        ? "bg-slate-100 border-slate-200 hover:text-blue-800 hover:bg-slate-200"
+                        : "bg-white/5 border-white/10 hover:text-blue-400 hover:bg-white/10"
+                    }`}
                   >
                     WhatsApp
                   </a>
-                  <span>•</span>
                   <a
                     href="https://linkedin.com/in/scalewithalap"
                     target="_blank"
                     rel="noreferrer"
-                    className={
-                      isLight ? "hover:text-blue-800" : "hover:text-blue-400"
-                    }
+                    className={`px-2 py-0.5 rounded-md border text-xs transition-colors ${
+                      isLight
+                        ? "bg-slate-100 border-slate-200 hover:text-blue-800 hover:bg-slate-200"
+                        : "bg-white/5 border-white/10 hover:text-blue-400 hover:bg-white/10"
+                    }`}
                   >
                     LinkedIn
                   </a>
-                  <span>•</span>
                   <a
                     href="https://github.com/scalewithalap"
                     target="_blank"
                     rel="noreferrer"
-                    className={
-                      isLight ? "hover:text-blue-800" : "hover:text-blue-400"
-                    }
+                    className={`px-2 py-0.5 rounded-md border text-xs transition-colors ${
+                      isLight
+                        ? "bg-slate-100 border-slate-200 hover:text-blue-800 hover:bg-slate-200"
+                        : "bg-white/5 border-white/10 hover:text-blue-400 hover:bg-white/10"
+                    }`}
                   >
                     GitHub
                   </a>
-                  <span>•</span>
                   <a
                     href="https://x.com/scalewithalap"
                     target="_blank"
                     rel="noreferrer"
-                    className={
-                      isLight ? "hover:text-blue-800" : "hover:text-blue-400"
-                    }
+                    className={`px-2 py-0.5 rounded-md border text-xs transition-colors ${
+                      isLight
+                        ? "bg-slate-100 border-slate-200 hover:text-blue-800 hover:bg-slate-200"
+                        : "bg-white/5 border-white/10 hover:text-blue-400 hover:bg-white/10"
+                    }`}
                   >
                     X
                   </a>
-                  <span>•</span>
                   <a
                     href="https://www.threads.com/@scalewithalap"
                     target="_blank"
                     rel="noreferrer"
-                    className={
-                      isLight ? "hover:text-blue-800" : "hover:text-blue-400"
-                    }
+                    className={`px-2 py-0.5 rounded-md border text-xs transition-colors ${
+                      isLight
+                        ? "bg-slate-100 border-slate-200 hover:text-blue-800 hover:bg-slate-200"
+                        : "bg-white/5 border-white/10 hover:text-blue-400 hover:bg-white/10"
+                    }`}
                   >
                     Threads
                   </a>
-                  <span>•</span>
                   <a
                     href="https://www.youtube.com/@scalewithalap"
                     target="_blank"
                     rel="noreferrer"
-                    className={
-                      isLight ? "hover:text-blue-800" : "hover:text-blue-400"
-                    }
+                    className={`px-2 py-0.5 rounded-md border text-xs transition-colors ${
+                      isLight
+                        ? "bg-slate-100 border-slate-200 hover:text-blue-800 hover:bg-slate-200"
+                        : "bg-white/5 border-white/10 hover:text-blue-400 hover:bg-white/10"
+                    }`}
                   >
                     YouTube
                   </a>
-                  <span>•</span>
                   <a
                     href="https://www.instagram.com/scalewithalap"
                     target="_blank"
                     rel="noreferrer"
-                    className={
-                      isLight ? "hover:text-blue-800" : "hover:text-blue-400"
-                    }
+                    className={`px-2 py-0.5 rounded-md border text-xs transition-colors ${
+                      isLight
+                        ? "bg-slate-100 border-slate-200 hover:text-blue-800 hover:bg-slate-200"
+                        : "bg-white/5 border-white/10 hover:text-blue-400 hover:bg-white/10"
+                    }`}
                   >
                     Instagram
                   </a>
-                  <span>•</span>
                   <a
                     href="https://www.facebook.com/scalewithalap"
                     target="_blank"
                     rel="noreferrer"
-                    className={
-                      isLight ? "hover:text-blue-800" : "hover:text-blue-400"
-                    }
+                    className={`px-2 py-0.5 rounded-md border text-xs transition-colors ${
+                      isLight
+                        ? "bg-slate-100 border-slate-200 hover:text-blue-800 hover:bg-slate-200"
+                        : "bg-white/5 border-white/10 hover:text-blue-400 hover:bg-white/10"
+                    }`}
                   >
                     Facebook
                   </a>
@@ -240,7 +253,7 @@ export default function ResumeApp() {
               <span>Summary</span>
             </h2>
             <p
-              className={`text-xs sm:text-sm leading-normal p-4 rounded-xl border ${
+              className={`text-xs sm:text-sm leading-relaxed p-3.5 sm:p-4 rounded-xl border ${
                 isLight
                   ? "bg-slate-50 border-slate-200 text-slate-800"
                   : "bg-white/5 border-white/5 text-white/80"
@@ -273,7 +286,7 @@ export default function ResumeApp() {
               <span>Technical Skills</span>
             </h2>
             <div
-              className={`p-4 rounded-xl border space-y-2.5 text-xs md:text-sm ${
+              className={`p-3.5 sm:p-4 rounded-xl border space-y-2.5 text-xs sm:text-sm leading-relaxed ${
                 isLight
                   ? "bg-slate-50 border-slate-200 text-slate-800"
                   : "bg-white/5 border-white/5 text-white/80"
@@ -382,16 +395,16 @@ export default function ResumeApp() {
               <span>Projects</span>
             </h2>
 
-            <div className="grid grid-cols-1 gap-3 text-xs">
+            <div className="grid grid-cols-1 gap-3 text-xs sm:text-sm">
               <div
-                className={`p-4 rounded-xl border space-y-2 transition-all ${
+                className={`p-3.5 sm:p-4 rounded-xl border space-y-2 transition-all ${
                   isLight
                     ? "bg-slate-50/70 border-slate-200/80 hover:border-slate-300"
                     : "bg-white/2 border-white/10 hover:border-white/20"
                 }`}
               >
                 <h3
-                  className={`font-bold text-sm md:text-base ${
+                  className={`font-bold text-sm sm:text-base leading-snug ${
                     isLight ? "text-blue-800" : "text-blue-400"
                   }`}
                 >
@@ -415,7 +428,7 @@ export default function ResumeApp() {
                   </a>
                 </h3>
                 <ul
-                  className={`md:pl-7 text-xs md:text-sm list-disc space-y-1 leading-normal ${isLight ? "text-slate-800 font-medium" : "text-white/80 font-normal"}`}
+                  className={`pl-4 sm:pl-6 md:pl-7 text-xs sm:text-sm list-disc space-y-1 leading-relaxed ${isLight ? "text-slate-800 font-medium" : "text-white/80 font-normal"}`}
                 >
                   <li>
                     Built a 39-file application that recreates macOS and iOS
@@ -439,14 +452,14 @@ export default function ResumeApp() {
               </div>
 
               <div
-                className={`p-4 rounded-xl border space-y-2 transition-all ${
+                className={`p-3.5 sm:p-4 rounded-xl border space-y-2 transition-all ${
                   isLight
                     ? "bg-slate-50/70 border-slate-200/80 hover:border-slate-300"
                     : "bg-white/2 border-white/10 hover:border-white/20"
                 }`}
               >
                 <h3
-                  className={`font-bold text-sm md:text-base ${isLight ? "text-blue-800" : "text-blue-400"}`}
+                  className={`font-bold text-sm sm:text-base leading-snug ${isLight ? "text-blue-800" : "text-blue-400"}`}
                 >
                   Vibe44 | Marketing website & MCP for Vibe44 Next.js AI SaaS
                   Starter Kit |{" "}
@@ -460,7 +473,7 @@ export default function ResumeApp() {
                   </a>
                 </h3>
                 <ul
-                  className={`md:pl-7 text-xs md:text-sm list-disc space-y-1 leading-normal ${isLight ? "text-slate-800 font-medium" : "text-white/80 font-normal"}`}
+                  className={`pl-4 sm:pl-6 md:pl-7 text-xs sm:text-sm list-disc space-y-1 leading-relaxed ${isLight ? "text-slate-800 font-medium" : "text-white/80 font-normal"}`}
                 >
                   <li>
                     Built from scratch a serverless MCP server with JSON-RPC
@@ -478,14 +491,14 @@ export default function ResumeApp() {
               </div>
 
               <div
-                className={`p-4 rounded-xl border space-y-2 transition-all ${
+                className={`p-3.5 sm:p-4 rounded-xl border space-y-2 transition-all ${
                   isLight
                     ? "bg-slate-50/70 border-slate-200/80 hover:border-slate-300"
                     : "bg-white/2 border-white/10 hover:border-white/20"
                 }`}
               >
                 <h3
-                  className={`font-bold text-sm md:text-base ${isLight ? "text-blue-800" : "text-blue-400"}`}
+                  className={`font-bold text-sm sm:text-base leading-snug ${isLight ? "text-blue-800" : "text-blue-400"}`}
                 >
                   Vibe44 Starter Kit | Demo website for Vibe44 Next.js AI SaaS
                   Starter Kit |{" "}
@@ -499,7 +512,7 @@ export default function ResumeApp() {
                   </a>
                 </h3>
                 <ul
-                  className={`md:pl-7 text-xs md:text-sm list-disc space-y-1 leading-normal ${isLight ? "text-slate-800 font-medium" : "text-white/80 font-normal"}`}
+                  className={`pl-4 sm:pl-6 md:pl-7 text-xs sm:text-sm list-disc space-y-1 leading-relaxed ${isLight ? "text-slate-800 font-medium" : "text-white/80 font-normal"}`}
                 >
                   <li>
                     Built from scratch a 687-file, ~165,000-line Next.js 16
@@ -520,14 +533,14 @@ export default function ResumeApp() {
               </div>
 
               <div
-                className={`p-4 rounded-xl border space-y-2 transition-all ${
+                className={`p-3.5 sm:p-4 rounded-xl border space-y-2 transition-all ${
                   isLight
                     ? "bg-slate-50/70 border-slate-200/80 hover:border-slate-300"
                     : "bg-white/2 border-white/10 hover:border-white/20"
                 }`}
               >
                 <h3
-                  className={`font-bold text-sm md:text-base ${isLight ? "text-blue-800" : "text-blue-400"}`}
+                  className={`font-bold text-sm sm:text-base leading-snug ${isLight ? "text-blue-800" : "text-blue-400"}`}
                 >
                   Zero Headache | Fully managed AI front desk for local service
                   businesses | YC Fall 2026 applicant |{" "}
@@ -541,7 +554,7 @@ export default function ResumeApp() {
                   </a>{" "}
                 </h3>
                 <ul
-                  className={`md:pl-7 text-xs md:text-sm list-disc space-y-1 leading-normal ${isLight ? "text-slate-800 font-medium" : "text-white/80 font-normal"}`}
+                  className={`pl-4 sm:pl-6 md:pl-7 text-xs sm:text-sm list-disc space-y-1 leading-relaxed ${isLight ? "text-slate-800 font-medium" : "text-white/80 font-normal"}`}
                 >
                   <li>
                     Built from scratch a 12-channel inbound engine with 10
@@ -557,14 +570,14 @@ export default function ResumeApp() {
               </div>
 
               <div
-                className={`p-4 rounded-xl border space-y-2 transition-all ${
+                className={`p-3.5 sm:p-4 rounded-xl border space-y-2 transition-all ${
                   isLight
                     ? "bg-slate-50/70 border-slate-200/80 hover:border-slate-300"
                     : "bg-white/2 border-white/10 hover:border-white/20"
                 }`}
               >
                 <h3
-                  className={`font-bold text-sm md:text-base ${isLight ? "text-blue-800" : "text-blue-400"}`}
+                  className={`font-bold text-sm sm:text-base leading-snug ${isLight ? "text-blue-800" : "text-blue-400"}`}
                 >
                   Zero Headache Platform | Multi-tenant Dashboard & AI Agents |{" "}
                   <a
@@ -577,7 +590,7 @@ export default function ResumeApp() {
                   </a>
                 </h3>
                 <ul
-                  className={`md:pl-7 text-xs md:text-sm list-disc space-y-1 leading-normal ${isLight ? "text-slate-800 font-medium" : "text-white/80 font-normal"}`}
+                  className={`pl-4 sm:pl-6 md:pl-7 text-xs sm:text-sm list-disc space-y-1 leading-relaxed ${isLight ? "text-slate-800 font-medium" : "text-white/80 font-normal"}`}
                 >
                   <li>
                     Building from scratch a Next.js 16 platform that runs one
@@ -596,14 +609,14 @@ export default function ResumeApp() {
               </div>
 
               <div
-                className={`p-4 rounded-xl border space-y-2 transition-all ${
+                className={`p-3.5 sm:p-4 rounded-xl border space-y-2 transition-all ${
                   isLight
                     ? "bg-slate-50/70 border-slate-200/80 hover:border-slate-300"
                     : "bg-white/2 border-white/10 hover:border-white/20"
                 }`}
               >
                 <h3
-                  className={`font-bold text-sm md:text-base ${isLight ? "text-blue-800" : "text-blue-400"}`}
+                  className={`font-bold text-sm sm:text-base leading-snug ${isLight ? "text-blue-800" : "text-blue-400"}`}
                 >
                   OpenUI | Local-First UI Design Platform |{" "}
                   <a
@@ -616,7 +629,7 @@ export default function ResumeApp() {
                   </a>
                 </h3>
                 <ul
-                  className={`md:pl-7 text-xs md:text-sm list-disc space-y-1 leading-normal ${isLight ? "text-slate-800 font-medium" : "text-white/80 font-normal"}`}
+                  className={`pl-4 sm:pl-6 md:pl-7 text-xs sm:text-sm list-disc space-y-1 leading-relaxed ${isLight ? "text-slate-800 font-medium" : "text-white/80 font-normal"}`}
                 >
                   <li>
                     Built an MIT-licensed, provider-agnostic alternative to
@@ -628,14 +641,14 @@ export default function ResumeApp() {
               </div>
 
               <div
-                className={`p-4 rounded-xl border space-y-2 transition-all ${
+                className={`p-3.5 sm:p-4 rounded-xl border space-y-2 transition-all ${
                   isLight
                     ? "bg-slate-50/70 border-slate-200/80 hover:border-slate-300"
                     : "bg-white/2 border-white/10 hover:border-white/20"
                 }`}
               >
                 <h3
-                  className={`font-bold text-sm md:text-base ${isLight ? "text-blue-800" : "text-blue-400"}`}
+                  className={`font-bold text-sm sm:text-base leading-snug ${isLight ? "text-blue-800" : "text-blue-400"}`}
                 >
                   Make Me Sound | AI-powered Communication Copilot |{" "}
                   <a
@@ -648,7 +661,7 @@ export default function ResumeApp() {
                   </a>
                 </h3>
                 <ul
-                  className={`md:pl-7 text-xs md:text-sm list-disc space-y-1 leading-normal ${isLight ? "text-slate-800 font-medium" : "text-white/80 font-normal"}`}
+                  className={`pl-4 sm:pl-6 md:pl-7 text-xs sm:text-sm list-disc space-y-1 leading-relaxed ${isLight ? "text-slate-800 font-medium" : "text-white/80 font-normal"}`}
                 >
                   <li>
                     Building a parallel multi-stream engine that converts drafts
@@ -659,14 +672,14 @@ export default function ResumeApp() {
               </div>
 
               <div
-                className={`p-4 rounded-xl border space-y-2 transition-all ${
+                className={`p-3.5 sm:p-4 rounded-xl border space-y-2 transition-all ${
                   isLight
                     ? "bg-slate-50/70 border-slate-200/80 hover:border-slate-300"
                     : "bg-white/2 border-white/10 hover:border-white/20"
                 }`}
               >
                 <h3
-                  className={`font-bold text-sm md:text-base ${isLight ? "text-blue-800" : "text-blue-400"}`}
+                  className={`font-bold text-sm sm:text-base leading-snug ${isLight ? "text-blue-800" : "text-blue-400"}`}
                 >
                   Freecom AI | Open-Source AI eCommerce Platform |{" "}
                   <a
@@ -679,7 +692,7 @@ export default function ResumeApp() {
                   </a>
                 </h3>
                 <ul
-                  className={`md:pl-7 text-xs md:text-sm list-disc space-y-1 leading-normal ${isLight ? "text-slate-800 font-medium" : "text-white/80 font-normal"}`}
+                  className={`pl-4 sm:pl-6 md:pl-7 text-xs sm:text-sm list-disc space-y-1 leading-relaxed ${isLight ? "text-slate-800 font-medium" : "text-white/80 font-normal"}`}
                 >
                   <li>
                     Building an open-source digital-download commerce platform
@@ -691,14 +704,14 @@ export default function ResumeApp() {
               </div>
 
               <div
-                className={`p-4 rounded-xl border space-y-2 transition-all ${
+                className={`p-3.5 sm:p-4 rounded-xl border space-y-2 transition-all ${
                   isLight
                     ? "bg-slate-50/70 border-slate-200/80 hover:border-slate-300"
                     : "bg-white/2 border-white/10 hover:border-white/20"
                 }`}
               >
                 <h3
-                  className={`font-bold text-sm md:text-base ${isLight ? "text-blue-800" : "text-blue-400"}`}
+                  className={`font-bold text-sm sm:text-base leading-snug ${isLight ? "text-blue-800" : "text-blue-400"}`}
                 >
                   Soothly AI | Autonomous Revenue Platform & 8-AI-Agents
                   Ecosystem |{" "}
@@ -712,7 +725,7 @@ export default function ResumeApp() {
                   </a>
                 </h3>
                 <ul
-                  className={`md:pl-7 text-xs md:text-sm list-disc space-y-1 leading-normal ${isLight ? "text-slate-800 font-medium" : "text-white/80 font-normal"}`}
+                  className={`pl-4 sm:pl-6 md:pl-7 text-xs sm:text-sm list-disc space-y-1 leading-relaxed ${isLight ? "text-slate-800 font-medium" : "text-white/80 font-normal"}`}
                 >
                   <li>
                     Building an autonomous revenue operations platform running
@@ -744,11 +757,11 @@ export default function ResumeApp() {
               <span>Work Experience</span>
             </h2>
             <div
-              className={`border-l-2 ${isLight ? "border-blue-300/70" : "border-blue-500/30"} pl-4 space-y-6 text-xs ml-1 relative`}
+              className={`border-l-2 ${isLight ? "border-blue-300/70" : "border-blue-500/30"} pl-3.5 sm:pl-4 space-y-5 sm:space-y-6 text-xs sm:text-sm ml-0.5 sm:ml-1 relative`}
             >
               <div className="relative space-y-1.5">
                 <div
-                  className={`absolute -left-5.25 top-1.5 w-2.5 h-2.5 rounded-full ${
+                  className={`absolute -left-5 sm:-left-5.25 top-1.5 w-2.5 h-2.5 rounded-full ${
                     isLight
                       ? "bg-blue-600 ring-4 ring-white"
                       : "bg-blue-400 ring-4 ring-[#18181b]"
@@ -756,13 +769,13 @@ export default function ResumeApp() {
                 />
                 <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1.5">
                   <h3
-                    className={`font-bold text-sm md:text-base ${isLight ? "text-blue-800" : "text-blue-400"}`}
+                    className={`font-bold text-sm sm:text-base leading-snug ${isLight ? "text-blue-800" : "text-blue-400"}`}
                   >
                     Founder & Full-stack AI-native Developer | Scale with Alap
                     (Personal Brand)
                   </h3>
                   <span
-                    className={`px-2.5 py-0.5 rounded-full font-mono text-[11px] font-medium shrink-0 self-start sm:self-auto ${
+                    className={`px-2.5 py-0.5 rounded-full font-mono text-[10px] sm:text-[11px] font-medium shrink-0 self-start sm:self-auto ${
                       isLight
                         ? "bg-blue-50 text-blue-800 border border-blue-200/80"
                         : "bg-blue-500/10 text-blue-300 border border-blue-500/20"
@@ -772,7 +785,7 @@ export default function ResumeApp() {
                   </span>
                 </div>
                 <ul
-                  className={`md:pl-7 text-xs md:text-sm list-disc space-y-1 leading-normal ${isLight ? "text-slate-800 font-medium" : "text-white/80 font-normal"}`}
+                  className={`pl-4 sm:pl-6 md:pl-7 text-xs sm:text-sm list-disc space-y-1 leading-relaxed ${isLight ? "text-slate-800 font-medium" : "text-white/80 font-normal"}`}
                 >
                   <li>
                     Founded Scale with Alap to publish technical content and
@@ -789,7 +802,7 @@ export default function ResumeApp() {
 
               <div className="relative space-y-1.5">
                 <div
-                  className={`absolute -left-5.25 top-1.5 w-2.5 h-2.5 rounded-full ${
+                  className={`absolute -left-5 sm:-left-5.25 top-1.5 w-2.5 h-2.5 rounded-full ${
                     isLight
                       ? "bg-blue-600 ring-4 ring-white"
                       : "bg-blue-400 ring-4 ring-[#18181b]"
@@ -797,12 +810,12 @@ export default function ResumeApp() {
                 />
                 <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1.5">
                   <h3
-                    className={`font-bold text-sm md:text-base ${isLight ? "text-blue-800" : "text-blue-400"}`}
+                    className={`font-bold text-sm sm:text-base leading-snug ${isLight ? "text-blue-800" : "text-blue-400"}`}
                   >
                     Co-founder & CEO | Zero Headache (AI-Native Service Company)
                   </h3>
                   <span
-                    className={`px-2.5 py-0.5 rounded-full font-mono text-[11px] font-medium shrink-0 self-start sm:self-auto ${
+                    className={`px-2.5 py-0.5 rounded-full font-mono text-[10px] sm:text-[11px] font-medium shrink-0 self-start sm:self-auto ${
                       isLight
                         ? "bg-blue-50 text-blue-800 border border-blue-200/80"
                         : "bg-blue-500/10 text-blue-300 border border-blue-500/20"
@@ -812,7 +825,7 @@ export default function ResumeApp() {
                   </span>
                 </div>
                 <ul
-                  className={`md:pl-7 text-xs md:text-sm list-disc space-y-1 leading-normal ${isLight ? "text-slate-800 font-medium" : "text-white/80 font-normal"}`}
+                  className={`pl-4 sm:pl-6 md:pl-7 text-xs sm:text-sm list-disc space-y-1 leading-relaxed ${isLight ? "text-slate-800 font-medium" : "text-white/80 font-normal"}`}
                 >
                   <li>
                     Leads product and engineering for a 24/7 AI lead-capture,
@@ -830,7 +843,7 @@ export default function ResumeApp() {
 
               <div className="relative space-y-1.5">
                 <div
-                  className={`absolute -left-5.25 top-1.5 w-2.5 h-2.5 rounded-full ${
+                  className={`absolute -left-5 sm:-left-5.25 top-1.5 w-2.5 h-2.5 rounded-full ${
                     isLight
                       ? "bg-blue-600 ring-4 ring-white"
                       : "bg-blue-400 ring-4 ring-[#18181b]"
@@ -838,13 +851,13 @@ export default function ResumeApp() {
                 />
                 <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1.5">
                   <h3
-                    className={`font-bold text-sm md:text-base ${isLight ? "text-blue-800" : "text-blue-400"}`}
+                    className={`font-bold text-sm sm:text-base leading-snug ${isLight ? "text-blue-800" : "text-blue-400"}`}
                   >
                     Co-founder & CTO | Pharmison Valentes Pharma Pvt. Ltd.
                     (Pharmaceutical)
                   </h3>
                   <span
-                    className={`px-2.5 py-0.5 rounded-full font-mono text-[11px] font-medium shrink-0 self-start sm:self-auto ${
+                    className={`px-2.5 py-0.5 rounded-full font-mono text-[10px] sm:text-[11px] font-medium shrink-0 self-start sm:self-auto ${
                       isLight
                         ? "bg-blue-50 text-blue-800 border border-blue-200/80"
                         : "bg-blue-500/10 text-blue-300 border border-blue-500/20"
@@ -854,7 +867,7 @@ export default function ResumeApp() {
                   </span>
                 </div>
                 <ul
-                  className={`md:pl-7 text-xs md:text-sm list-disc space-y-1 leading-normal ${isLight ? "text-slate-800 font-medium" : "text-white/80 font-normal"}`}
+                  className={`pl-4 sm:pl-6 md:pl-7 text-xs sm:text-sm list-disc space-y-1 leading-relaxed ${isLight ? "text-slate-800 font-medium" : "text-white/80 font-normal"}`}
                 >
                   <li>
                     Co-founded a registered Indian pharmaceutical company and
@@ -870,7 +883,7 @@ export default function ResumeApp() {
 
               <div className="relative space-y-1.5">
                 <div
-                  className={`absolute -left-5.25 top-1.5 w-2.5 h-2.5 rounded-full ${
+                  className={`absolute -left-5 sm:-left-5.25 top-1.5 w-2.5 h-2.5 rounded-full ${
                     isLight
                       ? "bg-blue-600 ring-4 ring-white"
                       : "bg-blue-400 ring-4 ring-[#18181b]"
@@ -878,12 +891,12 @@ export default function ResumeApp() {
                 />
                 <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1.5">
                   <h3
-                    className={`font-bold text-sm md:text-base ${isLight ? "text-blue-800" : "text-blue-400"}`}
+                    className={`font-bold text-sm sm:text-base leading-snug ${isLight ? "text-blue-800" : "text-blue-400"}`}
                   >
                     Full-Stack AI & Software Engineer | Freelancer
                   </h3>
                   <span
-                    className={`px-2.5 py-0.5 rounded-full font-mono text-[11px] font-medium shrink-0 self-start sm:self-auto ${
+                    className={`px-2.5 py-0.5 rounded-full font-mono text-[10px] sm:text-[11px] font-medium shrink-0 self-start sm:self-auto ${
                       isLight
                         ? "bg-blue-50 text-blue-800 border border-blue-200/80"
                         : "bg-blue-500/10 text-blue-300 border border-blue-500/20"
@@ -893,7 +906,7 @@ export default function ResumeApp() {
                   </span>
                 </div>
                 <ul
-                  className={`md:pl-7 text-xs md:text-sm list-disc space-y-1 leading-normal ${isLight ? "text-slate-800 font-medium" : "text-white/80 font-normal"}`}
+                  className={`pl-4 sm:pl-6 md:pl-7 text-xs sm:text-sm list-disc space-y-1 leading-relaxed ${isLight ? "text-slate-800 font-medium" : "text-white/80 font-normal"}`}
                 >
                   <li>
                     Designed, built, and deployed custom web applications, REST
@@ -925,7 +938,7 @@ export default function ResumeApp() {
               <span>Recognition</span>
             </h2>
             <div
-              className={`p-4 rounded-xl border text-xs md:text-sm space-y-1 ${
+              className={`p-3.5 sm:p-4 rounded-xl border text-xs sm:text-sm space-y-1 leading-relaxed ${
                 isLight
                   ? "bg-amber-50 border-amber-200 text-slate-800"
                   : "bg-amber-500/10 border-amber-500/20 text-white/80"
@@ -939,7 +952,7 @@ export default function ResumeApp() {
                   href="https://hyperagent.com/s/6YBNB4VIO26vErBhadK36w"
                   target="_blank"
                   rel="noreferrer"
-                  className="text-xs md:text-sm font-semibold text-amber-600 hover:text-amber-500 underline decoration-1 underline-offset-2 flex items-center space-x-1"
+                  className="text-xs sm:text-sm font-semibold text-amber-600 hover:text-amber-500 underline decoration-1 underline-offset-2 flex items-center space-x-1"
                 >
                   <span>Learn more</span>
                   <ExternalLink className="w-3 h-3" />
@@ -978,7 +991,7 @@ export default function ResumeApp() {
               />
               <span>Education</span>
             </h2>
-            <div className="space-y-2.5 text-xs md:text-sm">
+            <div className="space-y-2.5 text-xs sm:text-sm">
               <div>
                 <div
                   className={`font-bold ${isLight ? "text-slate-900" : "text-white"}`}

@@ -63,11 +63,15 @@ export default function MobileHome() {
             return (
               <div
                 key={item.id}
-                className="flex flex-col items-center group cursor-pointer"
+                onClick={() => openApp(item.appId, item.appTitle)}
+                className="flex flex-col items-center group cursor-pointer active:scale-95 transition-transform"
               >
                 <button
-                  onClick={() => openApp(item.appId, item.appTitle)}
-                  className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center text-white active:scale-90 hover:scale-105 transition-all duration-200 relative bg-transparent border-0 shadow-none"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    openApp(item.appId, item.appTitle);
+                  }}
+                  className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center text-white active:scale-90 hover:scale-105 transition-all duration-200 relative bg-transparent border-0 shadow-none cursor-pointer"
                   style={{
                     borderRadius: "22.5%",
                   }}
@@ -100,9 +104,16 @@ export default function MobileHome() {
             );
 
             return (
-              <div key={app.id} className="relative flex flex-col items-center">
+              <div
+                key={app.id}
+                onClick={() => openApp(app.id, app.title)}
+                className="relative flex flex-col items-center cursor-pointer active:scale-95 transition-transform"
+              >
                 <button
-                  onClick={() => openApp(app.id, app.title)}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    openApp(app.id, app.title);
+                  }}
                   className="w-12 h-12 rounded-2xl flex items-center justify-center text-white active:scale-90 hover:scale-110 transition-all duration-200 cursor-pointer relative"
                   style={{ borderRadius: "22.5%" }}
                   title={app.title}
