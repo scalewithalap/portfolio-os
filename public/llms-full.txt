@@ -7,7 +7,7 @@
 
 ## Executive Bio & Core Background
 
-Alap Putatunda is a Founding AI Engineer and Full-stack AI-native Developer with 6+ years of experience taking software from an empty repository to deployment, monitoring, and ongoing operation. Builds production LLM and multi-agent systems with RAG, semantic search, provider-agnostic model orchestration, voice AI, workflow automation, metered billing, and observability.
+Alap Putatunda is a Founding AI Engineer and Full-stack AI Developer with 6+ years of experience taking software from an empty repository to deployment, monitoring, and ongoing operation. Builds production LLM and multi-agent systems with RAG, semantic search, provider-agnostic model orchestration, voice AI, workflow automation, metered billing, and observability.
 
 Founded Scale with Alap, co-founded and leads Zero Headache as CEO, and shipped Vibe44 and OpenUI. Uses AI coding agents to accelerate delivery while retaining ownership of architecture, testing, security, and reliability. Selected for Hyperagent's "The Founding 500" in June 2026 ($20,000 credit recipient).
 
@@ -86,7 +86,7 @@ Founded Scale with Alap, co-founded and leads Zero Headache as CEO, and shipped 
 
 ## Work Experience & History
 
-1. **Scale with Alap (Personal Brand)** - *Founder & Full-stack AI-native Developer* (May 2026 - Present)
+1. **Scale with Alap (Personal Brand)** - *Founder & Full-stack AI Developer* (May 2026 - Present)
    - Founded Scale with Alap to publish technical content and build AI products (Vibe44, OpenUI, Make Me Sound, Freecom AI).
    - Directs AI-assisted engineering workflows across architecture, implementation, testing, and CI using Claude Code, Cursor, Codex, and Copilot.
 

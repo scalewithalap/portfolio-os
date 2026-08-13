@@ -38,8 +38,8 @@ function ProjectIcon({
   title: string;
   isLight: boolean;
 }) {
-  const [src, setSrc] = useState(iconImage || "/images/folder.png");
-  const isFolder = src.includes("folder.png");
+  const [src, setSrc] = useState(iconImage || "/images/folder.webp");
+  const isFolder = src.includes("folder.webp");
 
   return (
     <div
@@ -57,7 +57,7 @@ function ProjectIcon({
         src={src}
         alt={title}
         className="w-full h-full object-contain"
-        onError={() => setSrc("/images/folder.png")}
+        onError={() => setSrc("/images/folder.webp")}
       />
     </div>
   );

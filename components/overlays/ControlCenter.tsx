@@ -17,6 +17,7 @@ import {
   Volume2,
   VolumeX,
   ImageIcon,
+  Shuffle,
 } from "lucide-react";
 import { useEcosystemStore, WALLPAPERS } from "../../store/useEcosystemStore";
 
@@ -36,7 +37,10 @@ export default function ControlCenter() {
     toggleMute,
     openSpotlight,
     setRandomWallpaper,
+    setWallpaperIndex,
     currentWallpaperIndex,
+    wallpaper,
+    activeEnvironment,
   } = useEcosystemStore();
 
   const controlCenterRef = useRef<HTMLDivElement | null>(null);
@@ -68,6 +72,31 @@ export default function ControlCenter() {
   if (!isControlCenterOpen) return null;
 
   const isLight = systemTheme === "light";
+
+  const isMobileOrTablet =
+    activeEnvironment === "iOS" ||
+    activeEnvironment === "iPadOS" ||
+    (typeof window !== "undefined" && window.innerWidth <= 1024);
+
+  const defaultWallpaperUrl = WALLPAPERS.find(
+    (w) => w.id === "default-wallpaper",
+  )?.url;
+  const tahoeWallpaperUrl = WALLPAPERS.find(
+    (w) => w.id === "tahoe-wallpaper",
+  )?.url;
+
+  const effectiveWallpaperUrl =
+    isMobileOrTablet && (wallpaper === defaultWallpaperUrl || !wallpaper)
+      ? tahoeWallpaperUrl
+      : wallpaper;
+
+  const currentWp =
+    WALLPAPERS.find((w) => w.url === effectiveWallpaperUrl) ||
+    WALLPAPERS[currentWallpaperIndex];
+
+  const availableWallpapers = isMobileOrTablet
+    ? WALLPAPERS.filter((wp) => wp.id !== "default-wallpaper")
+    : WALLPAPERS;
 
   return (
     <>
@@ -268,42 +297,6 @@ export default function ControlCenter() {
 
         {/* Action Shortcuts */}
         <div className="space-y-2 pt-1">
-          {/* Change Wallpaper Button */}
-          <button
-            onClick={() => setRandomWallpaper()}
-            className={`w-full border rounded-2xl p-2.5 flex items-center justify-between transition-all text-left group cursor-pointer ${
-              isLight
-                ? "bg-slate-100 hover:bg-slate-200 border-slate-200 text-slate-900"
-                : "bg-white/10 hover:bg-white/20 border-white/10 text-white"
-            }`}
-          >
-            <div className="flex items-center space-x-3">
-              <div className="w-8 h-8 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center group-hover:bg-purple-600 group-hover:text-white transition-colors">
-                <ImageIcon className="w-4 h-4" />
-              </div>
-              <div>
-                <span className="text-xs font-bold block">
-                  Change Wallpaper
-                </span>
-                <span
-                  className={`text-[10px] block ${isLight ? "text-slate-500" : "text-white/50"}`}
-                >
-                  {WALLPAPERS[currentWallpaperIndex]?.name ||
-                    "Desktop Background"}
-                </span>
-              </div>
-            </div>
-            <span
-              className={`text-[10px] font-semibold px-2.5 py-1 rounded-full border transition-all ${
-                isLight
-                  ? "bg-white border-slate-300 text-slate-700 group-hover:bg-slate-200"
-                  : "bg-white/10 border-white/15 text-white/80 group-hover:bg-white/20"
-              }`}
-            >
-              Shuffle 🎲
-            </span>
-          </button>
-
           {/* Spotlight Search Shortcut */}
           <button
             onClick={() => {
@@ -341,6 +334,81 @@ export default function ControlCenter() {
               ⌘ + K
             </span>
           </button>
+
+          {/* Change Wallpaper Button */}
+          <button
+            onClick={() => setRandomWallpaper()}
+            className={`w-full border rounded-2xl p-2.5 flex items-center justify-between transition-all text-left group cursor-pointer ${
+              isLight
+                ? "bg-slate-100 hover:bg-slate-200 border-slate-200 text-slate-900"
+                : "bg-white/10 hover:bg-white/20 border-white/10 text-white"
+            }`}
+          >
+            <div className="flex items-center space-x-3">
+              <div className="w-8 h-8 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center group-hover:bg-purple-600 group-hover:text-white transition-colors">
+                <ImageIcon className="w-4 h-4" />
+              </div>
+              <div>
+                <span className="text-xs font-bold block">
+                  Change Wallpaper
+                </span>
+                <span
+                  className={`text-[10px] block ${isLight ? "text-slate-500" : "text-white/50"}`}
+                >
+                  {currentWp?.name || "Desktop Background"}
+                </span>
+              </div>
+            </div>
+            <span
+              className={`text-[10px] flex items-center gap-1 font-semibold px-2.5 py-1 rounded-full border transition-all ${
+                isLight
+                  ? "bg-white border-slate-300 text-slate-700 group-hover:bg-slate-200"
+                  : "bg-white/10 border-white/15 text-white/80 group-hover:bg-white/20"
+              }`}
+            >
+              Random <Shuffle className="w-2.5 h-2.5" />
+            </span>
+          </button>
+
+          {/* Wallpaper Thumbs Grid */}
+          <div
+            className={`p-2 grid grid-cols-7 gap-1.5 justify-items-center rounded-2xl border ${
+              isLight
+                ? "bg-slate-100 border-slate-200"
+                : "bg-white/10 border-white/10"
+            }`}
+          >
+            {availableWallpapers.map((wp) => {
+              const actualIdx = WALLPAPERS.findIndex((w) => w.id === wp.id);
+              const isSelected = wp.url === effectiveWallpaperUrl;
+              return (
+                <button
+                  key={wp.id}
+                  onClick={() => {
+                    const fullImg = new window.Image();
+                    fullImg.src = wp.url;
+                    setWallpaperIndex(actualIdx);
+                  }}
+                  className={`w-9 h-9 rounded-full overflow-hidden border transition-transform shrink-0 cursor-pointer ${
+                    isSelected
+                      ? "border-blue-500 ring-1 ring-blue-500 shadow-md scale-105"
+                      : isLight
+                        ? "border-slate-300 hover:scale-110"
+                        : "border-white/20 hover:scale-110"
+                  }`}
+                  title={wp.name}
+                >
+                  <img
+                    src={wp.thumb || wp.url}
+                    alt={wp.name}
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-full object-cover pointer-events-none"
+                  />
+                </button>
+              );
+            })}
+          </div>
         </div>
       </div>
     </>

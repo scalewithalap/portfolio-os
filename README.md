@@ -1,6 +1,6 @@
 # Scale with Alap (Portfolio OS)
 
-Interactive macOS-style Portfolio OS built by Alap Putatunda (AI Engineer & Full-stack Developer).
+Interactive macOS-style Portfolio OS by Alap Putatunda (Founding AI Engineer & Full-stack AI Developer).
 
 Live website: [scalewithalap.com](https://scalewithalap.com)  
 GitHub repository: [github.com/scalewithalap/portfolio-os](https://github.com/scalewithalap/portfolio-os)

@@ -64,7 +64,7 @@ export default function ContextMenu() {
 
   // Keep menu inside viewport bounds
   const menuWidth = 250;
-  const menuHeight = 390;
+  const menuHeight = 440;
   const x = Math.min(contextMenu.x, window.innerWidth - menuWidth - 10);
   const y = Math.min(contextMenu.y, window.innerHeight - menuHeight - 10);
 
@@ -121,12 +121,12 @@ export default function ContextMenu() {
           </div>
         </button>
 
-        {/* Wallpaper Picker Sublist Pill */}
+        {/* Wallpaper Picker Sublist Grid - 7 buttons per row, 2 rows, left-aligned */}
         <div className="px-2 pt-1 pb-0.5">
           <span className="font-medium leading-none">Choose Wallpaper</span>
         </div>
         <div
-          className={`px-3 py-2 flex items-center space-x-1.25 justify-center overflow-x-auto rounded-full my-0.5 scrollbar-none border ${
+          className={`p-2 grid grid-cols-7 space-y-1.25 space-x-1.5 justify-items-start rounded-2xl my-0.5 border ${
             isLight
               ? "bg-slate-200/50 border-slate-200"
               : "bg-white/5 border-white/20"
@@ -136,22 +136,27 @@ export default function ContextMenu() {
             <button
               key={wp.id}
               onClick={() => {
+                // On-demand lazy load the full resolution wallpaper
+                const fullImg = new window.Image();
+                fullImg.src = wp.url;
                 setWallpaperIndex(idx);
                 closeContextMenu();
               }}
-              className={`w-7 h-7 rounded-full overflow-hidden border transition-transform shrink-0 ${
+              className={`w-7.5 h-7.5 rounded-full overflow-hidden border transition-transform shrink-0 ${
                 currentWallpaperIndex === idx
-                  ? "border-blue-500 ring-1 ring-blue-500/50 shadow-md"
+                  ? "border-blue-500 ring-1 ring-blue-500 shadow-md"
                   : isLight
-                    ? "border-slate-300 hover:scale-105"
-                    : "border-white/20 hover:scale-105"
+                    ? "border-slate-300 hover:scale-110"
+                    : "border-white/20 hover:scale-110"
               }`}
               title={wp.name}
             >
               <img
-                src={wp.url}
+                src={wp.thumb || wp.url}
                 alt={wp.name}
-                className="w-full h-full object-cover"
+                loading="lazy"
+                decoding="async"
+                className="w-full h-full object-cover pointer-events-none"
               />
             </button>
           ))}

@@ -319,7 +319,7 @@ export default function DesktopDock() {
 
                     let fileName = "";
                     let fileType = "Desktop Item";
-                    let iconImg = "/images/text.png";
+                    let iconImg = "/images/text.webp";
 
                     const jsonString =
                       e.dataTransfer.getData("application/json");
@@ -401,7 +401,7 @@ export default function DesktopDock() {
                       WebkitBackfaceVisibility: "hidden",
                     }}
                     className={`object-contain drop-shadow-[0_8px_18px_rgba(0,0,0,0.5)] pointer-events-none ${
-                      app.iconImage.includes("folder.png") ||
+                      app.iconImage.includes("folder.webp") ||
                       app.id.startsWith("folder-")
                         ? "w-16.5 h-16.5 p-0.5"
                         : "w-19.5 h-19.5"

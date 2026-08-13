@@ -128,7 +128,7 @@ export default function AboutApp() {
                   >
                     Entrepreneur | Founding AI Engineer
                     <br />
-                    Full-stack AI-native Developer
+                    Full-stack AI Developer
                   </p>
                 </div>
               </div>
@@ -211,12 +211,12 @@ export default function AboutApp() {
                 <p
                   className={`leading-relaxed text-xs md:text-sm ${isLight ? "text-slate-700" : "text-white/80"}`}
                 >
-                  Founding AI Engineer and Full-stack AI-native Developer with
-                  6+ years of experience taking software from an empty
-                  repository to deployment, monitoring, and ongoing operation.
-                  Builds production LLM and multi-agent systems with RAG,
-                  semantic search, provider-agnostic model orchestration, voice
-                  AI, workflow automation, metered billing, and observability.
+                  Founding AI Engineer and Full-stack AI Developer with 6+ years
+                  of experience taking software from an empty repository to
+                  deployment, monitoring, and ongoing operation. Builds
+                  production LLM and multi-agent systems with RAG, semantic
+                  search, provider-agnostic model orchestration, voice AI,
+                  workflow automation, metered billing, and observability.
                 </p>
                 <p
                   className={`leading-relaxed text-xs md:text-sm ${isLight ? "text-slate-700" : "text-white/80"}`}
@@ -251,7 +251,7 @@ export default function AboutApp() {
                     <h3
                       className={`text-base md:text-lg font-bold ${isLight ? "text-slate-900" : "text-white"}`}
                     >
-                      Founder & Full-stack AI-native Developer
+                      Founder & Full-stack AI Developer
                     </h3>
                     <span
                       className={`text-[11px] md:text-xs font-mono ${isLight ? "text-slate-500" : "text-white/50"}`}

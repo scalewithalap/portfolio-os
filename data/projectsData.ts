@@ -44,7 +44,7 @@ export const PROJECTS_DATA: Project[] = [
   {
     id: "scalewithalap",
     title: "Scale with Alap (This site)",
-    tagline: "Interactive macOS-style Portfolio OS built by Alap Putatunda.",
+    tagline: "Interactive macOS-style Portfolio OS by Alap Putatunda.",
     badge: "Shipped & Live",
     category: "Portfolio",
     url: "scalewithalap.com",

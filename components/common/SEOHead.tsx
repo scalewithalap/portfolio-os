@@ -21,7 +21,7 @@ export default function SEOHead() {
     // Determine current view details based on active/focused app
     let title = "Scale with Alap - Founding AI Engineer";
     let description =
-      "Interactive macOS-style Portfolio OS built by Alap Putatunda.";
+      "Interactive macOS-style Portfolio OS by Alap Putatunda.";
     let canonicalUrl = "https://scalewithalap.com/";
     let activeProjectId: string | null = null;
 
@@ -87,7 +87,7 @@ export default function SEOHead() {
     updateMeta("author", "Alap Putatunda");
     updateMeta(
       "keywords",
-      "Alap Putatunda, Founding AI Engineer, Full-stack AI-native Developer, React 19, Next.js 16, TypeScript, Multi-Agent Orchestration, Model Context Protocol, LLM RAG, Voice AI, Supabase, PostgreSQL, Zero Headache, Vibe44, OpenUI, Make Me Sound, Soothly AI, Freecom AI, Hyperagent Founding 500",
+      "Alap Putatunda, Founding AI Engineer, Full-stack AI Developer, React 19, Next.js 16, TypeScript, Multi-Agent Orchestration, Model Context Protocol, LLM RAG, Voice AI, Supabase, PostgreSQL, Zero Headache, Vibe44, OpenUI, Make Me Sound, Soothly AI, Freecom AI, Hyperagent Founding 500",
     );
 
     // Open Graph
@@ -95,10 +95,33 @@ export default function SEOHead() {
     updateMeta("og:description", description, true);
     updateMeta("og:url", canonicalUrl, true);
     updateMeta("og:type", activeProjectId ? "article" : "website", true);
+    updateMeta("og:image", "https://scalewithalap.com/og.webp", true);
+    updateMeta(
+      "og:image:secure_url",
+      "https://scalewithalap.com/og.webp",
+      true,
+    );
+    updateMeta("og:image:type", "image/webp", true);
+    updateMeta("og:image:width", "1200", true);
+    updateMeta("og:image:height", "630", true);
+    updateMeta(
+      "og:image:alt",
+      "Scale with Alap | Founding AI Engineer & Full-Stack AI Developer",
+      true,
+    );
 
     // Twitter Card
+    updateMeta("twitter:card", "summary_large_image");
+    updateMeta("twitter:site", "@scalewithalap");
+    updateMeta("twitter:creator", "@scalewithalap");
     updateMeta("twitter:title", title);
     updateMeta("twitter:description", description);
+    updateMeta("twitter:image", "https://scalewithalap.com/og.webp");
+    updateMeta("twitter:image:src", "https://scalewithalap.com/og.webp");
+    updateMeta(
+      "twitter:image:alt",
+      "Scale with Alap | Founding AI Engineer Portfolio OS",
+    );
 
     // JSON-LD Structured Data Schema Construction
     const personSchema = {
@@ -109,7 +132,7 @@ export default function SEOHead() {
       jobTitle: "Founding AI Engineer & Full-Stack AI Developer",
       url: "https://scalewithalap.com",
       email: "mailto:hi@scalewithalap.com",
-      image: "https://scalewithalap.com/images/alap.webp",
+      image: "https://scalewithalap.com/og.webp",
       knowsAbout: [
         "Artificial Intelligence",
         "Multi-Agent Orchestration",
@@ -148,7 +171,8 @@ export default function SEOHead() {
       url: "https://scalewithalap.com/",
       name: "Scale with Alap",
       description:
-        "Interactive macOS-style Portfolio OS built by Alap Putatunda.",
+        "Interactive macOS-style Portfolio OS by Alap Putatunda.",
+      image: "https://scalewithalap.com/og.webp",
       publisher: {
         "@id": "https://scalewithalap.com/#person",
       },
@@ -161,6 +185,7 @@ export default function SEOHead() {
       url: canonicalUrl,
       name: title,
       description: description,
+      primaryImageOfPage: "https://scalewithalap.com/og.webp",
       mainEntity: {
         "@id": "https://scalewithalap.com/#person",
       },

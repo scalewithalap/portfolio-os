@@ -18,25 +18,23 @@ import IOSLockScreen from "./components/IOSLockScreen";
 import DesktopMenu from "../desktop/components/DesktopMenu";
 import ControlCenter from "../components/overlays/ControlCenter";
 import NotificationCenter from "../components/overlays/NotificationCenter";
+import SplashScreen from "../components/common/BootingScreen";
 import { APPS_CONFIG } from "../config/apps.config";
 
 export default function MobileEnvironment() {
-  const { openApps, focusedAppId, wallpaper, closeApp } =
-    useEcosystemStore();
+  const { openApps, focusedAppId, wallpaper, closeApp } = useEcosystemStore();
   const [isLocked, setIsLocked] = useState(true);
   const focusedApp = openApps.find((a) => a.id === focusedAppId && a.isOpen);
   const appConfig = APPS_CONFIG.find((c) => c.id === focusedApp?.id);
 
-  const mainWallpaperUrl =
-    WALLPAPERS.find((w) => w.id === "main-wallpaper")?.url ||
-    "/images/wallpaper.webp";
-  const purpleAbstractUrl =
-    WALLPAPERS.find((w) => w.id === "purple-abstract")?.url ||
-    "https://images.unsplash.com/photo-1672009190560-12e7bade8d09?q=80&w=2500&auto=format&fit=crop&fm=webp";
+  const defaultWallpaperUrl = "/images/default-wallpaper-mobile.webp";
+  const tahoeWallpaperUrl =
+    WALLPAPERS.find((w) => w.id === "tahoe-wallpaper")?.url ||
+    "/images/tahoe-wallpaper.webp";
 
-  // Exclude main-wallpaper on mobile and default to purple-abstract
+  // Exclude default-wallpaper on mobile and default to tahoe-wallpaper
   const mobileWallpaper =
-    wallpaper === mainWallpaperUrl ? purpleAbstractUrl : wallpaper;
+    wallpaper === defaultWallpaperUrl ? tahoeWallpaperUrl : wallpaper;
 
   const appContainerRef = useRef<HTMLDivElement>(null);
 
@@ -67,8 +65,7 @@ export default function MobileEnvironment() {
   // Listen for the browser back button (popstate) to close the active app
   useEffect(() => {
     const handlePopState = () => {
-      const currentFocusedId =
-        useEcosystemStore.getState().focusedAppId;
+      const currentFocusedId = useEcosystemStore.getState().focusedAppId;
       const currentOpenApps = useEcosystemStore.getState().openApps;
       const currentFocusedApp = currentOpenApps.find(
         (a) => a.id === currentFocusedId && a.isOpen,
@@ -97,6 +94,9 @@ export default function MobileEnvironment() {
 
   return (
     <div className="relative h-screen w-full max-w-full overflow-hidden bg-black text-white selection:bg-blue-500/30 font-sans flex flex-col">
+      {/* Authentic Apple Boot Splash Screen */}
+      <SplashScreen />
+
       {/* Background Wallpaper - Matches Desktop */}
       <div
         className="absolute inset-0 bg-cover bg-bottom-right z-0 transition-all duration-500"
@@ -153,4 +153,3 @@ export default function MobileEnvironment() {
     </div>
   );
 }
-

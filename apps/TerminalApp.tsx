@@ -16,7 +16,7 @@ const OUTPUT_LINES = [
   { cmd: "cat --summary", type: "input" },
   { text: "Resolving identity...", type: "sys" },
   {
-    text: "[ OK ] Alap Putatunda — Founding AI Engineer & Full-Stack AI-native Developer",
+    text: "[ OK ] Alap Putatunda — Founding AI Engineer & Full-Stack AI Developer",
     type: "success",
   },
   {
@@ -147,7 +147,7 @@ const OUTPUT_LINES = [
   { text: "Loading work history...", type: "sys" },
   { text: "[ OK ] Work Experience", type: "success" },
   {
-    text: "  ├─ Founder & Full-stack AI-native Developer | Scale with Alap (Personal Brand) | May 2026 – Present",
+    text: "  ├─ Founder & Full-stack AI Developer | Scale with Alap (Personal Brand) | May 2026 – Present",
     type: "item",
   },
   {
@@ -283,7 +283,9 @@ export default function TerminalApp() {
           : "bg-black/95 text-zinc-100 selection:bg-zinc-700"
       }`}
     >
-      <div className={`mb-4 wrap-break-word ${isLight ? "text-slate-400" : "text-zinc-400"}`}>
+      <div
+        className={`mb-4 wrap-break-word ${isLight ? "text-slate-400" : "text-zinc-400"}`}
+      >
         Last login: {new Date().toDateString()} on ttys001
         <br />
       </div>
@@ -317,7 +319,11 @@ export default function TerminalApp() {
           );
         }
         if (line.type === "item") {
-          return <div key={i} className="wrap-break-word max-w-full">{renderItemContent(line.text)}</div>;
+          return (
+            <div key={i} className="wrap-break-word max-w-full">
+              {renderItemContent(line.text)}
+            </div>
+          );
         }
         return <div key={i} className="h-3 sm:h-4" />;
       })}

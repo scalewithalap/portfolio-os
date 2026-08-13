@@ -47,7 +47,7 @@ export default function ResumeApp() {
       >
         <div className="flex items-center space-x-2 sm:space-x-2.5 min-w-0 flex-1">
           <img
-            src="/images/pdf.png"
+            src="/images/pdf.webp"
             alt="PDF"
             className="w-4 h-4 sm:w-5 sm:h-5 object-contain shrink-0"
             onError={(e) => {
@@ -109,7 +109,7 @@ export default function ResumeApp() {
                 <p
                   className={`font-bold text-sm sm:text-base md:text-lg mt-0.5 ${isLight ? "text-blue-800" : "text-blue-400"}`}
                 >
-                  Founding AI Engineer & Full-Stack AI-native Developer
+                  Founding AI Engineer & Full-Stack AI Developer
                 </p>
                 <p
                   className={`flex items-start sm:items-center text-xs sm:text-sm md:text-base mt-1.5 leading-relaxed ${isLight ? "text-slate-800" : "text-white/80"}`}
@@ -118,7 +118,8 @@ export default function ResumeApp() {
                     className={`mr-1.5 w-3.5 h-3.5 ${isLight ? "text-blue-800" : "text-blue-400"} shrink-0 mt-0.5 sm:mt-0`}
                   />
                   <span>
-                    From India | Open to remote jobs | Ready to relocate with visa sponsorship | DM or Email for demos
+                    From India | Open to remote jobs | Ready to relocate with
+                    visa sponsorship | DM or Email to schedule a call
                   </span>
                 </p>
                 <div
@@ -259,17 +260,17 @@ export default function ResumeApp() {
                   : "bg-white/5 border-white/5 text-white/80"
               }`}
             >
-              Founding AI Engineer and Full-stack AI-native Developer with 6+
-              years of experience taking software from an empty repository to
-              deployment, monitoring, and ongoing operation. Builds production
-              LLM and multi-agent systems with RAG, semantic search,
-              provider-agnostic model orchestration, voice AI, workflow
-              automation, metered billing, and observability. Founded Scale with
-              Alap, co-founded and leads Zero Headache as CEO, and shipped
-              Vibe44 and OpenUI. Uses AI coding agents to accelerate delivery
-              while retaining ownership of architecture, testing, security, and
-              reliability. Selected for Hyperagent's "The Founding 500" ($20,000
-              in platform credits) in June 2026.
+              Founding AI Engineer and Full-stack AI Developer with 6+ years of
+              experience taking software from an empty repository to deployment,
+              monitoring, and ongoing operation. Builds production LLM and
+              multi-agent systems with RAG, semantic search, provider-agnostic
+              model orchestration, voice AI, workflow automation, metered
+              billing, and observability. Founded Scale with Alap, co-founded
+              and leads Zero Headache as CEO, and shipped Vibe44 and OpenUI.
+              Uses AI coding agents to accelerate delivery while retaining
+              ownership of architecture, testing, security, and reliability.
+              Selected for Hyperagent's "The Founding 500" ($20,000 in platform
+              credits) in June 2026.
             </p>
           </div>
 
@@ -771,7 +772,7 @@ export default function ResumeApp() {
                   <h3
                     className={`font-bold text-sm sm:text-base leading-snug ${isLight ? "text-blue-800" : "text-blue-400"}`}
                   >
-                    Founder & Full-stack AI-native Developer | Scale with Alap
+                    Founder & Full-stack AI Developer | Scale with Alap
                     (Personal Brand)
                   </h3>
                   <span

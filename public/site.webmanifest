@@ -1,7 +1,8 @@
 {
   "name": "Scale with Alap — Founding AI Engineer Portfolio",
   "short_name": "Scale with Alap",
-  "description": "Interactive macOS-style Portfolio OS built by Alap Putatunda.",
+  "description": "Interactive macOS-style Portfolio
+OS by Alap Putatunda.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#000000",
@@ -9,15 +10,15 @@
   "orientation": "any",
   "icons": [
     {
-      "src": "/images/alap.webp",
+      "src": "/icons/Scale with Alap.png",
       "sizes": "192x192",
-      "type": "image/webp",
+      "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/images/alap.webp",
+      "src": "/icons/Scale with Alap.png",
       "sizes": "512x512",
-      "type": "image/webp",
+      "type": "image/png",
       "purpose": "any maskable"
     }
   ]

@@ -9,13 +9,7 @@
  */
 
 import React, { useState } from "react";
-import {
-  Trash2,
-  RefreshCw,
-  Sparkles,
-  FileX,
-  RotateCcw,
-} from "lucide-react";
+import { Trash2, RefreshCw, Sparkles, FileX, RotateCcw } from "lucide-react";
 import { useEcosystemStore } from "../store/useEcosystemStore";
 import { DESKTOP_ITEMS } from "../desktop/components/DesktopFolders";
 import { playTrashWhooshSound } from "../utils/soundEffects";
@@ -86,7 +80,7 @@ export default function TrashApp() {
 
     let fileName = "";
     let fileType = "Desktop Item";
-    let iconImg = "/images/text.png";
+    let iconImg = "/images/text.webp";
 
     // 1. Check custom JSON payload first
     const jsonString = e.dataTransfer.getData("application/json");

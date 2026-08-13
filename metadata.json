@@ -1,6 +1,7 @@
 {
   "name": "Scale with Alap",
-  "description": "Interactive macOS-style Portfolio OS built by Alap Putatunda.",
+  "description": "Interactive macOS-style Portfolio
+OS by Alap Putatunda.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

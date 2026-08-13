@@ -26,7 +26,8 @@
 - **Backend & Database Systems:** PostgreSQL, Drizzle ORM, Supabase RLS policies, Express.js, WebAuthn authentication, Dodo Payments, Drizzle, Stripe.
 
 ## Primary Projects & Case Studies
-- [Scale with Alap Portfolio OS](https://scalewithalap.com/projects/scalewithalap): Interactive macOS-style Portfolio OS built by Alap Putatunda.
+- [Scale with Alap Portfolio OS](https://scalewithalap.com/projects/scalewithalap): Interactive macOS-style Portfolio
+OS by Alap Putatunda.
 - [Vibe44 Marketing & MCP Server](https://scalewithalap.com/projects/vibe44): Serverless Model Context Protocol (MCP) server implementing JSON-RPC 2.0 with 6 tools, 4 resource templates, and Creem payment webhook fulfillment.
 - [Vibe44 Next.js 16 Starter Kit](https://scalewithalap.com/projects/vibe44-demo): A 687-file, ~165,000-line Next.js 16 engine featuring Universal Adapter Pattern, 5 payment gateways, and a 32-table PostgreSQL schema.
 - [OpenUI](https://scalewithalap.com/projects/openui): MIT-licensed local-first UI generator running component synthesis across local and cloud LLMs.

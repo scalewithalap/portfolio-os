@@ -42,41 +42,112 @@ export interface SnapPreviewTarget {
   label?: string;
 }
 
-export const WALLPAPERS = [
+export interface WallpaperItem {
+  id: string;
+  name: string;
+  url: string;
+  thumb: string;
+}
+
+export const WALLPAPERS: WallpaperItem[] = [
+  // Row 1 (7 items)
   {
-    id: "main-wallpaper",
-    name: "Alap Putatunda",
-    url: "/images/wallpaper.webp",
+    id: "default-wallpaper",
+    name: "Default Wallpaper",
+    url: "/images/default-wallpaper.webp",
+    thumb: "/images/default-wallpaper-thumb.webp",
+  },
+  {
+    id: "tahoe-wallpaper",
+    name: "macOS Tahoe 2026",
+    url: "/images/tahoe-wallpaper.webp",
+    thumb: "/images/tahoe-wallpaper-thumb.webp",
   },
   {
     id: "man-silhouette",
     name: "Man Silhouette",
     url: "https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?q=80&w=2500&auto=format&fit=crop&fm=webp",
+    thumb:
+      "https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?q=50&w=120&auto=format&fit=crop&fm=webp",
   },
   {
     id: "purple-abstract",
     name: "Purple Abstract",
-    url: "https://images.unsplash.com/photo-1672009190560-12e7bade8d09?q=80&w=2500&auto=format&fit=crop&fm=webp",
+    url: "https://images.unsplash.com/photo-1687804446680-d90cf8c60713?q=80&w=2500&auto=format&fit=crop&fm=webp",
+    thumb:
+      "https://images.unsplash.com/photo-1687804446680-d90cf8c60713?q=50&w=120&auto=format&fit=crop&fm=webp",
   },
   {
     id: "golden-gate",
     name: "Golden Gate Bridge",
     url: "https://images.unsplash.com/photo-1449034446853-66c86144b0ad?q=80&w=2500&auto=format&fit=crop&fm=webp",
-  },
-  {
-    id: "monterey-waves",
-    name: "Monterey Waves",
-    url: "https://images.unsplash.com/photo-1687042277586-971369d3d241?q=80&w=2500&auto=format&fit=crop&fm=webp",
+    thumb:
+      "https://images.unsplash.com/photo-1449034446853-66c86144b0ad?q=50&w=120&auto=format&fit=crop&fm=webp",
   },
   {
     id: "alpine-sunset",
     name: "Alpine Sunset",
     url: "https://images.unsplash.com/photo-1508739773434-c26b3d09e071?q=80&w=2500&auto=format&fit=crop&fm=webp",
+    thumb:
+      "https://images.unsplash.com/photo-1508739773434-c26b3d09e071?q=50&w=120&auto=format&fit=crop&fm=webp",
   },
   {
     id: "neon-mesh",
     name: "Neon Mesh",
     url: "https://images.unsplash.com/photo-1614850523459-c2f4c699c52e?q=80&w=2500&auto=format&fit=crop&fm=webp",
+    thumb:
+      "https://images.unsplash.com/photo-1614850523459-c2f4c699c52e?q=50&w=120&auto=format&fit=crop&fm=webp",
+  },
+
+  // Row 2 (7 items)
+  {
+    id: "cosmic-nebula",
+    name: "Cosmic Nebula",
+    url: "https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?q=80&w=2500&auto=format&fit=crop&fm=webp",
+    thumb:
+      "https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?q=50&w=120&auto=format&fit=crop&fm=webp",
+  },
+  {
+    id: "minimal-mountain",
+    name: "Minimal Mountain",
+    url: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=2500&auto=format&fit=crop&fm=webp",
+    thumb:
+      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=50&w=120&auto=format&fit=crop&fm=webp",
+  },
+  {
+    id: "cyberpunk-city",
+    name: "Cyberpunk City",
+    url: "https://images.unsplash.com/photo-1519501025264-65ba15a82390?q=80&w=2500&auto=format&fit=crop&fm=webp",
+    thumb:
+      "https://images.unsplash.com/photo-1519501025264-65ba15a82390?q=50&w=120&auto=format&fit=crop&fm=webp",
+  },
+  {
+    id: "northern-lights",
+    name: "Northern Lights",
+    url: "https://images.unsplash.com/photo-1531366936337-7c912a4589a7?q=80&w=2500&auto=format&fit=crop&fm=webp",
+    thumb:
+      "https://images.unsplash.com/photo-1531366936337-7c912a4589a7?q=50&w=120&auto=format&fit=crop&fm=webp",
+  },
+  {
+    id: "abstract-glass",
+    name: "Abstract Glass",
+    url: "https://images.unsplash.com/photo-1541701494587-cb58502866ab?q=80&w=2500&auto=format&fit=crop&fm=webp",
+    thumb:
+      "https://images.unsplash.com/photo-1541701494587-cb58502866ab?q=50&w=120&auto=format&fit=crop&fm=webp",
+  },
+  {
+    id: "blue-lake",
+    name: "Blue Lake",
+    url: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=2500&auto=format&fit=crop&fm=webp",
+    thumb:
+      "https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=50&w=120&auto=format&fit=crop&fm=webp",
+  },
+  {
+    id: "moon-in-space",
+    name: "Moon in Space",
+    url: "https://images.unsplash.com/photo-1459909633680-206dc5c67abb?q=80&w=2500&auto=format&fit=crop&fm=webp",
+    thumb:
+      "https://images.unsplash.com/photo-1459909633680-206dc5c67abb?q=50&w=120&auto=format&fit=crop&fm=webp",
   },
 ];
 
@@ -105,35 +176,35 @@ export const INITIAL_TRASH_ITEMS: TrashItem[] = [
     name: "Trimlyst_AI_Mobile_Flutter.zip",
     type: "Deprecated App Project",
     deletedAt: "Just now",
-    iconImage: "/images/folder.png",
+    iconImage: "/images/folder.webp",
   },
   {
     id: "1",
     name: "Legacy_Monolith_Backend.py",
     type: "Legacy Code",
     deletedAt: "Today, 2:10 PM",
-    iconImage: "/images/text.png",
+    iconImage: "/images/text.webp",
   },
   {
     id: "2",
     name: "Unused_Bootstrap_Theme.css",
     type: "Stylesheet",
     deletedAt: "Yesterday, 4:30 PM",
-    iconImage: "/images/text.png",
+    iconImage: "/images/text.webp",
   },
   {
     id: "3",
     name: "Deprecated_SQL_Dump_2022.sql",
     type: "Database",
     deletedAt: "Jul 28, 2026",
-    iconImage: "/images/text.png",
+    iconImage: "/images/text.webp",
   },
   {
     id: "4",
     name: "Draft_Proposal_v1.docx",
     type: "Document",
     deletedAt: "Jul 24, 2026",
-    iconImage: "/images/text.png",
+    iconImage: "/images/text.webp",
   },
 ];
 
@@ -317,7 +388,7 @@ export const useEcosystemStore = create<EcosystemState>()(
           name: item.name,
           type: item.type || "File",
           deletedAt: "Just now",
-          iconImage: item.iconImage || "/images/text.png",
+          iconImage: item.iconImage || "/images/text.webp",
         };
         state.trashItems.unshift(newItem);
         const toastId =
@@ -503,19 +574,28 @@ export const useEcosystemStore = create<EcosystemState>()(
 
     setRandomWallpaper: () =>
       set((state) => {
-        if (WALLPAPERS.length <= 1) return;
-        let randomIndex = Math.floor(Math.random() * WALLPAPERS.length);
-        while (randomIndex === state.currentWallpaperIndex) {
-          randomIndex = Math.floor(Math.random() * WALLPAPERS.length);
+        const isMobileOrTablet =
+          state.activeEnvironment === "iOS" ||
+          state.activeEnvironment === "iPadOS" ||
+          (typeof window !== "undefined" && window.innerWidth <= 1024);
+
+        const pool = isMobileOrTablet
+          ? WALLPAPERS.filter((w) => w.id !== "default-wallpaper")
+          : WALLPAPERS;
+
+        if (pool.length <= 1) return;
+        let randomWp = pool[Math.floor(Math.random() * pool.length)];
+        while (randomWp.url === state.wallpaper && pool.length > 1) {
+          randomWp = pool[Math.floor(Math.random() * pool.length)];
         }
-        state.currentWallpaperIndex = randomIndex;
-        const wp = WALLPAPERS[randomIndex];
-        state.wallpaper = wp.url;
+        const targetIndex = WALLPAPERS.findIndex((w) => w.id === randomWp.id);
+        state.currentWallpaperIndex = targetIndex !== -1 ? targetIndex : 0;
+        state.wallpaper = randomWp.url;
         const id =
           Date.now().toString() + Math.random().toString(36).substring(2, 5);
         state.toasts.push({
           id,
-          message: `Wallpaper set to ${wp.name}`,
+          message: `Wallpaper set to ${randomWp.name}`,
           type: "info",
         });
       }),
@@ -604,7 +684,11 @@ export const useEcosystemStore = create<EcosystemState>()(
           0,
         );
 
-        if (state.focusedAppId === targetId && app?.isOpen && !app.isMinimized) {
+        if (
+          state.focusedAppId === targetId &&
+          app?.isOpen &&
+          !app.isMinimized
+        ) {
           playWindowMinimizeSound();
           app.isMinimized = true;
           state.focusedAppId = null;

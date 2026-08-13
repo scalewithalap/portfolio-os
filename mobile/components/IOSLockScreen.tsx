@@ -21,6 +21,7 @@ interface IOSLockScreenProps {
 export default function IOSLockScreen({ onUnlock }: IOSLockScreenProps) {
   const { systemTheme } = useEcosystemStore();
   const isLight = systemTheme === "light";
+
   const [time, setTime] = useState(new Date());
 
   const lockScreenRef = useRef<HTMLDivElement>(null);
@@ -121,12 +122,12 @@ export default function IOSLockScreen({ onUnlock }: IOSLockScreenProps) {
       onMouseLeave={handleEnd}
       className="fixed inset-0 z-50 flex flex-col justify-between bg-cover px-2.5 pt-12 pb-10 transition-opacity duration-300 overflow-hidden font-sans touch-none"
       style={{
-        backgroundImage: "url(/images/wallpaper-mobile.webp)",
+        backgroundImage: "url(/images/default-wallpaper-mobile.webp)",
         backgroundPosition: "center",
       }}
     >
       {/* Dark Ambient Overlay */}
-      <div className="absolute inset-0 bg-black/10" />
+      <div className="absolute inset-0 bg-black/5" />
 
       {/* Top Lock Indicator & Time Display */}
       <div className="relative z-10 flex flex-col items-center text-white">
@@ -166,8 +167,8 @@ export default function IOSLockScreen({ onUnlock }: IOSLockScreenProps) {
               Hey, I'm Alap! Welcome to My Portfolio.
             </h4>
             <p className="text-xs text-white/85 leading-tight mt-0.5">
-              Founding AI Engineer & Full-Stack AI-native Developer. For the
-              full macOS experience, explore this website on a desktop.
+              Founding AI Engineer & Full-Stack AI Developer. For the full macOS
+              experience, explore this website on a desktop.
             </p>
           </div>
         </div>

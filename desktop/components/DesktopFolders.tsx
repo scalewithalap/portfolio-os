@@ -42,7 +42,7 @@ export const DESKTOP_ITEMS: DesktopItem[] = [
     title: "Scale with Alap",
     appId: "folder-scalewithalap",
     appTitle: "Scale with Alap",
-    iconImage: "/images/folder.png",
+    iconImage: "/images/folder.webp",
     kind: "Projects",
   },
   {
@@ -50,7 +50,7 @@ export const DESKTOP_ITEMS: DesktopItem[] = [
     title: "Vibe44 Website",
     appId: "folder-vibe44",
     appTitle: "Vibe44 - Marketing Website",
-    iconImage: "/images/folder.png",
+    iconImage: "/images/folder.webp",
     kind: "Projects",
   },
   {
@@ -58,7 +58,7 @@ export const DESKTOP_ITEMS: DesktopItem[] = [
     title: "Vibe44 (Product)",
     appId: "folder-vibe44-demo",
     appTitle: "Vibe44 - Next.js Starter Kit",
-    iconImage: "/images/folder.png",
+    iconImage: "/images/folder.webp",
     kind: "Projects",
   },
   {
@@ -66,7 +66,7 @@ export const DESKTOP_ITEMS: DesktopItem[] = [
     title: "Zero Headache Website",
     appId: "folder-zeroheadache",
     appTitle: "Zero Headache - Marketing Website",
-    iconImage: "/images/folder.png",
+    iconImage: "/images/folder.webp",
     kind: "Projects",
   },
   {
@@ -74,7 +74,7 @@ export const DESKTOP_ITEMS: DesktopItem[] = [
     title: "Zero Headache App",
     appId: "folder-zeroheadache-app",
     appTitle: "Zero Headache App",
-    iconImage: "/images/folder.png",
+    iconImage: "/images/folder.webp",
     kind: "Projects",
   },
   {
@@ -82,7 +82,7 @@ export const DESKTOP_ITEMS: DesktopItem[] = [
     title: "Make Me Sound",
     appId: "folder-makemesound",
     appTitle: "Make Me Sound",
-    iconImage: "/images/folder.png",
+    iconImage: "/images/folder.webp",
     kind: "Projects",
   },
   {
@@ -90,7 +90,7 @@ export const DESKTOP_ITEMS: DesktopItem[] = [
     title: "OpenUI",
     appId: "folder-openui",
     appTitle: "OpenUI",
-    iconImage: "/images/folder.png",
+    iconImage: "/images/folder.webp",
     kind: "Projects",
   },
   {
@@ -98,7 +98,7 @@ export const DESKTOP_ITEMS: DesktopItem[] = [
     title: "Freecom AI",
     appId: "folder-freecom",
     appTitle: "Freecom AI",
-    iconImage: "/images/folder.png",
+    iconImage: "/images/folder.webp",
     kind: "Projects",
   },
   {
@@ -106,7 +106,7 @@ export const DESKTOP_ITEMS: DesktopItem[] = [
     title: "About Me",
     appId: "about",
     appTitle: "About Alap",
-    iconImage: "/images/finder.png",
+    iconImage: "/images/finder.webp",
     kind: "System Apps",
   },
 
@@ -116,7 +116,7 @@ export const DESKTOP_ITEMS: DesktopItem[] = [
     title: "My Resume",
     appId: "resume",
     appTitle: "My Resume",
-    iconImage: "/images/pdf.png",
+    iconImage: "/images/pdf.webp",
     kind: "PDF Documents",
     size: "240 KB",
   },
@@ -127,7 +127,7 @@ export const DESKTOP_ITEMS: DesktopItem[] = [
     title: "Terminal",
     appId: "terminal",
     appTitle: "Terminal",
-    iconImage: "/images/terminal.png",
+    iconImage: "/images/terminal.webp",
     kind: "Developer Scripts",
     size: "4 KB",
   },
@@ -138,7 +138,7 @@ export const DESKTOP_ITEMS: DesktopItem[] = [
     title: "Photos",
     appId: "photos",
     appTitle: "My Photos",
-    iconImage: "/images/photos.png",
+    iconImage: "/images/photos.webp",
     kind: "Images",
     size: "1.8 MB",
   },

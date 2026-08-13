@@ -29,7 +29,7 @@ const EMAILS = [
   {
     id: "1",
     sender: "Scale with Alap",
-    subject: "Founder & Full-stack AI-native Developer",
+    subject: "Founder & Full-stack AI Developer",
     date: "May 2026 – Present",
     preview:
       "Founded Scale with Alap to publish technical content and build AI products...",
@@ -309,9 +309,7 @@ export default function MailApp() {
       <div
         className={`flex-1 overflow-y-auto overflow-x-hidden max-w-full flex-col relative transition-colors duration-200 ${
           mobileShowDetail ? "flex" : "hidden md:flex"
-        } ${
-          isLight ? "bg-white text-slate-900" : "bg-[#1e1e1e] text-white"
-        }`}
+        } ${isLight ? "bg-white text-slate-900" : "bg-[#1e1e1e] text-white"}`}
       >
         {/* Top toolbar */}
         <div

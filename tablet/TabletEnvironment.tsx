@@ -9,13 +9,14 @@
 
 import { Suspense, useState } from "react";
 import { X, Minus, Maximize2, ChevronUp } from "lucide-react";
-import { useEcosystemStore } from "../store/useEcosystemStore";
+import { useEcosystemStore, WALLPAPERS } from "../store/useEcosystemStore";
 import { APPS_CONFIG } from "../config/apps.config";
 import { DESKTOP_ITEMS } from "../desktop/components/DesktopFolders";
 import StaticHeroText from "../components/common/StaticHeroText";
 import DesktopMenu from "../desktop/components/DesktopMenu";
 import ControlCenter from "../components/overlays/ControlCenter";
 import NotificationCenter from "../components/overlays/NotificationCenter";
+import SplashScreen from "../components/common/BootingScreen";
 
 export default function TabletEnvironment() {
   const {
@@ -29,6 +30,15 @@ export default function TabletEnvironment() {
     wallpaper,
     systemTheme,
   } = useEcosystemStore();
+
+  const defaultWallpaperUrl = "/images/default-wallpaper-mobile.webp";
+  const tahoeWallpaperUrl =
+    WALLPAPERS.find((w) => w.id === "tahoe-wallpaper")?.url ||
+    "/images/tahoe-wallpaper.webp";
+
+  // Exclude default-wallpaper on tablet and default to tahoe-wallpaper
+  const tabletWallpaper =
+    wallpaper === defaultWallpaperUrl ? tahoeWallpaperUrl : wallpaper;
 
   const [isTabletDockRevealed, setIsTabletDockRevealed] = useState(false);
   const activeApps = openApps.filter((a) => a.isOpen && !a.isMinimized);
@@ -49,15 +59,18 @@ export default function TabletEnvironment() {
 
   return (
     <div className="relative h-screen w-screen overflow-hidden bg-black text-white select-none font-sans flex flex-col">
+      {/* Authentic Apple Boot Splash Screen */}
+      <SplashScreen />
+
       {/* Background Wallpaper */}
       <div
         className="absolute inset-0 bg-cover bg-bottom-right transition-all duration-500 z-0"
         style={{
-          backgroundImage: `url(${wallpaper})`,
+          backgroundImage: `url(${tabletWallpaper})`,
           backgroundPosition: "center",
         }}
       >
-        <div className="absolute inset-0 bg-black/10" />
+        <div className="absolute inset-0 bg-black/5" />
       </div>
 
       {/* Responsive Top Menu Bar - Identical Desktop Top Bar */}
