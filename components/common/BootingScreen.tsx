@@ -46,10 +46,11 @@ export default function SplashScreen() {
       { opacity: 1, y: 0, duration: 0.5, ease: "power2.out", stagger: 0.1 },
     )
       // Progress bar fill & percentage counter
+      // ponytail: use scaleX instead of width for GPU-composited animation (no layout reflows)
       .to(
         progressRef.current,
         {
-          width: "100%",
+          scaleX: 1,
           duration: 1.5,
           ease: "power1.inOut",
         },
@@ -119,12 +120,13 @@ export default function SplashScreen() {
         <div className="w-64 sm:w-72 h-1.25 md:h-1.5 bg-slate-800 rounded-full overflow-hidden relative backdrop-blur-xl">
           <div
             ref={progressRef}
-            className="h-full bg-white rounded-full w-0 shadow-[0_0_14px_rgba(99,102,241,0.9)] relative"
+            className="h-full bg-white rounded-full w-full shadow-[0_0_14px_rgba(99,102,241,0.9)] relative origin-left"
+            style={{ transform: "scaleX(0)" }}
           />
         </div>
 
         {/* Micro-Status Label & Real-Time Counter */}
-        <div className="mt-2 flex items-center justify-between w-64 sm:w-72 text-xs sm:text-sm">
+        <div className="mt-2 md:px-0.5 flex items-center justify-between w-64 sm:w-72 text-xs sm:text-sm">
           <span className="truncate pr-2 font-medium tracking-tight text-white/90 transition-all duration-200">
             {statusMessage}
           </span>

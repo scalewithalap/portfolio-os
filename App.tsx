@@ -9,17 +9,21 @@
  * - Mounts root UI overlays (SEOHead, SpotlightSearch, ToastContainer, ErrorBoundary).
  */
 
-import { useEffect, Suspense, lazy } from 'react';
-import { useEcosystemStore } from './store/useEcosystemStore';
-import SpotlightSearch from './components/overlays/SpotlightSearch';
-import ToastContainer from './components/common/ToastContainer';
-import ErrorBoundary from './components/common/ErrorBoundary';
-import SEOHead from './components/common/SEOHead';
-import { getAppInfoByProjectId } from './data/projectsData';
+import { useEffect, Suspense, lazy } from "react";
+import { useEcosystemStore } from "./store/useEcosystemStore";
+import ErrorBoundary from "./components/common/ErrorBoundary";
+import SEOHead from "./components/common/SEOHead";
+import { getAppInfoByProjectId } from "./data/projectsData";
 
-const DesktopEnv = lazy(() => import('./desktop'));
-const TabletEnv = lazy(() => import('./tablet'));
-const MobileEnv = lazy(() => import('./mobile'));
+const DesktopEnv = lazy(() => import("./desktop"));
+const TabletEnv = lazy(() => import("./tablet"));
+const MobileEnv = lazy(() => import("./mobile"));
+
+// lazy-load non-critical overlays — SpotlightSearch (26KB + 20 Lucide icons) and ToastContainer only render on demand
+const SpotlightSearch = lazy(
+  () => import("./components/overlays/SpotlightSearch"),
+);
+const ToastContainer = lazy(() => import("./components/common/ToastContainer"));
 
 export default function App() {
   const { activeEnvironment, setEnvironment, openApp } = useEcosystemStore();
@@ -29,11 +33,11 @@ export default function App() {
     const detectEnvironment = () => {
       const w = window.innerWidth;
       if (w < 768) {
-        setEnvironment('iOS');
+        setEnvironment("iOS");
       } else if (w <= 1024) {
-        setEnvironment('iPadOS');
+        setEnvironment("iPadOS");
       } else {
-        setEnvironment('macOS');
+        setEnvironment("macOS");
       }
     };
 
@@ -43,7 +47,7 @@ export default function App() {
       detectEnvironment();
     };
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
     // Deep-link route parser for /projects/:id, ?project=:id, ?app=:id, or #project-:id
     const handleInitialDeepLink = () => {
@@ -79,7 +83,7 @@ export default function App() {
     handleInitialDeepLink();
 
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
   }, [setEnvironment, openApp]);
 
@@ -92,13 +96,15 @@ export default function App() {
       <SEOHead />
       <ErrorBoundary fallbackTitle="Portfolio OS Failed to Load">
         <Suspense fallback={<div className="h-screen w-screen bg-black" />}>
-          {activeEnvironment === 'macOS' && <DesktopEnv />}
-          {activeEnvironment === 'iPadOS' && <TabletEnv />}
-          {activeEnvironment === 'iOS' && <MobileEnv />}
+          {activeEnvironment === "macOS" && <DesktopEnv />}
+          {activeEnvironment === "iPadOS" && <TabletEnv />}
+          {activeEnvironment === "iOS" && <MobileEnv />}
         </Suspense>
       </ErrorBoundary>
-      <SpotlightSearch />
-      <ToastContainer />
+      <Suspense fallback={null}>
+        <SpotlightSearch />
+        <ToastContainer />
+      </Suspense>
     </>
   );
 }

@@ -88,9 +88,16 @@ OS by Alap Putatunda."
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=Cutive&family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;1,400&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Preload critical assets to reduce chain depth -->
+    <link rel="preload" as="image" href="/images/wallpaper.webp" type="image/webp" />
+    <link rel="preload" as="image" href="/images/cursor.svg" type="image/svg+xml" />
+
+    <!-- DNS prefetch for external image CDN -->
+    <link rel="dns-prefetch" href="https://images.unsplash.com" />
 
     <!-- Static Initial Schema.org JSON-LD -->
     <script type="application/ld+json">
