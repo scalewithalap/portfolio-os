@@ -176,35 +176,35 @@ export const INITIAL_TRASH_ITEMS: TrashItem[] = [
     name: "Trimlyst_AI_Mobile_Flutter.zip",
     type: "Deprecated App Project",
     deletedAt: "Just now",
-    iconImage: "/images/folder.webp",
+    iconImage: "/icons/folder.webp",
   },
   {
     id: "1",
     name: "Legacy_Monolith_Backend.py",
     type: "Legacy Code",
     deletedAt: "Today, 2:10 PM",
-    iconImage: "/images/text.webp",
+    iconImage: "/icons/text.webp",
   },
   {
     id: "2",
     name: "Unused_Bootstrap_Theme.css",
     type: "Stylesheet",
     deletedAt: "Yesterday, 4:30 PM",
-    iconImage: "/images/text.webp",
+    iconImage: "/icons/text.webp",
   },
   {
     id: "3",
     name: "Deprecated_SQL_Dump_2022.sql",
     type: "Database",
     deletedAt: "Jul 28, 2026",
-    iconImage: "/images/text.webp",
+    iconImage: "/icons/text.webp",
   },
   {
     id: "4",
     name: "Draft_Proposal_v1.docx",
     type: "Document",
     deletedAt: "Jul 24, 2026",
-    iconImage: "/images/text.webp",
+    iconImage: "/icons/text.webp",
   },
 ];
 
@@ -388,7 +388,7 @@ export const useEcosystemStore = create<EcosystemState>()(
           name: item.name,
           type: item.type || "File",
           deletedAt: "Just now",
-          iconImage: item.iconImage || "/images/text.webp",
+          iconImage: item.iconImage || "/icons/text.webp",
         };
         state.trashItems.unshift(newItem);
         const toastId =

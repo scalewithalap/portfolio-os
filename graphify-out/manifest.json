@@ -1,0 +1,442 @@
+{
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\App.tsx": {
+    "mtime": 1786729031.2094493,
+    "ast_hash": "4dfa8ab04817a71ff0ecb7d758b43906",
+    "semantic_hash": "4dfa8ab04817a71ff0ecb7d758b43906"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\apps\\AboutApp.tsx": {
+    "mtime": 1786729458.9214046,
+    "ast_hash": "8ee4b4a592359de131a9df3666b9f1e3",
+    "semantic_hash": "8ee4b4a592359de131a9df3666b9f1e3"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\apps\\MailApp.tsx": {
+    "mtime": 1786602513.709833,
+    "ast_hash": "6e9c5a0a0088049d7a6221f94f6c3939",
+    "semantic_hash": "6e9c5a0a0088049d7a6221f94f6c3939"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\apps\\PhotosApp.tsx": {
+    "mtime": 1786489488.4556437,
+    "ast_hash": "0b1097ba4811d9aa0ee5f7cce2dc29f9",
+    "semantic_hash": "0b1097ba4811d9aa0ee5f7cce2dc29f9"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\apps\\ResumeApp.tsx": {
+    "mtime": 1786730010.24535,
+    "ast_hash": "e78a7f725b3588abc7accd65fb9a1556",
+    "semantic_hash": "e78a7f725b3588abc7accd65fb9a1556"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\apps\\SafariApp.tsx": {
+    "mtime": 1786489314.554242,
+    "ast_hash": "2bc70c760c739df9a832e7194d80461a",
+    "semantic_hash": "2bc70c760c739df9a832e7194d80461a"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\apps\\SingleProjectApp.tsx": {
+    "mtime": 1786489226.1499712,
+    "ast_hash": "74620352c617642c6b1881cef3e363b0",
+    "semantic_hash": "74620352c617642c6b1881cef3e363b0"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\apps\\TerminalApp.tsx": {
+    "mtime": 1786729488.3616736,
+    "ast_hash": "c3179a51f8faafb9a9049dedcad5ba1a",
+    "semantic_hash": "c3179a51f8faafb9a9049dedcad5ba1a"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\apps\\TrashApp.tsx": {
+    "mtime": 1786730022.5430982,
+    "ast_hash": "5bf689d09a08455d0334e42a005984d9",
+    "semantic_hash": "5bf689d09a08455d0334e42a005984d9"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\components\\common\\BootingScreen.tsx": {
+    "mtime": 1786644798.5477846,
+    "ast_hash": "7745a38b9a1e227f1c670d015ac59851",
+    "semantic_hash": "7745a38b9a1e227f1c670d015ac59851"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\components\\common\\ErrorBoundary.tsx": {
+    "mtime": 1786305393.1522458,
+    "ast_hash": "31b1ad314b126dc8a7d77f82db52bbe9",
+    "semantic_hash": "31b1ad314b126dc8a7d77f82db52bbe9"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\components\\common\\LazyImage.tsx": {
+    "mtime": 1786305398.8159735,
+    "ast_hash": "999c533130990a805b7fbabfb56c1f82",
+    "semantic_hash": "999c533130990a805b7fbabfb56c1f82"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\components\\common\\SEOHead.tsx": {
+    "mtime": 1786726544.6442316,
+    "ast_hash": "27319a400eeac9d3f81be5028570cd4f",
+    "semantic_hash": "27319a400eeac9d3f81be5028570cd4f"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\components\\common\\StaticHeroText.tsx": {
+    "mtime": 1786478705.7600455,
+    "ast_hash": "3d97d874b96318d389f7c71dadafc243",
+    "semantic_hash": "3d97d874b96318d389f7c71dadafc243"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\components\\common\\ToastContainer.tsx": {
+    "mtime": 1786305416.3892527,
+    "ast_hash": "ac663c215cba177c233cac4b8d000b4f",
+    "semantic_hash": "ac663c215cba177c233cac4b8d000b4f"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\components\\overlays\\ContextMenu.tsx": {
+    "mtime": 1786606397.9830022,
+    "ast_hash": "78d899beb60c1b7c93eef5f834d477f6",
+    "semantic_hash": "78d899beb60c1b7c93eef5f834d477f6"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\components\\overlays\\ControlCenter.tsx": {
+    "mtime": 1786613371.7328825,
+    "ast_hash": "0120e32bce4f60a2e49dc9be93a1d0e3",
+    "semantic_hash": "0120e32bce4f60a2e49dc9be93a1d0e3"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\components\\overlays\\NotificationCenter.tsx": {
+    "mtime": 1786730040.9279466,
+    "ast_hash": "4f6556d9478af43bf83251c215d8eed6",
+    "semantic_hash": "4f6556d9478af43bf83251c215d8eed6"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\components\\overlays\\ShortcutsHintOverlay.tsx": {
+    "mtime": 1786305440.4282627,
+    "ast_hash": "c3d5b1d2d79da22ab468007610bded97",
+    "semantic_hash": "c3d5b1d2d79da22ab468007610bded97"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\components\\overlays\\SpotlightSearch.tsx": {
+    "mtime": 1786729031.2122543,
+    "ast_hash": "1e2a3d25ed52341b929e2e7f38683032",
+    "semantic_hash": "1e2a3d25ed52341b929e2e7f38683032"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\config\\apps.config.ts": {
+    "mtime": 1786729950.6533978,
+    "ast_hash": "ff8e2c82bcf62e0c592c912d763ab7ba",
+    "semantic_hash": "ff8e2c82bcf62e0c592c912d763ab7ba"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\data\\projectsData.ts": {
+    "mtime": 1786729738.115341,
+    "ast_hash": "f8dac1f22aa4b9427a8bb3c28c403995",
+    "semantic_hash": "f8dac1f22aa4b9427a8bb3c28c403995"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\desktop\\DesktopEnvironment.tsx": {
+    "mtime": 1786609427.6369348,
+    "ast_hash": "9020663b4a0024997ec133c4c49086db",
+    "semantic_hash": "9020663b4a0024997ec133c4c49086db"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\desktop\\components\\DesktopDock.tsx": {
+    "mtime": 1786730052.8007786,
+    "ast_hash": "d5ededb28fd7fca61708803ca0c14a97",
+    "semantic_hash": "d5ededb28fd7fca61708803ca0c14a97"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\desktop\\components\\DesktopFolders.tsx": {
+    "mtime": 1786730140.57647,
+    "ast_hash": "da32eeb774fbdeea903417c586bdbc5f",
+    "semantic_hash": "da32eeb774fbdeea903417c586bdbc5f"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\desktop\\components\\DesktopMenu.tsx": {
+    "mtime": 1786640902.223722,
+    "ast_hash": "5054776dee7040ac4709e97be8ff4e88",
+    "semantic_hash": "5054776dee7040ac4709e97be8ff4e88"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\desktop\\components\\DesktopWindowManager.tsx": {
+    "mtime": 1786307714.4167335,
+    "ast_hash": "35b95b9f53371821b5152b4a8cf2eb31",
+    "semantic_hash": "35b95b9f53371821b5152b4a8cf2eb31"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\desktop\\components\\HeroHoverText.tsx": {
+    "mtime": 1786472142.4427183,
+    "ast_hash": "22d711ece88e4d67459259522541a0b1",
+    "semantic_hash": "22d711ece88e4d67459259522541a0b1"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\desktop\\components\\WindowFrame.tsx": {
+    "mtime": 1786490857.2250454,
+    "ast_hash": "8a6130b157cec9edaebe1c272db2b7f0",
+    "semantic_hash": "8a6130b157cec9edaebe1c272db2b7f0"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\desktop\\index.ts": {
+    "mtime": 1786305458.2086854,
+    "ast_hash": "a850d9f7abccdb5b2826ee0479e6b6bb",
+    "semantic_hash": "a850d9f7abccdb5b2826ee0479e6b6bb"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\main.tsx": {
+    "mtime": 1786305295.412091,
+    "ast_hash": "6e07d887e58c3bbbb0f96c068c79a732",
+    "semantic_hash": "6e07d887e58c3bbbb0f96c068c79a732"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\metadata.json": {
+    "mtime": 1786603216.5888922,
+    "ast_hash": "4a7f83a81884d60b1132e28b2e9ffebb",
+    "semantic_hash": "4a7f83a81884d60b1132e28b2e9ffebb"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\mobile\\MobileEnvironment.tsx": {
+    "mtime": 1786613605.0890417,
+    "ast_hash": "913dfcde7c12397f6018883bd914d7ac",
+    "semantic_hash": "913dfcde7c12397f6018883bd914d7ac"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\mobile\\components\\IOSLockScreen.tsx": {
+    "mtime": 1786613443.8320596,
+    "ast_hash": "a17ef4d9e5e93f899e8e93c189a00e1b",
+    "semantic_hash": "a17ef4d9e5e93f899e8e93c189a00e1b"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\mobile\\components\\MobileHome.tsx": {
+    "mtime": 1786493191.0871992,
+    "ast_hash": "b36fb61da94015b76ccd3d2d997a291d",
+    "semantic_hash": "b36fb61da94015b76ccd3d2d997a291d"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\mobile\\index.ts": {
+    "mtime": 1786305514.815546,
+    "ast_hash": "d9f0a62578c7a5d5c207f23687d2106e",
+    "semantic_hash": "d9f0a62578c7a5d5c207f23687d2106e"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\package.json": {
+    "mtime": 1786729550.855938,
+    "ast_hash": "f865fab5742c6f0b4f99e9c8de1a3fd6",
+    "semantic_hash": "f865fab5742c6f0b4f99e9c8de1a3fd6"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\scripts\\generate-sitemap.ts": {
+    "mtime": 1786729511.6345396,
+    "ast_hash": "51eeadb5b76ffa2294d54b3397544fdd",
+    "semantic_hash": "51eeadb5b76ffa2294d54b3397544fdd"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\store\\useEcosystemStore.ts": {
+    "mtime": 1786730090.2517,
+    "ast_hash": "dd42794972cf36f8e4546e8a5bee9391",
+    "semantic_hash": "dd42794972cf36f8e4546e8a5bee9391"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\tablet\\TabletEnvironment.tsx": {
+    "mtime": 1786655518.6602702,
+    "ast_hash": "998737d9f67b35f167833820a1383fec",
+    "semantic_hash": "998737d9f67b35f167833820a1383fec"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\tablet\\index.ts": {
+    "mtime": 1786305539.5457046,
+    "ast_hash": "011e2b5867369b25fe04fa81f73e3d39",
+    "semantic_hash": "011e2b5867369b25fe04fa81f73e3d39"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\tsconfig.json": {
+    "mtime": 1786302400.9895008,
+    "ast_hash": "6efb77795a141b2da1c6b75ae4c74670",
+    "semantic_hash": "6efb77795a141b2da1c6b75ae4c74670"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\utils\\soundEffects.ts": {
+    "mtime": 1786644798.5488193,
+    "ast_hash": "f79153a9caebaa9cdd782dbdf016a631",
+    "semantic_hash": "f79153a9caebaa9cdd782dbdf016a631"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\vite.config.ts": {
+    "mtime": 1786729535.7094936,
+    "ast_hash": "6e30c1c257ef21f2ba72963373db04d0",
+    "semantic_hash": "6e30c1c257ef21f2ba72963373db04d0"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\README.md": {
+    "mtime": 1786603262.664016,
+    "ast_hash": "ec0aebe95c2109ea016a2509d5b48d0f",
+    "semantic_hash": "ec0aebe95c2109ea016a2509d5b48d0f"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\index.html": {
+    "mtime": 1786730976.1771834,
+    "ast_hash": "e87d8eb7a86ede70a84657ea1a1450a7",
+    "semantic_hash": "e87d8eb7a86ede70a84657ea1a1450a7"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\public\\llms-full.txt": {
+    "mtime": 1786729499.077279,
+    "ast_hash": "f7953df86a2ed8c0e652d14b965a1473",
+    "semantic_hash": "f7953df86a2ed8c0e652d14b965a1473"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\public\\llms.txt": {
+    "mtime": 1786729508.8224778,
+    "ast_hash": "cc5a6f94e9e59e478c63622f3aec9229",
+    "semantic_hash": "cc5a6f94e9e59e478c63622f3aec9229"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\public\\robots.txt": {
+    "mtime": 1785867502.437734,
+    "ast_hash": "2f6b00e8a6fa502df08cd0ed0f24d276",
+    "semantic_hash": "2f6b00e8a6fa502df08cd0ed0f24d276"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\public\\alap_resume.pdf": {
+    "mtime": 1786611952.211911,
+    "ast_hash": "935db9935d9ea8782331b10679389f61",
+    "semantic_hash": "935db9935d9ea8782331b10679389f61"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\public\\icons\\contact.webp": {
+    "mtime": 1786607119.2350411,
+    "ast_hash": "47c0c2ae68468d868e74b4fffc6d55a2",
+    "semantic_hash": "47c0c2ae68468d868e74b4fffc6d55a2"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\public\\icons\\cursor-closedhand.svg": {
+    "mtime": 1786451012.9796607,
+    "ast_hash": "7df1e962ba5a670934ede4896600be07",
+    "semantic_hash": "7df1e962ba5a670934ede4896600be07"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\public\\icons\\cursor-openhand.svg": {
+    "mtime": 1786451043.3606534,
+    "ast_hash": "93f41a9210612fcbfd5188cbe8209585",
+    "semantic_hash": "93f41a9210612fcbfd5188cbe8209585"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\public\\icons\\cursor.svg": {
+    "mtime": 1786451066.8142996,
+    "ast_hash": "68387a1995b8353fae071ff36172251c",
+    "semantic_hash": "68387a1995b8353fae071ff36172251c"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\public\\icons\\finder.webp": {
+    "mtime": 1786607118.0032263,
+    "ast_hash": "cfaddcd3d378c461dac62710423a4571",
+    "semantic_hash": "cfaddcd3d378c461dac62710423a4571"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\public\\icons\\folder.webp": {
+    "mtime": 1786606969.9720526,
+    "ast_hash": "7e5a50bcf86f2c25e6072ea3f7c65376",
+    "semantic_hash": "7e5a50bcf86f2c25e6072ea3f7c65376"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\public\\icons\\pdf.webp": {
+    "mtime": 1786606968.7650833,
+    "ast_hash": "87028aafb1eac6478614c583ce01c5a3",
+    "semantic_hash": "87028aafb1eac6478614c583ce01c5a3"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\public\\icons\\photos.webp": {
+    "mtime": 1786607479.2986991,
+    "ast_hash": "d2fa1f678f1b9417aebe927d0ec6d556",
+    "semantic_hash": "d2fa1f678f1b9417aebe927d0ec6d556"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\public\\icons\\safari.webp": {
+    "mtime": 1786607481.0942357,
+    "ast_hash": "fc643db301797c0e1a40ed035589ee48",
+    "semantic_hash": "fc643db301797c0e1a40ed035589ee48"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\public\\icons\\terminal.webp": {
+    "mtime": 1786606967.720988,
+    "ast_hash": "8ef11bff01e61dd677d32a17493a1e86",
+    "semantic_hash": "8ef11bff01e61dd677d32a17493a1e86"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\public\\icons\\text.webp": {
+    "mtime": 1786606964.9029572,
+    "ast_hash": "f09c2d25b9284a0beab02b928606dc22",
+    "semantic_hash": "f09c2d25b9284a0beab02b928606dc22"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\public\\icons\\trash.webp": {
+    "mtime": 1786607476.3611686,
+    "ast_hash": "bb8f5b76f57a88ecf468a009f444212f",
+    "semantic_hash": "bb8f5b76f57a88ecf468a009f444212f"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\public\\images\\alap.webp": {
+    "mtime": 1784747189.392452,
+    "ast_hash": "c9a61cd3106ad08b06a50d9ef01dc8f4",
+    "semantic_hash": "c9a61cd3106ad08b06a50d9ef01dc8f4"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\public\\images\\default-wallpaper-mobile.webp": {
+    "mtime": 1786604665.1100903,
+    "ast_hash": "b7a3c18b61cf358d67d8b2ebee186aa7",
+    "semantic_hash": "b7a3c18b61cf358d67d8b2ebee186aa7"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\public\\images\\default-wallpaper-thumb.webp": {
+    "mtime": 1786730653.6815703,
+    "ast_hash": "713ac9217d8c06be79051a5bf9a44a6c",
+    "semantic_hash": "713ac9217d8c06be79051a5bf9a44a6c"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\public\\images\\default-wallpaper.webp": {
+    "mtime": 1786604664.7421107,
+    "ast_hash": "c0917f2518bccc6110c0aa1bd6cb1847",
+    "semantic_hash": "c0917f2518bccc6110c0aa1bd6cb1847"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\public\\images\\og.webp": {
+    "mtime": 1786726224.112784,
+    "ast_hash": "d334fd5f5b886650bccbc16eb5536fe3",
+    "semantic_hash": "d334fd5f5b886650bccbc16eb5536fe3"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\public\\images\\screenshots\\freecom-ai.webp": {
+    "mtime": 1785876539.7541564,
+    "ast_hash": "30679429fb6714f925f50c4916cb328f",
+    "semantic_hash": "30679429fb6714f925f50c4916cb328f"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\public\\images\\screenshots\\hyperagent-founding-500.webp": {
+    "mtime": 1786256519.5538404,
+    "ast_hash": "b21c3d5f9347e7ba5e9b8dd1c4e3b6b2",
+    "semantic_hash": "b21c3d5f9347e7ba5e9b8dd1c4e3b6b2"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\public\\images\\screenshots\\makemesound-dark.webp": {
+    "mtime": 1785876541.145579,
+    "ast_hash": "48f804be63b18a8aa43246b9924f3425",
+    "semantic_hash": "48f804be63b18a8aa43246b9924f3425"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\public\\images\\screenshots\\makemesound-light.webp": {
+    "mtime": 1785876542.4115322,
+    "ast_hash": "e0297cf1b1ae68319a914412b2026cda",
+    "semantic_hash": "e0297cf1b1ae68319a914412b2026cda"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\public\\images\\screenshots\\openui-dark.webp": {
+    "mtime": 1785876550.0027812,
+    "ast_hash": "6c4032767f8a6e7fed1cbc21e90bbefa",
+    "semantic_hash": "6c4032767f8a6e7fed1cbc21e90bbefa"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\public\\images\\screenshots\\openui-light.webp": {
+    "mtime": 1785876551.7930863,
+    "ast_hash": "52dcaab412ec0e1350672159f51a4aa9",
+    "semantic_hash": "52dcaab412ec0e1350672159f51a4aa9"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\public\\images\\screenshots\\scalewithalap-dark.webp": {
+    "mtime": 1786645291.2199554,
+    "ast_hash": "fc7aefb11152d08bde66ba62dafe8977",
+    "semantic_hash": "fc7aefb11152d08bde66ba62dafe8977"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\public\\images\\screenshots\\scalewithalap-light.webp": {
+    "mtime": 1786645285.2414913,
+    "ast_hash": "80c4117a26b3022764611f25cb043897",
+    "semantic_hash": "80c4117a26b3022764611f25cb043897"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\public\\images\\screenshots\\soothly-ai.webp": {
+    "mtime": 1785876553.2992399,
+    "ast_hash": "3f60755c47872ee6077ddadab100b4ce",
+    "semantic_hash": "3f60755c47872ee6077ddadab100b4ce"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\public\\images\\screenshots\\vibe44-dark.webp": {
+    "mtime": 1785876555.9041233,
+    "ast_hash": "e5626bdd45bb8bfc850060e4e3f8dc70",
+    "semantic_hash": "e5626bdd45bb8bfc850060e4e3f8dc70"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\public\\images\\screenshots\\vibe44-demo-dark.webp": {
+    "mtime": 1785876557.3831906,
+    "ast_hash": "cb08a4e8f0d8b27bee5ed9c7b7444a10",
+    "semantic_hash": "cb08a4e8f0d8b27bee5ed9c7b7444a10"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\public\\images\\screenshots\\vibe44-demo-light.webp": {
+    "mtime": 1785876533.405703,
+    "ast_hash": "0c629f53f73d9a1106762d81b5a82991",
+    "semantic_hash": "0c629f53f73d9a1106762d81b5a82991"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\public\\images\\screenshots\\vibe44-light.webp": {
+    "mtime": 1785876535.4187706,
+    "ast_hash": "2bc3418fe2d3362954271b9a30c443cc",
+    "semantic_hash": "2bc3418fe2d3362954271b9a30c443cc"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\public\\images\\screenshots\\zeroheadache-app.webp": {
+    "mtime": 1785880457.4086413,
+    "ast_hash": "fc21c768806bad17a58202a7b29e2209",
+    "semantic_hash": "fc21c768806bad17a58202a7b29e2209"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\public\\images\\screenshots\\zeroheadache.webp": {
+    "mtime": 1785876537.7986097,
+    "ast_hash": "24374fce5bf16e1a038e93fee37200c1",
+    "semantic_hash": "24374fce5bf16e1a038e93fee37200c1"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\public\\images\\tahoe-wallpaper-thumb.webp": {
+    "mtime": 1786730655.0469415,
+    "ast_hash": "f09a1603005d56ea46fd0f930763ece3",
+    "semantic_hash": "f09a1603005d56ea46fd0f930763ece3"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\public\\images\\tahoe-wallpaper.webp": {
+    "mtime": 1786604778.8879552,
+    "ast_hash": "fdce7618d644cc6bc29860e516cb9c9d",
+    "semantic_hash": "fdce7618d644cc6bc29860e516cb9c9d"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\public\\logos\\OpenUI.webp": {
+    "mtime": 1786627465.7226398,
+    "ast_hash": "2bd157a868876c72094ba99ea75a7678",
+    "semantic_hash": "2bd157a868876c72094ba99ea75a7678"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\public\\logos\\Scale with Alap.webp": {
+    "mtime": 1786627469.2805004,
+    "ast_hash": "f31a78ff8c4430f6463df09c381baf5d",
+    "semantic_hash": "f31a78ff8c4430f6463df09c381baf5d"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\public\\logos\\Vibe44.webp": {
+    "mtime": 1786627471.1037202,
+    "ast_hash": "bfd86df13a21371de13bf74c33d96ae7",
+    "semantic_hash": "bfd86df13a21371de13bf74c33d96ae7"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\public\\logos\\Zero Headache.webp": {
+    "mtime": 1786627475.059725,
+    "ast_hash": "e273f2e5dc0b264a5c68feddea703e8a",
+    "semantic_hash": "e273f2e5dc0b264a5c68feddea703e8a"
+  }
+}

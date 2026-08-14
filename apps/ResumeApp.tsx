@@ -47,7 +47,7 @@ export default function ResumeApp() {
       >
         <div className="flex items-center space-x-2 sm:space-x-2.5 min-w-0 flex-1">
           <img
-            src="/images/pdf.webp"
+            src="/icons/pdf.webp"
             alt="PDF"
             className="w-4 h-4 sm:w-5 sm:h-5 object-contain shrink-0"
             onError={(e) => {
@@ -71,7 +71,7 @@ export default function ResumeApp() {
         {/* Action Controls */}
         <div className="flex items-center space-x-2 shrink-0">
           <a
-            href="/files/alap_resume.pdf"
+            href="/alap_resume.pdf"
             download="Alap's Resume"
             onClick={handleDownloadToast}
             className="px-2.5 py-1.5 sm:px-3 sm:py-1.5 bg-blue-600 hover:bg-blue-500 text-white text-[11px] sm:text-xs font-semibold rounded-lg flex items-center space-x-1 sm:space-x-1.5 shadow-md shadow-blue-600/30 transition-all active:scale-95 cursor-pointer"
@@ -371,7 +371,7 @@ export default function ResumeApp() {
                 <span
                   className={`font-bold ${isLight ? "text-blue-800" : "text-blue-400"}`}
                 >
-                  Delivery & AI-Native Engineering:
+                  Delivery & AI-native Engineering:
                 </span>{" "}
                 AWS Lightsail, Vercel, GitHub Actions CI/CD, Vitest, Playwright,
                 Sentry, system design, performance and latency optimization,
@@ -813,7 +813,7 @@ export default function ResumeApp() {
                   <h3
                     className={`font-bold text-sm sm:text-base leading-snug ${isLight ? "text-blue-800" : "text-blue-400"}`}
                   >
-                    Co-founder & CEO | Zero Headache (AI-Native Service Company)
+                    Co-founder & CEO | Zero Headache (AI-native Service Company)
                   </h3>
                   <span
                     className={`px-2.5 py-0.5 rounded-full font-mono text-[10px] sm:text-[11px] font-medium shrink-0 self-start sm:self-auto ${

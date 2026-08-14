@@ -176,8 +176,8 @@ export default function AboutApp() {
                   <span
                     className={`font-semibold ${isLight ? "text-emerald-700" : "text-emerald-400"}`}
                   >
-                    AI Engineer & Full-Stack AI-Native Developer roles at AI
-                    startups, remote or relocation with visa sponsorship.
+                    AI Engineer & Full-Stack AI Developer roles at AI startups,
+                    remote or relocation with visa sponsorship.
                   </span>
                 </div>
                 <div className="flex flex-col sm:flex-row px-4 py-3 gap-1 sm:gap-0 items-start sm:items-center">
@@ -298,7 +298,7 @@ export default function AboutApp() {
                     </span>
                   </div>
                   <p className="text-xs md:text-sm font-semibold text-blue-600 mt-0.5">
-                    Zero Headache (AI-Native Service Company)
+                    Zero Headache (AI-native Service Company)
                   </p>
                   <ul
                     className={`mt-3 space-y-1.5 list-disc list-inside text-xs md:text-sm leading-relaxed ${isLight ? "text-slate-700" : "text-white/80"}`}

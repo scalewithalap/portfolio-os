@@ -6,6 +6,8 @@
   "scripts": {
     "dev": "vite --port=3000 --host=0.0.0.0",
     "build": "vite build",
+    "prebuild": "tsx scripts/generate-sitemap.ts",
+    "sitemap": "tsx scripts/generate-sitemap.ts",
     "preview": "vite preview",
     "clean": "node -e \"fs.rmSync('dist', { recursive: true, force: true }); fs.rmSync('server.js', { force: true });\"",
     "lint": "tsc --noEmit"

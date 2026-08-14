@@ -17,7 +17,7 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     cursor:
-      url("/images/cursor.svg") 0 0,
+      url("/icons/cursor.svg") 0 0,
       auto;
   }
 
@@ -50,7 +50,7 @@ input[type="button"],
 input[type="submit"],
 .cursor-pointer {
   cursor:
-    url("/images/cursor.svg") 0 0,
+    url("/icons/cursor.svg") 0 0,
     pointer !important;
 }
 
@@ -59,7 +59,7 @@ input[type="submit"],
 [draggable="true"],
 .grab-handle {
   cursor:
-    url("/images/cursor-openhand.svg") 10 10,
+    url("/icons/cursor-openhand.svg") 10 10,
     grab !important;
 }
 
@@ -72,7 +72,7 @@ input[type="submit"],
 body.is-dragging,
 body.is-dragging * {
   cursor:
-    url("/images/cursor-closedhand.svg") 8 8,
+    url("/icons/cursor-closedhand.svg") 8 8,
     grabbing !important;
 }
 

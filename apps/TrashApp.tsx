@@ -80,7 +80,7 @@ export default function TrashApp() {
 
     let fileName = "";
     let fileType = "Desktop Item";
-    let iconImg = "/images/text.webp";
+    let iconImg = "/icons/text.webp";
 
     // 1. Check custom JSON payload first
     const jsonString = e.dataTransfer.getData("application/json");

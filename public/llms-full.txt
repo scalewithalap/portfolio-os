@@ -73,7 +73,7 @@ Founded Scale with Alap, co-founded and leads Zero Headache as CEO, and shipped 
 - **Overview:** AI-powered communication copilot featuring a 105-tone transformation matrix (15 categories with 7 sub-variants each) and parallel multi-stream response engine.
 
 ### 8. Freecom AI Store
-- **Category:** AI-Native eCommerce Storefront
+- **Category:** AI-native eCommerce Storefront
 - **URL:** https://scalewithalap.com/projects/freecom
 - **Overview:** Open-source eCommerce storefront integrating automated product recommendation agents and instant checkout pipelines.
 
@@ -90,7 +90,7 @@ Founded Scale with Alap, co-founded and leads Zero Headache as CEO, and shipped 
    - Founded Scale with Alap to publish technical content and build AI products (Vibe44, OpenUI, Make Me Sound, Freecom AI).
    - Directs AI-assisted engineering workflows across architecture, implementation, testing, and CI using Claude Code, Cursor, Codex, and Copilot.
 
-2. **Zero Headache (AI-Native Service Company)** - *Co-founder & CEO* (July 2026 - Present)
+2. **Zero Headache (AI-native Service Company)** - *Co-founder & CEO* (July 2026 - Present)
    - Leads product and engineering for a 24/7 AI lead capture and booking service across 12 channels.
    - Applied to Y Combinator Fall 2026.
 

@@ -89,7 +89,7 @@ const OUTPUT_LINES = [
     type: "item",
   },
   { text: "", type: "empty" },
-  { text: "[ OK ] Delivery & AI-Native Engineering", type: "success" },
+  { text: "[ OK ] Delivery & AI-native Engineering", type: "success" },
   {
     text: "  ├─ AWS Lightsail, Vercel, GitHub Actions CI/CD, Vitest, Playwright, Sentry, system design, performance optimization",
     type: "item",
@@ -151,7 +151,7 @@ const OUTPUT_LINES = [
     type: "item",
   },
   {
-    text: "  ├─ Co-founder & CEO | Zero Headache (AI-Native Service Company) | July 2026 – Present",
+    text: "  ├─ Co-founder & CEO | Zero Headache (AI-native Service Company) | July 2026 – Present",
     type: "item",
   },
   {

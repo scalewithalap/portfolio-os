@@ -319,7 +319,7 @@ export default function DesktopDock() {
 
                     let fileName = "";
                     let fileType = "Desktop Item";
-                    let iconImg = "/images/text.webp";
+                    let iconImg = "/icons/text.webp";
 
                     const jsonString =
                       e.dataTransfer.getData("application/json");

@@ -4,10 +4,10 @@
 
 ## Core Profile & Identity
 - **Name:** Alap Putatunda
-- **Title:** Founding AI Engineer & Full-Stack AI-Native Developer
+- **Title:** Founding AI Engineer & Full-Stack AI Developer
 - **Location:** India (Open to global remote roles or relocation with visa sponsorship)
 - **Experience:** 6+ years taking software from empty repository to production
-- **Open to:** AI Engineer and Full-Stack AI-Native Developer roles at early-stage startups (≤200 people), remote or relocation with visa sponsorship
+- **Open to:** AI Engineer and Full-Stack AI Developer roles at early-stage startups (≤200 people), remote or relocation with visa sponsorship
 - **Email:** hi@scalewithalap.com
 - **Website:** https://scalewithalap.com
 - **GitHub:** https://github.com/scalewithalap
