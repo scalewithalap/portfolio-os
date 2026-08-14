@@ -20,8 +20,7 @@ export default function SEOHead() {
 
     // Determine current view details based on active/focused app
     let title = "Scale with Alap - Founding AI Engineer";
-    let description =
-      "Interactive macOS-style Portfolio OS by Alap Putatunda.";
+    let description = "Interactive macOS-style Portfolio OS by Alap Putatunda.";
     let canonicalUrl = "https://scalewithalap.com/";
     let activeProjectId: string | null = null;
 
@@ -95,10 +94,10 @@ export default function SEOHead() {
     updateMeta("og:description", description, true);
     updateMeta("og:url", canonicalUrl, true);
     updateMeta("og:type", activeProjectId ? "article" : "website", true);
-    updateMeta("og:image", "https://scalewithalap.com/og.webp", true);
+    updateMeta("og:image", "https://scalewithalap.com/images/og.webp", true);
     updateMeta(
       "og:image:secure_url",
-      "https://scalewithalap.com/og.webp",
+      "https://scalewithalap.com/images/og.webp",
       true,
     );
     updateMeta("og:image:type", "image/webp", true);
@@ -116,8 +115,8 @@ export default function SEOHead() {
     updateMeta("twitter:creator", "@scalewithalap");
     updateMeta("twitter:title", title);
     updateMeta("twitter:description", description);
-    updateMeta("twitter:image", "https://scalewithalap.com/og.webp");
-    updateMeta("twitter:image:src", "https://scalewithalap.com/og.webp");
+    updateMeta("twitter:image", "https://scalewithalap.com/images/og.webp");
+    updateMeta("twitter:image:src", "https://scalewithalap.com/images/og.webp");
     updateMeta(
       "twitter:image:alt",
       "Scale with Alap | Founding AI Engineer Portfolio OS",
@@ -132,7 +131,7 @@ export default function SEOHead() {
       jobTitle: "Founding AI Engineer & Full-Stack AI Developer",
       url: "https://scalewithalap.com",
       email: "mailto:hi@scalewithalap.com",
-      image: "https://scalewithalap.com/og.webp",
+      image: "https://scalewithalap.com/images/og.webp",
       knowsAbout: [
         "Artificial Intelligence",
         "Multi-Agent Orchestration",
@@ -170,9 +169,8 @@ export default function SEOHead() {
       "@id": "https://scalewithalap.com/#website",
       url: "https://scalewithalap.com/",
       name: "Scale with Alap",
-      description:
-        "Interactive macOS-style Portfolio OS by Alap Putatunda.",
-      image: "https://scalewithalap.com/og.webp",
+      description: "Interactive macOS-style Portfolio OS by Alap Putatunda.",
+      image: "https://scalewithalap.com/images/og.webp",
       publisher: {
         "@id": "https://scalewithalap.com/#person",
       },
@@ -185,7 +183,7 @@ export default function SEOHead() {
       url: canonicalUrl,
       name: title,
       description: description,
-      primaryImageOfPage: "https://scalewithalap.com/og.webp",
+      primaryImageOfPage: "https://scalewithalap.com/images/og.webp",
       mainEntity: {
         "@id": "https://scalewithalap.com/#person",
       },
