@@ -5,9 +5,9 @@
     "semantic_hash": "4dfa8ab04817a71ff0ecb7d758b43906"
   },
   "C:\\Users\\alapp\\Desktop\\scalewithalap\\apps\\AboutApp.tsx": {
-    "mtime": 1786729458.9214046,
-    "ast_hash": "8ee4b4a592359de131a9df3666b9f1e3",
-    "semantic_hash": "8ee4b4a592359de131a9df3666b9f1e3"
+    "mtime": 1786736551.893725,
+    "ast_hash": "3fc1271ff63412ca927b5e31a2e16cbe",
+    "semantic_hash": "3fc1271ff63412ca927b5e31a2e16cbe"
   },
   "C:\\Users\\alapp\\Desktop\\scalewithalap\\apps\\MailApp.tsx": {
     "mtime": 1786602513.709833,
@@ -60,9 +60,9 @@
     "semantic_hash": "999c533130990a805b7fbabfb56c1f82"
   },
   "C:\\Users\\alapp\\Desktop\\scalewithalap\\components\\common\\SEOHead.tsx": {
-    "mtime": 1786726544.6442316,
-    "ast_hash": "27319a400eeac9d3f81be5028570cd4f",
-    "semantic_hash": "27319a400eeac9d3f81be5028570cd4f"
+    "mtime": 1786736771.0947814,
+    "ast_hash": "ae3308a41816065748e95ca03f2c4772",
+    "semantic_hash": "ae3308a41816065748e95ca03f2c4772"
   },
   "C:\\Users\\alapp\\Desktop\\scalewithalap\\components\\common\\StaticHeroText.tsx": {
     "mtime": 1786478705.7600455,
@@ -165,9 +165,9 @@
     "semantic_hash": "913dfcde7c12397f6018883bd914d7ac"
   },
   "C:\\Users\\alapp\\Desktop\\scalewithalap\\mobile\\components\\IOSLockScreen.tsx": {
-    "mtime": 1786613443.8320596,
-    "ast_hash": "a17ef4d9e5e93f899e8e93c189a00e1b",
-    "semantic_hash": "a17ef4d9e5e93f899e8e93c189a00e1b"
+    "mtime": 1786736557.5885158,
+    "ast_hash": "3a32e5acb6b429e1a83a800c927c0ea4",
+    "semantic_hash": "3a32e5acb6b429e1a83a800c927c0ea4"
   },
   "C:\\Users\\alapp\\Desktop\\scalewithalap\\mobile\\components\\MobileHome.tsx": {
     "mtime": 1786493191.0871992,
@@ -225,9 +225,9 @@
     "semantic_hash": "ec0aebe95c2109ea016a2509d5b48d0f"
   },
   "C:\\Users\\alapp\\Desktop\\scalewithalap\\index.html": {
-    "mtime": 1786730976.1771834,
-    "ast_hash": "e87d8eb7a86ede70a84657ea1a1450a7",
-    "semantic_hash": "e87d8eb7a86ede70a84657ea1a1450a7"
+    "mtime": 1786736783.093471,
+    "ast_hash": "ec9ac1889f348ba3c97dd4f31e4d1239",
+    "semantic_hash": "ec9ac1889f348ba3c97dd4f31e4d1239"
   },
   "C:\\Users\\alapp\\Desktop\\scalewithalap\\public\\llms-full.txt": {
     "mtime": 1786729499.077279,
@@ -235,9 +235,9 @@
     "semantic_hash": "f7953df86a2ed8c0e652d14b965a1473"
   },
   "C:\\Users\\alapp\\Desktop\\scalewithalap\\public\\llms.txt": {
-    "mtime": 1786729508.8224778,
-    "ast_hash": "cc5a6f94e9e59e478c63622f3aec9229",
-    "semantic_hash": "cc5a6f94e9e59e478c63622f3aec9229"
+    "mtime": 1786735254.0860586,
+    "ast_hash": "1aa3ace6c77e9fd7ad4d9fd44acd0a97",
+    "semantic_hash": "1aa3ace6c77e9fd7ad4d9fd44acd0a97"
   },
   "C:\\Users\\alapp\\Desktop\\scalewithalap\\public\\robots.txt": {
     "mtime": 1785867502.437734,
@@ -309,11 +309,6 @@
     "ast_hash": "bb8f5b76f57a88ecf468a009f444212f",
     "semantic_hash": "bb8f5b76f57a88ecf468a009f444212f"
   },
-  "C:\\Users\\alapp\\Desktop\\scalewithalap\\public\\images\\alap.webp": {
-    "mtime": 1784747189.392452,
-    "ast_hash": "c9a61cd3106ad08b06a50d9ef01dc8f4",
-    "semantic_hash": "c9a61cd3106ad08b06a50d9ef01dc8f4"
-  },
   "C:\\Users\\alapp\\Desktop\\scalewithalap\\public\\images\\default-wallpaper-mobile.webp": {
     "mtime": 1786604665.1100903,
     "ast_hash": "b7a3c18b61cf358d67d8b2ebee186aa7",
@@ -328,11 +323,6 @@
     "mtime": 1786604664.7421107,
     "ast_hash": "c0917f2518bccc6110c0aa1bd6cb1847",
     "semantic_hash": "c0917f2518bccc6110c0aa1bd6cb1847"
-  },
-  "C:\\Users\\alapp\\Desktop\\scalewithalap\\public\\images\\og.webp": {
-    "mtime": 1786726224.112784,
-    "ast_hash": "d334fd5f5b886650bccbc16eb5536fe3",
-    "semantic_hash": "d334fd5f5b886650bccbc16eb5536fe3"
   },
   "C:\\Users\\alapp\\Desktop\\scalewithalap\\public\\images\\screenshots\\freecom-ai.webp": {
     "mtime": 1785876539.7541564,
@@ -438,5 +428,15 @@
     "mtime": 1786627475.059725,
     "ast_hash": "e273f2e5dc0b264a5c68feddea703e8a",
     "semantic_hash": "e273f2e5dc0b264a5c68feddea703e8a"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\public\\images\\alap-putatunda.webp": {
+    "mtime": 1784747189.392452,
+    "ast_hash": "c9a61cd3106ad08b06a50d9ef01dc8f4",
+    "semantic_hash": "c9a61cd3106ad08b06a50d9ef01dc8f4"
+  },
+  "C:\\Users\\alapp\\Desktop\\scalewithalap\\public\\images\\opengraph.webp": {
+    "mtime": 1786726224.112784,
+    "ast_hash": "d334fd5f5b886650bccbc16eb5536fe3",
+    "semantic_hash": "d334fd5f5b886650bccbc16eb5536fe3"
   }
 }

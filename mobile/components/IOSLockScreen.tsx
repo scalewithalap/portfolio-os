@@ -146,7 +146,7 @@ export default function IOSLockScreen({ onUnlock }: IOSLockScreenProps) {
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
               <LazyImage
-                src="/images/alap.webp"
+                src="/images/alap-putatunda.webp"
                 alt="Alap Putatunda"
                 className={`w-9 h-9 rounded-full object-cover shadow-md border shrink-0 object-[center_10%] ${
                   isLight ? "border-black/30" : "border-white/30"

@@ -278,7 +278,7 @@ LEGEND.forEach(c => {
 </script>
 <script>
 // Render hyperedges as shaded regions
-const hyperedges = [{"id": "he_core_portfolio_os_systems", "label": "Portfolio OS Core Systems Architecture", "nodes": ["readme_portfolio_os", "readme_window_manager", "readme_ecosystem_store", "readme_dock_magnification", "readme_web_audio", "readme_environment_router"], "relation": "form", "confidence": "EXTRACTED", "confidence_score": 0.95, "source_file": "README.md"}, {"id": "he_ai_product_ecosystem", "label": "Alap Putatunda AI Product Ecosystem", "nodes": ["public_llms_alap_profile", "llms_vibe44_mcp", "llms_vibe44_engine", "llms_zeroheadache_marketing", "llms_zeroheadache_platform", "llms_openui", "llms_makemesound", "llms_freecom", "llms_soothly"], "relation": "form", "confidence": "EXTRACTED", "confidence_score": 0.95, "source_file": "public/llms-full.txt"}];
+const hyperedges = [];
 // afterDrawing passes ctx already transformed to network coordinate space.
 // Draw node positions raw — no manual pan/zoom/DPR math needed.
 network.on('afterDrawing', function(ctx) {

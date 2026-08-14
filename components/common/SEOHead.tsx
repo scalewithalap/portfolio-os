@@ -19,10 +19,9 @@ export default function SEOHead() {
     if (typeof document === "undefined") return;
 
     // Determine current view details based on active/focused app
-    let title =
-      "Founding AI Engineer & Full-Stack AI Developer — Scale with Alap";
+    let title = "Scale with Alap — AI Engineer & Full-Stack AI Developer";
     let description =
-      "Interactive macOS-style Portfolio OS by Alap Putatunda. I'm a Founding AI Engineer & Full-Stack AI Developer. Explore all my projects, live systems, and technical case studies.";
+      "Interactive macOS-style Portfolio OS by Alap Putatunda - Founding AI Engineer & Full-stack AI Developer. Explore all of my projects & shipped products.";
     let canonicalUrl = "https://scalewithalap.com/";
     let activeProjectId: string | null = null;
 
@@ -98,10 +97,14 @@ export default function SEOHead() {
     updateMeta("og:description", description, true);
     updateMeta("og:url", canonicalUrl, true);
     updateMeta("og:type", activeProjectId ? "article" : "website", true);
-    updateMeta("og:image", "https://scalewithalap.com/images/og.webp", true);
+    updateMeta(
+      "og:image",
+      "https://scalewithalap.com/images/opengraph.webp",
+      true,
+    );
     updateMeta(
       "og:image:secure_url",
-      "https://scalewithalap.com/images/og.webp",
+      "https://scalewithalap.com/images/opengraph.webp",
       true,
     );
     updateMeta("og:image:type", "image/webp", true);
@@ -119,11 +122,17 @@ export default function SEOHead() {
     updateMeta("twitter:creator", "@scalewithalap");
     updateMeta("twitter:title", title);
     updateMeta("twitter:description", description);
-    updateMeta("twitter:image", "https://scalewithalap.com/images/og.webp");
-    updateMeta("twitter:image:src", "https://scalewithalap.com/images/og.webp");
+    updateMeta(
+      "twitter:image",
+      "https://scalewithalap.com/images/opengraph.webp",
+    );
+    updateMeta(
+      "twitter:image:src",
+      "https://scalewithalap.com/images/opengraph.webp",
+    );
     updateMeta(
       "twitter:image:alt",
-      "Scale with Alap | Founding AI Engineer Portfolio OS",
+      "Scale with Alap — AI Engineer & Full-Stack AI Developer",
     );
 
     // JSON-LD Structured Data Schema Construction
@@ -135,7 +144,7 @@ export default function SEOHead() {
       jobTitle: "Founding AI Engineer & Full-Stack AI Developer",
       url: "https://scalewithalap.com",
       email: "mailto:hi@scalewithalap.com",
-      image: "https://scalewithalap.com/images/og.webp",
+      image: "https://scalewithalap.com/images/opengraph.webp",
       knowsAbout: [
         "Artificial Intelligence",
         "Multi-Agent Orchestration",
@@ -161,7 +170,6 @@ export default function SEOHead() {
         "https://www.youtube.com/@scalewithalap",
         "https://www.instagram.com/scalewithalap",
         "https://www.facebook.com/scalewithalap",
-        "https://hyperagent.com/s/6YBNB4VIO26vErBhadK36w",
       ],
       award:
         "Selected for 'The Founding 500' by Hyperagent (by Airtable) — June 2026",
@@ -174,8 +182,8 @@ export default function SEOHead() {
       url: "https://scalewithalap.com/",
       name: "Scale with Alap",
       description:
-        "Interactive macOS-style Portfolio OS by Alap Putatunda. I'm a Founding AI Engineer & Full-Stack AI Developer. Explore all my projects, live systems, and technical case studies.",
-      image: "https://scalewithalap.com/images/og.webp",
+        "Interactive macOS-style Portfolio OS by Alap Putatunda - Founding AI Engineer & Full-stack AI Developer. Explore all of my projects & shipped products.",
+      image: "https://scalewithalap.com/images/opengraph.webp",
       publisher: {
         "@id": "https://scalewithalap.com/#person",
       },
@@ -188,7 +196,7 @@ export default function SEOHead() {
       url: canonicalUrl,
       name: title,
       description: description,
-      primaryImageOfPage: "https://scalewithalap.com/images/og.webp",
+      primaryImageOfPage: "https://scalewithalap.com/images/opengraph.webp",
       mainEntity: {
         "@id": "https://scalewithalap.com/#person",
       },

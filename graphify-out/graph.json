@@ -1,45 +1,7 @@
 {
   "directed": false,
   "multigraph": false,
-  "graph": {
-    "hyperedges": [
-      {
-        "id": "he_core_portfolio_os_systems",
-        "label": "Portfolio OS Core Systems Architecture",
-        "nodes": [
-          "readme_portfolio_os",
-          "readme_window_manager",
-          "readme_ecosystem_store",
-          "readme_dock_magnification",
-          "readme_web_audio",
-          "readme_environment_router"
-        ],
-        "relation": "form",
-        "confidence": "EXTRACTED",
-        "confidence_score": 0.95,
-        "source_file": "README.md"
-      },
-      {
-        "id": "he_ai_product_ecosystem",
-        "label": "Alap Putatunda AI Product Ecosystem",
-        "nodes": [
-          "public_llms_alap_profile",
-          "llms_vibe44_mcp",
-          "llms_vibe44_engine",
-          "llms_zeroheadache_marketing",
-          "llms_zeroheadache_platform",
-          "llms_openui",
-          "llms_makemesound",
-          "llms_freecom",
-          "llms_soothly"
-        ],
-        "relation": "form",
-        "confidence": "EXTRACTED",
-        "confidence_score": 0.95,
-        "source_file": "public/llms-full.txt"
-      }
-    ]
-  },
+  "graph": {},
   "nodes": [
     {
       "label": "App.tsx",
@@ -7604,42 +7566,6 @@
       "target": "llms_zeroheadache_platform"
     }
   ],
-  "hyperedges": [
-    {
-      "id": "he_core_portfolio_os_systems",
-      "label": "Portfolio OS Core Systems Architecture",
-      "nodes": [
-        "readme_portfolio_os",
-        "readme_window_manager",
-        "readme_ecosystem_store",
-        "readme_dock_magnification",
-        "readme_web_audio",
-        "readme_environment_router"
-      ],
-      "relation": "form",
-      "confidence": "EXTRACTED",
-      "confidence_score": 0.95,
-      "source_file": "README.md"
-    },
-    {
-      "id": "he_ai_product_ecosystem",
-      "label": "Alap Putatunda AI Product Ecosystem",
-      "nodes": [
-        "public_llms_alap_profile",
-        "llms_vibe44_mcp",
-        "llms_vibe44_engine",
-        "llms_zeroheadache_marketing",
-        "llms_zeroheadache_platform",
-        "llms_openui",
-        "llms_makemesound",
-        "llms_freecom",
-        "llms_soothly"
-      ],
-      "relation": "form",
-      "confidence": "EXTRACTED",
-      "confidence_score": 0.95,
-      "source_file": "public/llms-full.txt"
-    }
-  ],
-  "built_at_commit": "1a2d8b9c2c97806fbbf444a07e92af289de088e4"
+  "hyperedges": [],
+  "built_at_commit": "1779ee08be1043a5f21abde9652bbc58b4cc4297"
 }

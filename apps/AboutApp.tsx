@@ -111,7 +111,7 @@ export default function AboutApp() {
             <div className="animate-in fade-in duration-300 space-y-6">
               <div className="flex items-center space-x-4">
                 <LazyImage
-                  src="/images/alap.webp"
+                  src="/images/alap-putatunda.webp"
                   alt="Alap Putatunda"
                   className={`w-14 h-14 md:w-16 md:h-16 rounded-full object-cover shadow-md border shrink-0 object-[center_10%] ${
                     isLight ? "border-black/30" : "border-white/30"

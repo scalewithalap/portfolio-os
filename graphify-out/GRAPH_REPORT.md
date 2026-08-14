@@ -1,7 +1,7 @@
-# Graph Report - .  (2026-08-14)
+# Graph Report - .  (2026-08-15)
 
 ## Corpus Check
-- 88 files · ~25,000 words
+- 88 files · ~102,744 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -48,10 +48,6 @@
 
 ## Import Cycles
 - None detected.
-
-## Hyperedges (group relationships)
-- **Portfolio OS Core Systems Architecture** — readme_portfolio_os, readme_window_manager, readme_ecosystem_store, readme_dock_magnification, readme_web_audio, readme_environment_router [EXTRACTED 0.95]
-- **Alap Putatunda AI Product Ecosystem** — public_llms_alap_profile, llms_vibe44_mcp, llms_vibe44_engine, llms_zeroheadache_marketing, llms_zeroheadache_platform, llms_openui, llms_makemesound, llms_freecom, llms_soothly [EXTRACTED 0.95]
 
 ## Communities (11 total, 0 thin omitted)
 
