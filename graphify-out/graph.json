@@ -16,7 +16,7 @@
       "label": "App()",
       "file_type": "code",
       "source_file": "App.tsx",
-      "source_location": "L24",
+      "source_location": "L28",
       "id": "scalewithalap_app_app",
       "community": 11,
       "norm_label": "app()"
@@ -36,7 +36,7 @@
       "source_file": "vite.config.ts",
       "source_location": "L1",
       "id": "vite_config_ts",
-      "community": 32,
+      "community": 33,
       "norm_label": "vite.config.ts"
     },
     {
@@ -223,7 +223,7 @@
       "label": "handleEmptyTrash()",
       "file_type": "code",
       "source_file": "apps\\TrashApp.tsx",
-      "source_location": "L41",
+      "source_location": "L35",
       "id": "apps_trashapp_handleemptytrash",
       "community": 1,
       "norm_label": "handleemptytrash()"
@@ -232,7 +232,7 @@
       "label": "handleSingleDelete()",
       "file_type": "code",
       "source_file": "apps\\TrashApp.tsx",
-      "source_location": "L52",
+      "source_location": "L46",
       "id": "apps_trashapp_handlesingledelete",
       "community": 1,
       "norm_label": "handlesingledelete()"
@@ -241,7 +241,7 @@
       "label": "handleSingleRestore()",
       "file_type": "code",
       "source_file": "apps\\TrashApp.tsx",
-      "source_location": "L61",
+      "source_location": "L55",
       "id": "apps_trashapp_handlesinglerestore",
       "community": 1,
       "norm_label": "handlesinglerestore()"
@@ -250,7 +250,7 @@
       "label": "handleDragOver()",
       "file_type": "code",
       "source_file": "apps\\TrashApp.tsx",
-      "source_location": "L66",
+      "source_location": "L60",
       "id": "apps_trashapp_handledragover",
       "community": 1,
       "norm_label": "handledragover()"
@@ -259,7 +259,7 @@
       "label": "handleDragLeave()",
       "file_type": "code",
       "source_file": "apps\\TrashApp.tsx",
-      "source_location": "L75",
+      "source_location": "L69",
       "id": "apps_trashapp_handledragleave",
       "community": 1,
       "norm_label": "handledragleave()"
@@ -268,10 +268,28 @@
       "label": "handleDrop()",
       "file_type": "code",
       "source_file": "apps\\TrashApp.tsx",
-      "source_location": "L82",
+      "source_location": "L76",
       "id": "apps_trashapp_handledrop",
       "community": 1,
       "norm_label": "handledrop()"
+    },
+    {
+      "label": "BootingScreen.tsx",
+      "file_type": "code",
+      "source_file": "components\\common\\BootingScreen.tsx",
+      "source_location": "L1",
+      "id": "components_common_bootingscreen_tsx",
+      "community": 20,
+      "norm_label": "bootingscreen.tsx"
+    },
+    {
+      "label": "SplashScreen()",
+      "file_type": "code",
+      "source_file": "components\\common\\BootingScreen.tsx",
+      "source_location": "L22",
+      "id": "common_bootingscreen_splashscreen",
+      "community": 20,
+      "norm_label": "splashscreen()"
     },
     {
       "label": "ErrorBoundary.tsx",
@@ -360,7 +378,7 @@
       "source_file": "components\\common\\SEOHead.tsx",
       "source_location": "L1",
       "id": "components_common_seohead_tsx",
-      "community": 20,
+      "community": 21,
       "norm_label": "seohead.tsx"
     },
     {
@@ -369,7 +387,7 @@
       "source_file": "components\\common\\SEOHead.tsx",
       "source_location": "L15",
       "id": "common_seohead_seohead",
-      "community": 20,
+      "community": 21,
       "norm_label": "seohead()"
     },
     {
@@ -378,7 +396,7 @@
       "source_file": "components\\common\\StaticHeroText.tsx",
       "source_location": "L1",
       "id": "components_common_staticherotext_tsx",
-      "community": 21,
+      "community": 22,
       "norm_label": "staticherotext.tsx"
     },
     {
@@ -387,7 +405,7 @@
       "source_file": "components\\common\\StaticHeroText.tsx",
       "source_location": "L10",
       "id": "common_staticherotext_staticherotext",
-      "community": 21,
+      "community": 22,
       "norm_label": "staticherotext()"
     },
     {
@@ -396,7 +414,7 @@
       "source_file": "components\\common\\ToastContainer.tsx",
       "source_location": "L1",
       "id": "components_common_toastcontainer_tsx",
-      "community": 22,
+      "community": 23,
       "norm_label": "toastcontainer.tsx"
     },
     {
@@ -405,7 +423,7 @@
       "source_file": "components\\common\\ToastContainer.tsx",
       "source_location": "L16",
       "id": "common_toastcontainer_toastitem",
-      "community": 22,
+      "community": 23,
       "norm_label": "toastitem()"
     },
     {
@@ -414,7 +432,7 @@
       "source_file": "components\\overlays\\ContextMenu.tsx",
       "source_location": "L1",
       "id": "components_overlays_contextmenu_tsx",
-      "community": 23,
+      "community": 24,
       "norm_label": "contextmenu.tsx"
     },
     {
@@ -423,7 +441,7 @@
       "source_file": "components\\overlays\\ContextMenu.tsx",
       "source_location": "L45",
       "id": "overlays_contextmenu_handleclickoutside",
-      "community": 23,
+      "community": 24,
       "norm_label": "handleclickoutside()"
     },
     {
@@ -432,16 +450,16 @@
       "source_file": "components\\overlays\\ControlCenter.tsx",
       "source_location": "L1",
       "id": "components_overlays_controlcenter_tsx",
-      "community": 24,
+      "community": 25,
       "norm_label": "controlcenter.tsx"
     },
     {
       "label": "handleClickOutside()",
       "file_type": "code",
       "source_file": "components\\overlays\\ControlCenter.tsx",
-      "source_location": "L47",
+      "source_location": "L51",
       "id": "overlays_controlcenter_handleclickoutside",
-      "community": 24,
+      "community": 25,
       "norm_label": "handleclickoutside()"
     },
     {
@@ -486,7 +504,7 @@
       "source_file": "components\\overlays\\ShortcutsHintOverlay.tsx",
       "source_location": "L1",
       "id": "components_overlays_shortcutshintoverlay_tsx",
-      "community": 25,
+      "community": 26,
       "norm_label": "shortcutshintoverlay.tsx"
     },
     {
@@ -495,7 +513,7 @@
       "source_file": "components\\overlays\\ShortcutsHintOverlay.tsx",
       "source_location": "L36",
       "id": "overlays_shortcutshintoverlay_handlekeydown",
-      "community": 25,
+      "community": 26,
       "norm_label": "handlekeydown()"
     },
     {
@@ -540,7 +558,7 @@
       "source_file": "config\\apps.config.ts",
       "source_location": "L1",
       "id": "config_apps_config_ts",
-      "community": 26,
+      "community": 27,
       "norm_label": "apps.config.ts"
     },
     {
@@ -549,7 +567,7 @@
       "source_file": "config\\apps.config.ts",
       "source_location": "L34",
       "id": "config_apps_config_createprojectapp",
-      "community": 26,
+      "community": 27,
       "norm_label": "createprojectapp()"
     },
     {
@@ -592,7 +610,7 @@
       "label": "handleContextMenu()",
       "file_type": "code",
       "source_file": "desktop\\DesktopEnvironment.tsx",
-      "source_location": "L80",
+      "source_location": "L48",
       "id": "desktop_desktopenvironment_handlecontextmenu",
       "community": 14,
       "norm_label": "handlecontextmenu()"
@@ -601,7 +619,7 @@
       "label": "handleDesktopClick()",
       "file_type": "code",
       "source_file": "desktop\\DesktopEnvironment.tsx",
-      "source_location": "L85",
+      "source_location": "L53",
       "id": "desktop_desktopenvironment_handledesktopclick",
       "community": 14,
       "norm_label": "handledesktopclick()"
@@ -612,7 +630,7 @@
       "source_file": "desktop\\index.ts",
       "source_location": "L1",
       "id": "desktop_index_ts",
-      "community": 33,
+      "community": 34,
       "norm_label": "index.ts"
     },
     {
@@ -765,7 +783,7 @@
       "source_file": "desktop\\components\\DesktopWindowManager.tsx",
       "source_location": "L1",
       "id": "desktop_components_desktopwindowmanager_tsx",
-      "community": 27,
+      "community": 28,
       "norm_label": "desktopwindowmanager.tsx"
     },
     {
@@ -774,7 +792,7 @@
       "source_file": "desktop\\components\\DesktopWindowManager.tsx",
       "source_location": "L16",
       "id": "components_desktopwindowmanager_desktopwindowmanager",
-      "community": 27,
+      "community": 28,
       "norm_label": "desktopwindowmanager()"
     },
     {
@@ -819,7 +837,7 @@
       "source_file": "desktop\\components\\WindowFrame.tsx",
       "source_location": "L1",
       "id": "desktop_components_windowframe_tsx",
-      "community": 28,
+      "community": 29,
       "norm_label": "windowframe.tsx"
     },
     {
@@ -828,7 +846,7 @@
       "source_file": "desktop\\components\\WindowFrame.tsx",
       "source_location": "L27",
       "id": "components_windowframe_windowframe",
-      "community": 28,
+      "community": 29,
       "norm_label": "windowframe()"
     },
     {
@@ -837,7 +855,7 @@
       "source_file": "mobile\\index.ts",
       "source_location": "L1",
       "id": "mobile_index_ts",
-      "community": 34,
+      "community": 35,
       "norm_label": "index.ts"
     },
     {
@@ -846,16 +864,16 @@
       "source_file": "mobile\\MobileEnvironment.tsx",
       "source_location": "L1",
       "id": "mobile_mobileenvironment_tsx",
-      "community": 29,
+      "community": 30,
       "norm_label": "mobileenvironment.tsx"
     },
     {
       "label": "handlePopState()",
       "file_type": "code",
       "source_file": "mobile\\MobileEnvironment.tsx",
-      "source_location": "L69",
+      "source_location": "L67",
       "id": "mobile_mobileenvironment_handlepopstate",
-      "community": 29,
+      "community": 30,
       "norm_label": "handlepopstate()"
     },
     {
@@ -864,7 +882,7 @@
       "source_file": "mobile\\components\\IOSLockScreen.tsx",
       "source_location": "L1",
       "id": "mobile_components_ioslockscreen_tsx",
-      "community": 30,
+      "community": 31,
       "norm_label": "ioslockscreen.tsx"
     },
     {
@@ -873,7 +891,7 @@
       "source_file": "mobile\\components\\IOSLockScreen.tsx",
       "source_location": "L21",
       "id": "components_ioslockscreen_ioslockscreen",
-      "community": 30,
+      "community": 31,
       "norm_label": "ioslockscreen()"
     },
     {
@@ -882,7 +900,7 @@
       "source_file": "mobile\\components\\MobileHome.tsx",
       "source_location": "L1",
       "id": "mobile_components_mobilehome_tsx",
-      "community": 35,
+      "community": 36,
       "norm_label": "mobilehome.tsx"
     },
     {
@@ -891,16 +909,16 @@
       "source_file": "store\\useEcosystemStore.ts",
       "source_location": "L1",
       "id": "store_useecosystemstore_ts",
-      "community": 31,
+      "community": 32,
       "norm_label": "useecosystemstore.ts"
     },
     {
       "label": "getDefaultWindowGeometry()",
       "file_type": "code",
       "source_file": "store\\useEcosystemStore.ts",
-      "source_location": "L226",
+      "source_location": "L297",
       "id": "store_useecosystemstore_getdefaultwindowgeometry",
-      "community": 31,
+      "community": 32,
       "norm_label": "getdefaultwindowgeometry()"
     },
     {
@@ -909,7 +927,7 @@
       "source_file": "tablet\\index.ts",
       "source_location": "L1",
       "id": "tablet_index_ts",
-      "community": 36,
+      "community": 37,
       "norm_label": "index.ts"
     },
     {
@@ -918,7 +936,7 @@
       "source_file": "tablet\\TabletEnvironment.tsx",
       "source_location": "L1",
       "id": "tablet_tabletenvironment_tsx",
-      "community": 37,
+      "community": 38,
       "norm_label": "tabletenvironment.tsx"
     },
     {
@@ -1053,7 +1071,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "App.tsx",
-      "source_location": "L24",
+      "source_location": "L28",
       "weight": 1.0,
       "_src": "app_tsx",
       "_tgt": "scalewithalap_app_app",
@@ -1221,7 +1239,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "apps\\TrashApp.tsx",
-      "source_location": "L41",
+      "source_location": "L35",
       "weight": 1.0,
       "_src": "apps_trashapp_tsx",
       "_tgt": "apps_trashapp_handleemptytrash",
@@ -1233,7 +1251,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "apps\\TrashApp.tsx",
-      "source_location": "L52",
+      "source_location": "L46",
       "weight": 1.0,
       "_src": "apps_trashapp_tsx",
       "_tgt": "apps_trashapp_handlesingledelete",
@@ -1245,7 +1263,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "apps\\TrashApp.tsx",
-      "source_location": "L61",
+      "source_location": "L55",
       "weight": 1.0,
       "_src": "apps_trashapp_tsx",
       "_tgt": "apps_trashapp_handlesinglerestore",
@@ -1257,7 +1275,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "apps\\TrashApp.tsx",
-      "source_location": "L66",
+      "source_location": "L60",
       "weight": 1.0,
       "_src": "apps_trashapp_tsx",
       "_tgt": "apps_trashapp_handledragover",
@@ -1269,7 +1287,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "apps\\TrashApp.tsx",
-      "source_location": "L75",
+      "source_location": "L69",
       "weight": 1.0,
       "_src": "apps_trashapp_tsx",
       "_tgt": "apps_trashapp_handledragleave",
@@ -1281,7 +1299,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "apps\\TrashApp.tsx",
-      "source_location": "L82",
+      "source_location": "L76",
       "weight": 1.0,
       "_src": "apps_trashapp_tsx",
       "_tgt": "apps_trashapp_handledrop",
@@ -1324,6 +1342,18 @@
       "_tgt": "utils_soundeffects_playtrashwhooshsound",
       "source": "apps_trashapp_handledrop",
       "target": "utils_soundeffects_playtrashwhooshsound"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components\\common\\BootingScreen.tsx",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_src": "components_common_bootingscreen_tsx",
+      "_tgt": "common_bootingscreen_splashscreen",
+      "source": "components_common_bootingscreen_tsx",
+      "target": "common_bootingscreen_splashscreen",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -1461,7 +1491,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "components\\overlays\\ControlCenter.tsx",
-      "source_location": "L47",
+      "source_location": "L51",
       "weight": 1.0,
       "_src": "components_overlays_controlcenter_tsx",
       "_tgt": "overlays_controlcenter_handleclickoutside",
@@ -1593,7 +1623,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "desktop\\DesktopEnvironment.tsx",
-      "source_location": "L80",
+      "source_location": "L48",
       "weight": 1.0,
       "_src": "desktop_desktopenvironment_tsx",
       "_tgt": "desktop_desktopenvironment_handlecontextmenu",
@@ -1605,7 +1635,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "desktop\\DesktopEnvironment.tsx",
-      "source_location": "L85",
+      "source_location": "L53",
       "weight": 1.0,
       "_src": "desktop_desktopenvironment_tsx",
       "_tgt": "desktop_desktopenvironment_handledesktopclick",
@@ -1917,7 +1947,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "mobile\\MobileEnvironment.tsx",
-      "source_location": "L69",
+      "source_location": "L67",
       "weight": 1.0,
       "_src": "mobile_mobileenvironment_tsx",
       "_tgt": "mobile_mobileenvironment_handlepopstate",
@@ -1941,7 +1971,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "store\\useEcosystemStore.ts",
-      "source_location": "L226",
+      "source_location": "L297",
       "weight": 1.0,
       "_src": "store_useecosystemstore_ts",
       "_tgt": "store_useecosystemstore_getdefaultwindowgeometry",

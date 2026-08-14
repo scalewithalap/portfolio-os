@@ -1,11 +1,11 @@
-# Graph Report - scalewithalap  (2026-08-12)
+# Graph Report - scalewithalap  (2026-08-14)
 
 ## Corpus Check
-- 39 files · ~107,472 words
+- 40 files · ~109,642 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 116 nodes · 109 edges · 6 communities detected
+- 118 nodes · 110 edges · 6 communities detected
 - Extraction: 97% EXTRACTED · 3% INFERRED · 0% AMBIGUOUS · INFERRED: 3 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
