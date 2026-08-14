@@ -19,8 +19,10 @@ export default function SEOHead() {
     if (typeof document === "undefined") return;
 
     // Determine current view details based on active/focused app
-    let title = "Scale with Alap - Founding AI Engineer";
-    let description = "Interactive macOS-style Portfolio OS by Alap Putatunda.";
+    let title =
+      "Founding AI Engineer & Full-Stack AI Developer — Scale with Alap";
+    let description =
+      "Interactive macOS-style Portfolio OS by Alap Putatunda. I'm a Founding AI Engineer & Full-Stack AI Developer. Explore all my projects, live systems, and technical case studies.";
     let canonicalUrl = "https://scalewithalap.com/";
     let activeProjectId: string | null = null;
 
@@ -90,6 +92,8 @@ export default function SEOHead() {
     );
 
     // Open Graph
+    updateMeta("og:site_name", "Scale with Alap", true);
+    updateMeta("og:locale", "en_US", true);
     updateMeta("og:title", title, true);
     updateMeta("og:description", description, true);
     updateMeta("og:url", canonicalUrl, true);
@@ -169,7 +173,8 @@ export default function SEOHead() {
       "@id": "https://scalewithalap.com/#website",
       url: "https://scalewithalap.com/",
       name: "Scale with Alap",
-      description: "Interactive macOS-style Portfolio OS by Alap Putatunda.",
+      description:
+        "Interactive macOS-style Portfolio OS by Alap Putatunda. I'm a Founding AI Engineer & Full-Stack AI Developer. Explore all my projects, live systems, and technical case studies.",
       image: "https://scalewithalap.com/images/og.webp",
       publisher: {
         "@id": "https://scalewithalap.com/#person",

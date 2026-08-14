@@ -1,4 +1,4 @@
-# Scale with Alap - Founding AI Engineer Portfolio
+# Scale with Alap — Founding AI Engineer & Full-Stack AI Developer
 
 > Alap Putatunda is a Founding AI Engineer and Full-Stack AI Developer with 6+ years of experience engineering production multi-agent systems, RAG pipelines, LLM orchestrators, voice AI services, and desktop/web OS applications.
 
