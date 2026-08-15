@@ -9,7 +9,7 @@
 
 import { Suspense, useState } from "react";
 import { X, Minus, Maximize2, ChevronUp } from "lucide-react";
-import { useEcosystemStore, WALLPAPERS } from "../store/useEcosystemStore";
+import { useEcosystemStore } from "../store/useEcosystemStore";
 import { APPS_CONFIG } from "../config/apps.config";
 import { DESKTOP_ITEMS } from "../desktop/components/DesktopFolders";
 import StaticHeroText from "../components/common/StaticHeroText";
@@ -31,14 +31,12 @@ export default function TabletEnvironment() {
     systemTheme,
   } = useEcosystemStore();
 
-  const defaultWallpaperUrl = "/images/default-wallpaper-mobile.webp";
-  const tahoeWallpaperUrl =
-    WALLPAPERS.find((w) => w.id === "tahoe-wallpaper")?.url ||
-    "/images/tahoe-wallpaper.webp";
+  const defaultDesktopWallpaperUrl = "/images/default-wallpaper.webp";
+  const tahoeWallpaperUrl = "/images/tahoe-wallpaper.webp";
 
-  // Exclude default-wallpaper on tablet and default to tahoe-wallpaper
+  // Use tahoe-wallpaper as default wallpaper on tablets
   const tabletWallpaper =
-    wallpaper === defaultWallpaperUrl ? tahoeWallpaperUrl : wallpaper;
+    wallpaper === defaultDesktopWallpaperUrl ? tahoeWallpaperUrl : wallpaper;
 
   const [isTabletDockRevealed, setIsTabletDockRevealed] = useState(false);
   const activeApps = openApps.filter((a) => a.isOpen && !a.isMinimized);

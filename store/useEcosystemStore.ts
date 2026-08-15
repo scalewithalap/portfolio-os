@@ -323,12 +323,23 @@ function getDefaultWindowGeometry() {
   };
 }
 
+function getInitialEnvironment(): Environment {
+  if (typeof window === "undefined") return "macOS";
+  const w = window.innerWidth;
+  if (w < 768) return "iOS";
+  if (w <= 1024) return "iPadOS";
+  return "macOS";
+}
+
 export const useEcosystemStore = create<EcosystemState>()(
   immer((set) => ({
-    activeEnvironment: null,
+    activeEnvironment: getInitialEnvironment(),
     openApps: [],
     focusedAppId: null,
-    systemTheme: "light",
+    systemTheme:
+      typeof window !== "undefined" && window.innerWidth < 1024
+        ? "dark"
+        : "light",
     booting: true,
     isSpotlightOpen: false,
 

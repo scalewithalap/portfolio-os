@@ -12,7 +12,7 @@
 
 import { Suspense, useEffect, useRef, useState } from "react";
 import gsap from "gsap";
-import { useEcosystemStore, WALLPAPERS } from "../store/useEcosystemStore";
+import { useEcosystemStore } from "../store/useEcosystemStore";
 import MobileHome from "./components/MobileHome";
 import IOSLockScreen from "./components/IOSLockScreen";
 import DesktopMenu from "../desktop/components/DesktopMenu";
@@ -27,14 +27,12 @@ export default function MobileEnvironment() {
   const focusedApp = openApps.find((a) => a.id === focusedAppId && a.isOpen);
   const appConfig = APPS_CONFIG.find((c) => c.id === focusedApp?.id);
 
-  const defaultWallpaperUrl = "/images/default-wallpaper-mobile.webp";
-  const tahoeWallpaperUrl =
-    WALLPAPERS.find((w) => w.id === "tahoe-wallpaper")?.url ||
-    "/images/tahoe-wallpaper.webp";
+  const defaultDesktopWallpaperUrl = "/images/default-wallpaper.webp";
+  const tahoeWallpaperUrl = "/images/tahoe-wallpaper.webp";
 
-  // Exclude default-wallpaper on mobile and default to tahoe-wallpaper
+  // Use tahoe-wallpaper as default wallpaper on mobile
   const mobileWallpaper =
-    wallpaper === defaultWallpaperUrl ? tahoeWallpaperUrl : wallpaper;
+    wallpaper === defaultDesktopWallpaperUrl ? tahoeWallpaperUrl : wallpaper;
 
   const appContainerRef = useRef<HTMLDivElement>(null);
 
