@@ -8,3 +8,4 @@ coverage/
 !.env.example
 graphify-out/cost.json
 graphify-out/cache/
+graphify-out/.*
