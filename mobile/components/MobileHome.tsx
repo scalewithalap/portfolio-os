@@ -71,6 +71,7 @@ export default function MobileHome() {
                     e.stopPropagation();
                     openApp(item.appId, item.appTitle);
                   }}
+                  aria-label={item.title}
                   className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center text-white active:scale-90 hover:scale-105 transition-all duration-200 relative bg-transparent border-0 shadow-none cursor-pointer"
                   style={{
                     borderRadius: "22.5%",
@@ -79,6 +80,8 @@ export default function MobileHome() {
                   <img
                     src={item.iconImage}
                     alt={item.title}
+                    width={56}
+                    height={56}
                     className="w-13 h-13 sm:w-15 sm:h-15 object-contain drop-shadow-lg group-hover:scale-105 transition-transform"
                   />
                 </button>
@@ -114,6 +117,7 @@ export default function MobileHome() {
                     e.stopPropagation();
                     openApp(app.id, app.title);
                   }}
+                  aria-label={app.title}
                   className="w-12 h-12 rounded-2xl flex items-center justify-center text-white active:scale-90 hover:scale-110 transition-all duration-200 cursor-pointer relative"
                   style={{ borderRadius: "22.5%" }}
                   title={app.title}
@@ -122,6 +126,8 @@ export default function MobileHome() {
                     <img
                       src={app.iconImage}
                       alt={app.title}
+                      width={44}
+                      height={44}
                       className="w-11 h-11 object-contain drop-shadow-md"
                     />
                   ) : (

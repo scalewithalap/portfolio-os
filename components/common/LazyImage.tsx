@@ -108,6 +108,7 @@ export const LazyImage: React.FC<LazyImageProps> = ({
           <img
             src={hasError && fallbackSrc ? fallbackSrc : src}
             alt={alt}
+            decoding="async"
             onLoad={handleImageLoad}
             onError={handleImageError}
             className={`transition-opacity duration-500 ease-in-out ${

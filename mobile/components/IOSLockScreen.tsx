@@ -148,6 +148,8 @@ export default function IOSLockScreen({ onUnlock }: IOSLockScreenProps) {
               <LazyImage
                 src="/images/alap-putatunda.webp"
                 alt="Alap Putatunda"
+                width={36}
+                height={36}
                 className={`w-9 h-9 rounded-full object-cover shadow-md border shrink-0 object-[center_10%] ${
                   isLight ? "border-black/30" : "border-white/30"
                 }`}
@@ -163,9 +165,9 @@ export default function IOSLockScreen({ onUnlock }: IOSLockScreenProps) {
             </div>
           </div>
           <div>
-            <h4 className="text-md font-bold text-white">
+            <h2 className="text-md font-bold text-white">
               Hey, I'm Alap! Welcome to My Portfolio.
-            </h4>
+            </h2>
             <p className="text-xs text-white/85 leading-tight mt-0.5">
               Founding AI Engineer & Full-Stack AI Developer. For the full macOS
               experience, explore this website on a desktop.

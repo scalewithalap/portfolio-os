@@ -371,6 +371,7 @@ export default function DesktopDock() {
                   }
                 }}
                 id={`dock-icon-${app.id}`}
+                aria-label={app.title}
                 style={{
                   transform: `scale(${BASE_SCALE}) translateZ(0)`,
                   transformOrigin: "bottom center",
@@ -395,6 +396,8 @@ export default function DesktopDock() {
                   <img
                     src={app.iconImage}
                     alt={app.title}
+                    width={78}
+                    height={78}
                     style={{
                       imageRendering: "-webkit-optimize-contrast",
                       backfaceVisibility: "hidden",

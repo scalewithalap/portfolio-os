@@ -11,7 +11,7 @@
 import { useRef, useEffect } from "react";
 
 export default function HeroHoverText() {
-  const containerRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLHeadingElement>(null);
   const charsRef = useRef<(HTMLSpanElement | null)[]>([]);
 
   const line1Text = "I built this portfolio to impress you.";
@@ -132,7 +132,7 @@ export default function HeroHoverText() {
   let charIndexCounter = 0;
 
   return (
-    <div
+    <h1
       ref={containerRef}
       className="select-none text-center pointer-events-auto flex flex-col items-center justify-center py-6 px-4 drop-shadow-[0_5px_5px_rgba(0,0,0,0.55)]"
     >
@@ -179,6 +179,6 @@ export default function HeroHoverText() {
           </span>
         ))}
       </div>
-    </div>
+    </h1>
   );
 }

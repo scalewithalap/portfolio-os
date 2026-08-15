@@ -89,26 +89,50 @@
       content="Scale with Alap — AI Engineer & Full-Stack AI Developer"
     />
 
-    <!-- Google Fonts with Preconnect & Display Swap -->
+    <!-- Google Fonts with Preconnect & Non-Blocking Async Loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;1,400&display=swap"
-      rel="stylesheet"
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:ital,wght@0,400..600;1,400&display=swap"
     />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:ital,wght@0,400..600;1,400&display=swap"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:ital,wght@0,400..600;1,400&display=swap"
+      />
+    </noscript>
 
-    <!-- Preload critical assets to reduce chain depth -->
+    <!-- Preload critical viewport-specific wallpaper & icons with high fetch priority -->
     <link
       rel="preload"
       as="image"
       href="/images/default-wallpaper.webp"
       type="image/webp"
+      media="(min-width: 768px)"
+      fetchpriority="high"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="/images/default-wallpaper-mobile.webp"
+      type="image/webp"
+      media="(max-width: 767px)"
+      fetchpriority="high"
     />
     <link
       rel="preload"
       as="image"
       href="/icons/cursor.svg"
       type="image/svg+xml"
+      fetchpriority="low"
     />
 
     <!-- DNS prefetch for external image CDN -->

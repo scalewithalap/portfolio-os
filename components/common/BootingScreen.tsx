@@ -39,14 +39,13 @@ export default function SplashScreen() {
       onComplete: finishBoot,
     });
 
-    // Initial entrance subtle scale
+    // Initial entrance with authentic smooth Apple ease
     tl.fromTo(
       [logoRef.current, badgeRef.current, textGroupRef.current],
       { opacity: 0, y: 15 },
       { opacity: 1, y: 0, duration: 0.5, ease: "power2.out", stagger: 0.1 },
     )
-      // Progress bar fill & percentage counter
-      // ponytail: use scaleX instead of width for GPU-composited animation (no layout reflows)
+      // Progress bar fill & percentage counter with realistic macOS boot progression
       .to(
         progressRef.current,
         {
@@ -54,7 +53,7 @@ export default function SplashScreen() {
           duration: 1.5,
           ease: "power1.inOut",
         },
-        "-=0.15",
+        "-=0.1",
       )
       .to(
         progressObj,
@@ -75,14 +74,14 @@ export default function SplashScreen() {
         },
         "<",
       )
-      // Instant, snappy exit transition to reveal wallpaper
+      // Smooth fade-out exit to reveal the desktop/mobile wallpaper
       .call(() => {
         finishBoot();
       })
       .to(bootRef.current, {
         opacity: 0,
-        duration: 0.1,
-        ease: "power2.out",
+        duration: 0.35,
+        ease: "power2.inOut",
       })
       .set(bootRef.current, { display: "none" });
 
