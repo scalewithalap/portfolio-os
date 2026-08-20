@@ -20,7 +20,7 @@ const OUTPUT_LINES = [
     type: "success",
   },
   {
-    text: '  └─ 6+ years taking software from empty repo to deployment, monitoring, and operation. Builds production LLM and multi-agent systems with RAG, semantic search, provider-agnostic model orchestration, voice AI, workflow automation, metered billing, and observability. Founded Scale with Alap, co-founded Zero Headache as CEO, shipped Vibe44 and OpenUI. Selected for Hyperagent\'s "The Founding 500" ($20,000 in platform credits) in June 2026.',
+    text: '  └─ 7+ years taking software from empty repo to deployment, monitoring, and operation. Builds production LLM and multi-agent systems with RAG, semantic search, provider-agnostic model orchestration, voice AI, workflow automation, metered billing, and observability. Founded Scale with Alap, co-founded Zero Headache as CEO, shipped Vibe44 and OpenUI. Selected for Hyperagent\'s "The Founding 500" ($20,000 in platform credits) in June 2026.',
     type: "item",
   },
   { text: "", type: "empty" },

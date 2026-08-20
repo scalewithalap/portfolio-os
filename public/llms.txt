@@ -1,12 +1,12 @@
 # Scale with Alap — Founding AI Engineer & Full-Stack AI Developer
 
-> Alap Putatunda is a Founding AI Engineer and Full-Stack AI Developer with 6+ years of experience engineering production multi-agent systems, RAG pipelines, LLM orchestrators, voice AI services, and desktop/web OS applications.
+> Alap Putatunda is a Founding AI Engineer and Full-Stack AI Developer with 7+ years of experience engineering production multi-agent systems, RAG pipelines, LLM orchestrators, voice AI services, and desktop/web OS applications.
 
 ## Core Profile & Identity
 - **Name:** Alap Putatunda
 - **Title:** Founding AI Engineer & Full-Stack AI Developer
 - **Location:** India (Open to global remote roles or relocation with visa sponsorship)
-- **Experience:** 6+ years taking software from empty repository to production
+- **Experience:** 7+ years taking software from empty repository to production
 - **Open to:** AI Engineer and Full-Stack AI Developer roles at early-stage startups (≤200 people), remote or relocation with visa sponsorship
 - **Email:** hi@scalewithalap.com
 - **Website:** https://scalewithalap.com

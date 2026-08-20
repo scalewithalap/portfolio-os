@@ -162,7 +162,7 @@ export default function AboutApp() {
                     Experience
                   </span>
                   <span className={isLight ? "text-slate-800" : "text-white"}>
-                    6+ years taking software from empty repo to production
+                    7+ years taking software from empty repo to production
                   </span>
                 </div>
                 <div
@@ -211,7 +211,7 @@ export default function AboutApp() {
                 <p
                   className={`leading-relaxed text-xs md:text-sm ${isLight ? "text-slate-700" : "text-white/80"}`}
                 >
-                  Founding AI Engineer and Full-stack AI Developer with 6+ years
+                  Founding AI Engineer and Full-stack AI Developer with 7+ years
                   of experience taking software from an empty repository to
                   deployment, monitoring, and ongoing operation. Builds
                   production LLM and multi-agent systems with RAG, semantic

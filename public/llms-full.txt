@@ -1,13 +1,13 @@
 # Full Technical Portfolio & Case Studies - Alap Putatunda
 
-> Founding AI Engineer & Full-Stack AI Developer | 6+ Years Experience
+> Founding AI Engineer & Full-Stack AI Developer | 7+ Years Experience
 > Website: https://scalewithalap.com | Email: hi@scalewithalap.com | GitHub: https://github.com/scalewithalap | LinkedIn: https://linkedin.com/in/scalewithalap | X: https://x.com/scalewithalap | Threads: https://www.threads.com/@scalewithalap | YouTube: https://www.youtube.com/@scalewithalap | Instagram: https://www.instagram.com/scalewithalap | Facebook: https://www.facebook.com/scalewithalap
 
 ---
 
 ## Executive Bio & Core Background
 
-Alap Putatunda is a Founding AI Engineer and Full-stack AI Developer with 6+ years of experience taking software from an empty repository to deployment, monitoring, and ongoing operation. Builds production LLM and multi-agent systems with RAG, semantic search, provider-agnostic model orchestration, voice AI, workflow automation, metered billing, and observability.
+Alap Putatunda is a Founding AI Engineer and Full-stack AI Developer with 7+ years of experience taking software from an empty repository to deployment, monitoring, and ongoing operation. Builds production LLM and multi-agent systems with RAG, semantic search, provider-agnostic model orchestration, voice AI, workflow automation, metered billing, and observability.
 
 Founded Scale with Alap, co-founded and leads Zero Headache as CEO, and shipped Vibe44 and OpenUI. Uses AI coding agents to accelerate delivery while retaining ownership of architecture, testing, security, and reliability. Selected for Hyperagent's "The Founding 500" in June 2026 ($20,000 credit recipient).
 

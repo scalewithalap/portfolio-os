@@ -260,7 +260,7 @@ export default function ResumeApp() {
                   : "bg-white/5 border-white/5 text-white/80"
               }`}
             >
-              Founding AI Engineer and Full-stack AI Developer with 6+ years of
+              Founding AI Engineer and Full-stack AI Developer with 7+ years of
               experience taking software from an empty repository to deployment,
               monitoring, and ongoing operation. Builds production LLM and
               multi-agent systems with RAG, semantic search, provider-agnostic
