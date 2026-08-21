@@ -182,7 +182,7 @@ const SEARCH_ITEMS: SearchItem[] = [
     actionTab: "general",
     title: "About Alap Putatunda",
     subtitle:
-      "Founding AI Engineer & Product Builder (Remote / Visa Sponsorship)",
+      "Full-Stack AI Engineer | AI-Native Product/Software Development",
     category: "Section",
     icon: User,
     color: "bg-blue-600 text-white",
@@ -201,11 +201,11 @@ const SEARCH_ITEMS: SearchItem[] = [
   },
   {
     id: "sec-experience",
-    appId: "settings",
+    appId: "about",
     actionTab: "experience",
     title: "Work Experience Timeline",
     subtitle:
-      "Scale with Alap (Founder), Zero Headache (CEO), Pharmison Valentes (CTO)",
+      "Scale with Alap (Feb 2025 – Present), Zero Headache (CEO), Pharmison Valentes (Former CTO)",
     category: "Section",
     icon: Briefcase,
     color: "bg-emerald-600 text-white",
@@ -213,6 +213,7 @@ const SEARCH_ITEMS: SearchItem[] = [
       "career",
       "experience",
       "work",
+      "engineer",
       "founder",
       "ceo",
       "cto",

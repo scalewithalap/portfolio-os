@@ -473,7 +473,7 @@ export default function SafariApp() {
             >
               Alap Putatunda
             </span>
-            <span>Founding AI Engineer</span>
+            <span>Full-Stack AI Engineer</span>
           </div>
         </div>
 

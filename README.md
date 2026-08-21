@@ -1,6 +1,6 @@
 # Scale with Alap (Portfolio OS)
 
-Interactive macOS-style Portfolio OS by Alap Putatunda (Founding AI Engineer & Full-stack AI Developer).
+Interactive macOS-style Portfolio by Alap Putatunda (Full-Stack AI Engineer | AI-Native Product/Software Development).
 
 Live website: [scalewithalap.com](https://scalewithalap.com)  
 GitHub repository: [github.com/scalewithalap/portfolio-os](https://github.com/scalewithalap/portfolio-os)
@@ -14,8 +14,8 @@ This repository contains the source code for `scalewithalap.com`. The applicatio
 ## Core profile and background
 
 - **Name:** Alap Putatunda
-- **Role:** Founding AI Engineer & Full-Stack AI Developer (7+ years experience)
-- **Location:** India (open to global remote roles or relocation with visa sponsorship)
+- **Role:** Full-Stack AI Engineer | AI-Native Product/Software Development (6+ years leading pharma tech/ops & full-stack AI engineering)
+- **Location:** Remote worldwide from India (ready to relocate with visa sponsorship)
 - **Recognition:** Selected for "The Founding 500" by Hyperagent (Airtable) in June 2026 ($20,000 credit recipient)
 - **Contact:** `hi@scalewithalap.com`
 - **Main site:** [scalewithalap.com](https://scalewithalap.com)
@@ -23,7 +23,7 @@ This repository contains the source code for `scalewithalap.com`. The applicatio
 
 ## Key architecture features
 
-- **Custom 8-axis window geometry manager:** Handles window dragging, 8-axis resizing (`n`, `s`, `e`, `w`, `ne`, `nw`, `se`, `sw`), quadrant edge snapping, z-index ordering, focus tracking, and window state persistence.
+- **Custom 8-axis window geometry manager:** Handles window dragging, 8-axis resizing (`n`, `s`, `e`, `w`, `ne`, `nw`, `se`, `sw`), quadrant edge snapping, z-index ordering, focus tracking, and window state persistence across 39 components.
 - **Zustand & Immer state engine:** Centralized state in `store/useEcosystemStore.ts` tracking open application instances, window geometries, theme selections, system notifications, audio settings, and command terminal history across 30+ state fields.
 - **Dock magnification system:** Runs a cosine distance scaling algorithm via `requestAnimationFrame` with GPU-accelerated CSS 3D transforms.
 - **Lazy-loaded code-splitting:** Uses `React.lazy` and `Suspense` to partition 13 separate application modules into individual JavaScript chunks.
@@ -45,13 +45,13 @@ The portfolio includes 9 project case studies defined in `data/projectsData.ts` 
 
 | Project                       | Category            | Live / Repo URL                                                                    | Codebase & Tech Stack                                                  | Key Metrics                                                     |
 | :---------------------------- | :------------------ | :--------------------------------------------------------------------------------- | :--------------------------------------------------------------------- | :-------------------------------------------------------------- |
-| **Scale with Alap**           | Portfolio OS        | [scalewithalap.com](https://scalewithalap.com)                                     | React 19, TypeScript, Vite, Tailwind v4, Zustand, Immer, Web Audio API | 39 source files, 30+ state fields, 13 lazy-loaded apps          |
+| **Scale with Alap**           | Portfolio OS        | [scalewithalap.com](https://scalewithalap.com)                                     | React 19, TypeScript, Vite, Tailwind v4, Zustand, Immer, Web Audio API | 39 components, 30+ state fields, 13 lazy apps, 60 FPS GPU dock  |
 | **Vibe44 Marketing Site**     | Next.js Starter Kit | [vibe44.com](https://vibe44.com)                                                   | Next.js 16 Route Handlers, JSON-RPC 2.0, Creem, Resend, Notion API     | 6 MCP tools, 4 resource templates, `/llms.txt` endpoint         |
-| **Zero Headache Marketing**   | AI Agents           | [zeroheadache.co](https://zeroheadache.co)                                         | Next.js 16, React 19, Tailwind v4, GSAP ScrollTrigger, Lenis           | 12 inbound channels, 35+ CRM webhooks, ~17.2k lines             |
+| **Zero Headache Marketing**   | AI Agents           | [zeroheadache.co](https://zeroheadache.co)                                         | Next.js 16, React 19, Tailwind v4, Motion, Lenis                       | 12 inbound channels, 35+ CRM webhooks, strict CSP & HSTS        |
 | **Vibe44 Starter Kit Engine** | Next.js Starter Kit | [demo.vibe44.com](https://demo.vibe44.com)                                         | Next.js 16, PostgreSQL, Supabase RLS, Drizzle ORM, Vitest, Playwright  | ~165k lines, 687 source files, 32 DB tables, 900+ unit tests    |
 | **Zero Headache Platform**    | AI Agents           | [app.zeroheadache.co](https://app.zeroheadache.co)                                 | Next.js 16, Supabase RLS, OpenRouter, LangChain, MCP, Trigger.dev      | Per-client sandboxed AI agents, PostHog + Langfuse telemetry    |
-| **OpenUI**                    | Open Source         | [github.com/scalewithalap/openui](https://github.com/scalewithalap/openui)         | Next.js 16, React 19, Prisma 7, SQLite, Tailwind v4                    | MIT license, local component generation, zero cloud DB          |
-| **Make Me Sound**             | Desktop App         | [makemesound.xyz](https://makemesound.xyz)                                         | Next.js 16, Vercel AI SDK, OpenRouter, Supabase RLS, Upstash Redis     | 105 tone variations across 15 categories, parallel multi-stream |
+| **OpenUI**                    | Open Source         | [github.com/scalewithalap/openui](https://github.com/scalewithalap/openui)         | Next.js 16, React 19, Prisma 7, SQLite, Tailwind v4, Vercel AI SDK    | MIT license, local component generation, 4 AI providers         |
+| **Make Me Sound**             | Desktop App         | [makemesound.xyz](https://makemesound.xyz)                                         | Next.js 16, Vercel AI SDK, OpenRouter, Supabase RLS, Upstash Redis     | 105 tone variations, sub-second parallel streaming              |
 | **Freecom AI**                | eCommerce           | [github.com/scalewithalap/freecom-ai](https://github.com/scalewithalap/freecom-ai) | Next.js 16, Supabase, Trigger.dev v4, Composio, Zernio API             | Open-source digital download platform, Store Manager Agent      |
 | **Soothly AI**                | AI Agents           | [github.com/scalewithalap/soothly-ai](https://github.com/scalewithalap/soothly-ai) | Next.js 16, Supabase RLS, Inngest, pgvector, Lexical Editor            | 8 autonomous agents + Superagent manager, 3 autonomy tiers      |
 

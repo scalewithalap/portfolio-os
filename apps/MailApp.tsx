@@ -29,11 +29,11 @@ const EMAILS = [
   {
     id: "1",
     sender: "Scale with Alap",
-    subject: "Founder & Full-stack AI Developer",
-    date: "May 2026 – Present",
+    subject: "Full-stack AI Engineer",
+    date: "Feb 2025 – Present",
     preview:
-      "Founded Scale with Alap to publish technical content and build AI products...",
-    body: `Founded Scale with Alap to publish technical content and build AI products, including Vibe44, OpenUI, Make Me Sound, Freecom AI, and the Scale with Alap portfolio.\n\nDirects AI-assisted engineering workflows across architecture, implementation, testing, review, and CI using Claude Code, Cursor, Codex, and GitHub Copilot.`,
+      "Built Vibe44, OpenUI, Make Me Sound, and macOS Portfolio OS...",
+    body: `Built and launched Vibe44, a Next.js 16 AI SaaS codebase (~165k lines across 687 files) featuring an MCP server with JSON-RPC 2.0, Universal Adapter Pattern across 4 LLM providers, 5 payment gateways, and a 32-table Postgres RLS schema.\n\nDeveloped OpenUI, an open-source, local-first UI design tool (Next.js 16, React 19, SQLite, Prisma 7, Vercel AI SDK) and Make Me Sound, a parallel multi-stream engine converting drafts into 105 tone variations.\n\nBuilt an open-source macOS-style portfolio with 30+ Zustand state fields, 13 lazy-loaded apps, and 60 FPS GPU-accelerated dock animations.`,
   },
   {
     id: "2",
@@ -41,24 +41,16 @@ const EMAILS = [
     subject: "Co-founder & CEO",
     date: "July 2026 – Present",
     preview:
-      "Leads product and engineering for a 24/7 AI lead-capture service...",
-    body: `Leads product and engineering for a 24/7 AI lead-capture, qualification, booking, and recovery service across 12 voice and messaging channels for high-ticket local service businesses.\n\nDefined the multi-tenant product direction, industry qualification playbooks, sub-10-second call-answer target, and outcome-based billing around booked appointments and conversations. Applied to Y Combinator Fall 2026.`,
+      "Fully managed AI front desk for service businesses across 12 channels...",
+    body: `Built and launched a Next.js 16 and React 19 marketing site with 12 channels, 35+ CRM integrations, interactive ROI calculator, and strict security headers.\n\nEngineered multi-tenant dashboard and sandboxed AI agents per client with persistent memory, OpenRouter multi-model failover, and Supabase RLS isolation.`,
   },
   {
     id: "3",
     sender: "Pharmison Valentes Pharma",
-    subject: "Co-founder & CTO",
+    subject: "Co-founder & Former CTO",
     date: "May 2019 – Present",
-    preview: "Co-founded a registered Indian pharmaceutical company...",
-    body: `Co-founded a registered Indian pharmaceutical company and led all technology end to end — company website, internal tooling and systems, and digital operations.\n\nNow holds a non-executive Director & Shareholder position with no active operational role.`,
-  },
-  {
-    id: "4",
-    sender: "Freelance Clients",
-    subject: "Full-Stack AI & Software Engineer",
-    date: "2019 – 2026",
-    preview: "Designed, built, and deployed custom web applications...",
-    body: `Designed, built, and deployed custom web applications, REST APIs, and automation scripts for small businesses and startup clients using Next.js, Node.js, and Python.\n\nIntegrated LLM streaming routes, vector search stores, third-party payment gateways (Stripe, Lemonsqueezy), and CRM webhooks.\n\nSet up automated CI/CD workflows, automated unit test suites with Vitest, and error tracking with Sentry.`,
+    preview: "Scaled pharmaceutical company to Rs.7.5+ Cr revenue...",
+    body: `Co-founded a registered Indian pharmaceutical company, scaled it to Rs.7.5+ Cr (~$784K USD) in total revenue, and managed business operations and a 20+ member team across technology, finance, sales, and supply chain.\n\nLed technology end to end — company website, custom internal tools, supply-chain tracking, and digital operations.\n\nStepped back from day-to-day operations in Feb 2025 to focus full-time on AI engineering and building AI products; currently non-executive Director & Shareholder.`,
   },
 ];
 

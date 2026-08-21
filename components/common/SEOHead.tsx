@@ -19,9 +19,9 @@ export default function SEOHead() {
     if (typeof document === "undefined") return;
 
     // Determine current view details based on active/focused app
-    let title = "Scale with Alap — AI Engineer & Full-Stack AI Developer";
+    let title = "Scale with Alap — Full-Stack AI Engineer";
     let description =
-      "Interactive macOS-style Portfolio OS by Alap Putatunda - Founding AI Engineer & Full-stack AI Developer. Explore all of my projects & shipped products.";
+      "Interactive macOS-style Portfolio by Alap Putatunda — Full-Stack AI Engineer & AI-Native Product Builder. Explore projects, engineering architecture, and resume.";
     let canonicalUrl = "https://scalewithalap.com/";
     let activeProjectId: string | null = null;
 
@@ -37,13 +37,13 @@ export default function SEOHead() {
         canonicalUrl = `https://scalewithalap.com/projects/${matchedProject.id}`;
       }
     } else if (focusedAppId === "about") {
-      title = "About Alap Putatunda - Founding AI Engineer";
+      title = "About Alap Putatunda — Full-Stack AI Engineer";
       description =
-        "Alap Putatunda is a Founding AI Engineer with 7+ years experience taking AI products from empty repo to production. Recipient of Hyperagent Founding 500.";
+        "Alap Putatunda is a Full-Stack AI Engineer and technical founder specializing in multi-agent systems, AI SaaS, MCP servers, and LLM orchestration. Recipient of Hyperagent Founding 500.";
     } else if (focusedAppId === "resume") {
-      title = "Resume - Alap Putatunda | Founding AI Engineer";
+      title = "Resume — Alap Putatunda | Full-Stack AI Engineer";
       description =
-        "Official Resume of Alap Putatunda - Founding AI Engineer, CEO of Zero Headache, and creator of Vibe44 & OpenUI.";
+        "Official Resume of Alap Putatunda — Full-Stack AI Engineer, Co-founder & CEO of Zero Headache, and creator of Vibe44 & OpenUI.";
     }
 
     // Update document title
@@ -87,7 +87,7 @@ export default function SEOHead() {
     updateMeta("author", "Alap Putatunda");
     updateMeta(
       "keywords",
-      "Alap Putatunda, Founding AI Engineer, Full-stack AI Developer, React 19, Next.js 16, TypeScript, Multi-Agent Orchestration, Model Context Protocol, LLM RAG, Voice AI, Supabase, PostgreSQL, Zero Headache, Vibe44, OpenUI, Make Me Sound, Soothly AI, Freecom AI, Hyperagent Founding 500",
+      "Alap Putatunda, Full-Stack AI Engineer, AI-Native Product/Software Development, React 19, Next.js 16, TypeScript, Multi-Agent Orchestration, Model Context Protocol, LLM RAG, Voice AI, Supabase, PostgreSQL, Zero Headache, Vibe44, OpenUI, Make Me Sound, Soothly AI, Freecom AI, Hyperagent Founding 500",
     );
 
     // Open Graph
@@ -99,12 +99,12 @@ export default function SEOHead() {
     updateMeta("og:type", activeProjectId ? "article" : "website", true);
     updateMeta(
       "og:image",
-      "https://scalewithalap.com/images/opengraph.webp",
+      "https://scalewithalap.com/images/og-image.webp",
       true,
     );
     updateMeta(
       "og:image:secure_url",
-      "https://scalewithalap.com/images/opengraph.webp",
+      "https://scalewithalap.com/images/og-image.webp",
       true,
     );
     updateMeta("og:image:type", "image/webp", true);
@@ -112,7 +112,7 @@ export default function SEOHead() {
     updateMeta("og:image:height", "630", true);
     updateMeta(
       "og:image:alt",
-      "Scale with Alap | Founding AI Engineer & Full-Stack AI Developer",
+      "Scale with Alap | Full-Stack AI Engineer & AI-Native Product Builder",
       true,
     );
 
@@ -124,16 +124,13 @@ export default function SEOHead() {
     updateMeta("twitter:description", description);
     updateMeta(
       "twitter:image",
-      "https://scalewithalap.com/images/opengraph.webp",
+      "https://scalewithalap.com/images/og-image.webp",
     );
     updateMeta(
       "twitter:image:src",
-      "https://scalewithalap.com/images/opengraph.webp",
+      "https://scalewithalap.com/images/og-image.webp",
     );
-    updateMeta(
-      "twitter:image:alt",
-      "Scale with Alap — AI Engineer & Full-Stack AI Developer",
-    );
+    updateMeta("twitter:image:alt", "Scale with Alap — Full-Stack AI Engineer");
 
     // JSON-LD Structured Data Schema Construction
     const personSchema = {
@@ -141,10 +138,11 @@ export default function SEOHead() {
       "@type": "Person",
       "@id": "https://scalewithalap.com/#person",
       name: "Alap Putatunda",
-      jobTitle: "Founding AI Engineer & Full-Stack AI Developer",
+      jobTitle:
+        "Full-Stack AI Engineer | AI-Native Product/Software Development",
       url: "https://scalewithalap.com",
       email: "mailto:hi@scalewithalap.com",
-      image: "https://scalewithalap.com/images/opengraph.webp",
+      image: "https://scalewithalap.com/images/og-image.webp",
       knowsAbout: [
         "Artificial Intelligence",
         "Multi-Agent Orchestration",
@@ -182,8 +180,8 @@ export default function SEOHead() {
       url: "https://scalewithalap.com/",
       name: "Scale with Alap",
       description:
-        "Interactive macOS-style Portfolio OS by Alap Putatunda - Founding AI Engineer & Full-stack AI Developer. Explore all of my projects & shipped products.",
-      image: "https://scalewithalap.com/images/opengraph.webp",
+        "Interactive macOS-style Portfolio by Alap Putatunda — Full-Stack AI Engineer & AI-Native Product Builder. Explore projects, engineering architecture, and resume.",
+      image: "https://scalewithalap.com/images/og-image.webp",
       publisher: {
         "@id": "https://scalewithalap.com/#person",
       },
@@ -196,7 +194,7 @@ export default function SEOHead() {
       url: canonicalUrl,
       name: title,
       description: description,
-      primaryImageOfPage: "https://scalewithalap.com/images/opengraph.webp",
+      primaryImageOfPage: "https://scalewithalap.com/images/og-image.webp",
       mainEntity: {
         "@id": "https://scalewithalap.com/#person",
       },

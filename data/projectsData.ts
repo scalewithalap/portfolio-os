@@ -44,7 +44,7 @@ export const PROJECTS_DATA: Project[] = [
   {
     id: "scalewithalap",
     title: "Scale with Alap (This site)",
-    tagline: "Interactive macOS-style Portfolio OS by Alap Putatunda.",
+    tagline: "Portfolio OS – Interactive macOS-style Portfolio (Open-sourced)",
     badge: "Shipped & Live",
     category: "Portfolio",
     url: "scalewithalap.com",
@@ -55,9 +55,9 @@ export const PROJECTS_DATA: Project[] = [
     coverImageDark: "/images/screenshots/scalewithalap-dark.webp",
     coverImageLight: "/images/screenshots/scalewithalap-light.webp",
     description:
-      "A 39-file React 19 application recreating macOS and iOS desktop environments with custom window management and Web Audio synthesis.",
+      "A custom web window manager recreating macOS and iOS desktop interfaces with 30+ Zustand state fields and 60 FPS dock animations.",
     longDescription:
-      "Built a 39-file application that recreates macOS and iOS windowing systems, featuring a custom window manager for drag, 8-axis resize, edge snapping, and z-index ordering. Manages state in a 755-line Zustand and Immer store, code-splits 13 apps with React.lazy and Suspense, and uses a requestAnimationFrame dock magnification system with GPU-accelerated transforms.",
+      "Built a custom web window manager recreating macOS and iOS desktop interfaces, supporting window dragging, resizing, edge and quadrant snapping, z-index focus management, and minimize/restore animations across 39 components. Centralized state across 30+ fields using Zustand and Immer, lazy-loaded 13 apps with React.lazy and Suspense, and implemented 60 FPS dock animations using requestAnimationFrame and GPU-accelerated transforms.",
     skills: [
       "TypeScript",
       "React 19",
@@ -79,16 +79,16 @@ export const PROJECTS_DATA: Project[] = [
     color: "from-blue-600 to-indigo-900",
     accentColor: "#3b82f6",
     highlights: [
-      "Custom window geometry manager with drag, resize, quadrant snap, and z-index ordering",
-      "30+ UI state fields in Zustand/Immer store across 13 code-split React apps",
-      "requestAnimationFrame dock magnification with cosine scaling & GPU transforms",
+      "Built custom web window manager recreating macOS/iOS desktop interfaces across 39 components",
+      "Centralized state across 30+ fields in Zustand/Immer store and lazy-loaded 13 apps with React.lazy and Suspense",
+      "60 FPS dock magnification animations using requestAnimationFrame and GPU-accelerated transforms",
       "Theme toggle engine, Web Audio API synthesis, and touch gesture support",
     ],
     metrics: [
-      { label: "App Files", value: "39 Files" },
+      { label: "Components", value: "39 Items" },
       { label: "State Fields", value: "30+ Fields" },
       { label: "Lazy Apps", value: "13 Apps" },
-      { label: "Dock Target", value: "GPU-Accelerated" },
+      { label: "Dock Animation", value: "60 FPS GPU" },
     ],
     techStack: [
       {
@@ -119,12 +119,12 @@ export const PROJECTS_DATA: Project[] = [
       {
         title: "Custom Window Geometry Manager",
         description:
-          "Handles window dragging, 8-axis resizing, edge snapping, and z-index ordering across desktop displays.",
+          "Handles window dragging, 8-axis resizing, edge and quadrant snapping, and z-index focus management across desktop displays.",
       },
       {
-        title: "Cosine Magnification Dock",
+        title: "60 FPS Cosine Magnification Dock",
         description:
-          "Calculates cursor proximity in real time to apply fluid scale transforms to dock icon items.",
+          "Calculates cursor proximity in real time to apply fluid GPU-accelerated transforms to dock icon items via requestAnimationFrame.",
       },
     ],
     codeSnippet: {
@@ -162,8 +162,8 @@ export const useEcosystemStore = create<EcosystemState>()(
 
   {
     id: "vibe44",
-    title: "Vibe44 Marketing Site",
-    tagline: "Marketing site, Docs & MCP server for Vibe44 Next.js Starter Kit",
+    title: "Vibe44 Marketing Site & MCP Server",
+    tagline: "The Next.js AI SaaS Starter Kit | Marketing site, Documentations & MCP Server",
     badge: "Shipped & Live",
     category: "Next.js Starter Kit",
     url: "vibe44.com",
@@ -174,9 +174,9 @@ export const useEcosystemStore = create<EcosystemState>()(
     coverImageDark: "/images/screenshots/vibe44-dark.webp",
     coverImageLight: "/images/screenshots/vibe44-light.webp",
     description:
-      "A serverless MCP exposing 6 tools, 4 resource templates, /llms.txt endpoints, and Creem payment webhook fulfillment.",
+      "Serverless Model Context Protocol (MCP) server with JSON-RPC 2.0, 6 tools, 4 resource templates, and idempotent Creem payment webhook fulfillment.",
     longDescription:
-      "Built a serverless MCP implementing JSON-RPC 2.0 with 6 tools, 4 resource templates, rate limiting, and /llms.txt documentation endpoints for AI agent and RAG ingestion. Handles automated webhook fulfillment from Creem payments to GitHub repository access, single-use Cal.com booking link generation, Resend email dispatch, and Notion CRM synchronization with idempotency guards.",
+      "Implemented a serverless Model Context Protocol (MCP) server from scratch using JSON-RPC 2.0, providing 6 tools, 4 resource templates, IP-based rate limiting, and /llms.txt endpoints for AI agent and RAG ingestion. Built idempotent Creem payment webhook handlers to automate post-purchase fulfillment, triggering GitHub repo invites, single-use Cal.com booking links, transactional Resend emails, and parallel Notion database syncs.",
     skills: [
       "TypeScript",
       "Next.js 16",
@@ -193,10 +193,10 @@ export const useEcosystemStore = create<EcosystemState>()(
     color: "from-indigo-600 to-slate-900",
     accentColor: "#6366f1",
     highlights: [
-      "Serverless MCP with JSON-RPC 2.0, 6 tools & 4 resource templates",
-      "Automated Creem payment webhook processing with idempotency guards",
-      "Single-use Cal.com booking links and GitHub repository access automated on purchase",
-      "/llms.txt endpoint formatted for agent and RAG documentation indexing",
+      "Implemented serverless Model Context Protocol (MCP) server from scratch using JSON-RPC 2.0",
+      "Provides 6 tools, 4 resource templates, IP-based rate limiting, and /llms.txt endpoints for AI agent and RAG ingestion",
+      "Built idempotent Creem payment webhook handlers automating GitHub repo invites and single-use Cal.com booking links",
+      "Parallel Notion database synchronization and transactional Resend email dispatch",
     ],
     metrics: [
       { label: "MCP Tools", value: "6 Tools" },
@@ -226,14 +226,14 @@ export const useEcosystemStore = create<EcosystemState>()(
     ],
     features: [
       {
-        title: "Agent Ingestion Pipeline",
+        title: "Serverless MCP Architecture",
         description:
-          "Exposes structured documentation tools and resource endpoints for AI coding agents.",
+          "Exposes 6 tools, 4 resource templates, IP rate limiting, and structured /llms.txt documentation endpoints for AI agent and RAG ingestion.",
       },
       {
-        title: "Webhook Fulfillment Engine",
+        title: "Idempotent Webhook Fulfillment",
         description:
-          "Grants repository access, sends booking credentials, and updates CRM records upon purchase.",
+          "Grants repository access, dispatches single-use booking credentials, and updates Notion databases upon verified Creem payments.",
       },
     ],
     codeSnippet: {
@@ -265,7 +265,7 @@ export async function POST(request: Request) {
   {
     id: "zeroheadache",
     title: "Zero Headache Marketing Site",
-    tagline: "Fully managed AI front desk for local service businesses",
+    tagline: "Fully managed AI front desk for service businesses | Marketing site",
     badge: "Shipped & Live",
     category: "AI Agents",
     url: "zeroheadache.co",
@@ -275,35 +275,34 @@ export async function POST(request: Request) {
     coverImageDark: "/images/screenshots/zeroheadache.webp",
     coverImageLight: "/images/screenshots/zeroheadache.webp",
     description:
-      "A 12-channel inbound lead engine with 10 qualification playbooks, 35+ CRM integrations, and interactive ROI simulator.",
+      "A Next.js 16 and React 19 marketing site with 12 channels, 35+ CRM integrations, interactive ROI calculator, and strict security headers.",
     longDescription:
-      "Built a conversion-first marketing and lead intake engine across 12 inbound communication channels. Features 10 industry qualification playbooks (plumbing, HVAC, legal, dental, home services), 35+ CRM webhook integrations with Google Sheets fallback, interactive lead-loss ROI calculator, JSON-LD structured schema across 40+ routes, and Lenis smooth scrolling with GSAP ScrollTrigger animations in a ~17,200-line Next.js 16 codebase.",
+      "Built and launched a Next.js 16 and React 19 marketing site with TypeScript, Tailwind CSS 4, Motion, and Lenis, featuring an interactive ROI calculator, product coverage for 12 channels, 35+ CRM integrations, and structured JSON-LD schemas. Configured strict CSP, HSTS, clickjacking, and cross-origin security headers while optimizing accessibility and rendering performance through semantic HTML, accessible form controls, and responsive SVGs.",
     skills: [
       "TypeScript",
       "Next.js 16",
       "React 19",
       "Tailwind CSS v4",
-      "GSAP + ScrollTrigger",
-      "Lenis Smooth Scroll",
       "Motion",
+      "Lenis Smooth Scroll",
       "JSON-LD Schema",
       "Webhooks",
-      "Google Sheets API",
-      "Responsive UI",
+      "Security Headers (CSP/HSTS)",
+      "Responsive SVGs",
     ],
     color: "from-emerald-600 to-teal-900",
     accentColor: "#10b981",
     highlights: [
-      "12-channel inbound engine with 10 industry qualification playbooks",
-      "35+ CRM integration architecture with automated Google Sheets fallback",
-      "Interactive lead-loss ROI simulator & machine-readable LLM index",
-      "17,200-line Next.js 16 codebase with structured JSON-LD across 40+ routes",
+      "Built and launched Next.js 16 and React 19 marketing site with TypeScript, Tailwind CSS 4, Motion, and Lenis",
+      "Interactive lead-loss ROI calculator and product coverage for 12 inbound channels",
+      "35+ CRM integration architecture with structured JSON-LD schemas across routes",
+      "Configured strict CSP, HSTS, clickjacking, and cross-origin security headers",
     ],
     metrics: [
-      { label: "Inbound Channels", value: "12 Channels" },
+      { label: "Channels", value: "12 Channels" },
       { label: "CRM Integrations", value: "35+ Systems" },
-      { label: "Routes", value: "40+ Routes" },
-      { label: "Codebase", value: "~17.2k Lines" },
+      { label: "Framework", value: "Next.js 16 + React 19" },
+      { label: "Security", value: "Strict CSP & HSTS" },
     ],
     techStack: [
       {
@@ -312,27 +311,27 @@ export async function POST(request: Request) {
       },
       {
         category: "Animations & UI",
-        items: ["GSAP + ScrollTrigger", "Motion", "Lenis Smooth Scroll"],
+        items: ["Motion", "Lenis Smooth Scroll", "Responsive SVGs"],
       },
       {
-        category: "Architecture & Data",
+        category: "Architecture & Security",
         items: [
           "35+ CRM Webhook System",
-          "Google Sheets Fallback API",
-          "JSON-LD Schema",
+          "Structured JSON-LD Schema",
+          "CSP & HSTS Security Headers",
         ],
       },
     ],
     features: [
       {
-        title: "Lead-Loss ROI Simulator",
+        title: "Lead-Loss ROI Calculator",
         description:
           "Calculates missed revenue based on call volume, response times, and average job ticket values.",
       },
       {
-        title: "Industry Qualification Playbooks",
+        title: "Hardened Security Configuration",
         description:
-          "Structures pre-configured intake logic for plumbing, HVAC, legal, dental, and home services.",
+          "Configures strict CSP, HSTS, clickjacking, and cross-origin security headers while optimizing rendering performance.",
       },
     ],
     codeSnippet: {
@@ -363,9 +362,9 @@ export async function dispatchLeadIntake(lead: LeadIntakeData) {
   },
   {
     id: "vibe44-demo",
-    title: "Vibe44 (Next.js 16 Starter Kit)",
+    title: "Vibe44 (Next.js AI SaaS Starter Kit Demo)",
     tagline:
-      "687-file Next.js 16 starter kit engine with Universal Adapter Pattern",
+      "The Next.js AI SaaS Starter Kit for Committed Builders | Demo site",
     badge: "Shipped & Live",
     category: "Next.js Starter Kit",
     url: "demo.vibe44.com",
@@ -375,9 +374,9 @@ export async function dispatchLeadIntake(lead: LeadIntakeData) {
     coverImageDark: "/images/screenshots/vibe44-demo-dark.webp",
     coverImageLight: "/images/screenshots/vibe44-demo-light.webp",
     description:
-      "A 687-file, ~165,000-line Next.js 16 engine featuring multi-provider LLM orchestration, 5 payment gateways, and a 32-table PostgreSQL schema.",
+      "A Next.js 16 AI SaaS codebase (~165k lines across 687 files) featuring Universal Adapter Pattern across 4 LLM providers, 5 payment gateways, and a 32-table Postgres schema.",
     longDescription:
-      "Built a 687-file, ~165,000-line Next.js 16 engine across ~810 files using a Universal Adapter Pattern. Supports 4 LLM providers (Anthropic, OpenAI, Gemini, DeepSeek) with PII redaction and structured output generation. Integrates 5 payment gateways (Stripe, Dodo Payments, Polar, Lemon Squeezy, Creem), Drizzle ORM over PostgreSQL with Supabase RLS, Trigger.dev v4 background jobs, Upstash Redis/QStash, WebAuthn authentication, and Sentry telemetry; validated by 900+ unit tests across 84 Vitest suites and 9 Playwright E2E test suites.",
+      "Developed a Next.js 16 AI SaaS codebase (~165k lines across 687 files) using a Universal Adapter Pattern to support streaming, structured output, and runtime model switching across 4 LLM providers with a PII-redacting RAG pipeline. Engineered backend infrastructure with a 32-table PostgreSQL schema using Row-Level Security, integrating 5 payment gateways, 9 analytics providers, 4 fallback email services, WebAuthn, QStash/Trigger.dev background jobs, and 900+ unit and Playwright E2E tests.",
     skills: [
       "TypeScript",
       "Next.js 16",
@@ -410,16 +409,16 @@ export async function dispatchLeadIntake(lead: LeadIntakeData) {
     color: "from-blue-600 to-cyan-900",
     accentColor: "#0284c7",
     highlights: [
-      "Universal Adapter Pattern supporting 4 LLM providers with automatic fallback",
-      "PII-redacting RAG context pipeline and structured output generation",
-      "5 payment gateways, 9 analytics integrations, and 4 email providers",
-      "32-table Postgres/RLS schema covered by 900+ unit tests & 9 Playwright suites",
+      "Universal Adapter Pattern supporting streaming, structured output, and runtime model switching across 4 LLM providers",
+      "PII-redacting RAG pipeline with pgvector semantic retrieval",
+      "32-table PostgreSQL schema with Row-Level Security, 5 payment gateways, and 9 analytics providers",
+      "Covered by 900+ unit tests across 84 suites and 9 Playwright E2E test suites",
     ],
     metrics: [
       { label: "Codebase Size", value: "~165k Lines" },
       { label: "Source Files", value: "687 Files" },
-      { label: "Unit Tests", value: "900+ Tests" },
-      { label: "DB Tables", value: "32 Tables" },
+      { label: "Unit & E2E Tests", value: "900+ Tests" },
+      { label: "DB Schema", value: "32 Tables RLS" },
     ],
     techStack: [
       {
@@ -590,7 +589,7 @@ export async function executeAgentTask(tenantId: string, taskInput: TaskInput) {
   {
     id: "openui",
     title: "OpenUI",
-    tagline: "Local-first, MIT-licensed open-source UI component generator",
+    tagline: "The Local-First UI Design Platform. An Open-source Google Stitch Alternative",
     badge: "Shipped & Open Source",
     category: "Open Source",
     url: "github.com/scalewithalap/openui",
@@ -600,32 +599,32 @@ export async function executeAgentTask(tenantId: string, taskInput: TaskInput) {
     coverImageDark: "/images/screenshots/openui-dark.webp",
     coverImageLight: "/images/screenshots/openui-light.webp",
     description:
-      "An MIT-licensed UI generator running local component synthesis across multiple LLM providers without cloud database dependencies.",
+      "An open-source, local-first UI design tool using Next.js 16, React 19, Tailwind CSS 4, SQLite, Prisma 7, and the Vercel AI SDK.",
     longDescription:
-      "Built an MIT-licensed, provider-agnostic platform for generating React and TypeScript component code locally without cloud databases, user tracking, or subscription requirements. Built with Next.js 16, React 19, Prisma 7 with SQLite, Tailwind CSS v4, and Redux Toolkit; connects directly to local or cloud LLMs via Vercel AI SDK and OpenRouter.",
+      "Built an open-source, local-first UI design tool using Next.js 16, React 19, Tailwind CSS 4, SQLite, Prisma 7, and the Vercel AI SDK, enabling offline UI generation across 4 AI providers without requiring accounts, subscriptions, or cloud storage.",
     skills: [
       "TypeScript",
       "Next.js 16",
       "React 19",
       "Tailwind CSS v4",
-      "Prisma 7",
       "SQLite",
+      "Prisma 7",
       "Vercel AI SDK",
-      "OpenRouter",
+      "Local-First Architecture",
     ],
     color: "from-sky-600 to-blue-900",
     accentColor: "#0284c7",
     highlights: [
-      "MIT-licensed local-first platform requiring no cloud database or login",
-      "Provider-agnostic LLM interface for component code generation",
-      "Built with Next.js 16, React 19, Prisma 7, SQLite, and Tailwind CSS v4",
+      "Built an open-source, local-first UI design tool using Next.js 16, React 19, Tailwind CSS 4, SQLite, Prisma 7, and Vercel AI SDK",
+      "Enables offline UI generation across 4 AI providers without requiring accounts, subscriptions, or cloud storage",
+      "Open-source Google Stitch alternative with complete local privacy",
       "Exports clean React and TypeScript component structures directly to disk",
     ],
     metrics: [
-      { label: "License", value: "MIT" },
+      { label: "License", value: "MIT Open Source" },
       { label: "Cloud Auth", value: "None Required" },
-      { label: "Cloud DB", value: "Zero Dependence" },
-      { label: "Stack", value: "React 19 + Prisma 7" },
+      { label: "Cloud Storage", value: "Zero Dependence" },
+      { label: "Providers", value: "4 AI Providers" },
     ],
     techStack: [
       {
@@ -640,7 +639,7 @@ export async function executeAgentTask(tenantId: string, taskInput: TaskInput) {
       {
         category: "LLM Support",
         items: [
-          "Provider Agnostic (Ollama, OpenAI, Anthropic, Gemini, OpenRouter)",
+          "Vercel AI SDK (Ollama, OpenAI, Anthropic, Gemini, OpenRouter)",
         ],
       },
     ],
@@ -660,7 +659,7 @@ export async function executeAgentTask(tenantId: string, taskInput: TaskInput) {
   {
     id: "makemesound",
     title: "Make Me Sound",
-    tagline: "AI communication copilot with 105-tone transformation matrix",
+    tagline: "An AI-powered Communication Copilot | In Active Development",
     badge: "Under Active Development",
     category: "Desktop App",
     url: "makemesound.xyz",
@@ -670,9 +669,9 @@ export async function executeAgentTask(tenantId: string, taskInput: TaskInput) {
     coverImageDark: "/images/screenshots/makemesound-dark.webp",
     coverImageLight: "/images/screenshots/makemesound-light.webp",
     description:
-      "A parallel multi-stream engine converting drafts into 105 tone variations across 15 categories with sub-second streaming speed.",
+      "A parallel multi-stream engine converting drafts into 105 tone variations with sub-second streaming across web, desktop, browser, and mobile.",
     longDescription:
-      "Building an AI communication copilot with a 105-tone matrix (15 categories with 7 sub-variants each) for precise linguistic adjustments. Employs a parallel multi-stream engine on Next.js 16 and OpenRouter for sub-second streaming responses. Uses Supabase RLS, Upstash Redis rate limiting, Lemonsqueezy subscription billing, and a cross-platform architecture expanding to Tauri v2 desktop floating toolboxes and WXT browser extensions.",
+      "Building a parallel multi-stream engine that converts drafts into 105 tone variations with sub-second streaming; expanding across web, desktop, browser, and mobile clients. Employs Next.js 16, OpenRouter, Supabase RLS, Upstash Redis rate limiting, Lemonsqueezy subscription billing, Tauri v2 desktop floating toolboxes, and WXT browser extensions.",
     skills: [
       "TypeScript",
       "Next.js 16",
@@ -688,16 +687,16 @@ export async function executeAgentTask(tenantId: string, taskInput: TaskInput) {
     color: "from-amber-600 to-orange-900",
     accentColor: "#f59e0b",
     highlights: [
-      "Parallel multi-stream generation engine returning sub-second streaming responses",
-      "105 distinct communication tone variations across 15 structured categories",
-      "Cross-platform architecture expanding across web, Tauri v2 desktop, and WXT browser extension",
+      "Building a parallel multi-stream engine that converts drafts into 105 tone variations with sub-second streaming",
+      "Expanding across web, desktop, browser, and mobile clients",
+      "Cross-platform architecture with Tauri v2 desktop floating toolboxes and WXT browser extensions",
       "Custom dictionary enforcement and system prompt safety boundaries",
     ],
     metrics: [
-      { label: "Tone Variations", value: "105 Tones" },
-      { label: "Generation Speed", value: "Sub-second" },
-      { label: "Stream Engine", value: "Parallel" },
-      { label: "Platforms", value: "Web, Desktop, Extension" },
+      { label: "Tone Variations", value: "105 Variations" },
+      { label: "Generation Speed", value: "Sub-second Streaming" },
+      { label: "Engine", value: "Parallel Multi-Stream" },
+      { label: "Platforms", value: "Web, Desktop, Extension, Mobile" },
     ],
     techStack: [
       {
@@ -726,8 +725,8 @@ export async function executeAgentTask(tenantId: string, taskInput: TaskInput) {
     id: "freecom",
     title: "Freecom AI",
     tagline:
-      "Open-source digital download eCommerce platform with autonomous agent swarm",
-    badge: "Under Development",
+      "An Open-Source AI-Agents-powered eCommerce Platform | In Development (80% Complete)",
+    badge: "Under Development (80%)",
     category: "eCommerce",
     url: "github.com/scalewithalap/freecom-ai",
     githubUrl: "https://github.com/scalewithalap/freecom-ai",
@@ -736,9 +735,9 @@ export async function executeAgentTask(tenantId: string, taskInput: TaskInput) {
     coverImageDark: "/images/screenshots/freecom-ai.webp",
     coverImageLight: "/images/screenshots/freecom-ai.webp",
     description:
-      "An open-source digital product commerce platform featuring a self-hosted Store Manager Agent and cloud agent swarm.",
+      "An open-source digital-download commerce platform with a self-hosted Store Manager Agent and cloud agent swarm for SEO, content, and support.",
     longDescription:
-      "Building an open-source digital download commerce platform with an Open-Core architecture. Combines a self-hosted Store Manager Agent for inventory and checkout management with a cloud agent swarm (SEO, Content, Marketing, Analytics, Customer Support). Uses Next.js 16, Supabase PostgreSQL, Trigger.dev background workers, Composio.dev, Zernio social API, and Human-in-the-Loop approval controls.",
+      "Building an open-source digital-download commerce platform with a self-hosted Store Manager Agent and a cloud agent swarm for SEO, content, marketing, analytics, and support with human approval controls. Uses Next.js 16, Supabase PostgreSQL, Trigger.dev background workers, Composio.dev, Zernio social API, and Human-in-the-Loop approval controls.",
     skills: [
       "TypeScript",
       "Next.js 16",
@@ -752,16 +751,16 @@ export async function executeAgentTask(tenantId: string, taskInput: TaskInput) {
     color: "from-zinc-700 to-zinc-900",
     accentColor: "#71717a",
     highlights: [
-      "Self-hosted Store Manager Agent automating digital product inventory and checkout operations",
-      "Cloud agent swarm managing SEO audits, marketing campaigns, and customer support tickets",
+      "Building an open-source digital-download commerce platform with a self-hosted Store Manager Agent",
+      "Cloud agent swarm for SEO, content, marketing, analytics, and support with human approval controls",
       "Human-in-the-Loop approval controls with budget guardrails and session kill switches",
       "Open-Core architecture using Next.js 16, Supabase, Trigger.dev, and Composio.dev",
     ],
     metrics: [
       { label: "Platform Type", value: "Open Source" },
       { label: "Core Agent", value: "Store Manager" },
-      { label: "Cloud Swarm", value: "SEO, Marketing, Support" },
-      { label: "Safety Controls", value: "Human-in-the-Loop" },
+      { label: "Cloud Swarm", value: "SEO, Content, Support" },
+      { label: "Safety Controls", value: "Human Approval" },
     ],
     techStack: [
       {

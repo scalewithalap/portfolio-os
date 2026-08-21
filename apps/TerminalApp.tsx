@@ -16,11 +16,11 @@ const OUTPUT_LINES = [
   { cmd: "cat --summary", type: "input" },
   { text: "Resolving identity...", type: "sys" },
   {
-    text: "[ OK ] Alap Putatunda — Founding AI Engineer & Full-Stack AI Developer",
+    text: "[ OK ] Alap Putatunda — Full-Stack AI Engineer | AI-Native Product/Software Development",
     type: "success",
   },
   {
-    text: '  └─ 7+ years taking software from empty repo to deployment, monitoring, and operation. Builds production LLM and multi-agent systems with RAG, semantic search, provider-agnostic model orchestration, voice AI, workflow automation, metered billing, and observability. Founded Scale with Alap, co-founded Zero Headache as CEO, shipped Vibe44 and OpenUI. Selected for Hyperagent\'s "The Founding 500" ($20,000 in platform credits) in June 2026.',
+    text: '  └─ Technical founder who spent 6+ years building and scaling a pharmaceutical company end-to-end (technology, ops, 20+ members, Rs.7.5+ Cr / ~$784K USD revenue). Began building AI products part-time in 2024, stepped back in Feb 2025 to pursue full-time AI engineering, and founded Zero Headache. Specializes in AI-native SaaS, multi-agent systems, MCP servers, RAG, semantic search, AI IDEs, and payment integrations. Selected for Hyperagent\'s "The Founding 500" ($20,000 credits).',
     type: "item",
   },
   { text: "", type: "empty" },
@@ -28,74 +28,77 @@ const OUTPUT_LINES = [
   // ── Skills ──
   { cmd: "fetch --skills", type: "input" },
   { text: "Loading technical matrices...", type: "sys" },
-  { text: "[ OK ] AI Agents, LLMs & Automations", type: "success" },
+  { text: "[ OK ] AI Agents, Frameworks & LLM Systems", type: "success" },
   {
-    text: "  ├─ RAG, embeddings, vector search, semantic retrieval, multi-agent systems, agent orchestration",
+    text: "  ├─ Multi-agent systems, agent orchestration, agent swarm, human-in-the-loop workflows, autonomous workflows",
     type: "item",
   },
   {
-    text: "  ├─ Structured outputs, intent classification, persistent memory, prompt engineering, token metering, model routing and failover",
+    text: "  ├─ RAG, embeddings, vector search, semantic retrieval, persistent memory, structured outputs, intent classification",
     type: "item",
   },
   {
-    text: "  └─ AWS Bedrock, Gemini Enterprise Agent Platform, Anthropic/Claude, Gemini, OpenAI/ChatGPT, DeepSeek, Z.AI/GLM, MiniMax, MoonShot/Kimi, Qwen, OpenRouter, LangChain, Genspark, Manus, OpenClaw, Hermes Agent",
-    type: "item",
-  },
-  { text: "", type: "empty" },
-  { text: "[ OK ] Languages & Frontend", type: "success" },
-  {
-    text: "  ├─ TypeScript, Python, React 19, Next.js 15/16, React Native, Vite, Tailwind CSS v4, shadcn/ui, Radix UI",
+    text: "  ├─ Model routing and failover, token metering, prompt engineering, Claude (Anthropic), Gemini (Google), OpenAI (ChatGPT), DeepSeek, OpenRouter, LangChain",
     type: "item",
   },
   {
-    text: "  ├─ GSAP, Motion/Framer Motion, Zustand, Immer, ReactFlow, Fumadocs, Lenis, Lucide React, SSE",
-    type: "item",
-  },
-  {
-    text: "  └─ React.lazy, Suspense, responsive/adaptive UI, accessibility, i18n, CSS 3D transforms",
+    text: "  └─ Model Context Protocol (MCP) servers and clients, JSON-RPC 2.0, MCP tools and resources, /llms.txt endpoints for agent ingestion, agent skills/rules/hooks systems",
     type: "item",
   },
   { text: "", type: "empty" },
-  { text: "[ OK ] Backend, Data & Protocols", type: "success" },
+  { text: "[ OK ] AI IDEs & Coding Agents", type: "success" },
   {
-    text: "  ├─ Node.js, REST APIs, webhooks, Model Context Protocol (MCP), JSON-RPC 2.0, microservices, event-driven systems",
+    text: "  ├─ Google Antigravity, Claude Code, Cursor, Codex, GitHub Copilot, Google AI Studio, OpenCode",
     type: "item",
   },
   {
-    text: "  ├─ PostgreSQL, Supabase, pgvector, Row-Level Security, Drizzle ORM, Prisma, Upstash Redis",
-    type: "item",
-  },
-  { text: "  └─ Trigger.dev, Inngest, QStash, n8n", type: "item" },
-  { text: "", type: "empty" },
-  { text: "[ OK ] Browser & UI Systems", type: "success" },
-  {
-    text: "  └─ requestAnimationFrame, IntersectionObserver, Clipboard API, Web Audio API, custom window management, drag/resize/snap, command palettes, fuzzy search, code splitting, dark/light theming, touch gestures",
+    text: "  └─ Context engineering (AGENTS.md, CLAUDE.md, .cursorrules), custom subagents, custom skills, test-driven agent loops, spec-driven development",
     type: "item",
   },
   { text: "", type: "empty" },
-  { text: "[ OK ] Voice, Messaging & Integrations", type: "success" },
+  { text: "[ OK ] AI Automation & Integrations", type: "success" },
   {
-    text: "  └─ Vapi, Twilio, Deepgram, ElevenLabs, Murf AI, Sent.dm, Resend, Postmark, SendGrid, Brevo, Composio, Zernio, Zapier, Cal.com, GitHub API, Notion API, CRM integrations, SMS, WhatsApp, voice AI",
+    text: "  ├─ Trigger.dev, Inngest, Upstash Redis, QStash, n8n, Zapier, Webhooks, REST APIs, JSON-RPC 2.0",
+    type: "item",
+  },
+  {
+    text: "  ├─ Resend, Postmark, SendGrid, Brevo, AWS SES, Twilio, Sent.dm, Vapi, Murf AI, ElevenLabs, Deepgram",
+    type: "item",
+  },
+  {
+    text: "  └─ Composio, Zernio, Cal.com API, GitHub API, Notion API, PostHog, Langfuse, Sentry",
     type: "item",
   },
   { text: "", type: "empty" },
-  { text: "[ OK ] Payments, Analytics & Security", type: "success" },
+  { text: "[ OK ] UI/UX & Frontend Engineering", type: "success" },
   {
-    text: "  ├─ Dodo Payments, Stripe, Polar, Lemon Squeezy, Creem, PostHog, Langfuse, Mixpanel, DataFast, Umami, Plausible, Pirsch, Vemetric, GA4, Vercel Analytics",
+    text: "  ├─ TypeScript, JavaScript, React 19, Next.js 16, Vite, Tailwind CSS 4, Motion, GSAP + ScrollTrigger, Lenis Smooth Scroll",
     type: "item",
   },
   {
-    text: "  └─ PII redaction, WebAuthn/passkeys, RBAC, HMAC tokens, CSRF/SSRF protection, rate limiting, webhook idempotency, consent management, OWASP Top 10",
+    text: "  └─ Zustand, Immer, ReactFlow, Lexical Editor, Lucide, Web Audio API, requestAnimationFrame, IntersectionObserver, responsive/adaptive UI",
     type: "item",
   },
   { text: "", type: "empty" },
-  { text: "[ OK ] Delivery & AI-native Engineering", type: "success" },
+  { text: "[ OK ] Full-Stack Engineering & Database", type: "success" },
   {
-    text: "  ├─ AWS Lightsail, Vercel, GitHub Actions CI/CD, Vitest, Playwright, Sentry, system design, performance optimization",
+    text: "  ├─ PostgreSQL, Supabase, pgvector, Row-Level Security (RLS), Prisma 7, Drizzle ORM, SQLite",
     type: "item",
   },
   {
-    text: "  └─ Claude Code, Cursor, Codex, GitHub Copilot, Google AI Studio, Antigravity, OpenCode, AGENTS.md/CLAUDE.md context engineering, spec-driven development, test-driven agent loops",
+    text: "  └─ Node.js, WebAuthn, Clerk Auth, Supabase Auth, HMAC token impersonation, CSRF protection, rate limiting, PII redaction",
+    type: "item",
+  },
+  { text: "", type: "empty" },
+  { text: "[ OK ] Payment Gateways & Metered Billing", type: "success" },
+  {
+    text: "  └─ Stripe, Dodo Payments, Polar, Lemon Squeezy, Creem, Webhook signature verification, idempotent event processing, subscription lifecycles",
+    type: "item",
+  },
+  { text: "", type: "empty" },
+  { text: "[ OK ] Cloud & Delivery", type: "success" },
+  {
+    text: "  └─ Vercel, AWS Lightsail, GitHub Actions CI/CD, Vitest, Playwright E2E testing, Docker",
     type: "item",
   },
   { text: "", type: "empty" },
@@ -105,27 +108,27 @@ const OUTPUT_LINES = [
   { text: "Loading production projects...", type: "sys" },
   { text: "[ OK ] Production Projects & Applications", type: "success" },
   {
-    text: "  ├─ Scale with Alap | Interactive macOS-style Portfolio OS | scalewithalap.com | GitHub",
+    text: "  ├─ Scale with Alap | Portfolio OS – Interactive macOS-style Portfolio | scalewithalap.com | GitHub",
     type: "item",
   },
   {
-    text: "  ├─ Vibe44 | Marketing website & MCP for Next.js AI SaaS Starter Kit | vibe44.com",
+    text: "  ├─ Vibe44 Marketing Site & MCP Server | The Next.js AI SaaS Starter Kit & MCP Server | vibe44.com",
     type: "item",
   },
   {
-    text: "  ├─ Vibe44 Starter Kit | 687-file, ~165k-line Next.js 16 engine | demo.vibe44.com",
+    text: "  ├─ Vibe44 Starter Kit Demo | 687-file, ~165k-line Next.js 16 AI SaaS codebase | demo.vibe44.com",
     type: "item",
   },
   {
-    text: "  ├─ Zero Headache | Fully managed AI front desk for local service businesses | zeroheadache.co",
+    text: "  ├─ Zero Headache Marketing Site | Fully managed AI front desk for service businesses | zeroheadache.co",
     type: "item",
   },
   {
-    text: "  ├─ Zero Headache Platform | Multi-tenant dashboard & sandboxed agents (YC F26 applicant) | app.zeroheadache.co",
+    text: "  ├─ Zero Headache Platform | Multi-tenant dashboard & sandboxed AI agents | app.zeroheadache.co",
     type: "item",
   },
   {
-    text: "  ├─ OpenUI | MIT-licensed local-first UI design platform | GitHub",
+    text: "  ├─ OpenUI | Local-first UI design platform (Google Stitch alternative) | GitHub",
     type: "item",
   },
   {
@@ -133,11 +136,11 @@ const OUTPUT_LINES = [
     type: "item",
   },
   {
-    text: "  ├─ Freecom AI | Open-source AI eCommerce platform | GitHub",
+    text: "  ├─ Freecom AI | Open-source AI eCommerce platform with agent swarm | GitHub",
     type: "item",
   },
   {
-    text: "  └─ Soothly AI | Autonomous 8-agent revenue platform with Superagent orchestrator | GitHub",
+    text: "  └─ Soothly AI | Autonomous 8-agent revenue platform with Superagent manager | GitHub",
     type: "item",
   },
   { text: "", type: "empty" },
@@ -147,19 +150,15 @@ const OUTPUT_LINES = [
   { text: "Loading work history...", type: "sys" },
   { text: "[ OK ] Work Experience", type: "success" },
   {
-    text: "  ├─ Founder & Full-stack AI Developer | Scale with Alap (Personal Brand) | May 2026 – Present",
+    text: "  ├─ Full-stack AI Engineer | Scale with Alap (Portfolio & Personal Brand) | Feb 2025 – Present",
     type: "item",
   },
   {
-    text: "  ├─ Co-founder & CEO | Zero Headache (AI-native Service Company) | July 2026 – Present",
+    text: "  ├─ Co-founder & CEO | Zero Headache (AI-native Front Desk Service) | July 2026 – Present",
     type: "item",
   },
   {
-    text: "  ├─ Co-founder & CTO | Pharmison Valentes Pharma Pvt. Ltd. (Pharmaceutical) | May 2019 – Present",
-    type: "item",
-  },
-  {
-    text: "  └─ Full-Stack AI & Software Engineer | Freelancer | 2019 – 2026",
+    text: "  └─ Co-founder & Former CTO | Pharmison Valentes Pharma Pvt. Ltd. (Pharmaceutical) | May 2019 – Present",
     type: "item",
   },
   { text: "", type: "empty" },
@@ -179,7 +178,7 @@ const OUTPUT_LINES = [
   { text: "Loading academic records...", type: "sys" },
   { text: "[ OK ] Education", type: "success" },
   {
-    text: "  ├─ Bachelor of Computer Applications coursework | JIS College of Engineering, Kalyani | 2018 – 2020 (left in 2nd year to build full time)",
+    text: "  ├─ Bachelor of Computer Applications (BCA) coursework | JIS College of Engineering, Kalyani | 2018 – 2020 (left in 2nd year to build full time)",
     type: "item",
   },
   {

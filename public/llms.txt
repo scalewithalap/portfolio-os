@@ -1,13 +1,13 @@
-# Scale with Alap — Founding AI Engineer & Full-Stack AI Developer
+# Scale with Alap — Full-Stack AI Engineer
 
-> Alap Putatunda is a Founding AI Engineer and Full-Stack AI Developer with 7+ years of experience engineering production multi-agent systems, RAG pipelines, LLM orchestrators, voice AI services, and desktop/web OS applications.
+> Alap Putatunda is a Full-Stack AI Engineer, AI-native product builder, and technical founder who spent 6+ years building and scaling a pharmaceutical company end-to-end (technology, operations, 20+ member team, Rs.7.5+ Cr / ~$784K USD revenue). Began building AI products part-time in 2024, stepped back in Feb 2025 to pursue full-time AI engineering, and founded Zero Headache to build autonomous AI front desk systems. Specializes in AI-native SaaS, multi-agent systems, MCP servers, RAG, semantic search, AI IDEs, and payment integrations.
 
 ## Core Profile & Identity
 - **Name:** Alap Putatunda
-- **Title:** Founding AI Engineer & Full-Stack AI Developer
-- **Location:** India (Open to global remote roles or relocation with visa sponsorship)
-- **Experience:** 7+ years taking software from empty repository to production
-- **Open to:** AI Engineer and Full-Stack AI Developer roles at early-stage startups (≤200 people), remote or relocation with visa sponsorship
+- **Title:** Full-Stack AI Engineer | AI-Native Product/Software Development
+- **Location:** Remote worldwide from India | Ready to relocate with visa sponsorship
+- **Experience:** 6+ years leading pharma technology/ops (Rs.7.5+ Cr revenue, 20+ team) & full-stack AI engineering
+- **Open to:** AI Engineer and Full-Stack AI Developer roles at early-stage AI startups (<=200 people), remote worldwide or relocation with visa sponsorship
 - **Email:** hi@scalewithalap.com
 - **Website:** https://scalewithalap.com
 - **GitHub:** https://github.com/scalewithalap
@@ -17,25 +17,27 @@
 - **YouTube:** https://www.youtube.com/@scalewithalap
 - **Instagram:** https://www.instagram.com/scalewithalap
 - **Facebook:** https://www.facebook.com/scalewithalap
-- **Recognition:** "The Founding 500" by Hyperagent (by Airtable) - June 2026 ($20,000 credit recipient)
+- **Recognition:** Selected for "The Founding 500" by Hyperagent (by Airtable) — June 2026 ($20,000 credit recipient)
 
 ## Technical Architecture Competencies
-- **AI & LLM Orchestration:** Multi-provider model adapters (Anthropic Claude 3.7/3.5, OpenAI GPT-4o/o3, Google Gemini 2.5/3, DeepSeek-R1), provider-agnostic fallback pipelines, PII redaction, structured output generation.
-- **Agent Frameworks & Automation:** Multi-agent orchestration, JSON-RPC 2.0 Model Context Protocol (MCP) servers, Trigger.dev v4 background workers, Upstash Redis / QStash queues.
-- **Frontend & App Engineering:** React 19, Next.js 16 (App Router / RSC), TypeScript, Vite, Tailwind CSS v4, Zustand, Immer, Web Audio API synthesis, desktop OS window management.
-- **Backend & Database Systems:** PostgreSQL, Drizzle ORM, Supabase RLS policies, Express.js, WebAuthn authentication, Dodo Payments, Drizzle, Stripe.
+- **AI Agents, Frameworks & LLM Systems:** Multi-agent systems, agent orchestration, agent swarm, human-in-the-loop workflows, autonomous workflows, RAG, embeddings, vector search, semantic retrieval, persistent memory, structured outputs, intent classification, model routing and failover, token metering, prompt engineering, Claude (Anthropic), Gemini (Google), OpenAI (ChatGPT), DeepSeek, OpenRouter, LangChain, Model Context Protocol (MCP) servers and clients, JSON-RPC 2.0, MCP tools and resources, /llms.txt endpoints for agent ingestion, agent skills/rules/hooks systems.
+- **AI IDEs & Coding Agents:** Google Antigravity, Claude Code, Cursor, Codex, GitHub Copilot, Google AI Studio, OpenCode, Context engineering (AGENTS.md, CLAUDE.md, .cursorrules), custom subagents, custom skills, test-driven agent loops, spec-driven development.
+- **AI Automation & Integrations:** Trigger.dev, Inngest, Upstash Redis, QStash, n8n, Zapier, Webhooks, REST APIs, JSON-RPC 2.0, Resend, Postmark, SendGrid, Brevo, AWS SES, Twilio, Sent.dm, Vapi, Murf AI, ElevenLabs, Deepgram, Composio, Zernio, Cal.com API, GitHub API, Notion API, PostHog, Langfuse, Sentry.
+- **UI/UX & Frontend Engineering:** TypeScript, JavaScript, React 19, Next.js 16, Vite, Tailwind CSS 4, Motion, GSAP + ScrollTrigger, Lenis Smooth Scroll, Zustand, Immer, ReactFlow, Lexical Editor, Lucide, Web Audio API, requestAnimationFrame, IntersectionObserver, responsive/adaptive UI.
+- **Full-Stack Engineering & Database:** PostgreSQL, Supabase, pgvector, Row-Level Security (RLS), Prisma 7, Drizzle ORM, SQLite, Node.js, WebAuthn, Clerk Auth, Supabase Auth, HMAC token impersonation, CSRF protection, rate limiting, PII redaction.
+- **Payment Gateways & Metered Billing:** Stripe, Dodo Payments, Polar, Lemon Squeezy, Creem, Webhook signature verification, idempotent event processing, subscription lifecycles.
+- **Cloud & Delivery:** Vercel, AWS Lightsail, GitHub Actions CI/CD, Vitest, Playwright E2E testing, Docker.
 
 ## Primary Projects & Case Studies
-- [Scale with Alap Portfolio OS](https://scalewithalap.com/projects/scalewithalap): Interactive macOS-style Portfolio
-OS by Alap Putatunda.
-- [Vibe44 Marketing & MCP Server](https://scalewithalap.com/projects/vibe44): Serverless Model Context Protocol (MCP) server implementing JSON-RPC 2.0 with 6 tools, 4 resource templates, and Creem payment webhook fulfillment.
-- [Vibe44 Next.js 16 Starter Kit](https://scalewithalap.com/projects/vibe44-demo): A 687-file, ~165,000-line Next.js 16 engine featuring Universal Adapter Pattern, 5 payment gateways, and a 32-table PostgreSQL schema.
-- [OpenUI](https://scalewithalap.com/projects/openui): MIT-licensed local-first UI generator running component synthesis across local and cloud LLMs.
-- [Zero Headache Marketing](https://scalewithalap.com/projects/zeroheadache): AI lead-capture and voice booking platform answering calls in under 10 seconds across 12 channels for local businesses.
-- [Zero Headache Platform](https://scalewithalap.com/projects/zeroheadache-platform): Multi-tenant AI voice call dispatch and CRM integration engine.
-- [Make Me Sound](https://scalewithalap.com/projects/makemesound): AI communication copilot generating 105 tone variations with multi-stream execution.
-- [Freecom AI Store](https://scalewithalap.com/projects/freecom): Open-source eCommerce storefront with AI recommendation agent.
-- [Soothly AI](https://scalewithalap.com/projects/soothly): Autonomous 8-agent revenue platform with Superagent meta-orchestrator and Inngest durable functions.
+- [Scale with Alap Portfolio OS](https://scalewithalap.com/projects/scalewithalap): Custom web window manager recreating macOS and iOS desktop interfaces with 30+ Zustand state fields, 13 lazy-loaded React apps, and 60 FPS GPU-accelerated dock animations.
+- [Vibe44 Marketing Site & MCP Server](https://scalewithalap.com/projects/vibe44): Serverless Model Context Protocol (MCP) server implementing JSON-RPC 2.0 with 6 tools, 4 resource templates, /llms.txt documentation endpoints, and idempotent Creem payment webhook fulfillment.
+- [Vibe44 Next.js 16 Starter Kit Demo](https://scalewithalap.com/projects/vibe44-demo): A 687-file, ~165,000-line Next.js 16 engine featuring Universal Adapter Pattern across 4 LLM providers, 5 payment gateways, a 32-table PostgreSQL schema, and 900+ unit and Playwright tests.
+- [OpenUI](https://scalewithalap.com/projects/openui): Open-source, local-first UI design platform (Google Stitch alternative) built with Next.js 16, React 19, SQLite, Prisma 7, and Vercel AI SDK.
+- [Zero Headache Marketing Site](https://scalewithalap.com/projects/zeroheadache): Next.js 16 and React 19 marketing site with 12 channels, 35+ CRM integrations, interactive ROI calculator, and strict security headers.
+- [Zero Headache Platform](https://scalewithalap.com/projects/zeroheadache-app): Multi-tenant dashboard and sandboxed AI agents per client with persistent memory, OpenRouter multi-model failover, and Supabase RLS.
+- [Make Me Sound](https://scalewithalap.com/projects/makemesound): Parallel multi-stream engine converting text drafts into 105 tone variations with sub-second streaming across web, desktop, browser, and mobile.
+- [Freecom AI](https://scalewithalap.com/projects/freecom): Open-source digital-download commerce platform with a self-hosted Store Manager Agent and cloud agent swarm for SEO, content, and support.
+- [Soothly AI](https://scalewithalap.com/projects/soothly-ai): Autonomous revenue platform running an 8-agent ecosystem coordinated by a Superagent manager using Inngest durable functions and Supabase pgvector.
 
 ## Optional Full Context
 - For full Markdown representations of all projects and resume details, see: https://scalewithalap.com/llms-full.txt

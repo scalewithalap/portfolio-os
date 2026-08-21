@@ -261,7 +261,7 @@ export default function NotificationCenter() {
                   <span
                     className={`text-[11px] leading-3 block mt-0.5 ${isLight ? "text-slate-500" : "text-white/60"}`}
                   >
-                    Founding AI Engineer & Full-stack AI Developer.
+                    Full-Stack AI Engineer | AI-Native Product/Software Development.
                   </span>
                 </div>
               </div>

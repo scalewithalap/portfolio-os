@@ -169,7 +169,7 @@ export default function IOSLockScreen({ onUnlock }: IOSLockScreenProps) {
               Hey, I'm Alap! Welcome to My Portfolio.
             </h2>
             <p className="text-xs text-white/85 leading-tight mt-0.5">
-              Founding AI Engineer & Full-Stack AI Developer. For the full macOS
+              Full-Stack AI Engineer | AI-Native Product/Software Development. For the full macOS
               experience, explore this website on a desktop.
             </p>
           </div>

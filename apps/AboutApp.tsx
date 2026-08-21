@@ -107,6 +107,7 @@ export default function AboutApp() {
         }`}
       >
         <div className="w-full px-3.5 py-4 sm:px-6 md:px-8 md:py-8 pb-24 md:pb-24">
+          {/* General Tab Content */}
           {activeTab === "general" && (
             <div className="animate-in fade-in duration-300 space-y-6">
               <div className="flex items-center space-x-4">
@@ -126,9 +127,9 @@ export default function AboutApp() {
                   <p
                     className={`text-xs md:text-sm leading-tight font-medium ${isLight ? "text-slate-600" : "text-white/70"}`}
                   >
-                    Entrepreneur | Founding AI Engineer
+                    Full-Stack AI Engineer
                     <br />
-                    Full-stack AI Developer
+                    AI-Native Product/Software Development
                   </p>
                 </div>
               </div>
@@ -149,8 +150,7 @@ export default function AboutApp() {
                     Location
                   </span>
                   <span className={isLight ? "text-slate-800" : "text-white"}>
-                    India (Open to remote jobs or ready to relocate with visa
-                    sponsorship)
+                    Remote worldwide from India | Ready to relocate with visa sponsorship
                   </span>
                 </div>
                 <div
@@ -162,7 +162,7 @@ export default function AboutApp() {
                     Experience
                   </span>
                   <span className={isLight ? "text-slate-800" : "text-white"}>
-                    7+ years taking software from empty repo to production
+                    6+ years leading pharma tech/ops (Rs.7.5+ Cr revenue, 20+ team) & full-stack AI engineering
                   </span>
                 </div>
                 <div
@@ -176,8 +176,7 @@ export default function AboutApp() {
                   <span
                     className={`font-semibold ${isLight ? "text-emerald-700" : "text-emerald-400"}`}
                   >
-                    AI Engineer & Full-Stack AI Developer roles at AI startups,
-                    remote or relocation with visa sponsorship.
+                    AI Engineer & Full-Stack AI Developer roles at AI startups (Remote or relocation with visa sponsorship)
                   </span>
                 </div>
                 <div className="flex flex-col sm:flex-row px-4 py-3 gap-1 sm:gap-0 items-start sm:items-center">
@@ -206,31 +205,23 @@ export default function AboutApp() {
                 <h3
                   className={`text-base md:text-lg font-bold ${isLight ? "text-slate-900" : "text-white"}`}
                 >
-                  Summary
+                  Executive Summary
                 </h3>
                 <p
                   className={`leading-relaxed text-xs md:text-sm ${isLight ? "text-slate-700" : "text-white/80"}`}
                 >
-                  Founding AI Engineer and Full-stack AI Developer with 7+ years
-                  of experience taking software from an empty repository to
-                  deployment, monitoring, and ongoing operation. Builds
-                  production LLM and multi-agent systems with RAG, semantic
-                  search, provider-agnostic model orchestration, voice AI,
-                  workflow automation, metered billing, and observability.
+                  Technical founder who spent 6+ years building and scaling a pharmaceutical company from the ground up, managing complete technology, business operations, and a 20+ member team to Rs.7.5+ Cr (~$784K USD) in total revenue. Began building AI products part-time in 2024, stepped back from day-to-day operations in Feb 2025 to pursue full-time AI engineering while remaining a non-executive Director & Shareholder, and founded Zero Headache to build autonomous AI systems.
                 </p>
                 <p
                   className={`leading-relaxed text-xs md:text-sm ${isLight ? "text-slate-700" : "text-white/80"}`}
                 >
-                  Founded Scale with Alap, co-founded and leads Zero Headache as
-                  CEO, and shipped Vibe44 and OpenUI. Uses AI coding agents to
-                  accelerate delivery while retaining ownership of architecture,
-                  testing, security, and reliability. Selected for Hyperagent's
-                  "The Founding 500" ($20,000 in platform credits) in June 2026.
+                  Specializes in building AI-native SaaS and Agentic SaaS (AaaS) products from scratch — multi-agent systems, automations, AI agents, MCP servers, RAG with vector search, semantic search, AI IDEs and coding agents, payment gateway integrations, and production full-stack engineering with modern web frameworks.
                 </p>
               </div>
             </div>
           )}
 
+          {/* Experience Tab Content */}
           {activeTab === "experience" && (
             <div className="animate-in fade-in duration-300 space-y-6">
               <h1
@@ -251,29 +242,28 @@ export default function AboutApp() {
                     <h3
                       className={`text-base md:text-lg font-bold ${isLight ? "text-slate-900" : "text-white"}`}
                     >
-                      Founder & Full-stack AI Developer
+                      Full-stack AI Engineer
                     </h3>
                     <span
                       className={`text-[11px] md:text-xs font-mono ${isLight ? "text-slate-500" : "text-white/50"}`}
                     >
-                      May 2026 – Present
+                      Feb 2025 – Present
                     </span>
                   </div>
                   <p className="text-xs md:text-sm font-semibold text-blue-600 mt-0.5">
-                    Scale with Alap (Personal Brand)
+                    Scale with Alap (Portfolio & Personal Brand)
                   </p>
                   <ul
                     className={`mt-3 space-y-1.5 list-disc list-inside text-xs md:text-sm leading-relaxed ${isLight ? "text-slate-700" : "text-white/80"}`}
                   >
                     <li>
-                      Founded Scale with Alap to publish technical content and
-                      build AI products, including Vibe44, OpenUI, Make Me
-                      Sound, Freecom AI, and the Scale with Alap portfolio.
+                      Built and launched Vibe44, a Next.js 16 AI SaaS codebase (~165k lines across 687 files) featuring an MCP server with JSON-RPC 2.0, Universal Adapter Pattern across 4 LLM providers, 5 payment gateways, and a 32-table Postgres RLS schema.
                     </li>
                     <li>
-                      Directs AI-assisted engineering workflows across
-                      architecture, implementation, testing, review, and CI
-                      using Claude Code, Cursor, Codex, and GitHub Copilot.
+                      Developed OpenUI, an open-source, local-first UI design tool (Next.js 16, React 19, SQLite, Prisma 7, Vercel AI SDK) and Make Me Sound, a parallel multi-stream engine converting drafts into 105 tone variations.
+                    </li>
+                    <li>
+                      Built an open-source macOS-style portfolio with 30+ Zustand state fields, 13 lazy-loaded apps, and 60 FPS GPU-accelerated dock animations.
                     </li>
                   </ul>
                 </div>
@@ -298,22 +288,16 @@ export default function AboutApp() {
                     </span>
                   </div>
                   <p className="text-xs md:text-sm font-semibold text-blue-600 mt-0.5">
-                    Zero Headache (AI-native Service Company)
+                    Zero Headache (AI-native Front Desk Service)
                   </p>
                   <ul
                     className={`mt-3 space-y-1.5 list-disc list-inside text-xs md:text-sm leading-relaxed ${isLight ? "text-slate-700" : "text-white/80"}`}
                   >
                     <li>
-                      Leads product and engineering for a 24/7 AI lead-capture,
-                      qualification, booking, and recovery service across 12
-                      voice and messaging channels for high-ticket local
-                      businesses.
+                      Built and launched a Next.js 16 and React 19 marketing site with 12 channels, 35+ CRM integrations, interactive ROI calculator, and strict security headers.
                     </li>
                     <li>
-                      Defined the multi-tenant product direction, industry
-                      qualification playbooks, sub-10-second call-answer target,
-                      and outcome-based billing around booked appointments and
-                      conversations; applied to Y Combinator Fall 2026.
+                      Engineered multi-tenant dashboard and sandboxed AI agents per client with persistent memory, OpenRouter multi-model failover, and Supabase RLS isolation.
                     </li>
                   </ul>
                 </div>
@@ -329,7 +313,7 @@ export default function AboutApp() {
                     <h3
                       className={`text-base md:text-lg font-bold ${isLight ? "text-slate-900" : "text-white"}`}
                     >
-                      Co-founder & CTO
+                      Co-founder & Former CTO
                     </h3>
                     <span
                       className={`text-[11px] md:text-xs font-mono ${isLight ? "text-slate-500" : "text-white/50"}`}
@@ -344,55 +328,13 @@ export default function AboutApp() {
                     className={`mt-3 space-y-1.5 list-disc list-inside text-xs md:text-sm leading-relaxed ${isLight ? "text-slate-700" : "text-white/80"}`}
                   >
                     <li>
-                      Co-founded a registered Indian pharmaceutical company and
-                      led all technology end to end — company website, internal
-                      tooling and systems, and digital operations.
+                      Co-founded a registered Indian pharmaceutical company, scaled it to Rs.7.5+ Cr (~$784K USD) in total revenue, and managed business operations and a 20+ member team across technology, finance, sales, and supply chain.
                     </li>
                     <li>
-                      Holds a non-executive Director and Shareholder position
-                      with no active operational role.
-                    </li>
-                  </ul>
-                </div>
-
-                <div
-                  className={`rounded-xl border p-5 text-xs md:text-sm transition-colors ${
-                    isLight
-                      ? "bg-slate-50/80 border-slate-200"
-                      : "bg-white/5 border-white/10"
-                  }`}
-                >
-                  <div className="flex justify-between items-start">
-                    <h3
-                      className={`text-base md:text-lg font-bold ${isLight ? "text-slate-900" : "text-white"}`}
-                    >
-                      Independent Web & App Developer, and AI Systems Builder
-                    </h3>
-                    <span
-                      className={`text-[11px] md:text-xs font-mono ${isLight ? "text-slate-500" : "text-white/50"}`}
-                    >
-                      2019 – 2026
-                    </span>
-                  </div>
-                  <p className="text-xs md:text-sm font-semibold text-blue-600 mt-0.5">
-                    Freelancer
-                  </p>
-                  <ul
-                    className={`mt-3 space-y-1.5 list-disc list-inside text-xs md:text-sm leading-relaxed ${isLight ? "text-slate-700" : "text-white/80"}`}
-                  >
-                    <li>
-                      Designed, built, and deployed custom web applications,
-                      REST APIs, and automation scripts for small businesses and
-                      startup clients using Next.js, Node.js, and Python.
+                      Led technology end to end — company website, custom internal tools, supply-chain tracking, and digital operations.
                     </li>
                     <li>
-                      Integrated LLM streaming routes, vector search stores,
-                      third-party payment gateways (Stripe, Lemonsqueezy), and
-                      CRM webhooks.
-                    </li>
-                    <li>
-                      Set up automated CI/CD workflows, unit test suites with
-                      Vitest, and error tracking with Sentry.
+                      Stepped back from day-to-day operations in Feb 2025 to focus full-time on AI engineering and building AI products; currently non-executive Director & Shareholder.
                     </li>
                   </ul>
                 </div>
@@ -400,6 +342,7 @@ export default function AboutApp() {
             </div>
           )}
 
+          {/* Education Tab Content */}
           {activeTab === "education" && (
             <div className="animate-in fade-in duration-300 space-y-6">
               <h1
@@ -419,7 +362,7 @@ export default function AboutApp() {
                   <h3
                     className={`text-base md:text-lg font-bold ${isLight ? "text-slate-900" : "text-white"}`}
                   >
-                    Bachelor of Computer Applications coursework
+                    Bachelor of Computer Applications (BCA) coursework
                   </h3>
                   <p
                     className={`mt-0.5 text-xs md:text-sm ${isLight ? "text-slate-600" : "text-white/60"}`}
@@ -429,12 +372,12 @@ export default function AboutApp() {
                   <div
                     className={`mt-2 text-[11px] md:text-xs font-mono ${isLight ? "text-slate-500" : "text-white/50"}`}
                   >
-                    2018 – 2020
+                    Enrolled 2018, left in 2020 during 2nd year to focus full-time on building products and running the business
                   </div>
                   <p
                     className={`mt-3 pl-3 border-l-2 border-[#0058d0] italic text-xs md:text-sm ${isLight ? "text-slate-700" : "text-white/80"}`}
                   >
-                    Left in the second year to build full time.
+                    Left in the second year to focus full-time on building products and running the business.
                   </p>
                 </div>
 
