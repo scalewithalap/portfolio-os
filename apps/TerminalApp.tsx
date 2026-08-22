@@ -20,7 +20,7 @@ const OUTPUT_LINES = [
     type: "success",
   },
   {
-    text: '  └─ Technical founder who spent 6+ years building and scaling a pharmaceutical company end-to-end (technology, ops, 20+ members, Rs.7.5+ Cr / ~$784K USD revenue). Began building AI products part-time in 2024, stepped back in Feb 2025 to pursue full-time AI engineering, and founded Zero Headache. Specializes in AI-native SaaS, multi-agent systems, MCP servers, RAG, semantic search, AI IDEs, and payment integrations. Selected for Hyperagent\'s "The Founding 500" ($20,000 credits).',
+    text: '  └─ Technical founder who spent 6+ years building & scaling a pharmaceutical company end-to-end (technology, operations, 20+ members, $784K+ USD or Rs.7.5+ Crore revenue). Began building AI agents & apps part-time in 2024, stepped down as CTO in 2025 to pursue AI engineering full-time, and started Scale with Alap. Specializes in AI-native SaaS, AI Agents, multi-agent systems, MCP servers, semantic search, RAG, and payment integrations. Selected for Hyperagent\'s (by Airtable) "The Founding 500" program, and awarded $20,000 in platform credits to build AI agents.',
     type: "item",
   },
   { text: "", type: "empty" },
@@ -108,7 +108,7 @@ const OUTPUT_LINES = [
   { text: "Loading production projects...", type: "sys" },
   { text: "[ OK ] Production Projects & Applications", type: "success" },
   {
-    text: "  ├─ Scale with Alap | Portfolio OS – Interactive macOS-style Portfolio | scalewithalap.com | GitHub",
+    text: "  ├─ Portfolio OS | Interactive macOS-style Portfolio (Open-sourced) | scalewithalap.com | GitHub",
     type: "item",
   },
   {

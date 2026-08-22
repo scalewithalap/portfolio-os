@@ -150,7 +150,8 @@ export default function AboutApp() {
                     Location
                   </span>
                   <span className={isLight ? "text-slate-800" : "text-white"}>
-                    Remote worldwide from India | Ready to relocate with visa sponsorship
+                    Remote worldwide from India | Ready to relocate with visa
+                    sponsorship
                   </span>
                 </div>
                 <div
@@ -162,7 +163,9 @@ export default function AboutApp() {
                     Experience
                   </span>
                   <span className={isLight ? "text-slate-800" : "text-white"}>
-                    6+ years leading pharma tech/ops (Rs.7.5+ Cr revenue, 20+ team) & full-stack AI engineering
+                    6+ years running a pharma company end-to-end ($784K+ USD
+                    revenue, 20+ team), then transitioned full-time to
+                    full-stack AI engineering in 2025.
                   </span>
                 </div>
                 <div
@@ -176,7 +179,8 @@ export default function AboutApp() {
                   <span
                     className={`font-semibold ${isLight ? "text-emerald-700" : "text-emerald-400"}`}
                   >
-                    AI Engineer & Full-Stack AI Developer roles at AI startups (Remote or relocation with visa sponsorship)
+                    AI Engineer & Full-Stack AI Developer roles at AI startups
+                    (Remote or relocation with visa sponsorship)
                   </span>
                 </div>
                 <div className="flex flex-col sm:flex-row px-4 py-3 gap-1 sm:gap-0 items-start sm:items-center">
@@ -210,12 +214,23 @@ export default function AboutApp() {
                 <p
                   className={`leading-relaxed text-xs md:text-sm ${isLight ? "text-slate-700" : "text-white/80"}`}
                 >
-                  Technical founder who spent 6+ years building and scaling a pharmaceutical company from the ground up, managing complete technology, business operations, and a 20+ member team to Rs.7.5+ Cr (~$784K USD) in total revenue. Began building AI products part-time in 2024, stepped back from day-to-day operations in Feb 2025 to pursue full-time AI engineering while remaining a non-executive Director & Shareholder, and founded Zero Headache to build autonomous AI systems.
+                  Technical founder who spent 6+ years building and scaling a
+                  pharmaceutical company from the ground up, managing complete
+                  technology, business operations, and a 20+ member team to
+                  Rs.7.5+ Cr ($784K+ USD) in total revenue. Began building AI
+                  products part-time in 2024, stepped back from day-to-day
+                  operations in Feb 2025 to pursue full-time AI engineering
+                  while remaining a non-executive Director & Shareholder, and
+                  founded Zero Headache to build autonomous AI systems.
                 </p>
                 <p
                   className={`leading-relaxed text-xs md:text-sm ${isLight ? "text-slate-700" : "text-white/80"}`}
                 >
-                  Specializes in building AI-native SaaS and Agentic SaaS (AaaS) products from scratch — multi-agent systems, automations, AI agents, MCP servers, RAG with vector search, semantic search, AI IDEs and coding agents, payment gateway integrations, and production full-stack engineering with modern web frameworks.
+                  Specializes in building AI-native SaaS and Agentic SaaS (AaaS)
+                  products from scratch — multi-agent systems, automations, AI
+                  agents, MCP servers, RAG with vector search, semantic search,
+                  AI IDEs and coding agents, payment gateway integrations, and
+                  production full-stack engineering with modern web frameworks.
                 </p>
               </div>
             </div>
@@ -257,13 +272,22 @@ export default function AboutApp() {
                     className={`mt-3 space-y-1.5 list-disc list-inside text-xs md:text-sm leading-relaxed ${isLight ? "text-slate-700" : "text-white/80"}`}
                   >
                     <li>
-                      Built and launched Vibe44, a Next.js 16 AI SaaS codebase (~165k lines across 687 files) featuring an MCP server with JSON-RPC 2.0, Universal Adapter Pattern across 4 LLM providers, 5 payment gateways, and a 32-table Postgres RLS schema.
+                      Built and launched Vibe44, a Next.js 16 AI SaaS codebase
+                      (~165k lines across 687 files) featuring an MCP server
+                      with JSON-RPC 2.0, Universal Adapter Pattern across 4 LLM
+                      providers, 5 payment gateways, and a 32-table Postgres RLS
+                      schema.
                     </li>
                     <li>
-                      Developed OpenUI, an open-source, local-first UI design tool (Next.js 16, React 19, SQLite, Prisma 7, Vercel AI SDK) and Make Me Sound, a parallel multi-stream engine converting drafts into 105 tone variations.
+                      Developed OpenUI, an open-source, local-first UI design
+                      tool (Next.js 16, React 19, SQLite, Prisma 7, Vercel AI
+                      SDK) and Make Me Sound, a parallel multi-stream engine
+                      converting drafts into 105 tone variations.
                     </li>
                     <li>
-                      Built an open-source macOS-style portfolio with 30+ Zustand state fields, 13 lazy-loaded apps, and 60 FPS GPU-accelerated dock animations.
+                      Built Portfolio OS, an open-source macOS-style portfolio
+                      with 30+ Zustand state fields, 13 lazy-loaded apps, and 60
+                      FPS GPU-accelerated dock animations.
                     </li>
                   </ul>
                 </div>
@@ -294,10 +318,14 @@ export default function AboutApp() {
                     className={`mt-3 space-y-1.5 list-disc list-inside text-xs md:text-sm leading-relaxed ${isLight ? "text-slate-700" : "text-white/80"}`}
                   >
                     <li>
-                      Built and launched a Next.js 16 and React 19 marketing site with 12 channels, 35+ CRM integrations, interactive ROI calculator, and strict security headers.
+                      Built and launched a Next.js 16 and React 19 marketing
+                      site with 12 channels, 35+ CRM integrations, interactive
+                      ROI calculator, and strict security headers.
                     </li>
                     <li>
-                      Engineered multi-tenant dashboard and sandboxed AI agents per client with persistent memory, OpenRouter multi-model failover, and Supabase RLS isolation.
+                      Engineered multi-tenant dashboard and sandboxed AI agents
+                      per client with persistent memory, OpenRouter multi-model
+                      failover, and Supabase RLS isolation.
                     </li>
                   </ul>
                 </div>
@@ -328,13 +356,20 @@ export default function AboutApp() {
                     className={`mt-3 space-y-1.5 list-disc list-inside text-xs md:text-sm leading-relaxed ${isLight ? "text-slate-700" : "text-white/80"}`}
                   >
                     <li>
-                      Co-founded a registered Indian pharmaceutical company, scaled it to Rs.7.5+ Cr (~$784K USD) in total revenue, and managed business operations and a 20+ member team across technology, finance, sales, and supply chain.
+                      Co-founded a registered Indian pharmaceutical company,
+                      scaled it to Rs.7.5+ Cr ($784K+ USD) in total revenue, and
+                      managed business operations and a 20+ member team across
+                      technology, finance, sales, and supply chain.
                     </li>
                     <li>
-                      Led technology end to end — company website, custom internal tools, supply-chain tracking, and digital operations.
+                      Led technology end to end — company website, custom
+                      internal tools, supply-chain tracking, and digital
+                      operations.
                     </li>
                     <li>
-                      Stepped back from day-to-day operations in Feb 2025 to focus full-time on AI engineering and building AI products; currently non-executive Director & Shareholder.
+                      Stepped back from day-to-day operations in Feb 2025 to
+                      focus full-time on AI engineering and building AI
+                      products; currently non-executive Director & Shareholder.
                     </li>
                   </ul>
                 </div>
@@ -372,12 +407,14 @@ export default function AboutApp() {
                   <div
                     className={`mt-2 text-[11px] md:text-xs font-mono ${isLight ? "text-slate-500" : "text-white/50"}`}
                   >
-                    Enrolled 2018, left in 2020 during 2nd year to focus full-time on building products and running the business
+                    Enrolled 2018, left in 2020 during 2nd year to focus
+                    full-time on building products and running the business
                   </div>
                   <p
                     className={`mt-3 pl-3 border-l-2 border-[#0058d0] italic text-xs md:text-sm ${isLight ? "text-slate-700" : "text-white/80"}`}
                   >
-                    Left in the second year to focus full-time on building products and running the business.
+                    Left in the second year to focus full-time on building
+                    products and running the business.
                   </p>
                 </div>
 

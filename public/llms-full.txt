@@ -8,7 +8,7 @@
 
 ## Executive Summary & Background
 
-Technical founder who spent 6+ years building and scaling a pharmaceutical company from the ground up, managing complete technology, business operations, and a 20+ member team to Rs.7.5+ Cr (~$784K USD) in total revenue. Began building AI products part-time in 2024, stepped back from day-to-day operations in Feb 2025 to pursue full-time AI engineering while remaining a non-executive Director & Shareholder, and founded Zero Headache to build autonomous AI systems.
+Technical founder who spent 6+ years building and scaling a pharmaceutical company from the ground up, managing complete technology, business operations, and a 20+ member team to Rs.7.5+ Cr ($784K+ USD) in total revenue. Began building AI products part-time in 2024, stepped back from day-to-day operations in Feb 2025 to pursue full-time AI engineering while remaining a non-executive Director & Shareholder, and founded Zero Headache to build autonomous AI systems.
 
 Specializes in building AI-native SaaS and Agentic SaaS (AaaS) products from scratch — multi-agent systems, automations, AI agents, MCP servers, RAG with vector search, semantic search, AI IDEs and coding agents, payment gateway integrations, and production full-stack engineering with modern web frameworks.
 
@@ -30,9 +30,9 @@ Recipient of "The Founding 500" recognition by Hyperagent (by Airtable) in June 
 
 ## Detailed Project Case Studies
 
-### 1. Scale with Alap (Portfolio OS)
+### 1. Portfolio OS
 - **Category:** Interactive Desktop Portfolio & Web System (Open-sourced)
-- **URL:** https://scalewithalap.com | GitHub: https://github.com/scalewithalap/portfolio-os
+- **URL:** https://scalewithalap.com/projects/portfolio-os | GitHub: https://github.com/scalewithalap/portfolio-os
 - **Codebase:** React 19 + TypeScript + Vite + Tailwind CSS v4 + Zustand + Immer + Web Audio API
 - **Overview:** Built a custom web window manager recreating macOS and iOS desktop interfaces, supporting window dragging, resizing, edge and quadrant snapping, z-index focus management, and minimize/restore animations across 39 components. Centralized state across 30+ fields using Zustand and Immer, lazy-loaded 13 apps with React.lazy and Suspense, and implemented 60 FPS dock animations using requestAnimationFrame and GPU-accelerated transforms.
 - **Key Metrics:** 39 Components, 30+ State Fields, 13 Lazy Apps, 60 FPS GPU-Accelerated Dock.
@@ -93,7 +93,7 @@ Recipient of "The Founding 500" recognition by Hyperagent (by Airtable) in June 
    - Engineered multi-tenant dashboard and sandboxed AI agents per client with persistent memory, OpenRouter multi-model failover, and Supabase RLS isolation.
 
 3. **Pharmison Valentes Pharma Pvt. Ltd. (Pharmaceutical)** — *Co-founder & Former CTO* (May 2019 – Present)
-   - Co-founded a registered Indian pharmaceutical company, scaled it to Rs.7.5+ Cr (~$784K USD) in total revenue, and managed business operations and a 20+ member team across technology, finance, sales, and supply chain.
+   - Co-founded a registered Indian pharmaceutical company, scaled it to Rs.7.5+ Cr ($784K+ USD) in total revenue, and managed business operations and a 20+ member team across technology, finance, sales, and supply chain.
    - Led technology end to end — company website, custom internal tools, supply-chain tracking, and digital operations.
    - Stepped back from day-to-day operations in Feb 2025 to focus full-time on AI engineering and building AI products; currently non-executive Director & Shareholder.
 

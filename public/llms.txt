@@ -1,6 +1,6 @@
 # Scale with Alap — Full-Stack AI Engineer
 
-> Alap Putatunda is a Full-Stack AI Engineer, AI-native product builder, and technical founder who spent 6+ years building and scaling a pharmaceutical company end-to-end (technology, operations, 20+ member team, Rs.7.5+ Cr / ~$784K USD revenue). Began building AI products part-time in 2024, stepped back in Feb 2025 to pursue full-time AI engineering, and founded Zero Headache to build autonomous AI front desk systems. Specializes in AI-native SaaS, multi-agent systems, MCP servers, RAG, semantic search, AI IDEs, and payment integrations.
+> Alap Putatunda is a Full-Stack AI Engineer, AI-native product builder, and technical founder who spent 6+ years building and scaling a pharmaceutical company end-to-end (technology, operations, 20+ member team, Rs.7.5+ Cr / $784K+ USD revenue). Began building AI products part-time in 2024, stepped back in Feb 2025 to pursue full-time AI engineering, and founded Zero Headache to build autonomous AI front desk systems. Specializes in AI-native SaaS, multi-agent systems, MCP servers, RAG, semantic search, AI IDEs, and payment integrations.
 
 ## Core Profile & Identity
 - **Name:** Alap Putatunda
@@ -29,7 +29,7 @@
 - **Cloud & Delivery:** Vercel, AWS Lightsail, GitHub Actions CI/CD, Vitest, Playwright E2E testing, Docker.
 
 ## Primary Projects & Case Studies
-- [Scale with Alap Portfolio OS](https://scalewithalap.com/projects/scalewithalap): Custom web window manager recreating macOS and iOS desktop interfaces with 30+ Zustand state fields, 13 lazy-loaded React apps, and 60 FPS GPU-accelerated dock animations.
+- [Portfolio OS](https://scalewithalap.com/projects/portfolio-os): Custom web window manager recreating macOS and iOS desktop interfaces with 30+ Zustand state fields, 13 lazy-loaded React apps, and 60 FPS GPU-accelerated dock animations.
 - [Vibe44 Marketing Site & MCP Server](https://scalewithalap.com/projects/vibe44): Serverless Model Context Protocol (MCP) server implementing JSON-RPC 2.0 with 6 tools, 4 resource templates, /llms.txt documentation endpoints, and idempotent Creem payment webhook fulfillment.
 - [Vibe44 Next.js 16 Starter Kit Demo](https://scalewithalap.com/projects/vibe44-demo): A 687-file, ~165,000-line Next.js 16 engine featuring Universal Adapter Pattern across 4 LLM providers, 5 payment gateways, a 32-table PostgreSQL schema, and 900+ unit and Playwright tests.
 - [OpenUI](https://scalewithalap.com/projects/openui): Open-source, local-first UI design platform (Google Stitch alternative) built with Next.js 16, React 19, SQLite, Prisma 7, and Vercel AI SDK.

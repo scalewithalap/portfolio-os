@@ -7,70 +7,70 @@
   <!-- Homepage / Main Desktop Portfolio OS -->
   <url>
     <loc>https://scalewithalap.com/</loc>
-    <lastmod>2026-08-21</lastmod>
+    <lastmod>2026-08-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-  <!-- Project 1: Scale with Alap (This site) -->
+  <!-- Project 1: Portfolio OS (This site) -->
   <url>
-    <loc>https://scalewithalap.com/projects/scalewithalap</loc>
-    <lastmod>2026-08-21</lastmod>
+    <loc>https://scalewithalap.com/projects/portfolio-os</loc>
+    <lastmod>2026-08-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <!-- Project 2: Vibe44 Marketing Site & MCP Server -->
   <url>
     <loc>https://scalewithalap.com/projects/vibe44</loc>
-    <lastmod>2026-08-21</lastmod>
+    <lastmod>2026-08-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <!-- Project 3: Zero Headache Marketing Site -->
   <url>
     <loc>https://scalewithalap.com/projects/zeroheadache</loc>
-    <lastmod>2026-08-21</lastmod>
+    <lastmod>2026-08-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <!-- Project 4: Vibe44 (Next.js AI SaaS Starter Kit Demo) -->
   <url>
     <loc>https://scalewithalap.com/projects/vibe44-demo</loc>
-    <lastmod>2026-08-21</lastmod>
+    <lastmod>2026-08-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <!-- Project 5: Zero Headache Platform -->
   <url>
     <loc>https://scalewithalap.com/projects/zeroheadache-platform</loc>
-    <lastmod>2026-08-21</lastmod>
+    <lastmod>2026-08-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <!-- Project 6: OpenUI -->
   <url>
     <loc>https://scalewithalap.com/projects/openui</loc>
-    <lastmod>2026-08-21</lastmod>
+    <lastmod>2026-08-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <!-- Project 7: Make Me Sound -->
   <url>
     <loc>https://scalewithalap.com/projects/makemesound</loc>
-    <lastmod>2026-08-21</lastmod>
+    <lastmod>2026-08-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <!-- Project 8: Freecom AI -->
   <url>
     <loc>https://scalewithalap.com/projects/freecom</loc>
-    <lastmod>2026-08-21</lastmod>
+    <lastmod>2026-08-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <!-- Project 9: Soothly AI -->
   <url>
     <loc>https://scalewithalap.com/projects/soothly</loc>
-    <lastmod>2026-08-21</lastmod>
+    <lastmod>2026-08-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

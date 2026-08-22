@@ -427,7 +427,7 @@ export default function SingleProjectApp({ projectId }: SingleProjectAppProps) {
             <div className="md:col-span-6">
               <div className="mb-2 md:mb-4 flex flex-wrap items-center gap-2">
                 <span className="px-3 py-1 rounded-lg md:rounded-md bg-amber-400 text-slate-950 border border-amber-300 font-extrabold text-[10px] md:text-xs uppercase tracking-wider shadow-md shadow-amber-500/20">
-                  {project.badge || project.category}
+                  {project.badge}
                 </span>
                 <span className="px-3 py-1 rounded-xl md:rounded-lg bg-black/40 border border-white/20 text-white/90 text-xs md:text-sm font-medium tracking-wide backdrop-blur-md shadow-xs">
                   {project.tagline}

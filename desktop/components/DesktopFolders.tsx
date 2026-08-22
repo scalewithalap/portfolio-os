@@ -38,10 +38,10 @@ export interface DesktopItem {
 export const DESKTOP_ITEMS: DesktopItem[] = [
   // Projects
   {
-    id: "folder-scalewithalap",
-    title: "Scale with Alap",
-    appId: "folder-scalewithalap",
-    appTitle: "Scale with Alap",
+    id: "folder-portfolio-os",
+    title: "Portfolio OS",
+    appId: "folder-portfolio-os",
+    appTitle: "Portfolio OS",
     iconImage: "/icons/folder.webp",
     kind: "Projects",
   },

@@ -210,7 +210,6 @@ export default function SEOHead() {
           "@type": "SoftwareApplication",
           name: proj.title,
           description: proj.description,
-          applicationCategory: proj.category,
           operatingSystem: "Web",
           url: `https://scalewithalap.com/projects/${proj.id}`,
           author: {

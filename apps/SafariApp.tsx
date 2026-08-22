@@ -4,7 +4,7 @@
  *
  * Responsibilities:
  * - Recreates a simulated web browser UI complete with URL address bar, back/forward navigation history, reload animation, and tab toggles.
- * - Displays a grid/list catalog of all 9 portfolio project case studies with search filtering and category tags.
+ * - Displays a grid/list catalog of all 9 portfolio project case studies with search filtering tags.
  * - Allows opening dedicated project windows or launching live project URLs in external browser tabs.
  */
 
@@ -130,7 +130,7 @@ function TiltProjectCard({
 
         <div className="p-5 flex-1 flex flex-col justify-between space-y-4">
           <div>
-            {/* Category Tag & Action */}
+            {/* Action */}
             <div className="flex items-center justify-between mb-2">
               <span
                 className={`px-2.5 py-0.5 rounded-full border text-[10px] font-semibold tracking-wide ${
@@ -147,7 +147,7 @@ function TiltProjectCard({
                         : "bg-emerald-500/15 border-emerald-500/30 text-emerald-300"
                 }`}
               >
-                {project.badge || project.category}
+                {project.badge}
               </span>
               <a
                 href={project.demoUrl || `https://${project.url}`}
@@ -256,9 +256,8 @@ function TiltProjectCard({
 export default function SafariApp() {
   const { openApp, systemTheme } = useEcosystemStore();
   const isLight = systemTheme === "light";
-  const [selectedCategory] = useState<string>("all");
   const [searchQuery, setSearchQuery] = useState<string>("");
-  const [sortBy] = useState<"latest" | "category" | "techStack">("latest");
+  const [sortBy] = useState<"latest" | "techStack">("latest");
   const setSelectedProject = (project: Project | null) => {
     if (project) {
       openApp(`folder-${project.id}`, project.title);
@@ -266,17 +265,9 @@ export default function SafariApp() {
   };
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
 
-  // Filter and sort projects by category, search, and sort option
+  // Filter and sort projects by search and sort option
   const filteredProjects = useMemo(() => {
     const list = PROJECTS_DATA.filter((p) => {
-      const matchesCategory =
-        selectedCategory === "all" ||
-        p.category.toLowerCase().includes(selectedCategory.toLowerCase()) ||
-        (selectedCategory === "ai" &&
-          (p.category === "AI Agents" ||
-            p.category === "Open Source" ||
-            p.category === "Next.js Starter Kit"));
-
       const matchesSearch =
         p.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
         p.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -284,13 +275,11 @@ export default function SafariApp() {
           t.toLowerCase().includes(searchQuery.toLowerCase()),
         );
 
-      return matchesCategory && matchesSearch;
+      return matchesSearch;
     });
 
     const sorted = [...list];
-    if (sortBy === "category") {
-      sorted.sort((a, b) => a.category.localeCompare(b.category));
-    } else if (sortBy === "techStack") {
+    if (sortBy === "techStack") {
       sorted.sort(
         (a, b) =>
           (b.skills || []).length - (a.skills || []).length ||
@@ -298,7 +287,7 @@ export default function SafariApp() {
       );
     }
     return sorted;
-  }, [selectedCategory, searchQuery, sortBy]);
+  }, [searchQuery, sortBy]);
 
   const featuredProject = PROJECTS_DATA[0]; // Vibe44
 
@@ -484,7 +473,7 @@ export default function SafariApp() {
           }`}
         >
           {/* Featured Hero Banner */}
-          {selectedCategory === "all" && !searchQuery && (
+          {!searchQuery && (
             <div className="relative rounded-2xl overflow-hidden bg-linear-to-r from-fuchsia-900 via-indigo-900 to-slate-900 border border-white/15 shadow-2xl p-4 sm:p-6 md:p-8">
               <div className="relative z-10 flex flex-col md:flex-row justify-between items-start md:items-center gap-4 md:gap-6">
                 <div className="space-y-2.5 sm:space-y-3 max-w-xl">
@@ -503,10 +492,15 @@ export default function SafariApp() {
 
                   <div className="flex flex-wrap items-center gap-2.5 pt-1">
                     <button
-                      onClick={() => openApp("folder-vibe44", "Vibe44 AI Kit")}
+                      onClick={() =>
+                        openApp(
+                          `folder-${featuredProject.id}`,
+                          featuredProject.title,
+                        )
+                      }
                       className="px-3.5 py-2 bg-blue-600 hover:bg-blue-500 text-white font-semibold text-xs rounded-xl flex items-center space-x-1.5 shadow-lg shadow-blue-600/30 transition-all active:scale-95 cursor-pointer"
                     >
-                      <span>Open Vibe44 Folder</span>
+                      <span>Open {featuredProject.title} Folder</span>
                       <ArrowRight className="w-3.5 h-3.5" />
                     </button>
 
@@ -625,7 +619,7 @@ export default function SafariApp() {
                                   : "bg-emerald-500/15 border-emerald-500/30 text-emerald-300"
                           }`}
                         >
-                          {project.badge || project.category}
+                          {project.badge}
                         </span>
                       </div>
                       <p

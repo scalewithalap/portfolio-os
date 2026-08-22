@@ -276,7 +276,7 @@ export default function ResumeApp() {
               <p>
                 Technical founder who spent 6+ years running a pharmaceutical
                 company end-to-end — technology, operations, a team of 20+
-                members, Rs.7.5+ Crore (~$784K USD) in revenue. Began building
+                members, Rs.7.5+ Crore ($784K+ USD) in revenue. Began building
                 AI-native products part-time in 2024 alongside my role as
                 Co-founder & CTO of Pharmison Valentes. Transitioned to a
                 full-time commitment in February 2025 upon stepping into a
@@ -442,10 +442,9 @@ export default function ResumeApp() {
                     Directors.
                   </li>
                   <li>
-                    Shipped Scale with Alap, Vibe44, Zero Headache, and OpenUI,
-                    as measured by live public deployments, by owning
-                    architecture, engineering, testing, CI/CD, deployment, and
-                    documentation.
+                    Shipped Portfolio OS, Vibe44, Zero Headache, and OpenUI, as
+                    measured by live public deployments, by owning architecture,
+                    engineering, testing, CI/CD, deployment, and documentation.
                   </li>
                   <li>
                     Established AI-native delivery across five stages, as
@@ -531,7 +530,7 @@ export default function ResumeApp() {
                   <li>
                     Co-founded a registered Indian pharmaceutical company and
                     led all technology end-to-end for six years, growing the
-                    business to more than Rs.7.5 Crore (~$784K USD) in
+                    business to more than Rs.7.5 Crore ($784K+ USD) in
                     cumulative revenue while owning the website pharmison.com,
                     employee reporting, and the operational systems supporting
                     day-to-day business — including a team of 20+ members across

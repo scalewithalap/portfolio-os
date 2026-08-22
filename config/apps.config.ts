@@ -98,11 +98,11 @@ export const APPS_CONFIG: AppConfig[] = [
   },
   // Project Folders (Mapped directly to SingleProjectApp)
   {
-    id: "folder-scalewithalap",
-    title: "Scale with Alap",
+    id: "folder-portfolio-os",
+    title: "Portfolio OS",
     iconImage: "/icons/folder.webp",
     icon: Folder,
-    component: createProjectApp("scalewithalap"),
+    component: createProjectApp("portfolio-os"),
   },
   {
     id: "folder-vibe44",

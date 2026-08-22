@@ -13,14 +13,6 @@ export interface Project {
   title: string;
   tagline: string;
   badge: string;
-  category:
-    | "Next.js Starter Kit"
-    | "Open Source"
-    | "AI Agents"
-    | "Desktop App"
-    | "eCommerce"
-    | "Portfolio"
-    | "AI Studio";
   url: string;
   demoUrl?: string;
   githubUrl?: string;
@@ -42,11 +34,10 @@ export interface Project {
 
 export const PROJECTS_DATA: Project[] = [
   {
-    id: "scalewithalap",
-    title: "Scale with Alap (This site)",
-    tagline: "Portfolio OS – Interactive macOS-style Portfolio (Open-sourced)",
+    id: "portfolio-os",
+    title: "Portfolio OS (This site)",
+    tagline: "Interactive macOS-style Portfolio (Open-sourced)",
     badge: "Shipped & Live",
-    category: "Portfolio",
     url: "scalewithalap.com",
     demoUrl: "https://scalewithalap.com",
     githubUrl: "https://github.com/scalewithalap/portfolio-os",
@@ -163,9 +154,9 @@ export const useEcosystemStore = create<EcosystemState>()(
   {
     id: "vibe44",
     title: "Vibe44 Marketing Site & MCP Server",
-    tagline: "The Next.js AI SaaS Starter Kit | Marketing site, Documentations & MCP Server",
+    tagline:
+      "The Next.js AI SaaS Starter Kit | Marketing site, Documentations & MCP Server",
     badge: "Shipped & Live",
-    category: "Next.js Starter Kit",
     url: "vibe44.com",
     demoUrl: "https://vibe44.com",
     githubUrl: "https://github.com/scalewithalap",
@@ -265,9 +256,9 @@ export async function POST(request: Request) {
   {
     id: "zeroheadache",
     title: "Zero Headache Marketing Site",
-    tagline: "Fully managed AI front desk for service businesses | Marketing site",
+    tagline:
+      "Fully managed AI front desk for service businesses | Marketing site",
     badge: "Shipped & Live",
-    category: "AI Agents",
     url: "zeroheadache.co",
     demoUrl: "https://zeroheadache.co",
     iconImage: "/logos/Zero Headache.webp",
@@ -366,7 +357,6 @@ export async function dispatchLeadIntake(lead: LeadIntakeData) {
     tagline:
       "The Next.js AI SaaS Starter Kit for Committed Builders | Demo site",
     badge: "Shipped & Live",
-    category: "Next.js Starter Kit",
     url: "demo.vibe44.com",
     demoUrl: "https://demo.vibe44.com",
     iconImage: "/logos/Vibe44.webp",
@@ -490,7 +480,6 @@ export async function generateUniversalStream(params: LLMStreamParams) {
     title: "Zero Headache Platform",
     tagline: "Multi-tenant dashboard & sandboxed AI agents per client",
     badge: "Under Development",
-    category: "AI Agents",
     url: "app.zeroheadache.co",
     demoUrl: "https://app.zeroheadache.co",
     iconImage: "/logos/Zero Headache.webp",
@@ -589,9 +578,9 @@ export async function executeAgentTask(tenantId: string, taskInput: TaskInput) {
   {
     id: "openui",
     title: "OpenUI",
-    tagline: "The Local-First UI Design Platform. An Open-source Google Stitch Alternative",
+    tagline:
+      "The Local-First UI Design Platform. An Open-source Google Stitch Alternative",
     badge: "Shipped & Open Source",
-    category: "Open Source",
     url: "github.com/scalewithalap/openui",
     githubUrl: "https://github.com/scalewithalap/openui",
     iconImage: "/logos/OpenUI.webp",
@@ -661,7 +650,6 @@ export async function executeAgentTask(tenantId: string, taskInput: TaskInput) {
     title: "Make Me Sound",
     tagline: "An AI-powered Communication Copilot | In Active Development",
     badge: "Under Active Development",
-    category: "Desktop App",
     url: "makemesound.xyz",
     demoUrl: "https://makemesound.xyz",
     iconImage: "",
@@ -727,7 +715,6 @@ export async function executeAgentTask(tenantId: string, taskInput: TaskInput) {
     tagline:
       "An Open-Source AI-Agents-powered eCommerce Platform | In Development (80% Complete)",
     badge: "Under Development (80%)",
-    category: "eCommerce",
     url: "github.com/scalewithalap/freecom-ai",
     githubUrl: "https://github.com/scalewithalap/freecom-ai",
     iconImage: "",
@@ -796,7 +783,6 @@ export async function executeAgentTask(tenantId: string, taskInput: TaskInput) {
     tagline:
       "Autonomous 8-agent revenue platform with durable workflow execution",
     badge: "Under Development",
-    category: "AI Agents",
     url: "github.com/scalewithalap/soothly-ai",
     githubUrl: "https://github.com/scalewithalap/soothly-ai",
     iconImage: "",
@@ -885,7 +871,10 @@ export const PROJECT_APP_MAPPING: Record<
   string,
   { appId: string; title: string }
 > = {
-  scalewithalap: { appId: "folder-scalewithalap", title: "Scale with Alap" },
+  "portfolio-os": {
+    appId: "folder-portfolio-os",
+    title: "Portfolio OS",
+  },
   vibe44: { appId: "folder-vibe44", title: "Vibe44 Marketing & MCP" },
   "vibe44-demo": {
     appId: "folder-vibe44-demo",

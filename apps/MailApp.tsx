@@ -31,8 +31,7 @@ const EMAILS = [
     sender: "Scale with Alap",
     subject: "Full-stack AI Engineer",
     date: "Feb 2025 – Present",
-    preview:
-      "Built Vibe44, OpenUI, Make Me Sound, and macOS Portfolio OS...",
+    preview: "Built Vibe44, OpenUI, Make Me Sound, and macOS Portfolio OS...",
     body: `Built and launched Vibe44, a Next.js 16 AI SaaS codebase (~165k lines across 687 files) featuring an MCP server with JSON-RPC 2.0, Universal Adapter Pattern across 4 LLM providers, 5 payment gateways, and a 32-table Postgres RLS schema.\n\nDeveloped OpenUI, an open-source, local-first UI design tool (Next.js 16, React 19, SQLite, Prisma 7, Vercel AI SDK) and Make Me Sound, a parallel multi-stream engine converting drafts into 105 tone variations.\n\nBuilt an open-source macOS-style portfolio with 30+ Zustand state fields, 13 lazy-loaded apps, and 60 FPS GPU-accelerated dock animations.`,
   },
   {
@@ -50,7 +49,7 @@ const EMAILS = [
     subject: "Co-founder & Former CTO",
     date: "May 2019 – Present",
     preview: "Scaled pharmaceutical company to Rs.7.5+ Cr revenue...",
-    body: `Co-founded a registered Indian pharmaceutical company, scaled it to Rs.7.5+ Cr (~$784K USD) in total revenue, and managed business operations and a 20+ member team across technology, finance, sales, and supply chain.\n\nLed technology end to end — company website, custom internal tools, supply-chain tracking, and digital operations.\n\nStepped back from day-to-day operations in Feb 2025 to focus full-time on AI engineering and building AI products; currently non-executive Director & Shareholder.`,
+    body: `Co-founded a registered Indian pharmaceutical company, scaled it to Rs.7.5+ Cr ($784K+ USD) in total revenue, and managed business operations and a 20+ member team across technology, finance, sales, and supply chain.\n\nLed technology end to end — company website, custom internal tools, supply-chain tracking, and digital operations.\n\nStepped back from day-to-day operations in Feb 2025 to focus full-time on AI engineering and building AI products; currently non-executive Director & Shareholder.`,
   },
 ];
 

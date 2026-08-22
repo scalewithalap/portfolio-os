@@ -25,23 +25,23 @@ export interface ScreenshotPhoto {
 
 export const SCREENSHOT_PHOTOS: ScreenshotPhoto[] = [
   {
-    id: "scalewithalap-dark",
-    title: "Scale with Alap (Portfolio OS - Dark)",
+    id: "portfolio-os-dark",
+    title: "Portfolio OS (Dark Mode)",
     url: "/images/screenshots/scalewithalap-dark.webp",
     details:
       "Interactive macOS & iOS web operating system built with React 19, Vite, Tailwind v4, Zustand & Immer state management, and Web Audio API synthesis.",
-    appId: "folder-scalewithalap",
-    appTitle: "Scale with Alap",
+    appId: "folder-portfolio-os",
+    appTitle: "Portfolio OS",
     badge: "Shipped & Live",
   },
   {
-    id: "scalewithalap-light",
-    title: "Scale with Alap (Portfolio OS - Light)",
+    id: "portfolio-os-light",
+    title: "Portfolio OS (Light Mode)",
     url: "/images/screenshots/scalewithalap-light.webp",
     details:
       "macOS Light theme desktop UI recreating window geometry management, dock cosine magnification, and responsive touch routing.",
-    appId: "folder-scalewithalap",
-    appTitle: "Scale with Alap",
+    appId: "folder-portfolio-os",
+    appTitle: "Portfolio OS",
     badge: "Shipped & Live",
   },
   {
@@ -162,7 +162,7 @@ export const SCREENSHOT_PHOTOS: ScreenshotPhoto[] = [
       "Open-source digital download platform featuring automated recommendation agents, Trigger.dev v4, and Store Manager Agent.",
     appId: "folder-freecom",
     appTitle: "Freecom AI Store",
-    badge: "Under Development",
+    badge: "Under Slow Development",
   },
   {
     id: "soothly-ai",
@@ -172,7 +172,7 @@ export const SCREENSHOT_PHOTOS: ScreenshotPhoto[] = [
       "Autonomous 8-agent revenue platform coordinated by a Superagent meta-orchestrator with Inngest durable workflow functions.",
     appId: "folder-soothly-ai",
     appTitle: "Soothly AI Revenue Platform",
-    badge: "Under Development",
+    badge: "Under Slow Development",
   },
 ];
 
