@@ -802,8 +802,8 @@ export default function ResumeApp() {
                     Built an open-source, local-first UI design tool using
                     Next.js 16, React 19, Tailwind CSS 4, SQLite, Prisma 7, and
                     the Vercel AI SDK, enabling offline UI generation across 4
-                    AI providers without requiring accounts, subscriptions, or
-                    cloud storage.
+                    AI providers without requiring AI subscriptions, or cloud
+                    storage.
                   </li>
                 </ul>
               </div>

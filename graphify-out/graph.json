@@ -4,36 +4,37 @@
   "graph": {
     "hyperedges": [
       {
-        "id": "he_production_portfolio_showcase",
-        "label": "Scale with Alap Production Projects",
+        "id": "alap_ai_suite",
+        "label": "Alap AI Product Suite",
         "nodes": [
-          "data_projectsdata_portfolio_os",
-          "data_projectsdata_vibe44",
-          "data_projectsdata_zeroheadache",
-          "data_projectsdata_openui",
-          "data_projectsdata_makemesound",
-          "data_projectsdata_freecom",
-          "data_projectsdata_soothly_ai"
+          "portfolio_os",
+          "vibe44_mcp_server",
+          "vibe44_engine",
+          "openui",
+          "zeroheadache_platform",
+          "makemesound",
+          "freecom_ai",
+          "soothly_ai"
         ],
-        "relation": "implement",
-        "confidence": "EXTRACTED",
-        "confidence_score": 1.0,
-        "source_file": "data/projectsData.ts"
+        "relation": "form",
+        "confidence": "INFERRED",
+        "confidence_score": 0.85,
+        "source_file": "public/llms-full.txt"
       }
     ]
   },
   "nodes": [
     {
-      "id": "desktop_components_desktopfolders_desktopitem",
-      "label": "DesktopItem",
+      "id": "config_apps_config_appconfig",
+      "label": "AppConfig",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 0,
       "file_type": "code",
-      "norm_label": "desktopitem",
-      "source_file": "desktop/components/DesktopFolders.tsx",
-      "source_location": "L23"
+      "norm_label": "appconfig",
+      "source_file": "config/apps.config.ts",
+      "source_location": "L24"
     },
     {
       "id": "components_common_errorboundary_errorboundary",
@@ -120,18 +121,6 @@
       "source_location": "L14"
     },
     {
-      "id": "config_apps_config_appconfig",
-      "label": "AppConfig",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 2,
-      "file_type": "code",
-      "norm_label": "appconfig",
-      "source_file": "config/apps.config.ts",
-      "source_location": "L24"
-    },
-    {
       "id": "data_projectsdata_project",
       "label": "Project",
       "_callable": true,
@@ -144,12 +133,24 @@
       "source_location": "L11"
     },
     {
+      "id": "desktop_components_desktopfolders_desktopitem",
+      "label": "DesktopItem",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 3,
+      "file_type": "code",
+      "norm_label": "desktopitem",
+      "source_file": "desktop/components/DesktopFolders.tsx",
+      "source_location": "L23"
+    },
+    {
       "id": "mobile_components_ioslockscreen_ioslockscreenprops",
       "label": "IOSLockScreenProps",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 4,
+      "community": 3,
       "file_type": "code",
       "norm_label": "ioslockscreenprops",
       "source_file": "mobile/components/IOSLockScreen.tsx",
@@ -286,6 +287,17 @@
       "source_location": "L10"
     },
     {
+      "id": "components_overlays_contextmenu_contextmenu",
+      "label": "ContextMenu()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "contextmenu()",
+      "source_file": "components/overlays/ContextMenu.tsx",
+      "source_location": "L23"
+    },
+    {
       "id": "components_overlays_controlcenter_controlcenter",
       "label": "ControlCenter()",
       "_callable": true,
@@ -330,15 +342,15 @@
       "source_location": "L26"
     },
     {
-      "id": "desktop_components_desktopfolders_desktopprojects",
-      "label": "DesktopProjects()",
+      "id": "config_apps_config_createprojectapp",
+      "label": "createProjectApp()",
       "_callable": true,
       "_origin": "ast",
       "community": 0,
       "file_type": "code",
-      "norm_label": "desktopprojects()",
-      "source_file": "desktop/components/DesktopFolders.tsx",
-      "source_location": "L158"
+      "norm_label": "createprojectapp()",
+      "source_file": "config/apps.config.ts",
+      "source_location": "L34"
     },
     {
       "id": "desktop_components_desktopmenu_desktopmenu",
@@ -350,17 +362,6 @@
       "norm_label": "desktopmenu()",
       "source_file": "desktop/components/DesktopMenu.tsx",
       "source_location": "L24"
-    },
-    {
-      "id": "desktop_components_desktopwindowmanager_desktopwindowmanager",
-      "label": "DesktopWindowManager()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "file_type": "code",
-      "norm_label": "desktopwindowmanager()",
-      "source_file": "desktop/components/DesktopWindowManager.tsx",
-      "source_location": "L16"
     },
     {
       "id": "desktop_components_herohovertext_herohovertext",
@@ -561,6 +562,39 @@
       "source_location": "L901"
     },
     {
+      "id": "scripts_generate_sitemap_generatesitemapxml",
+      "label": "generateSitemapXML()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 10,
+      "file_type": "code",
+      "norm_label": "generatesitemapxml()",
+      "source_file": "scripts/generate-sitemap.ts",
+      "source_location": "L29"
+    },
+    {
+      "id": "scripts_generate_sitemap_writesitemap",
+      "label": "writeSitemap()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 10,
+      "file_type": "code",
+      "norm_label": "writesitemap()",
+      "source_file": "scripts/generate-sitemap.ts",
+      "source_location": "L85"
+    },
+    {
+      "id": "vite_config_sitemapplugin",
+      "label": "sitemapPlugin()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 10,
+      "file_type": "code",
+      "norm_label": "sitemapplugin()",
+      "source_file": "vite.config.ts",
+      "source_location": "L7"
+    },
+    {
       "id": "apps_aboutapp_aboutapp",
       "label": "AboutApp()",
       "_callable": true,
@@ -638,17 +672,6 @@
       "source_location": "L23"
     },
     {
-      "id": "config_apps_config_createprojectapp",
-      "label": "createProjectApp()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 2,
-      "file_type": "code",
-      "norm_label": "createprojectapp()",
-      "source_file": "config/apps.config.ts",
-      "source_location": "L34"
-    },
-    {
       "id": "data_projectsdata_getprojectcoverimage",
       "label": "getProjectCoverImage()",
       "_callable": true,
@@ -660,22 +683,11 @@
       "source_location": "L916"
     },
     {
-      "id": "apps_mailapp_mailapp",
-      "label": "MailApp()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 4,
-      "file_type": "code",
-      "norm_label": "mailapp()",
-      "source_file": "apps/MailApp.tsx",
-      "source_location": "L56"
-    },
-    {
       "id": "apps_trashapp_trashapp",
       "label": "TrashApp()",
       "_callable": true,
       "_origin": "ast",
-      "community": 4,
+      "community": 3,
       "file_type": "code",
       "norm_label": "trashapp()",
       "source_file": "apps/TrashApp.tsx",
@@ -686,18 +698,29 @@
       "label": "DesktopDock()",
       "_callable": true,
       "_origin": "ast",
-      "community": 4,
+      "community": 3,
       "file_type": "code",
       "norm_label": "desktopdock()",
       "source_file": "desktop/components/DesktopDock.tsx",
       "source_location": "L21"
     },
     {
+      "id": "desktop_components_desktopfolders_desktopprojects",
+      "label": "DesktopProjects()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "file_type": "code",
+      "norm_label": "desktopprojects()",
+      "source_file": "desktop/components/DesktopFolders.tsx",
+      "source_location": "L158"
+    },
+    {
       "id": "mobile_components_ioslockscreen_ioslockscreen",
       "label": "IOSLockScreen()",
       "_callable": true,
       "_origin": "ast",
-      "community": 4,
+      "community": 3,
       "file_type": "code",
       "norm_label": "ioslockscreen()",
       "source_file": "mobile/components/IOSLockScreen.tsx",
@@ -708,7 +731,7 @@
       "label": "getAudioContext()",
       "_callable": true,
       "_origin": "ast",
-      "community": 4,
+      "community": 3,
       "file_type": "code",
       "norm_label": "getaudiocontext()",
       "source_file": "utils/soundEffects.ts",
@@ -719,7 +742,7 @@
       "label": "getScaledGain()",
       "_callable": true,
       "_origin": "ast",
-      "community": 4,
+      "community": 3,
       "file_type": "code",
       "norm_label": "getscaledgain()",
       "source_file": "utils/soundEffects.ts",
@@ -730,7 +753,7 @@
       "label": "playCopySound()",
       "_callable": true,
       "_origin": "ast",
-      "community": 4,
+      "community": 3,
       "file_type": "code",
       "norm_label": "playcopysound()",
       "source_file": "utils/soundEffects.ts",
@@ -741,7 +764,7 @@
       "label": "playDockLaunchSound()",
       "_callable": true,
       "_origin": "ast",
-      "community": 4,
+      "community": 3,
       "file_type": "code",
       "norm_label": "playdocklaunchsound()",
       "source_file": "utils/soundEffects.ts",
@@ -752,7 +775,7 @@
       "label": "playLockUnlockSound()",
       "_callable": true,
       "_origin": "ast",
-      "community": 4,
+      "community": 3,
       "file_type": "code",
       "norm_label": "playlockunlocksound()",
       "source_file": "utils/soundEffects.ts",
@@ -763,7 +786,7 @@
       "label": "playSpotlightSound()",
       "_callable": true,
       "_origin": "ast",
-      "community": 4,
+      "community": 3,
       "file_type": "code",
       "norm_label": "playspotlightsound()",
       "source_file": "utils/soundEffects.ts",
@@ -774,7 +797,7 @@
       "label": "playThemeToggleSound()",
       "_callable": true,
       "_origin": "ast",
-      "community": 4,
+      "community": 3,
       "file_type": "code",
       "norm_label": "playthemetogglesound()",
       "source_file": "utils/soundEffects.ts",
@@ -785,7 +808,7 @@
       "label": "playToastSound()",
       "_callable": true,
       "_origin": "ast",
-      "community": 4,
+      "community": 3,
       "file_type": "code",
       "norm_label": "playtoastsound()",
       "source_file": "utils/soundEffects.ts",
@@ -796,7 +819,7 @@
       "label": "playTrashWhooshSound()",
       "_callable": true,
       "_origin": "ast",
-      "community": 4,
+      "community": 3,
       "file_type": "code",
       "norm_label": "playtrashwhooshsound()",
       "source_file": "utils/soundEffects.ts",
@@ -807,7 +830,7 @@
       "label": "playWindowCloseSound()",
       "_callable": true,
       "_origin": "ast",
-      "community": 4,
+      "community": 3,
       "file_type": "code",
       "norm_label": "playwindowclosesound()",
       "source_file": "utils/soundEffects.ts",
@@ -818,7 +841,7 @@
       "label": "playWindowMinimizeSound()",
       "_callable": true,
       "_origin": "ast",
-      "community": 4,
+      "community": 3,
       "file_type": "code",
       "norm_label": "playwindowminimizesound()",
       "source_file": "utils/soundEffects.ts",
@@ -829,11 +852,22 @@
       "label": "playWindowOpenSound()",
       "_callable": true,
       "_origin": "ast",
-      "community": 4,
+      "community": 3,
       "file_type": "code",
       "norm_label": "playwindowopensound()",
       "source_file": "utils/soundEffects.ts",
       "source_location": "L117"
+    },
+    {
+      "id": "apps_mailapp_mailapp",
+      "label": "MailApp()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 5,
+      "file_type": "code",
+      "norm_label": "mailapp()",
+      "source_file": "apps/MailApp.tsx",
+      "source_location": "L56"
     },
     {
       "id": "apps_terminalapp_promptprefix",
@@ -858,15 +892,15 @@
       "source_location": "L208"
     },
     {
-      "id": "components_overlays_contextmenu_contextmenu",
-      "label": "ContextMenu()",
+      "id": "desktop_components_desktopwindowmanager_desktopwindowmanager",
+      "label": "DesktopWindowManager()",
       "_callable": true,
       "_origin": "ast",
       "community": 5,
       "file_type": "code",
-      "norm_label": "contextmenu()",
-      "source_file": "components/overlays/ContextMenu.tsx",
-      "source_location": "L23"
+      "norm_label": "desktopwindowmanager()",
+      "source_file": "desktop/components/DesktopWindowManager.tsx",
+      "source_location": "L16"
     },
     {
       "id": "desktop_components_windowframe_windowframe",
@@ -902,39 +936,6 @@
       "source_location": "L326"
     },
     {
-      "id": "scripts_generate_sitemap_generatesitemapxml",
-      "label": "generateSitemapXML()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "file_type": "code",
-      "norm_label": "generatesitemapxml()",
-      "source_file": "scripts/generate-sitemap.ts",
-      "source_location": "L29"
-    },
-    {
-      "id": "scripts_generate_sitemap_writesitemap",
-      "label": "writeSitemap()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "file_type": "code",
-      "norm_label": "writesitemap()",
-      "source_file": "scripts/generate-sitemap.ts",
-      "source_location": "L85"
-    },
-    {
-      "id": "vite_config_sitemapplugin",
-      "label": "sitemapPlugin()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "file_type": "code",
-      "norm_label": "sitemapplugin()",
-      "source_file": "vite.config.ts",
-      "source_location": "L7"
-    },
-    {
       "id": "components_common_bootingscreen",
       "label": "BootingScreen.tsx",
       "_origin": "ast",
@@ -962,6 +963,16 @@
       "file_type": "code",
       "norm_label": "staticherotext.tsx",
       "source_file": "components/common/StaticHeroText.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "components_overlays_contextmenu",
+      "label": "ContextMenu.tsx",
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "contextmenu.tsx",
+      "source_file": "components/overlays/ContextMenu.tsx",
       "source_location": "L1"
     },
     {
@@ -995,6 +1006,16 @@
       "source_location": "L1"
     },
     {
+      "id": "config_apps_config",
+      "label": "apps.config.ts",
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "apps.config.ts",
+      "source_file": "config/apps.config.ts",
+      "source_location": "L1"
+    },
+    {
       "id": "config_apps_config_apps_config",
       "label": "APPS_CONFIG",
       "_origin": "ast",
@@ -1005,36 +1026,6 @@
       "source_location": "L42"
     },
     {
-      "id": "desktop_components_desktopfolders",
-      "label": "DesktopFolders.tsx",
-      "_origin": "ast",
-      "community": 0,
-      "file_type": "code",
-      "norm_label": "desktopfolders.tsx",
-      "source_file": "desktop/components/DesktopFolders.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "desktop_components_desktopfolders_desktop_items",
-      "label": "DESKTOP_ITEMS",
-      "_origin": "ast",
-      "community": 0,
-      "file_type": "code",
-      "norm_label": "desktop_items",
-      "source_file": "desktop/components/DesktopFolders.tsx",
-      "source_location": "L38"
-    },
-    {
-      "id": "desktop_components_desktopfolders_stack_kinds",
-      "label": "STACK_KINDS",
-      "_origin": "ast",
-      "community": 0,
-      "file_type": "code",
-      "norm_label": "stack_kinds",
-      "source_file": "desktop/components/DesktopFolders.tsx",
-      "source_location": "L147"
-    },
-    {
       "id": "desktop_components_desktopmenu",
       "label": "DesktopMenu.tsx",
       "_origin": "ast",
@@ -1042,16 +1033,6 @@
       "file_type": "code",
       "norm_label": "desktopmenu.tsx",
       "source_file": "desktop/components/DesktopMenu.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "desktop_components_desktopwindowmanager",
-      "label": "DesktopWindowManager.tsx",
-      "_origin": "ast",
-      "community": 0,
-      "file_type": "code",
-      "norm_label": "desktopwindowmanager.tsx",
-      "source_file": "desktop/components/DesktopWindowManager.tsx",
       "source_location": "L1"
     },
     {
@@ -1093,6 +1074,16 @@
       "norm_label": "mobileenvironment.tsx",
       "source_file": "mobile/MobileEnvironment.tsx",
       "source_location": "L1"
+    },
+    {
+      "id": "store_useecosystemstore_wallpapers",
+      "label": "WALLPAPERS",
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "wallpapers",
+      "source_file": "store/useEcosystemStore.ts",
+      "source_location": "L52"
     },
     {
       "id": "tablet_tabletenvironment",
@@ -1245,6 +1236,66 @@
       "source_location": "L1"
     },
     {
+      "id": "scripts_generate_sitemap",
+      "label": "generate-sitemap.ts",
+      "_origin": "ast",
+      "community": 10,
+      "file_type": "code",
+      "norm_label": "generate-sitemap.ts",
+      "source_file": "scripts/generate-sitemap.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "scripts_generate_sitemap_dirname",
+      "label": "__dirname",
+      "_origin": "ast",
+      "community": 10,
+      "file_type": "code",
+      "norm_label": "__dirname",
+      "source_file": "scripts/generate-sitemap.ts",
+      "source_location": "L18"
+    },
+    {
+      "id": "scripts_generate_sitemap_filename",
+      "label": "__filename",
+      "_origin": "ast",
+      "community": 10,
+      "file_type": "code",
+      "norm_label": "__filename",
+      "source_file": "scripts/generate-sitemap.ts",
+      "source_location": "L17"
+    },
+    {
+      "id": "scripts_generate_sitemap_project_slug_map",
+      "label": "PROJECT_SLUG_MAP",
+      "_origin": "ast",
+      "community": 10,
+      "file_type": "code",
+      "norm_label": "project_slug_map",
+      "source_file": "scripts/generate-sitemap.ts",
+      "source_location": "L24"
+    },
+    {
+      "id": "scripts_generate_sitemap_rootdir",
+      "label": "rootDir",
+      "_origin": "ast",
+      "community": 10,
+      "file_type": "code",
+      "norm_label": "rootdir",
+      "source_file": "scripts/generate-sitemap.ts",
+      "source_location": "L19"
+    },
+    {
+      "id": "vite_config",
+      "label": "vite.config.ts",
+      "_origin": "ast",
+      "community": 10,
+      "file_type": "code",
+      "norm_label": "vite.config.ts",
+      "source_file": "vite.config.ts",
+      "source_location": "L1"
+    },
+    {
       "id": "apps_aboutapp",
       "label": "AboutApp.tsx",
       "_origin": "ast",
@@ -1335,16 +1386,6 @@
       "source_location": "L1"
     },
     {
-      "id": "config_apps_config",
-      "label": "apps.config.ts",
-      "_origin": "ast",
-      "community": 2,
-      "file_type": "code",
-      "norm_label": "apps.config.ts",
-      "source_file": "config/apps.config.ts",
-      "source_location": "L1"
-    },
-    {
       "id": "data_projectsdata",
       "label": "projectsData.ts",
       "_origin": "ast",
@@ -1375,320 +1416,10 @@
       "source_location": "L35"
     },
     {
-      "id": "package",
-      "label": "package.json",
-      "_origin": "ast",
-      "community": 3,
-      "file_type": "code",
-      "norm_label": "package.json",
-      "source_file": "package.json",
-      "source_location": "L1"
-    },
-    {
-      "id": "package_dependencies_vite",
-      "label": "vite",
-      "_origin": "ast",
-      "community": 3,
-      "file_type": "code",
-      "norm_label": "vite",
-      "source_file": "package.json",
-      "source_location": "L24"
-    },
-    {
-      "id": "package_devdependencies",
-      "label": "devDependencies",
-      "_origin": "ast",
-      "community": 3,
-      "file_type": "code",
-      "norm_label": "devdependencies",
-      "source_file": "package.json",
-      "source_location": "L27"
-    },
-    {
-      "id": "package_devdependencies_tailwindcss",
-      "label": "tailwindcss",
-      "_origin": "ast",
-      "community": 3,
-      "file_type": "code",
-      "norm_label": "tailwindcss",
-      "source_file": "package.json",
-      "source_location": "L31"
-    },
-    {
-      "id": "package_devdependencies_tsx",
-      "label": "tsx",
-      "_origin": "ast",
-      "community": 3,
-      "file_type": "code",
-      "norm_label": "tsx",
-      "source_file": "package.json",
-      "source_location": "L32"
-    },
-    {
-      "id": "package_devdependencies_types_node",
-      "label": "@types/node",
-      "_origin": "ast",
-      "community": 3,
-      "file_type": "code",
-      "norm_label": "@types/node",
-      "source_file": "package.json",
-      "source_location": "L28"
-    },
-    {
-      "id": "package_devdependencies_types_react",
-      "label": "@types/react",
-      "_origin": "ast",
-      "community": 3,
-      "file_type": "code",
-      "norm_label": "@types/react",
-      "source_file": "package.json",
-      "source_location": "L29"
-    },
-    {
-      "id": "package_devdependencies_types_react_dom",
-      "label": "@types/react-dom",
-      "_origin": "ast",
-      "community": 3,
-      "file_type": "code",
-      "norm_label": "@types/react-dom",
-      "source_file": "package.json",
-      "source_location": "L30"
-    },
-    {
-      "id": "package_devdependencies_typescript",
-      "label": "typescript",
-      "_origin": "ast",
-      "community": 3,
-      "file_type": "code",
-      "norm_label": "typescript",
-      "source_file": "package.json",
-      "source_location": "L33"
-    },
-    {
-      "id": "package_devdependencies_vite",
-      "label": "vite",
-      "_origin": "ast",
-      "community": 3,
-      "file_type": "code",
-      "norm_label": "vite",
-      "source_file": "package.json",
-      "source_location": "L34"
-    },
-    {
-      "id": "package_name",
-      "label": "name",
-      "_origin": "ast",
-      "community": 3,
-      "file_type": "code",
-      "norm_label": "name",
-      "source_file": "package.json",
-      "source_location": "L2"
-    },
-    {
-      "id": "package_private",
-      "label": "private",
-      "_origin": "ast",
-      "community": 3,
-      "file_type": "code",
-      "norm_label": "private",
-      "source_file": "package.json",
-      "source_location": "L3"
-    },
-    {
-      "id": "package_scripts",
-      "label": "scripts",
-      "_origin": "ast",
-      "community": 3,
-      "file_type": "code",
-      "norm_label": "scripts",
-      "source_file": "package.json",
-      "source_location": "L6"
-    },
-    {
-      "id": "package_scripts_build",
-      "label": "build",
-      "_origin": "ast",
-      "community": 3,
-      "file_type": "code",
-      "norm_label": "build",
-      "source_file": "package.json",
-      "source_location": "L8"
-    },
-    {
-      "id": "package_scripts_clean",
-      "label": "clean",
-      "_origin": "ast",
-      "community": 3,
-      "file_type": "code",
-      "norm_label": "clean",
-      "source_file": "package.json",
-      "source_location": "L12"
-    },
-    {
-      "id": "package_scripts_dev",
-      "label": "dev",
-      "_origin": "ast",
-      "community": 3,
-      "file_type": "code",
-      "norm_label": "dev",
-      "source_file": "package.json",
-      "source_location": "L7"
-    },
-    {
-      "id": "package_scripts_lint",
-      "label": "lint",
-      "_origin": "ast",
-      "community": 3,
-      "file_type": "code",
-      "norm_label": "lint",
-      "source_file": "package.json",
-      "source_location": "L13"
-    },
-    {
-      "id": "package_scripts_prebuild",
-      "label": "prebuild",
-      "_origin": "ast",
-      "community": 3,
-      "file_type": "code",
-      "norm_label": "prebuild",
-      "source_file": "package.json",
-      "source_location": "L9"
-    },
-    {
-      "id": "package_scripts_preview",
-      "label": "preview",
-      "_origin": "ast",
-      "community": 3,
-      "file_type": "code",
-      "norm_label": "preview",
-      "source_file": "package.json",
-      "source_location": "L11"
-    },
-    {
-      "id": "package_scripts_sitemap",
-      "label": "sitemap",
-      "_origin": "ast",
-      "community": 3,
-      "file_type": "code",
-      "norm_label": "sitemap",
-      "source_file": "package.json",
-      "source_location": "L10"
-    },
-    {
-      "id": "package_type",
-      "label": "type",
-      "_origin": "ast",
-      "community": 3,
-      "file_type": "code",
-      "norm_label": "type",
-      "source_file": "package.json",
-      "source_location": "L5"
-    },
-    {
-      "id": "package_version",
-      "label": "version",
-      "_origin": "ast",
-      "community": 3,
-      "file_type": "code",
-      "norm_label": "version",
-      "source_file": "package.json",
-      "source_location": "L4"
-    },
-    {
-      "id": "tailwindcss",
-      "label": "tailwindcss",
-      "_origin": "ast",
-      "community": 3,
-      "file_type": "concept",
-      "norm_label": "tailwindcss",
-      "source_file": "package.json",
-      "source_location": "L31"
-    },
-    {
-      "id": "tsx",
-      "label": "tsx",
-      "_origin": "ast",
-      "community": 3,
-      "file_type": "concept",
-      "norm_label": "tsx",
-      "source_file": "package.json",
-      "source_location": "L32"
-    },
-    {
-      "id": "types_node",
-      "label": "@types/node",
-      "_origin": "ast",
-      "community": 3,
-      "file_type": "concept",
-      "norm_label": "@types/node",
-      "source_file": "package.json",
-      "source_location": "L28"
-    },
-    {
-      "id": "types_react",
-      "label": "@types/react",
-      "_origin": "ast",
-      "community": 3,
-      "file_type": "concept",
-      "norm_label": "@types/react",
-      "source_file": "package.json",
-      "source_location": "L29"
-    },
-    {
-      "id": "types_react_dom",
-      "label": "@types/react-dom",
-      "_origin": "ast",
-      "community": 3,
-      "file_type": "concept",
-      "norm_label": "@types/react-dom",
-      "source_file": "package.json",
-      "source_location": "L30"
-    },
-    {
-      "id": "typescript",
-      "label": "typescript",
-      "_origin": "ast",
-      "community": 3,
-      "file_type": "concept",
-      "norm_label": "typescript",
-      "source_file": "package.json",
-      "source_location": "L33"
-    },
-    {
-      "id": "vite",
-      "label": "vite",
-      "_origin": "ast",
-      "community": 3,
-      "file_type": "concept",
-      "norm_label": "vite",
-      "source_file": "package.json",
-      "source_location": "L24"
-    },
-    {
-      "id": "apps_mailapp",
-      "label": "MailApp.tsx",
-      "_origin": "ast",
-      "community": 4,
-      "file_type": "code",
-      "norm_label": "mailapp.tsx",
-      "source_file": "apps/MailApp.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "apps_mailapp_emails",
-      "label": "EMAILS",
-      "_origin": "ast",
-      "community": 4,
-      "file_type": "code",
-      "norm_label": "emails",
-      "source_file": "apps/MailApp.tsx",
-      "source_location": "L28"
-    },
-    {
       "id": "apps_trashapp",
       "label": "TrashApp.tsx",
       "_origin": "ast",
-      "community": 4,
+      "community": 3,
       "file_type": "code",
       "norm_label": "trashapp.tsx",
       "source_file": "apps/TrashApp.tsx",
@@ -1698,17 +1429,47 @@
       "id": "desktop_components_desktopdock",
       "label": "DesktopDock.tsx",
       "_origin": "ast",
-      "community": 4,
+      "community": 3,
       "file_type": "code",
       "norm_label": "desktopdock.tsx",
       "source_file": "desktop/components/DesktopDock.tsx",
       "source_location": "L1"
     },
     {
+      "id": "desktop_components_desktopfolders",
+      "label": "DesktopFolders.tsx",
+      "_origin": "ast",
+      "community": 3,
+      "file_type": "code",
+      "norm_label": "desktopfolders.tsx",
+      "source_file": "desktop/components/DesktopFolders.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "desktop_components_desktopfolders_desktop_items",
+      "label": "DESKTOP_ITEMS",
+      "_origin": "ast",
+      "community": 3,
+      "file_type": "code",
+      "norm_label": "desktop_items",
+      "source_file": "desktop/components/DesktopFolders.tsx",
+      "source_location": "L38"
+    },
+    {
+      "id": "desktop_components_desktopfolders_stack_kinds",
+      "label": "STACK_KINDS",
+      "_origin": "ast",
+      "community": 3,
+      "file_type": "code",
+      "norm_label": "stack_kinds",
+      "source_file": "desktop/components/DesktopFolders.tsx",
+      "source_location": "L147"
+    },
+    {
       "id": "mobile_components_ioslockscreen",
       "label": "IOSLockScreen.tsx",
       "_origin": "ast",
-      "community": 4,
+      "community": 3,
       "file_type": "code",
       "norm_label": "ioslockscreen.tsx",
       "source_file": "mobile/components/IOSLockScreen.tsx",
@@ -1718,7 +1479,7 @@
       "id": "store_useecosystemstore_useecosystemstore",
       "label": "useEcosystemStore",
       "_origin": "ast",
-      "community": 4,
+      "community": 3,
       "file_type": "code",
       "norm_label": "useecosystemstore",
       "source_file": "store/useEcosystemStore.ts",
@@ -1728,11 +1489,291 @@
       "id": "utils_soundeffects",
       "label": "soundEffects.ts",
       "_origin": "ast",
-      "community": 4,
+      "community": 3,
       "file_type": "code",
       "norm_label": "soundeffects.ts",
       "source_file": "utils/soundEffects.ts",
       "source_location": "L1"
+    },
+    {
+      "id": "package",
+      "label": "package.json",
+      "_origin": "ast",
+      "community": 4,
+      "file_type": "code",
+      "norm_label": "package.json",
+      "source_file": "package.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "package_devdependencies",
+      "label": "devDependencies",
+      "_origin": "ast",
+      "community": 4,
+      "file_type": "code",
+      "norm_label": "devdependencies",
+      "source_file": "package.json",
+      "source_location": "L27"
+    },
+    {
+      "id": "package_devdependencies_tailwindcss",
+      "label": "tailwindcss",
+      "_origin": "ast",
+      "community": 4,
+      "file_type": "code",
+      "norm_label": "tailwindcss",
+      "source_file": "package.json",
+      "source_location": "L31"
+    },
+    {
+      "id": "package_devdependencies_tsx",
+      "label": "tsx",
+      "_origin": "ast",
+      "community": 4,
+      "file_type": "code",
+      "norm_label": "tsx",
+      "source_file": "package.json",
+      "source_location": "L32"
+    },
+    {
+      "id": "package_devdependencies_types_node",
+      "label": "@types/node",
+      "_origin": "ast",
+      "community": 4,
+      "file_type": "code",
+      "norm_label": "@types/node",
+      "source_file": "package.json",
+      "source_location": "L28"
+    },
+    {
+      "id": "package_devdependencies_types_react",
+      "label": "@types/react",
+      "_origin": "ast",
+      "community": 4,
+      "file_type": "code",
+      "norm_label": "@types/react",
+      "source_file": "package.json",
+      "source_location": "L29"
+    },
+    {
+      "id": "package_devdependencies_types_react_dom",
+      "label": "@types/react-dom",
+      "_origin": "ast",
+      "community": 4,
+      "file_type": "code",
+      "norm_label": "@types/react-dom",
+      "source_file": "package.json",
+      "source_location": "L30"
+    },
+    {
+      "id": "package_devdependencies_typescript",
+      "label": "typescript",
+      "_origin": "ast",
+      "community": 4,
+      "file_type": "code",
+      "norm_label": "typescript",
+      "source_file": "package.json",
+      "source_location": "L33"
+    },
+    {
+      "id": "package_name",
+      "label": "name",
+      "_origin": "ast",
+      "community": 4,
+      "file_type": "code",
+      "norm_label": "name",
+      "source_file": "package.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "package_private",
+      "label": "private",
+      "_origin": "ast",
+      "community": 4,
+      "file_type": "code",
+      "norm_label": "private",
+      "source_file": "package.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "package_scripts",
+      "label": "scripts",
+      "_origin": "ast",
+      "community": 4,
+      "file_type": "code",
+      "norm_label": "scripts",
+      "source_file": "package.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "package_scripts_build",
+      "label": "build",
+      "_origin": "ast",
+      "community": 4,
+      "file_type": "code",
+      "norm_label": "build",
+      "source_file": "package.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "package_scripts_clean",
+      "label": "clean",
+      "_origin": "ast",
+      "community": 4,
+      "file_type": "code",
+      "norm_label": "clean",
+      "source_file": "package.json",
+      "source_location": "L12"
+    },
+    {
+      "id": "package_scripts_dev",
+      "label": "dev",
+      "_origin": "ast",
+      "community": 4,
+      "file_type": "code",
+      "norm_label": "dev",
+      "source_file": "package.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "package_scripts_lint",
+      "label": "lint",
+      "_origin": "ast",
+      "community": 4,
+      "file_type": "code",
+      "norm_label": "lint",
+      "source_file": "package.json",
+      "source_location": "L13"
+    },
+    {
+      "id": "package_scripts_prebuild",
+      "label": "prebuild",
+      "_origin": "ast",
+      "community": 4,
+      "file_type": "code",
+      "norm_label": "prebuild",
+      "source_file": "package.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "package_scripts_preview",
+      "label": "preview",
+      "_origin": "ast",
+      "community": 4,
+      "file_type": "code",
+      "norm_label": "preview",
+      "source_file": "package.json",
+      "source_location": "L11"
+    },
+    {
+      "id": "package_scripts_sitemap",
+      "label": "sitemap",
+      "_origin": "ast",
+      "community": 4,
+      "file_type": "code",
+      "norm_label": "sitemap",
+      "source_file": "package.json",
+      "source_location": "L10"
+    },
+    {
+      "id": "package_type",
+      "label": "type",
+      "_origin": "ast",
+      "community": 4,
+      "file_type": "code",
+      "norm_label": "type",
+      "source_file": "package.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "package_version",
+      "label": "version",
+      "_origin": "ast",
+      "community": 4,
+      "file_type": "code",
+      "norm_label": "version",
+      "source_file": "package.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "tailwindcss",
+      "label": "tailwindcss",
+      "_origin": "ast",
+      "community": 4,
+      "file_type": "concept",
+      "norm_label": "tailwindcss",
+      "source_file": "package.json",
+      "source_location": "L31"
+    },
+    {
+      "id": "tsx",
+      "label": "tsx",
+      "_origin": "ast",
+      "community": 4,
+      "file_type": "concept",
+      "norm_label": "tsx",
+      "source_file": "package.json",
+      "source_location": "L32"
+    },
+    {
+      "id": "types_node",
+      "label": "@types/node",
+      "_origin": "ast",
+      "community": 4,
+      "file_type": "concept",
+      "norm_label": "@types/node",
+      "source_file": "package.json",
+      "source_location": "L28"
+    },
+    {
+      "id": "types_react",
+      "label": "@types/react",
+      "_origin": "ast",
+      "community": 4,
+      "file_type": "concept",
+      "norm_label": "@types/react",
+      "source_file": "package.json",
+      "source_location": "L29"
+    },
+    {
+      "id": "types_react_dom",
+      "label": "@types/react-dom",
+      "_origin": "ast",
+      "community": 4,
+      "file_type": "concept",
+      "norm_label": "@types/react-dom",
+      "source_file": "package.json",
+      "source_location": "L30"
+    },
+    {
+      "id": "typescript",
+      "label": "typescript",
+      "_origin": "ast",
+      "community": 4,
+      "file_type": "concept",
+      "norm_label": "typescript",
+      "source_file": "package.json",
+      "source_location": "L33"
+    },
+    {
+      "id": "apps_mailapp",
+      "label": "MailApp.tsx",
+      "_origin": "ast",
+      "community": 5,
+      "file_type": "code",
+      "norm_label": "mailapp.tsx",
+      "source_file": "apps/MailApp.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "apps_mailapp_emails",
+      "label": "EMAILS",
+      "_origin": "ast",
+      "community": 5,
+      "file_type": "code",
+      "norm_label": "emails",
+      "source_file": "apps/MailApp.tsx",
+      "source_location": "L28"
     },
     {
       "id": "apps_terminalapp",
@@ -1755,13 +1796,13 @@
       "source_location": "L14"
     },
     {
-      "id": "components_overlays_contextmenu",
-      "label": "ContextMenu.tsx",
+      "id": "desktop_components_desktopwindowmanager",
+      "label": "DesktopWindowManager.tsx",
       "_origin": "ast",
       "community": 5,
       "file_type": "code",
-      "norm_label": "contextmenu.tsx",
-      "source_file": "components/overlays/ContextMenu.tsx",
+      "norm_label": "desktopwindowmanager.tsx",
+      "source_file": "desktop/components/DesktopWindowManager.tsx",
       "source_location": "L1"
     },
     {
@@ -1795,230 +1836,10 @@
       "source_location": "L173"
     },
     {
-      "id": "store_useecosystemstore_wallpapers",
-      "label": "WALLPAPERS",
-      "_origin": "ast",
-      "community": 5,
-      "file_type": "code",
-      "norm_label": "wallpapers",
-      "source_file": "store/useEcosystemStore.ts",
-      "source_location": "L52"
-    },
-    {
-      "id": "tsconfig",
-      "label": "tsconfig.json",
-      "_origin": "ast",
-      "community": 6,
-      "file_type": "code",
-      "norm_label": "tsconfig.json",
-      "source_file": "tsconfig.json",
-      "source_location": "L1"
-    },
-    {
-      "id": "tsconfig_compileroptions",
-      "label": "compilerOptions",
-      "_origin": "ast",
-      "community": 6,
-      "file_type": "code",
-      "norm_label": "compileroptions",
-      "source_file": "tsconfig.json",
-      "source_location": "L2"
-    },
-    {
-      "id": "tsconfig_compileroptions_allowimportingtsextensions",
-      "label": "allowImportingTsExtensions",
-      "_origin": "ast",
-      "community": 6,
-      "file_type": "code",
-      "norm_label": "allowimportingtsextensions",
-      "source_file": "tsconfig.json",
-      "source_location": "L19"
-    },
-    {
-      "id": "tsconfig_compileroptions_allowjs",
-      "label": "allowJs",
-      "_origin": "ast",
-      "community": 6,
-      "file_type": "code",
-      "norm_label": "allowjs",
-      "source_file": "tsconfig.json",
-      "source_location": "L14"
-    },
-    {
-      "id": "tsconfig_compileroptions_experimentaldecorators",
-      "label": "experimentalDecorators",
-      "_origin": "ast",
-      "community": 6,
-      "file_type": "code",
-      "norm_label": "experimentaldecorators",
-      "source_file": "tsconfig.json",
-      "source_location": "L4"
-    },
-    {
-      "id": "tsconfig_compileroptions_isolatedmodules",
-      "label": "isolatedModules",
-      "_origin": "ast",
-      "community": 6,
-      "file_type": "code",
-      "norm_label": "isolatedmodules",
-      "source_file": "tsconfig.json",
-      "source_location": "L12"
-    },
-    {
-      "id": "tsconfig_compileroptions_jsx",
-      "label": "jsx",
-      "_origin": "ast",
-      "community": 6,
-      "file_type": "code",
-      "norm_label": "jsx",
-      "source_file": "tsconfig.json",
-      "source_location": "L15"
-    },
-    {
-      "id": "tsconfig_compileroptions_lib",
-      "label": "lib",
-      "_origin": "ast",
-      "community": 6,
-      "file_type": "code",
-      "norm_label": "lib",
-      "source_file": "tsconfig.json",
-      "source_location": "L9"
-    },
-    {
-      "id": "tsconfig_compileroptions_module",
-      "label": "module",
-      "_origin": "ast",
-      "community": 6,
-      "file_type": "code",
-      "norm_label": "module",
-      "source_file": "tsconfig.json",
-      "source_location": "L8"
-    },
-    {
-      "id": "tsconfig_compileroptions_moduledetection",
-      "label": "moduleDetection",
-      "_origin": "ast",
-      "community": 6,
-      "file_type": "code",
-      "norm_label": "moduledetection",
-      "source_file": "tsconfig.json",
-      "source_location": "L13"
-    },
-    {
-      "id": "tsconfig_compileroptions_moduleresolution",
-      "label": "moduleResolution",
-      "_origin": "ast",
-      "community": 6,
-      "file_type": "code",
-      "norm_label": "moduleresolution",
-      "source_file": "tsconfig.json",
-      "source_location": "L11"
-    },
-    {
-      "id": "tsconfig_compileroptions_noemit",
-      "label": "noEmit",
-      "_origin": "ast",
-      "community": 6,
-      "file_type": "code",
-      "norm_label": "noemit",
-      "source_file": "tsconfig.json",
-      "source_location": "L20"
-    },
-    {
-      "id": "tsconfig_compileroptions_nounusedlocals",
-      "label": "noUnusedLocals",
-      "_origin": "ast",
-      "community": 6,
-      "file_type": "code",
-      "norm_label": "nounusedlocals",
-      "source_file": "tsconfig.json",
-      "source_location": "L6"
-    },
-    {
-      "id": "tsconfig_compileroptions_nounusedparameters",
-      "label": "noUnusedParameters",
-      "_origin": "ast",
-      "community": 6,
-      "file_type": "code",
-      "norm_label": "nounusedparameters",
-      "source_file": "tsconfig.json",
-      "source_location": "L7"
-    },
-    {
-      "id": "tsconfig_compileroptions_paths",
-      "label": "paths",
-      "_origin": "ast",
-      "community": 6,
-      "file_type": "code",
-      "norm_label": "paths",
-      "source_file": "tsconfig.json",
-      "source_location": "L16"
-    },
-    {
-      "id": "tsconfig_compileroptions_skiplibcheck",
-      "label": "skipLibCheck",
-      "_origin": "ast",
-      "community": 6,
-      "file_type": "code",
-      "norm_label": "skiplibcheck",
-      "source_file": "tsconfig.json",
-      "source_location": "L10"
-    },
-    {
-      "id": "tsconfig_compileroptions_target",
-      "label": "target",
-      "_origin": "ast",
-      "community": 6,
-      "file_type": "code",
-      "norm_label": "target",
-      "source_file": "tsconfig.json",
-      "source_location": "L3"
-    },
-    {
-      "id": "tsconfig_compileroptions_usedefineforclassfields",
-      "label": "useDefineForClassFields",
-      "_origin": "ast",
-      "community": 6,
-      "file_type": "code",
-      "norm_label": "usedefineforclassfields",
-      "source_file": "tsconfig.json",
-      "source_location": "L5"
-    },
-    {
-      "id": "ref_dom",
-      "label": "DOM",
-      "_origin": "ast",
-      "community": 6,
-      "file_type": "concept",
-      "norm_label": "dom",
-      "source_file": "tsconfig.json",
-      "source_location": "L9"
-    },
-    {
-      "id": "ref_dom_iterable",
-      "label": "DOM.Iterable",
-      "_origin": "ast",
-      "community": 6,
-      "file_type": "concept",
-      "norm_label": "dom.iterable",
-      "source_file": "tsconfig.json",
-      "source_location": "L9"
-    },
-    {
-      "id": "ref_es2022",
-      "label": "ES2022",
-      "_origin": "ast",
-      "community": 6,
-      "file_type": "concept",
-      "norm_label": "es2022",
-      "source_file": "tsconfig.json",
-      "source_location": "L9"
-    },
-    {
       "id": "package_dependencies",
       "label": "dependencies",
       "_origin": "ast",
-      "community": 7,
+      "community": 6,
       "file_type": "code",
       "norm_label": "dependencies",
       "source_file": "package.json",
@@ -2028,7 +1849,7 @@
       "id": "package_dependencies_gsap",
       "label": "gsap",
       "_origin": "ast",
-      "community": 7,
+      "community": 6,
       "file_type": "code",
       "norm_label": "gsap",
       "source_file": "package.json",
@@ -2038,7 +1859,7 @@
       "id": "package_dependencies_immer",
       "label": "immer",
       "_origin": "ast",
-      "community": 7,
+      "community": 6,
       "file_type": "code",
       "norm_label": "immer",
       "source_file": "package.json",
@@ -2048,7 +1869,7 @@
       "id": "package_dependencies_lucide_react",
       "label": "lucide-react",
       "_origin": "ast",
-      "community": 7,
+      "community": 6,
       "file_type": "code",
       "norm_label": "lucide-react",
       "source_file": "package.json",
@@ -2058,7 +1879,7 @@
       "id": "package_dependencies_motion",
       "label": "motion",
       "_origin": "ast",
-      "community": 7,
+      "community": 6,
       "file_type": "code",
       "norm_label": "motion",
       "source_file": "package.json",
@@ -2068,7 +1889,7 @@
       "id": "package_dependencies_react",
       "label": "react",
       "_origin": "ast",
-      "community": 7,
+      "community": 6,
       "file_type": "code",
       "norm_label": "react",
       "source_file": "package.json",
@@ -2078,7 +1899,7 @@
       "id": "package_dependencies_react_dom",
       "label": "react-dom",
       "_origin": "ast",
-      "community": 7,
+      "community": 6,
       "file_type": "code",
       "norm_label": "react-dom",
       "source_file": "package.json",
@@ -2088,17 +1909,27 @@
       "id": "package_dependencies_tailwindcss_vite",
       "label": "@tailwindcss/vite",
       "_origin": "ast",
-      "community": 7,
+      "community": 6,
       "file_type": "code",
       "norm_label": "@tailwindcss/vite",
       "source_file": "package.json",
       "source_location": "L16"
     },
     {
+      "id": "package_dependencies_vite",
+      "label": "vite",
+      "_origin": "ast",
+      "community": 6,
+      "file_type": "code",
+      "norm_label": "vite",
+      "source_file": "package.json",
+      "source_location": "L24"
+    },
+    {
       "id": "package_dependencies_vitejs_plugin_react",
       "label": "@vitejs/plugin-react",
       "_origin": "ast",
-      "community": 7,
+      "community": 6,
       "file_type": "code",
       "norm_label": "@vitejs/plugin-react",
       "source_file": "package.json",
@@ -2108,17 +1939,27 @@
       "id": "package_dependencies_zustand",
       "label": "zustand",
       "_origin": "ast",
-      "community": 7,
+      "community": 6,
       "file_type": "code",
       "norm_label": "zustand",
       "source_file": "package.json",
       "source_location": "L25"
     },
     {
+      "id": "package_devdependencies_vite",
+      "label": "vite",
+      "_origin": "ast",
+      "community": 6,
+      "file_type": "code",
+      "norm_label": "vite",
+      "source_file": "package.json",
+      "source_location": "L34"
+    },
+    {
       "id": "gsap",
       "label": "gsap",
       "_origin": "ast",
-      "community": 7,
+      "community": 6,
       "file_type": "concept",
       "norm_label": "gsap",
       "source_file": "package.json",
@@ -2128,7 +1969,7 @@
       "id": "immer",
       "label": "immer",
       "_origin": "ast",
-      "community": 7,
+      "community": 6,
       "file_type": "concept",
       "norm_label": "immer",
       "source_file": "package.json",
@@ -2138,7 +1979,7 @@
       "id": "lucide_react",
       "label": "lucide-react",
       "_origin": "ast",
-      "community": 7,
+      "community": 6,
       "file_type": "concept",
       "norm_label": "lucide-react",
       "source_file": "package.json",
@@ -2148,7 +1989,7 @@
       "id": "motion",
       "label": "motion",
       "_origin": "ast",
-      "community": 7,
+      "community": 6,
       "file_type": "concept",
       "norm_label": "motion",
       "source_file": "package.json",
@@ -2158,7 +1999,7 @@
       "id": "react",
       "label": "react",
       "_origin": "ast",
-      "community": 7,
+      "community": 6,
       "file_type": "concept",
       "norm_label": "react",
       "source_file": "package.json",
@@ -2168,7 +2009,7 @@
       "id": "react_dom",
       "label": "react-dom",
       "_origin": "ast",
-      "community": 7,
+      "community": 6,
       "file_type": "concept",
       "norm_label": "react-dom",
       "source_file": "package.json",
@@ -2178,17 +2019,27 @@
       "id": "tailwindcss_vite",
       "label": "@tailwindcss/vite",
       "_origin": "ast",
-      "community": 7,
+      "community": 6,
       "file_type": "concept",
       "norm_label": "@tailwindcss/vite",
       "source_file": "package.json",
       "source_location": "L16"
     },
     {
+      "id": "vite",
+      "label": "vite",
+      "_origin": "ast",
+      "community": 6,
+      "file_type": "concept",
+      "norm_label": "vite",
+      "source_file": "package.json",
+      "source_location": "L24"
+    },
+    {
       "id": "vitejs_plugin_react",
       "label": "@vitejs/plugin-react",
       "_origin": "ast",
-      "community": 7,
+      "community": 6,
       "file_type": "concept",
       "norm_label": "@vitejs/plugin-react",
       "source_file": "package.json",
@@ -2198,71 +2049,221 @@
       "id": "zustand",
       "label": "zustand",
       "_origin": "ast",
-      "community": 7,
+      "community": 6,
       "file_type": "concept",
       "norm_label": "zustand",
       "source_file": "package.json",
       "source_location": "L25"
     },
     {
-      "id": "scripts_generate_sitemap",
-      "label": "generate-sitemap.ts",
+      "id": "tsconfig",
+      "label": "tsconfig.json",
       "_origin": "ast",
-      "community": 9,
+      "community": 7,
       "file_type": "code",
-      "norm_label": "generate-sitemap.ts",
-      "source_file": "scripts/generate-sitemap.ts",
+      "norm_label": "tsconfig.json",
+      "source_file": "tsconfig.json",
       "source_location": "L1"
     },
     {
-      "id": "scripts_generate_sitemap_dirname",
-      "label": "__dirname",
+      "id": "tsconfig_compileroptions",
+      "label": "compilerOptions",
       "_origin": "ast",
-      "community": 9,
+      "community": 7,
       "file_type": "code",
-      "norm_label": "__dirname",
-      "source_file": "scripts/generate-sitemap.ts",
-      "source_location": "L18"
+      "norm_label": "compileroptions",
+      "source_file": "tsconfig.json",
+      "source_location": "L2"
     },
     {
-      "id": "scripts_generate_sitemap_filename",
-      "label": "__filename",
+      "id": "tsconfig_compileroptions_allowimportingtsextensions",
+      "label": "allowImportingTsExtensions",
       "_origin": "ast",
-      "community": 9,
+      "community": 7,
       "file_type": "code",
-      "norm_label": "__filename",
-      "source_file": "scripts/generate-sitemap.ts",
-      "source_location": "L17"
-    },
-    {
-      "id": "scripts_generate_sitemap_project_slug_map",
-      "label": "PROJECT_SLUG_MAP",
-      "_origin": "ast",
-      "community": 9,
-      "file_type": "code",
-      "norm_label": "project_slug_map",
-      "source_file": "scripts/generate-sitemap.ts",
-      "source_location": "L24"
-    },
-    {
-      "id": "scripts_generate_sitemap_rootdir",
-      "label": "rootDir",
-      "_origin": "ast",
-      "community": 9,
-      "file_type": "code",
-      "norm_label": "rootdir",
-      "source_file": "scripts/generate-sitemap.ts",
+      "norm_label": "allowimportingtsextensions",
+      "source_file": "tsconfig.json",
       "source_location": "L19"
     },
     {
-      "id": "vite_config",
-      "label": "vite.config.ts",
+      "id": "tsconfig_compileroptions_allowjs",
+      "label": "allowJs",
       "_origin": "ast",
-      "community": 9,
+      "community": 7,
       "file_type": "code",
-      "norm_label": "vite.config.ts",
-      "source_file": "vite.config.ts",
-      "source_location": "L1"
+      "norm_label": "allowjs",
+      "source_file": "tsconfig.json",
+      "source_location": "L14"
+    },
+    {
+      "id": "tsconfig_compileroptions_experimentaldecorators",
+      "label": "experimentalDecorators",
+      "_origin": "ast",
+      "community": 7,
+      "file_type": "code",
+      "norm_label": "experimentaldecorators",
+      "source_file": "tsconfig.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "tsconfig_compileroptions_isolatedmodules",
+      "label": "isolatedModules",
+      "_origin": "ast",
+      "community": 7,
+      "file_type": "code",
+      "norm_label": "isolatedmodules",
+      "source_file": "tsconfig.json",
+      "source_location": "L12"
+    },
+    {
+      "id": "tsconfig_compileroptions_jsx",
+      "label": "jsx",
+      "_origin": "ast",
+      "community": 7,
+      "file_type": "code",
+      "norm_label": "jsx",
+      "source_file": "tsconfig.json",
+      "source_location": "L15"
+    },
+    {
+      "id": "tsconfig_compileroptions_lib",
+      "label": "lib",
+      "_origin": "ast",
+      "community": 7,
+      "file_type": "code",
+      "norm_label": "lib",
+      "source_file": "tsconfig.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "tsconfig_compileroptions_module",
+      "label": "module",
+      "_origin": "ast",
+      "community": 7,
+      "file_type": "code",
+      "norm_label": "module",
+      "source_file": "tsconfig.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "tsconfig_compileroptions_moduledetection",
+      "label": "moduleDetection",
+      "_origin": "ast",
+      "community": 7,
+      "file_type": "code",
+      "norm_label": "moduledetection",
+      "source_file": "tsconfig.json",
+      "source_location": "L13"
+    },
+    {
+      "id": "tsconfig_compileroptions_moduleresolution",
+      "label": "moduleResolution",
+      "_origin": "ast",
+      "community": 7,
+      "file_type": "code",
+      "norm_label": "moduleresolution",
+      "source_file": "tsconfig.json",
+      "source_location": "L11"
+    },
+    {
+      "id": "tsconfig_compileroptions_noemit",
+      "label": "noEmit",
+      "_origin": "ast",
+      "community": 7,
+      "file_type": "code",
+      "norm_label": "noemit",
+      "source_file": "tsconfig.json",
+      "source_location": "L20"
+    },
+    {
+      "id": "tsconfig_compileroptions_nounusedlocals",
+      "label": "noUnusedLocals",
+      "_origin": "ast",
+      "community": 7,
+      "file_type": "code",
+      "norm_label": "nounusedlocals",
+      "source_file": "tsconfig.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "tsconfig_compileroptions_nounusedparameters",
+      "label": "noUnusedParameters",
+      "_origin": "ast",
+      "community": 7,
+      "file_type": "code",
+      "norm_label": "nounusedparameters",
+      "source_file": "tsconfig.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "tsconfig_compileroptions_paths",
+      "label": "paths",
+      "_origin": "ast",
+      "community": 7,
+      "file_type": "code",
+      "norm_label": "paths",
+      "source_file": "tsconfig.json",
+      "source_location": "L16"
+    },
+    {
+      "id": "tsconfig_compileroptions_skiplibcheck",
+      "label": "skipLibCheck",
+      "_origin": "ast",
+      "community": 7,
+      "file_type": "code",
+      "norm_label": "skiplibcheck",
+      "source_file": "tsconfig.json",
+      "source_location": "L10"
+    },
+    {
+      "id": "tsconfig_compileroptions_target",
+      "label": "target",
+      "_origin": "ast",
+      "community": 7,
+      "file_type": "code",
+      "norm_label": "target",
+      "source_file": "tsconfig.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "tsconfig_compileroptions_usedefineforclassfields",
+      "label": "useDefineForClassFields",
+      "_origin": "ast",
+      "community": 7,
+      "file_type": "code",
+      "norm_label": "usedefineforclassfields",
+      "source_file": "tsconfig.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "ref_dom",
+      "label": "DOM",
+      "_origin": "ast",
+      "community": 7,
+      "file_type": "concept",
+      "norm_label": "dom",
+      "source_file": "tsconfig.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "ref_dom_iterable",
+      "label": "DOM.Iterable",
+      "_origin": "ast",
+      "community": 7,
+      "file_type": "concept",
+      "norm_label": "dom.iterable",
+      "source_file": "tsconfig.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "ref_es2022",
+      "label": "ES2022",
+      "_origin": "ast",
+      "community": 7,
+      "file_type": "concept",
+      "norm_label": "es2022",
+      "source_file": "tsconfig.json",
+      "source_location": "L9"
     },
     {
       "id": "index_jsonld_schemas",
@@ -2282,7 +2283,7 @@
       "label": "Alap Putatunda (Biography & Experience)",
       "author": "Alap Putatunda",
       "captured_at": null,
-      "community": 10,
+      "community": 11,
       "contributor": null,
       "file_type": "code",
       "norm_label": "alap putatunda (biography & experience)",
@@ -2295,7 +2296,7 @@
       "label": "Resume & Career History",
       "author": "Alap Putatunda",
       "captured_at": null,
-      "community": 10,
+      "community": 11,
       "contributor": null,
       "file_type": "code",
       "norm_label": "resume & career history",
@@ -2308,7 +2309,7 @@
       "label": "Alap Putatunda Resume Document (PDF)",
       "author": "Alap Putatunda",
       "captured_at": null,
-      "community": 10,
+      "community": 11,
       "contributor": null,
       "file_type": "paper",
       "norm_label": "alap putatunda resume document (pdf)",
@@ -2321,7 +2322,7 @@
       "label": "Alap Putatunda Resume Document (PDF)",
       "author": "Alap Putatunda",
       "captured_at": null,
-      "community": 11,
+      "community": 12,
       "contributor": null,
       "file_type": "paper",
       "norm_label": "alap putatunda resume document (pdf)",
@@ -2334,7 +2335,7 @@
       "label": "Freecom AI",
       "author": "Alap Putatunda",
       "captured_at": null,
-      "community": 12,
+      "community": 13,
       "contributor": null,
       "file_type": "code",
       "norm_label": "freecom ai",
@@ -2347,7 +2348,7 @@
       "label": "Make Me Sound",
       "author": "Alap Putatunda",
       "captured_at": null,
-      "community": 13,
+      "community": 14,
       "contributor": null,
       "file_type": "code",
       "norm_label": "make me sound",
@@ -2360,7 +2361,7 @@
       "label": "Soothly AI",
       "author": "Alap Putatunda",
       "captured_at": null,
-      "community": 14,
+      "community": 15,
       "contributor": null,
       "file_type": "code",
       "norm_label": "soothly ai",
@@ -2373,7 +2374,7 @@
       "label": "Vibe44 Starter Kit Engine Demo",
       "author": "Alap Putatunda",
       "captured_at": null,
-      "community": 15,
+      "community": 16,
       "contributor": null,
       "file_type": "code",
       "norm_label": "vibe44 starter kit engine demo",
@@ -2386,7 +2387,7 @@
       "label": "Zero Headache Platform",
       "author": "Alap Putatunda",
       "captured_at": null,
-      "community": 16,
+      "community": 17,
       "contributor": null,
       "file_type": "code",
       "norm_label": "zero headache platform",
@@ -2399,26 +2400,13 @@
       "label": "Portfolio OS Index Entry",
       "author": "Alap Putatunda",
       "captured_at": null,
-      "community": 17,
+      "community": 18,
       "contributor": null,
       "file_type": "document",
       "norm_label": "portfolio os index entry",
       "source_file": "index.html",
       "source_location": "index.html:1-356",
       "source_url": "https://scalewithalap.com"
-    },
-    {
-      "id": "llms_full_txt_deep_dive",
-      "label": "Complete LLM System Reference (/llms-full.txt)",
-      "author": "Alap Putatunda",
-      "captured_at": null,
-      "community": 19,
-      "contributor": null,
-      "file_type": "document",
-      "norm_label": "complete llm system reference (/llms-full.txt)",
-      "source_file": "C:/Users/alapp/Desktop/scalewithalap/public/llms-full.txt",
-      "source_location": "public/llms-full.txt:1",
-      "source_url": "https://scalewithalap.com/llms-full.txt"
     },
     {
       "id": "readme_projectsmanifest",
@@ -2434,11 +2422,24 @@
       "source_url": "https://scalewithalap.com"
     },
     {
+      "id": "llms_full_txt_deep_dive",
+      "label": "Complete LLM System Reference (/llms-full.txt)",
+      "author": "Alap Putatunda",
+      "captured_at": null,
+      "community": 20,
+      "contributor": null,
+      "file_type": "document",
+      "norm_label": "complete llm system reference (/llms-full.txt)",
+      "source_file": "C:/Users/alapp/Desktop/scalewithalap/public/llms-full.txt",
+      "source_location": "public/llms-full.txt:1",
+      "source_url": "https://scalewithalap.com/llms-full.txt"
+    },
+    {
       "id": "llms_txt_documentation",
       "label": "AI Context Index (/llms.txt)",
       "author": "Alap Putatunda",
       "captured_at": null,
-      "community": 20,
+      "community": 21,
       "contributor": null,
       "file_type": "document",
       "norm_label": "ai context index (/llms.txt)",
@@ -2451,7 +2452,7 @@
       "label": "Scale with Alap Social Preview (og-image.webp)",
       "author": "Alap Putatunda",
       "captured_at": null,
-      "community": 21,
+      "community": 22,
       "contributor": null,
       "file_type": "image",
       "norm_label": "scale with alap social preview (og-image.webp)",
@@ -2464,7 +2465,7 @@
       "label": "Portfolio OS Readme",
       "author": "Alap Putatunda",
       "captured_at": null,
-      "community": 23,
+      "community": 24,
       "contributor": null,
       "file_type": "document",
       "norm_label": "portfolio os readme",
@@ -2473,11 +2474,167 @@
       "source_url": "https://scalewithalap.com"
     },
     {
+      "id": "alap_putatunda",
+      "label": "Alap Putatunda",
+      "author": "Alap Putatunda",
+      "captured_at": null,
+      "community": 8,
+      "contributor": null,
+      "file_type": "document",
+      "norm_label": "alap putatunda",
+      "source_file": "public/llms-full.txt",
+      "source_location": "public/llms-full.txt:1",
+      "source_url": "https://scalewithalap.com"
+    },
+    {
+      "id": "freecom_ai",
+      "label": "Freecom AI",
+      "author": "Alap Putatunda",
+      "captured_at": null,
+      "community": 8,
+      "contributor": null,
+      "file_type": "document",
+      "norm_label": "freecom ai",
+      "source_file": "public/llms-full.txt",
+      "source_location": "public/llms-full.txt:72",
+      "source_url": "https://github.com/scalewithalap/freecom-ai"
+    },
+    {
+      "id": "hyperagent_founding_500",
+      "label": "Hyperagent Founding 500 Award",
+      "author": "Alap Putatunda",
+      "captured_at": null,
+      "community": 8,
+      "contributor": null,
+      "file_type": "document",
+      "norm_label": "hyperagent founding 500 award",
+      "source_file": "public/llms-full.txt",
+      "source_location": "public/llms-full.txt:112",
+      "source_url": null
+    },
+    {
+      "id": "makemesound",
+      "label": "Make Me Sound",
+      "author": "Alap Putatunda",
+      "captured_at": null,
+      "community": 8,
+      "contributor": null,
+      "file_type": "document",
+      "norm_label": "make me sound",
+      "source_file": "public/llms-full.txt",
+      "source_location": "public/llms-full.txt:67",
+      "source_url": "https://makemesound.xyz"
+    },
+    {
+      "id": "openui",
+      "label": "OpenUI",
+      "author": "Alap Putatunda",
+      "captured_at": null,
+      "community": 8,
+      "contributor": null,
+      "file_type": "document",
+      "norm_label": "openui",
+      "source_file": "public/llms-full.txt",
+      "source_location": "public/llms-full.txt:52",
+      "source_url": "https://github.com/scalewithalap/openui"
+    },
+    {
+      "id": "pharmison_valentes",
+      "label": "Pharmison Valentes Pharma",
+      "author": "Alap Putatunda",
+      "captured_at": null,
+      "community": 8,
+      "contributor": null,
+      "file_type": "document",
+      "norm_label": "pharmison valentes pharma",
+      "source_file": "public/llms-full.txt",
+      "source_location": "public/llms-full.txt:95",
+      "source_url": null
+    },
+    {
+      "id": "portfolio_os",
+      "label": "Portfolio OS",
+      "author": "Alap Putatunda",
+      "captured_at": null,
+      "community": 8,
+      "contributor": null,
+      "file_type": "document",
+      "norm_label": "portfolio os",
+      "source_file": "public/llms-full.txt",
+      "source_location": "public/llms-full.txt:33",
+      "source_url": "https://scalewithalap.com/projects/portfolio-os"
+    },
+    {
+      "id": "soothly_ai",
+      "label": "Soothly AI",
+      "author": "Alap Putatunda",
+      "captured_at": null,
+      "community": 8,
+      "contributor": null,
+      "file_type": "document",
+      "norm_label": "soothly ai",
+      "source_file": "public/llms-full.txt",
+      "source_location": "public/llms-full.txt:77",
+      "source_url": "https://github.com/scalewithalap/soothly-ai"
+    },
+    {
+      "id": "vibe44_engine",
+      "label": "Vibe44 AI SaaS Engine",
+      "author": "Alap Putatunda",
+      "captured_at": null,
+      "community": 8,
+      "contributor": null,
+      "file_type": "document",
+      "norm_label": "vibe44 ai saas engine",
+      "source_file": "public/llms-full.txt",
+      "source_location": "public/llms-full.txt:46",
+      "source_url": "https://demo.vibe44.com"
+    },
+    {
+      "id": "vibe44_mcp_server",
+      "label": "Vibe44 MCP Server & Marketing Site",
+      "author": "Alap Putatunda",
+      "captured_at": null,
+      "community": 8,
+      "contributor": null,
+      "file_type": "document",
+      "norm_label": "vibe44 mcp server & marketing site",
+      "source_file": "public/llms-full.txt",
+      "source_location": "public/llms-full.txt:40",
+      "source_url": "https://vibe44.com"
+    },
+    {
+      "id": "zeroheadache_marketing",
+      "label": "Zero Headache Marketing Site",
+      "author": "Alap Putatunda",
+      "captured_at": null,
+      "community": 8,
+      "contributor": null,
+      "file_type": "document",
+      "norm_label": "zero headache marketing site",
+      "source_file": "public/llms-full.txt",
+      "source_location": "public/llms-full.txt:57",
+      "source_url": "https://zeroheadache.co"
+    },
+    {
+      "id": "zeroheadache_platform",
+      "label": "Zero Headache Platform",
+      "author": "Alap Putatunda",
+      "captured_at": null,
+      "community": 8,
+      "contributor": null,
+      "file_type": "document",
+      "norm_label": "zero headache platform",
+      "source_file": "public/llms-full.txt",
+      "source_location": "public/llms-full.txt:62",
+      "source_url": "https://app.zeroheadache.co"
+    },
+    {
       "id": "apps_terminalapp_cli_overview",
       "label": "Interactive Developer Terminal Simulator",
       "author": "Alap Putatunda",
       "captured_at": null,
-      "community": 8,
+      "community": 9,
       "contributor": null,
       "file_type": "code",
       "norm_label": "interactive developer terminal simulator",
@@ -2490,7 +2647,7 @@
       "label": "Dynamic SEO & Social Metadata Engine",
       "author": "Alap Putatunda",
       "captured_at": null,
-      "community": 8,
+      "community": 9,
       "contributor": null,
       "file_type": "code",
       "norm_label": "dynamic seo & social metadata engine",
@@ -2503,7 +2660,7 @@
       "label": "OpenUI",
       "author": "Alap Putatunda",
       "captured_at": null,
-      "community": 8,
+      "community": 9,
       "contributor": null,
       "file_type": "code",
       "norm_label": "openui",
@@ -2516,7 +2673,7 @@
       "label": "Portfolio OS",
       "author": "Alap Putatunda",
       "captured_at": null,
-      "community": 8,
+      "community": 9,
       "contributor": null,
       "file_type": "code",
       "norm_label": "portfolio os",
@@ -2530,7 +2687,7 @@
       "label": "Vibe44 Marketing & MCP Server",
       "author": "Alap Putatunda",
       "captured_at": null,
-      "community": 8,
+      "community": 9,
       "contributor": null,
       "file_type": "code",
       "norm_label": "vibe44 marketing & mcp server",
@@ -2543,7 +2700,7 @@
       "label": "Zero Headache Marketing Site",
       "author": "Alap Putatunda",
       "captured_at": null,
-      "community": 8,
+      "community": 9,
       "contributor": null,
       "file_type": "code",
       "norm_label": "zero headache marketing site",
@@ -2556,7 +2713,7 @@
       "label": "Complete LLM System Reference (/llms-full.txt)",
       "author": "Alap Putatunda",
       "captured_at": null,
-      "community": 8,
+      "community": 9,
       "contributor": null,
       "file_type": "document",
       "norm_label": "complete llm system reference (/llms-full.txt)",
@@ -2569,7 +2726,7 @@
       "label": "AI Context Index (/llms.txt)",
       "author": "Alap Putatunda",
       "captured_at": null,
-      "community": 8,
+      "community": 9,
       "contributor": null,
       "file_type": "document",
       "norm_label": "ai context index (/llms.txt)",
@@ -2582,7 +2739,7 @@
       "label": "Scale with Alap Social Preview (og-image.webp)",
       "author": "Alap Putatunda",
       "captured_at": null,
-      "community": 8,
+      "community": 9,
       "contributor": null,
       "file_type": "image",
       "norm_label": "scale with alap social preview (og-image.webp)",
@@ -2630,7 +2787,7 @@
       "id": "readme_portfolio_os",
       "label": "Scale with Alap Portfolio OS",
       "author": "Alap Putatunda",
-      "community": 22,
+      "community": 23,
       "contributor": null,
       "file_type": "document",
       "norm_label": "scale with alap portfolio os",
@@ -2642,7 +2799,7 @@
       "id": "alap_portrait_asset",
       "label": "Alap Putatunda High-Resolution Portrait",
       "author": "Alap Putatunda",
-      "community": 4,
+      "community": 3,
       "contributor": null,
       "file_type": "image",
       "norm_label": "alap putatunda high-resolution portrait",
@@ -2678,7 +2835,7 @@
       "id": "index_html_entrypoint",
       "label": "Web Application HTML Entrypoint",
       "author": null,
-      "community": 18,
+      "community": 19,
       "contributor": null,
       "file_type": "document",
       "norm_label": "web application html entrypoint",
@@ -2953,6 +3110,18 @@
       "weight": 1.0
     },
     {
+      "source": "components_overlays_spotlightsearch_getitemrecentindex",
+      "target": "components_overlays_spotlightsearch_spotlightsearch",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "components/overlays/SpotlightSearch.tsx",
+      "source_location": "L445",
+      "weight": 1.0
+    },
+    {
       "source": "components_overlays_spotlightsearch_spotlightsearch",
       "target": "store_useecosystemstore_useecosystemstore",
       "relation": "calls",
@@ -2962,18 +3131,6 @@
       "context": "call",
       "source_file": "components/overlays/SpotlightSearch.tsx",
       "source_location": "L406",
-      "weight": 1.0
-    },
-    {
-      "source": "components_overlays_spotlightsearch_spotlightsearch",
-      "target": "components_overlays_spotlightsearch_getitemrecentindex",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "components/overlays/SpotlightSearch.tsx",
-      "source_location": "L445",
       "weight": 1.0
     },
     {
@@ -3667,6 +3824,18 @@
       "weight": 1.0
     },
     {
+      "source": "app",
+      "target": "store_useecosystemstore_useecosystemstore",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "App.tsx",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
       "source": "app_app",
       "target": "main",
       "relation": "imports",
@@ -3676,6 +3845,18 @@
       "context": "import",
       "source_file": "main.tsx",
       "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_aboutapp",
+      "target": "store_useecosystemstore_useecosystemstore",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "apps/AboutApp.tsx",
+      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -3691,27 +3872,27 @@
       "weight": 1.0
     },
     {
-      "source": "apps_safariapp",
-      "target": "data_projectsdata_getprojectcoverimage",
+      "source": "apps_photosapp",
+      "target": "store_useecosystemstore_useecosystemstore",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "import",
-      "source_file": "apps/SafariApp.tsx",
-      "source_location": "L27",
+      "source_file": "apps/PhotosApp.tsx",
+      "source_location": "L13",
       "weight": 1.0
     },
     {
-      "source": "apps_safariapp",
-      "target": "data_projectsdata_project",
+      "source": "apps_resumeapp",
+      "target": "store_useecosystemstore_useecosystemstore",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "import",
-      "source_file": "apps/SafariApp.tsx",
-      "source_location": "L27",
+      "source_file": "apps/ResumeApp.tsx",
+      "source_location": "L23",
       "weight": 1.0
     },
     {
@@ -3727,27 +3908,15 @@
       "weight": 1.0
     },
     {
-      "source": "apps_singleprojectapp",
-      "target": "data_projectsdata_getprojectcoverimage",
+      "source": "apps_safariapp",
+      "target": "store_useecosystemstore_useecosystemstore",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "import",
-      "source_file": "apps/SingleProjectApp.tsx",
-      "source_location": "L34",
-      "weight": 1.0
-    },
-    {
-      "source": "apps_singleprojectapp",
-      "target": "data_projectsdata_project",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "apps/SingleProjectApp.tsx",
-      "source_location": "L34",
+      "source_file": "apps/SafariApp.tsx",
+      "source_location": "L32",
       "weight": 1.0
     },
     {
@@ -3760,6 +3929,18 @@
       "context": "import",
       "source_file": "apps/SingleProjectApp.tsx",
       "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_singleprojectapp",
+      "target": "store_useecosystemstore_useecosystemstore",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "apps/SingleProjectApp.tsx",
+      "source_location": "L39",
       "weight": 1.0
     },
     {
@@ -3908,6 +4089,18 @@
     },
     {
       "source": "components_common_seohead",
+      "target": "store_useecosystemstore_useecosystemstore",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "components/common/SEOHead.tsx",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "components_common_seohead",
       "target": "data_projectsdata_projects_data",
       "relation": "imports",
       "_origin": "ast",
@@ -3955,15 +4148,15 @@
       "weight": 1.0
     },
     {
-      "source": "components_overlays_contextmenu",
+      "source": "components_common_toastcontainer",
       "target": "store_useecosystemstore_useecosystemstore",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "import",
-      "source_file": "components/overlays/ContextMenu.tsx",
-      "source_location": "L21",
+      "source_file": "components/common/ToastContainer.tsx",
+      "source_location": "L14",
       "weight": 1.0
     },
     {
@@ -4136,14 +4329,14 @@
     },
     {
       "source": "components_overlays_spotlightsearch",
-      "target": "config_apps_config_apps_config",
+      "target": "store_useecosystemstore_useecosystemstore",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "components/overlays/SpotlightSearch.tsx",
-      "source_location": "L39",
+      "source_location": "L38",
       "weight": 1.0
     },
     {
@@ -4168,6 +4361,18 @@
       "context": "import",
       "source_file": "desktop/components/DesktopDock.tsx",
       "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "config_apps_config_apps_config",
+      "target": "components_overlays_spotlightsearch",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "components/overlays/SpotlightSearch.tsx",
+      "source_location": "L39",
       "weight": 1.0
     },
     {
@@ -4240,6 +4445,54 @@
       "context": "import",
       "source_file": "App.tsx",
       "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "data_projectsdata_getprojectcoverimage",
+      "target": "apps_safariapp",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "apps/SafariApp.tsx",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "data_projectsdata_getprojectcoverimage",
+      "target": "apps_singleprojectapp",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "apps/SingleProjectApp.tsx",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "data_projectsdata_project",
+      "target": "apps_safariapp",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "apps/SafariApp.tsx",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "data_projectsdata_project",
+      "target": "apps_singleprojectapp",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "apps/SingleProjectApp.tsx",
+      "source_location": "L34",
       "weight": 1.0
     },
     {
@@ -4396,6 +4649,18 @@
       "context": "import",
       "source_file": "tablet/TabletEnvironment.tsx",
       "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "desktop_components_desktopwindowmanager",
+      "target": "store_useecosystemstore_useecosystemstore",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "desktop/components/DesktopWindowManager.tsx",
+      "source_location": "L12",
       "weight": 1.0
     },
     {
@@ -4748,78 +5013,6 @@
     },
     {
       "source": "store_useecosystemstore_useecosystemstore",
-      "target": "app",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "App.tsx",
-      "source_location": "L13",
-      "weight": 1.0
-    },
-    {
-      "source": "store_useecosystemstore_useecosystemstore",
-      "target": "apps_aboutapp",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "apps/AboutApp.tsx",
-      "source_location": "L21",
-      "weight": 1.0
-    },
-    {
-      "source": "store_useecosystemstore_useecosystemstore",
-      "target": "apps_photosapp",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "apps/PhotosApp.tsx",
-      "source_location": "L13",
-      "weight": 1.0
-    },
-    {
-      "source": "store_useecosystemstore_useecosystemstore",
-      "target": "apps_resumeapp",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "apps/ResumeApp.tsx",
-      "source_location": "L23",
-      "weight": 1.0
-    },
-    {
-      "source": "store_useecosystemstore_useecosystemstore",
-      "target": "apps_safariapp",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "apps/SafariApp.tsx",
-      "source_location": "L32",
-      "weight": 1.0
-    },
-    {
-      "source": "store_useecosystemstore_useecosystemstore",
-      "target": "apps_singleprojectapp",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "apps/SingleProjectApp.tsx",
-      "source_location": "L39",
-      "weight": 1.0
-    },
-    {
-      "source": "store_useecosystemstore_useecosystemstore",
       "target": "apps_terminalapp",
       "relation": "imports",
       "_origin": "ast",
@@ -4832,50 +5025,14 @@
     },
     {
       "source": "store_useecosystemstore_useecosystemstore",
-      "target": "components_common_seohead",
+      "target": "components_overlays_contextmenu",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "import",
-      "source_file": "components/common/SEOHead.tsx",
-      "source_location": "L12",
-      "weight": 1.0
-    },
-    {
-      "source": "store_useecosystemstore_useecosystemstore",
-      "target": "components_common_toastcontainer",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "components/common/ToastContainer.tsx",
-      "source_location": "L14",
-      "weight": 1.0
-    },
-    {
-      "source": "store_useecosystemstore_useecosystemstore",
-      "target": "components_overlays_spotlightsearch",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "components/overlays/SpotlightSearch.tsx",
-      "source_location": "L38",
-      "weight": 1.0
-    },
-    {
-      "source": "store_useecosystemstore_useecosystemstore",
-      "target": "desktop_components_desktopwindowmanager",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "desktop/components/DesktopWindowManager.tsx",
-      "source_location": "L12",
+      "source_file": "components/overlays/ContextMenu.tsx",
+      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -5048,6 +5205,18 @@
     },
     {
       "source": "app",
+      "target": "store_useecosystemstore",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "App.tsx",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "app",
       "target": "components_common_errorboundary",
       "relation": "imports_from",
       "_origin": "ast",
@@ -5096,6 +5265,18 @@
     },
     {
       "source": "apps_aboutapp",
+      "target": "store_useecosystemstore",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "apps/AboutApp.tsx",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_aboutapp",
       "target": "components_common_lazyimage",
       "relation": "imports_from",
       "_origin": "ast",
@@ -5104,6 +5285,30 @@
       "context": "import",
       "source_file": "apps/AboutApp.tsx",
       "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_mailapp",
+      "target": "store_useecosystemstore",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "apps/MailApp.tsx",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_photosapp",
+      "target": "store_useecosystemstore",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "apps/PhotosApp.tsx",
+      "source_location": "L13",
       "weight": 1.0
     },
     {
@@ -5116,6 +5321,18 @@
       "context": "import",
       "source_file": "apps/PhotosApp.tsx",
       "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_resumeapp",
+      "target": "store_useecosystemstore",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "apps/ResumeApp.tsx",
+      "source_location": "L23",
       "weight": 1.0
     },
     {
@@ -5144,6 +5361,18 @@
     },
     {
       "source": "apps_safariapp",
+      "target": "store_useecosystemstore",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "apps/SafariApp.tsx",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_safariapp",
       "target": "components_common_lazyimage",
       "relation": "imports_from",
       "_origin": "ast",
@@ -5168,6 +5397,18 @@
     },
     {
       "source": "apps_singleprojectapp",
+      "target": "store_useecosystemstore",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "apps/SingleProjectApp.tsx",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_singleprojectapp",
       "target": "components_common_lazyimage",
       "relation": "imports_from",
       "_origin": "ast",
@@ -5176,6 +5417,30 @@
       "context": "import",
       "source_file": "apps/SingleProjectApp.tsx",
       "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_terminalapp",
+      "target": "store_useecosystemstore",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "apps/TerminalApp.tsx",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_trashapp",
+      "target": "store_useecosystemstore",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "apps/TrashApp.tsx",
+      "source_location": "L13",
       "weight": 1.0
     },
     {
@@ -5239,6 +5504,30 @@
       "weight": 1.0
     },
     {
+      "source": "components_common_lazyimage",
+      "target": "mobile_components_ioslockscreen",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "mobile/components/IOSLockScreen.tsx",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "components_common_seohead",
+      "target": "store_useecosystemstore",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "components/common/SEOHead.tsx",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
       "source": "components_common_seohead",
       "target": "data_projectsdata",
       "relation": "imports_from",
@@ -5275,6 +5564,18 @@
       "weight": 1.0
     },
     {
+      "source": "components_common_toastcontainer",
+      "target": "store_useecosystemstore",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "components/common/ToastContainer.tsx",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
       "source": "components_overlays_contextmenu",
       "target": "store_useecosystemstore",
       "relation": "imports_from",
@@ -5284,18 +5585,6 @@
       "context": "import",
       "source_file": "components/overlays/ContextMenu.tsx",
       "source_location": "L21",
-      "weight": 1.0
-    },
-    {
-      "source": "components_overlays_contextmenu",
-      "target": "desktop_desktopenvironment",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "desktop/DesktopEnvironment.tsx",
-      "source_location": "L20",
       "weight": 1.0
     },
     {
@@ -5432,6 +5721,18 @@
     },
     {
       "source": "components_overlays_spotlightsearch",
+      "target": "store_useecosystemstore",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "components/overlays/SpotlightSearch.tsx",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "components_overlays_spotlightsearch",
       "target": "config_apps_config",
       "relation": "imports_from",
       "_origin": "ast",
@@ -5455,6 +5756,18 @@
       "weight": 1.0
     },
     {
+      "source": "config_apps_config",
+      "target": "desktop_components_desktopdock",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "desktop/components/DesktopDock.tsx",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
       "source": "data_projectsdata",
       "target": "scripts_generate_sitemap",
       "relation": "imports_from",
@@ -5468,14 +5781,14 @@
     },
     {
       "source": "desktop_components_desktopdock",
-      "target": "config_apps_config",
+      "target": "store_useecosystemstore",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "desktop/components/DesktopDock.tsx",
-      "source_location": "L13",
+      "source_location": "L14",
       "weight": 1.0
     },
     {
@@ -5612,6 +5925,30 @@
     },
     {
       "source": "desktop_components_desktopwindowmanager",
+      "target": "desktop_desktopenvironment",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "desktop/DesktopEnvironment.tsx",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "desktop_components_desktopwindowmanager",
+      "target": "store_useecosystemstore",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "desktop/components/DesktopWindowManager.tsx",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "desktop_components_desktopwindowmanager",
       "target": "desktop_components_windowframe",
       "relation": "imports_from",
       "_origin": "ast",
@@ -5647,6 +5984,18 @@
       "weight": 1.0
     },
     {
+      "source": "desktop_components_windowframe",
+      "target": "store_useecosystemstore",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "desktop/components/WindowFrame.tsx",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
       "source": "desktop_desktopenvironment",
       "target": "store_useecosystemstore",
       "relation": "imports_from",
@@ -5672,26 +6021,26 @@
     },
     {
       "source": "desktop_desktopenvironment",
-      "target": "desktop_components_desktopwindowmanager",
+      "target": "components_overlays_contextmenu",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "desktop/DesktopEnvironment.tsx",
-      "source_location": "L17",
+      "source_location": "L20",
       "weight": 1.0
     },
     {
       "source": "mobile_components_ioslockscreen",
-      "target": "components_common_lazyimage",
+      "target": "store_useecosystemstore",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "mobile/components/IOSLockScreen.tsx",
-      "source_location": "L14",
+      "source_location": "L13",
       "weight": 1.0
     },
     {
@@ -5791,212 +6140,8 @@
       "weight": 1.0
     },
     {
-      "source": "store_useecosystemstore",
-      "target": "app",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "App.tsx",
-      "source_location": "L13",
-      "weight": 1.0
-    },
-    {
-      "source": "store_useecosystemstore",
-      "target": "apps_aboutapp",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "apps/AboutApp.tsx",
-      "source_location": "L21",
-      "weight": 1.0
-    },
-    {
-      "source": "store_useecosystemstore",
-      "target": "apps_mailapp",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "apps/MailApp.tsx",
-      "source_location": "L26",
-      "weight": 1.0
-    },
-    {
-      "source": "store_useecosystemstore",
-      "target": "apps_photosapp",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "apps/PhotosApp.tsx",
-      "source_location": "L13",
-      "weight": 1.0
-    },
-    {
-      "source": "store_useecosystemstore",
-      "target": "apps_resumeapp",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "apps/ResumeApp.tsx",
-      "source_location": "L23",
-      "weight": 1.0
-    },
-    {
-      "source": "store_useecosystemstore",
-      "target": "apps_safariapp",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "apps/SafariApp.tsx",
-      "source_location": "L32",
-      "weight": 1.0
-    },
-    {
-      "source": "store_useecosystemstore",
-      "target": "apps_singleprojectapp",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "apps/SingleProjectApp.tsx",
-      "source_location": "L39",
-      "weight": 1.0
-    },
-    {
-      "source": "store_useecosystemstore",
-      "target": "apps_terminalapp",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "apps/TerminalApp.tsx",
-      "source_location": "L12",
-      "weight": 1.0
-    },
-    {
-      "source": "store_useecosystemstore",
-      "target": "apps_trashapp",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "apps/TrashApp.tsx",
-      "source_location": "L13",
-      "weight": 1.0
-    },
-    {
-      "source": "store_useecosystemstore",
-      "target": "components_common_seohead",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "components/common/SEOHead.tsx",
-      "source_location": "L12",
-      "weight": 1.0
-    },
-    {
-      "source": "store_useecosystemstore",
-      "target": "components_common_toastcontainer",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "components/common/ToastContainer.tsx",
-      "source_location": "L14",
-      "weight": 1.0
-    },
-    {
-      "source": "store_useecosystemstore",
-      "target": "components_overlays_spotlightsearch",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "components/overlays/SpotlightSearch.tsx",
-      "source_location": "L38",
-      "weight": 1.0
-    },
-    {
-      "source": "store_useecosystemstore",
-      "target": "desktop_components_desktopdock",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "desktop/components/DesktopDock.tsx",
-      "source_location": "L14",
-      "weight": 1.0
-    },
-    {
-      "source": "store_useecosystemstore",
-      "target": "desktop_components_desktopwindowmanager",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "desktop/components/DesktopWindowManager.tsx",
-      "source_location": "L12",
-      "weight": 1.0
-    },
-    {
-      "source": "store_useecosystemstore",
-      "target": "desktop_components_windowframe",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "desktop/components/WindowFrame.tsx",
-      "source_location": "L14",
-      "weight": 1.0
-    },
-    {
-      "source": "store_useecosystemstore",
-      "target": "mobile_components_ioslockscreen",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "mobile/components/IOSLockScreen.tsx",
-      "source_location": "L13",
-      "weight": 1.0
-    },
-    {
-      "source": "store_useecosystemstore",
-      "target": "utils_soundeffects",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "store/useEcosystemStore.ts",
-      "source_location": "L14",
-      "weight": 1.0
-    },
-    {
-      "source": "store_useecosystemstore",
-      "target": "tablet_tabletenvironment",
+      "source": "tablet_tabletenvironment",
+      "target": "store_useecosystemstore",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -6016,6 +6161,18 @@
       "context": "import",
       "source_file": "tablet/TabletEnvironment.tsx",
       "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "utils_soundeffects",
+      "target": "store_useecosystemstore",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "store/useEcosystemStore.ts",
+      "source_location": "L14",
       "weight": 1.0
     },
     {
@@ -6096,8 +6253,8 @@
       "weight": 1.0
     },
     {
-      "source": "apps_aboutapp",
-      "target": "apps_aboutapp_aboutapp",
+      "source": "apps_aboutapp_aboutapp",
+      "target": "apps_aboutapp",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -6118,36 +6275,14 @@
       "weight": 1.0
     },
     {
-      "source": "apps_mailapp",
-      "target": "apps_mailapp_mailapp",
+      "source": "apps_mailapp_mailapp",
+      "target": "apps_mailapp",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "apps/MailApp.tsx",
       "source_location": "L56",
-      "weight": 1.0
-    },
-    {
-      "source": "apps_photosapp",
-      "target": "apps_photosapp_screenshotphoto",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "apps/PhotosApp.tsx",
-      "source_location": "L16",
-      "weight": 1.0
-    },
-    {
-      "source": "apps_photosapp",
-      "target": "apps_photosapp_photosapp",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "apps/PhotosApp.tsx",
-      "source_location": "L179",
       "weight": 1.0
     },
     {
@@ -6162,8 +6297,30 @@
       "weight": 1.0
     },
     {
-      "source": "apps_resumeapp",
-      "target": "apps_resumeapp_resumeapp",
+      "source": "apps_photosapp_photosapp",
+      "target": "apps_photosapp",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "apps/PhotosApp.tsx",
+      "source_location": "L179",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_photosapp_screenshotphoto",
+      "target": "apps_photosapp",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "apps/PhotosApp.tsx",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_resumeapp_resumeapp",
+      "target": "apps_resumeapp",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -6173,8 +6330,8 @@
       "weight": 1.0
     },
     {
-      "source": "apps_safariapp",
-      "target": "apps_safariapp_safariapp",
+      "source": "apps_safariapp_safariapp",
+      "target": "apps_safariapp",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -6184,8 +6341,8 @@
       "weight": 1.0
     },
     {
-      "source": "apps_safariapp",
-      "target": "apps_safariapp_tiltprojectcard",
+      "source": "apps_safariapp_tiltprojectcard",
+      "target": "apps_safariapp",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -6195,25 +6352,25 @@
       "weight": 1.0
     },
     {
-      "source": "apps_singleprojectapp",
-      "target": "apps_singleprojectapp_singleprojectappprops",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "apps/SingleProjectApp.tsx",
-      "source_location": "L42",
-      "weight": 1.0
-    },
-    {
-      "source": "apps_singleprojectapp",
-      "target": "apps_singleprojectapp_singleprojectapp",
+      "source": "apps_singleprojectapp_singleprojectapp",
+      "target": "apps_singleprojectapp",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "apps/SingleProjectApp.tsx",
       "source_location": "L46",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_singleprojectapp_singleprojectappprops",
+      "target": "apps_singleprojectapp",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "apps/SingleProjectApp.tsx",
+      "source_location": "L42",
       "weight": 1.0
     },
     {
@@ -6228,8 +6385,8 @@
       "weight": 1.0
     },
     {
-      "source": "apps_terminalapp",
-      "target": "apps_terminalapp_promptprefix",
+      "source": "apps_terminalapp_promptprefix",
+      "target": "apps_terminalapp",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -6239,8 +6396,8 @@
       "weight": 1.0
     },
     {
-      "source": "apps_terminalapp",
-      "target": "apps_terminalapp_terminalapp",
+      "source": "apps_terminalapp_terminalapp",
+      "target": "apps_terminalapp",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -6338,8 +6495,8 @@
       "weight": 1.0
     },
     {
-      "source": "components_common_seohead",
-      "target": "components_common_seohead_seohead",
+      "source": "components_common_seohead_seohead",
+      "target": "components_common_seohead",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -6404,25 +6561,25 @@
       "weight": 1.0
     },
     {
-      "source": "components_overlays_notificationcenter",
-      "target": "components_overlays_notificationcenter_projecticon",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "components/overlays/NotificationCenter.tsx",
-      "source_location": "L32",
-      "weight": 1.0
-    },
-    {
-      "source": "components_overlays_notificationcenter",
-      "target": "components_overlays_notificationcenter_notificationcenter",
+      "source": "components_overlays_notificationcenter_notificationcenter",
+      "target": "components_overlays_notificationcenter",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "components/overlays/NotificationCenter.tsx",
       "source_location": "L66",
+      "weight": 1.0
+    },
+    {
+      "source": "components_overlays_notificationcenter_projecticon",
+      "target": "components_overlays_notificationcenter",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "components/overlays/NotificationCenter.tsx",
+      "source_location": "L32",
       "weight": 1.0
     },
     {
@@ -6438,50 +6595,6 @@
     },
     {
       "source": "components_overlays_spotlightsearch",
-      "target": "components_overlays_spotlightsearch_getitemrecentindex",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "components/overlays/SpotlightSearch.tsx",
-      "source_location": "L377",
-      "weight": 1.0
-    },
-    {
-      "source": "components_overlays_spotlightsearch",
-      "target": "components_overlays_spotlightsearch_spotlightsearch",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "components/overlays/SpotlightSearch.tsx",
-      "source_location": "L399",
-      "weight": 1.0
-    },
-    {
-      "source": "components_overlays_spotlightsearch",
-      "target": "components_overlays_spotlightsearch_searchitem",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "components/overlays/SpotlightSearch.tsx",
-      "source_location": "L42",
-      "weight": 1.0
-    },
-    {
-      "source": "components_overlays_spotlightsearch",
-      "target": "components_overlays_spotlightsearch_categoryicon",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "components/overlays/SpotlightSearch.tsx",
-      "source_location": "L57",
-      "weight": 1.0
-    },
-    {
-      "source": "components_overlays_spotlightsearch",
       "target": "components_overlays_spotlightsearch_search_items",
       "relation": "contains",
       "_origin": "ast",
@@ -6492,8 +6605,52 @@
       "weight": 1.0
     },
     {
-      "source": "config_apps_config",
-      "target": "config_apps_config_appconfig",
+      "source": "components_overlays_spotlightsearch_categoryicon",
+      "target": "components_overlays_spotlightsearch",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "components/overlays/SpotlightSearch.tsx",
+      "source_location": "L57",
+      "weight": 1.0
+    },
+    {
+      "source": "components_overlays_spotlightsearch_getitemrecentindex",
+      "target": "components_overlays_spotlightsearch",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "components/overlays/SpotlightSearch.tsx",
+      "source_location": "L377",
+      "weight": 1.0
+    },
+    {
+      "source": "components_overlays_spotlightsearch_searchitem",
+      "target": "components_overlays_spotlightsearch",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "components/overlays/SpotlightSearch.tsx",
+      "source_location": "L42",
+      "weight": 1.0
+    },
+    {
+      "source": "components_overlays_spotlightsearch_spotlightsearch",
+      "target": "components_overlays_spotlightsearch",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "components/overlays/SpotlightSearch.tsx",
+      "source_location": "L399",
+      "weight": 1.0
+    },
+    {
+      "source": "config_apps_config_appconfig",
+      "target": "config_apps_config",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -6503,19 +6660,8 @@
       "weight": 1.0
     },
     {
-      "source": "config_apps_config",
-      "target": "config_apps_config_createprojectapp",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "config/apps.config.ts",
-      "source_location": "L34",
-      "weight": 1.0
-    },
-    {
-      "source": "config_apps_config",
-      "target": "config_apps_config_apps_config",
+      "source": "config_apps_config_apps_config",
+      "target": "config_apps_config",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -6525,14 +6671,14 @@
       "weight": 1.0
     },
     {
-      "source": "data_projectsdata",
-      "target": "data_projectsdata_project",
+      "source": "config_apps_config_createprojectapp",
+      "target": "config_apps_config",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "data/projectsData.ts",
-      "source_location": "L11",
+      "source_file": "config/apps.config.ts",
+      "source_location": "L34",
       "weight": 1.0
     },
     {
@@ -6558,8 +6704,8 @@
       "weight": 1.0
     },
     {
-      "source": "data_projectsdata",
-      "target": "data_projectsdata_getappinfobyprojectid",
+      "source": "data_projectsdata_getappinfobyprojectid",
+      "target": "data_projectsdata",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -6569,14 +6715,25 @@
       "weight": 1.0
     },
     {
-      "source": "data_projectsdata",
-      "target": "data_projectsdata_getprojectcoverimage",
+      "source": "data_projectsdata_getprojectcoverimage",
+      "target": "data_projectsdata",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "data/projectsData.ts",
       "source_location": "L916",
+      "weight": 1.0
+    },
+    {
+      "source": "data_projectsdata_project",
+      "target": "data_projectsdata",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "data/projectsData.ts",
+      "source_location": "L11",
       "weight": 1.0
     },
     {
@@ -6603,18 +6760,18 @@
     },
     {
       "source": "desktop_components_desktopfolders",
-      "target": "desktop_components_desktopfolders_desktopprojects",
+      "target": "desktop_components_desktopfolders_desktop_items",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "desktop/components/DesktopFolders.tsx",
-      "source_location": "L158",
+      "source_location": "L38",
       "weight": 1.0
     },
     {
-      "source": "desktop_components_desktopfolders",
-      "target": "desktop_components_desktopfolders_desktopitem",
+      "source": "desktop_components_desktopfolders_desktopitem",
+      "target": "desktop_components_desktopfolders",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -6624,14 +6781,14 @@
       "weight": 1.0
     },
     {
-      "source": "desktop_components_desktopfolders",
-      "target": "desktop_components_desktopfolders_desktop_items",
+      "source": "desktop_components_desktopfolders_desktopprojects",
+      "target": "desktop_components_desktopfolders",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "desktop/components/DesktopFolders.tsx",
-      "source_location": "L38",
+      "source_location": "L158",
       "weight": 1.0
     },
     {
@@ -6701,25 +6858,25 @@
       "weight": 1.0
     },
     {
-      "source": "mobile_components_ioslockscreen",
-      "target": "mobile_components_ioslockscreen_ioslockscreenprops",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "mobile/components/IOSLockScreen.tsx",
-      "source_location": "L17",
-      "weight": 1.0
-    },
-    {
-      "source": "mobile_components_ioslockscreen",
-      "target": "mobile_components_ioslockscreen_ioslockscreen",
+      "source": "mobile_components_ioslockscreen_ioslockscreen",
+      "target": "mobile_components_ioslockscreen",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "mobile/components/IOSLockScreen.tsx",
       "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "mobile_components_ioslockscreen_ioslockscreenprops",
+      "target": "mobile_components_ioslockscreen",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "mobile/components/IOSLockScreen.tsx",
+      "source_location": "L17",
       "weight": 1.0
     },
     {
@@ -6911,17 +7068,6 @@
     },
     {
       "source": "package_dependencies",
-      "target": "package_dependencies_vite",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "package.json",
-      "source_location": "L24",
-      "weight": 1.0
-    },
-    {
-      "source": "package_dependencies",
       "target": "package_dependencies_zustand",
       "relation": "contains",
       "_origin": "ast",
@@ -6929,6 +7075,17 @@
       "confidence_score": 1.0,
       "source_file": "package.json",
       "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "package_dependencies_vite",
+      "target": "package_dependencies",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "package.json",
+      "source_location": "L24",
       "weight": 1.0
     },
     {
@@ -7164,17 +7321,6 @@
     },
     {
       "source": "store_useecosystemstore",
-      "target": "store_useecosystemstore_useecosystemstore",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "store/useEcosystemStore.ts",
-      "source_location": "L334",
-      "weight": 1.0
-    },
-    {
-      "source": "store_useecosystemstore",
       "target": "store_useecosystemstore_wallpapers",
       "relation": "contains",
       "_origin": "ast",
@@ -7281,6 +7427,17 @@
       "confidence_score": 1.0,
       "source_file": "store/useEcosystemStore.ts",
       "source_location": "L165",
+      "weight": 1.0
+    },
+    {
+      "source": "store_useecosystemstore_useecosystemstore",
+      "target": "store_useecosystemstore",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "store/useEcosystemStore.ts",
+      "source_location": "L334",
       "weight": 1.0
     },
     {
@@ -7681,7 +7838,7 @@
       "source_file": "App.tsx"
     },
     {
-      "source": "apps_trashapp",
+      "source": "apps_aboutapp",
       "target": "config_apps_config",
       "relation": "dynamic_import",
       "_origin": "ast",
@@ -7690,8 +7847,35 @@
       "source_file": "config/apps.config.ts"
     },
     {
-      "source": "config_apps_config",
-      "target": "apps_aboutapp",
+      "source": "apps_photosapp",
+      "target": "config_apps_config",
+      "relation": "dynamic_import",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "config/apps.config.ts"
+    },
+    {
+      "source": "apps_resumeapp",
+      "target": "config_apps_config",
+      "relation": "dynamic_import",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "config/apps.config.ts"
+    },
+    {
+      "source": "apps_safariapp",
+      "target": "config_apps_config",
+      "relation": "dynamic_import",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "config/apps.config.ts"
+    },
+    {
+      "source": "apps_singleprojectapp",
+      "target": "config_apps_config",
       "relation": "dynamic_import",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -7709,43 +7893,16 @@
     },
     {
       "source": "config_apps_config",
-      "target": "apps_photosapp",
-      "relation": "dynamic_import",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "config/apps.config.ts"
-    },
-    {
-      "source": "config_apps_config",
-      "target": "apps_resumeapp",
-      "relation": "dynamic_import",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "config/apps.config.ts"
-    },
-    {
-      "source": "config_apps_config",
-      "target": "apps_safariapp",
-      "relation": "dynamic_import",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "config/apps.config.ts"
-    },
-    {
-      "source": "config_apps_config",
-      "target": "apps_singleprojectapp",
-      "relation": "dynamic_import",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "config/apps.config.ts"
-    },
-    {
-      "source": "config_apps_config",
       "target": "apps_terminalapp",
+      "relation": "dynamic_import",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "config/apps.config.ts"
+    },
+    {
+      "source": "config_apps_config",
+      "target": "apps_trashapp",
       "relation": "dynamic_import",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -7808,6 +7965,96 @@
       "weight": 1.0
     },
     {
+      "source": "alap_putatunda",
+      "target": "portfolio_os",
+      "relation": "built",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "public/llms-full.txt",
+      "source_location": "public/llms-full.txt:33",
+      "weight": 1.0
+    },
+    {
+      "source": "alap_putatunda",
+      "target": "vibe44_mcp_server",
+      "relation": "built",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "public/llms-full.txt",
+      "source_location": "public/llms-full.txt:40",
+      "weight": 1.0
+    },
+    {
+      "source": "alap_putatunda",
+      "target": "vibe44_engine",
+      "relation": "built",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "public/llms-full.txt",
+      "source_location": "public/llms-full.txt:46",
+      "weight": 1.0
+    },
+    {
+      "source": "alap_putatunda",
+      "target": "openui",
+      "relation": "built",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "public/llms-full.txt",
+      "source_location": "public/llms-full.txt:52",
+      "weight": 1.0
+    },
+    {
+      "source": "alap_putatunda",
+      "target": "zeroheadache_marketing",
+      "relation": "built",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "public/llms-full.txt",
+      "source_location": "public/llms-full.txt:57",
+      "weight": 1.0
+    },
+    {
+      "source": "alap_putatunda",
+      "target": "zeroheadache_platform",
+      "relation": "built",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "public/llms-full.txt",
+      "source_location": "public/llms-full.txt:62",
+      "weight": 1.0
+    },
+    {
+      "source": "alap_putatunda",
+      "target": "makemesound",
+      "relation": "built",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "public/llms-full.txt",
+      "source_location": "public/llms-full.txt:67",
+      "weight": 1.0
+    },
+    {
+      "source": "alap_putatunda",
+      "target": "freecom_ai",
+      "relation": "built",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "public/llms-full.txt",
+      "source_location": "public/llms-full.txt:72",
+      "weight": 1.0
+    },
+    {
+      "source": "alap_putatunda",
+      "target": "soothly_ai",
+      "relation": "built",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "public/llms-full.txt",
+      "source_location": "public/llms-full.txt:77",
+      "weight": 1.0
+    },
+    {
       "source": "data_projectsdata_openui",
       "target": "public_llms_full_txt_deep_dive",
       "relation": "cites",
@@ -7855,6 +8102,26 @@
       "confidence_score": 1.0,
       "source_file": "public/llms-full.txt",
       "source_location": "public/llms-full.txt:55",
+      "weight": 1.0
+    },
+    {
+      "source": "alap_putatunda",
+      "target": "pharmison_valentes",
+      "relation": "co_founded",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "public/llms-full.txt",
+      "source_location": "public/llms-full.txt:95",
+      "weight": 1.0
+    },
+    {
+      "source": "alap_putatunda",
+      "target": "hyperagent_founding_500",
+      "relation": "honored_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "public/llms-full.txt",
+      "source_location": "public/llms-full.txt:112",
       "weight": 1.0
     },
     {
@@ -7918,6 +8185,16 @@
       "weight": 1.0
     },
     {
+      "source": "data_projectsdata_projects_data",
+      "target": "readme_projectsmanifest",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "README.md:44",
+      "weight": 1.0
+    },
+    {
       "source": "desktop_desktopenvironment",
       "target": "public_images_default_wallpaper_asset",
       "relation": "references",
@@ -7958,16 +8235,6 @@
       "weight": 1.0
     },
     {
-      "source": "readme_projectsmanifest",
-      "target": "data_projectsdata_projects_data",
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "README.md",
-      "source_location": "README.md:44",
-      "weight": 1.0
-    },
-    {
       "source": "tablet_tabletenvironment",
       "target": "public_images_tahoe_wallpaper_asset",
       "relation": "references",
@@ -7988,8 +8255,28 @@
       "weight": 0.9
     },
     {
-      "source": "index_jsonld_schemas",
-      "target": "components_common_seohead_seohead",
+      "source": "vibe44_mcp_server",
+      "target": "vibe44_engine",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "public/llms-full.txt",
+      "source_location": "public/llms-full.txt:40",
+      "weight": 1.0
+    },
+    {
+      "source": "zeroheadache_marketing",
+      "target": "zeroheadache_platform",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "public/llms-full.txt",
+      "source_location": "public/llms-full.txt:57",
+      "weight": 1.0
+    },
+    {
+      "source": "components_common_seohead_seohead",
+      "target": "index_jsonld_schemas",
       "relation": "semantically_similar_to",
       "confidence": "INFERRED",
       "confidence_score": 0.9,
@@ -8000,22 +8287,23 @@
   ],
   "hyperedges": [
     {
-      "id": "he_production_portfolio_showcase",
-      "label": "Scale with Alap Production Projects",
+      "id": "alap_ai_suite",
+      "label": "Alap AI Product Suite",
       "nodes": [
-        "data_projectsdata_portfolio_os",
-        "data_projectsdata_vibe44",
-        "data_projectsdata_zeroheadache",
-        "data_projectsdata_openui",
-        "data_projectsdata_makemesound",
-        "data_projectsdata_freecom",
-        "data_projectsdata_soothly_ai"
+        "portfolio_os",
+        "vibe44_mcp_server",
+        "vibe44_engine",
+        "openui",
+        "zeroheadache_platform",
+        "makemesound",
+        "freecom_ai",
+        "soothly_ai"
       ],
-      "relation": "implement",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "data/projectsData.ts"
+      "relation": "form",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "public/llms-full.txt"
     }
   ],
-  "built_at_commit": "1d80ffd147302f0d5707f51c0060e0c08d1c6754"
+  "built_at_commit": "e03e5216e4a1bc33e857c8d1fc36529293ba5955"
 }

@@ -590,7 +590,7 @@ export async function executeAgentTask(tenantId: string, taskInput: TaskInput) {
     description:
       "An open-source, local-first UI design tool using Next.js 16, React 19, Tailwind CSS 4, SQLite, Prisma 7, and the Vercel AI SDK.",
     longDescription:
-      "Built an open-source, local-first UI design tool using Next.js 16, React 19, Tailwind CSS 4, SQLite, Prisma 7, and the Vercel AI SDK, enabling offline UI generation across 4 AI providers without requiring accounts, subscriptions, or cloud storage.",
+      "Built an open-source, local-first UI design tool using Next.js 16, React 19, Tailwind CSS 4, SQLite, Prisma 7, and the Vercel AI SDK, enabling offline UI generation across 4 AI providers without requiring AI subscriptions, or cloud storage.",
     skills: [
       "TypeScript",
       "Next.js 16",
@@ -605,7 +605,7 @@ export async function executeAgentTask(tenantId: string, taskInput: TaskInput) {
     accentColor: "#0284c7",
     highlights: [
       "Built an open-source, local-first UI design tool using Next.js 16, React 19, Tailwind CSS 4, SQLite, Prisma 7, and Vercel AI SDK",
-      "Enables offline UI generation across 4 AI providers without requiring accounts, subscriptions, or cloud storage",
+      "Enables offline UI generation across 4 AI providers without requiring AI subscriptions, or cloud storage",
       "Open-source Google Stitch alternative with complete local privacy",
       "Exports clean React and TypeScript component structures directly to disk",
     ],
